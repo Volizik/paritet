@@ -1,5 +1,5 @@
 .main {
-  min-height: 100vh;
+  height: 100vh;
   box-sizing: border-box;
   position: relative;
   width: 100%;
@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex: 1 0 auto;
   }
   &__left {
     position: relative;
@@ -143,7 +144,7 @@
       a {
         display: block;
         position: relative;
-        text-align: right;
+        float: right;
         color: #fff;
         font-size: 13px;
         margin-top: 5px;
@@ -239,7 +240,7 @@
 
     &--sms {
       .main__form--content a {
-        text-align: left;
+        float: left;
       }
     }
     &--password {
@@ -269,6 +270,8 @@
           font-size: 14px;
           cursor: pointer;
           transition: .4s;
+          float: left;
+          margin-top: 50px;
           &:hover {
             background-color: #002a4d;
             transition: .4s;
@@ -333,6 +336,7 @@
     box-sizing: border-box;
     background-color: rgba(255,255,255,.7);
     margin-top: 50px;
+    flex-shrink: 0;
     p {
       margin: 0 auto 0 0;
       font-size: 13px;
