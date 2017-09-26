@@ -1,0 +1,69 @@
+.adm-sidebar {
+  position: relative;
+  width: 260px;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  height: 100%;
+  color: #fff;
+  background-color: #00467f;
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    .logo {
+      width: 40%;
+      &:before {
+        background-color: #fff;
+      }
+    }
+    h2 {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      span {
+        display: block;
+        font-size: 12px;
+        text-transform: lowercase;
+        font-weight: 400;
+        max-width: 50px;
+      }
+    }
+  }
+  &__item {
+    margin-top: 25px;
+    &--header {
+      display: flex;
+      align-items: center;
+      img {
+        margin: 0px 15px;
+      }
+      span {
+        font-size: 16px;
+        text-transform: uppercase;
+        &:hover {
+          transition: .4s;
+          color: #7fc6ff;
+        }
+      }
+    }
+    ul {
+      position: relative;
+      padding-left: 57px;
+      margin: 0;
+      li {
+        list-style: none;
+        position: relative;
+        a {
+          font-size: 13px;
+          color: #fff;
+          &:hover {
+            transition: .4s;
+            color: #7fc6ff;
+          }
+        }
+      }
+    }
+  }
+
+}
