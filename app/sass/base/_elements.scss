@@ -1,3 +1,32 @@
+$blue: #00467f;
+$blue-hover: #73b9f2;
+$green-btn: #b9bf0a;
+$green-btn-active: #888c07;
+$status: #5ccc3d;
+$someone: #0062b3;
+$someone-hover: #004680;
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.status {
+  color: $status!important;
+  font-weight: 700;
+}
+.someone {
+  color: $someone!important;
+  font-weight: 700;
+  transition: .4s;
+  &:hover {
+    color: $someone-hover!important;
+    transition: .4s;
+  }
+}
+
 .logo {
   display: block;
   position: relative;
@@ -8,7 +37,7 @@
     bottom: 10px;
     left: 22px;
     width: 20px;
-    height: 0px;
+    height: 0;
     background-color: #00467f;
     animation: animateLogo 2s ease-in-out forwards;
   }
@@ -23,6 +52,92 @@
     animation: animateLogo 2s ease-in-out forwards;
   }
 }
+
+.action-btn {
+  display: flex;
+  position: relative;
+  height: 40px;
+  min-width: 150px;
+  background-color: $green-btn;
+  cursor: pointer;
+  &--text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    min-width: 120px;
+    width: calc(100% - 30px);
+    height: 100%;
+    transition: .4s;
+    overflow: hidden;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    color: #fff;
+    &:active {
+      background-color: $green-btn-active;
+      transition: .4s;
+    }
+  }
+  &--drop {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 100%;
+    transition: .4s;
+    &:before {
+      content: '';
+      position: relative;
+      top: 50%;
+      border-top: 6px solid #fff;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      @include center;
+    }
+    &:active {
+      background-color: $green-btn-active;
+      transition: .4s;
+    }
+  }
+  &--active {
+    background-color: $green-btn-active;
+  }
+  ul {
+    display: none;
+    margin: 0;
+    position: absolute;
+    top: 45px;
+    background: #fff;
+    padding: 10px 0;
+    right: 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px 0 #ddd;
+    width: 100%;
+    min-width: 200px;
+    z-index: 10;
+    li {
+      position: relative;
+      cursor: pointer;
+      transition: .4s;
+      &:hover {
+        background-color: #dce9f5;
+        transition: .4s;
+      }
+      a {
+        display: block;
+        font-size: 15px;
+        color: #000;
+        white-space: nowrap;
+        padding: 5px 20px;
+        box-sizing: border-box;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
 
 
 @keyframes animateLogo {

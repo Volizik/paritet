@@ -3,10 +3,9 @@
   width: 260px;
   padding: 10px;
   box-sizing: border-box;
-  min-height: 100vh;
-  height: 100%;
   color: #fff;
   background-color: #00467f;
+
   &__logo {
     display: flex;
     justify-content: center;
@@ -21,12 +20,14 @@
       font-size: 20px;
       color: #fff;
       text-transform: uppercase;
+      font-weight: 400;
       span {
         display: block;
         font-size: 12px;
         text-transform: lowercase;
         font-weight: 400;
         max-width: 50px;
+        margin-top: 5px;
       }
     }
   }
@@ -65,5 +66,4 @@
       }
     }
   }
-
 }

@@ -1,3 +1,17 @@
+.adm-wrap {
+    display: flex;
+    position: relative;
+    width:100%;
+    min-height:100vh;
+    height: 100%;
+}
+.adm-container {
+    position: relative;
+    width:calc(100% - 260px);
+    min-height:100vh;
+    height: 100%;
+}
+
 .container {
     box-sizing: border-box;
     padding-right: 10px;
