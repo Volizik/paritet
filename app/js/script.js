@@ -55,12 +55,34 @@ $(function () {
         }
     });
 
-    $('.opened').text('Сохранить');
-    $(document).on('click', '.user-edit', function (e) {
+
+    $(document).on('click', '.action-btn > .user-edit', function (e) {
         e.preventDefault();
         var tabId = $(this).attr('href');
         $('.adm-content__user').hide(0);
         $(tabId).fadeIn();
+        if(!$(this).hasClass('user-edit-active')) {
+            $(this).text('Сохранить').addClass('user-edit-active');
+            $(this).attr('href', '#user-cabinet')
+        } else {
+            $(this).text('Изменить').removeClass('user-edit-active');
+            $(this).attr('href', '#user-edit')
+        }
+    });
+
+    $(document).on('click', '.save', function (e) {
+        e.preventDefault();
+        var tabId = $(this).attr('href');
+        $('.adm-content__user').hide(0);
+        $(tabId).fadeIn();
+        $('.action-btn > .user-edit').text('Изменить').removeClass('user-edit-active').attr('href', '#user-edit');
+    });
+    $(document).on('click', '.cancel', function (e) {
+        e.preventDefault();
+        var tabId = $(this).attr('href');
+        $('.adm-content__user').hide(0);
+        $(tabId).fadeIn();
+        $('.action-btn > .user-edit').text('Изменить').removeClass('user-edit-active').attr('href', '#user-edit');
     });
 
 
