@@ -2,7 +2,6 @@
   position: relative;
   padding: 40px 40px 0;
   box-sizing: border-box;
-
   &__block {
     position: relative;
     border-top: 1px solid #ccc;
@@ -12,6 +11,7 @@
       border-bottom: 1px solid #ccc;
       margin-bottom: 40px;
     }
+
 
     &--row {
       position: relative;
@@ -32,6 +32,9 @@
       position: relative;
       color: #000;
       font-weight: 700;
+      span, a {
+        padding-left: 10px;
+      }
     }
     &--photo {
       display: flex;
@@ -52,5 +55,80 @@
         color: $someone;
       }
     }
+
+
+    input:not([type="checkbox"]) {
+      min-width: 300px;
+      height: 30px;
+      border: 1px solid #ccc;
+      padding: 0px 10px;
+      font-size: 14px;
+      color: #000000;
+    }
+    input[type="checkbox"] {
+      &:not(checked) {
+        position: absolute;
+        opacity: 0;
+      }
+      &:not(checked) + label {
+        position: relative;
+        padding: 0 0 0 20px;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 2px;
+          width: 10px;
+          height: 10px;
+          border-radius: 1px;
+          border: 1px solid #ccc;
+          background: #fff;
+        }
+        &:after {
+          content: '';
+          display: none;
+          position: absolute;
+          top: 3px;
+          left: 1px;
+          width: 10px;
+          height: 10px;
+          background: url(../img/icons/checked.png) no-repeat center center;
+        }
+      }
+      &:checked + label{
+        &:after {
+          display: block;
+        }
+      }
+    }
+    label {
+      font-weight: 400;
+    }
+
+
+    .edit-pass {
+      font-weight: 400;
+      color: $someone;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .save {
+      display: inline-block;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 10px 20px;
+      background-color: #0070cc;
+      margin-right: 10px;
+    }
+    .cancel {
+      display: inline-block;
+      font-size: 13px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      color: #000;
+      background-color: #f5f5f5;
+    }
+
   }
 }

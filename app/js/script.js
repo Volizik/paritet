@@ -47,27 +47,62 @@ $(function () {
 
 
 
+    /*------------------start edit user tabs--------------------*/
+
+    $('.adm-content__user').each(function (i) {
+        if(i !=0) {
+            $(this).hide(0);
+        }
+    });
+
+    $('.opened').text('Сохранить');
+    $(document).on('click', '.user-edit', function (e) {
+        e.preventDefault();
+        var tabId = $(this).attr('href');
+        $('.adm-content__user').hide(0);
+        $(tabId).fadeIn();
+    });
+
+
+    /*--------------------end edit user tabs--------------------*/
+
+
+
+
 
     /*-------------------start action-btn---------------------*/
 
-    $('.action-btn--text').text($('.action-btn ul li:first-of-type a').text());
 
-    $(document).on('click', '.action-btn--drop', function () {
+    $(document).on('click', '.action-btn--arrow', function () {
         $(this).toggleClass('action-btn--active');
         $(this).parent().find('ul').fadeToggle('fast');
     });
 
     $(document).on('click', '.action-btn ul li a', function () {
-        $('.action-btn--drop').removeClass('action-btn--active');
-        $(this).parent().parent().parent().find($('.action-btn--text').text($(this).text()));
+        $('.action-btn--arrow').removeClass('action-btn--active');
         $('.action-btn ul').fadeToggle('fast')
     });
 
     $(document).click(function(event) {
         if ($(event.target).closest(".action-btn").length) return;
         $(".action-btn ul").fadeOut("fast");
+        $('.action-btn--arrow').removeClass('action-btn--active');
     });
 
     /*---------------------end action-btn---------------------*/
+    
+    
+    
+    
+    /*------------------------start edit password btn--------------------*/
+    
+    $(document).on('click', '.edit-pass', function () {
+        var input = $(this).parent().find('input[type=password]');
+        // var inpValueLength = input.val().length;
+        // console.log(inpValueLength);
+        input.removeAttr('disabled').focus();
+    })
+    
+    /*------------------------end edit password btn--------------------*/
 
 });

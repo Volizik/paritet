@@ -60,7 +60,7 @@ $someone-hover: #004680;
   min-width: 150px;
   background-color: $green-btn;
   cursor: pointer;
-  &--text {
+  &--edit {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +79,7 @@ $someone-hover: #004680;
       transition: .4s;
     }
   }
-  &--drop {
+  &--arrow {
     display: block;
     position: relative;
     width: 30px;
@@ -136,8 +136,6 @@ $someone-hover: #004680;
     }
   }
 }
-
-
 
 
 @keyframes animateLogo {
