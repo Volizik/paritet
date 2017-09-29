@@ -48,6 +48,13 @@
         }
       }
     }
+    a {
+      color: #fff;
+      &:hover {
+        transition: .4s;
+        color: #7fc6ff;
+      }
+    }
     ul {
       position: relative;
       padding-left: 57px;

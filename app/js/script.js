@@ -70,14 +70,7 @@ $(function () {
         }
     });
 
-    $(document).on('click', '.save', function (e) {
-        e.preventDefault();
-        var tabId = $(this).attr('href');
-        $('.adm-content__user').hide(0);
-        $(tabId).fadeIn();
-        $('.action-btn > .user-edit').text('Изменить').removeClass('user-edit-active').attr('href', '#user-edit');
-    });
-    $(document).on('click', '.cancel', function (e) {
+    $(document).on('click', '.return-to-cabinet', function (e) {
         e.preventDefault();
         var tabId = $(this).attr('href');
         $('.adm-content__user').hide(0);
@@ -126,5 +119,16 @@ $(function () {
     })
     
     /*------------------------end edit password btn--------------------*/
+
+
+
+
+    /*-------------------SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
+
+    $(document).on('click', '.someone', function() {
+        window.location = "/admin-cabinet.html";
+    })
+
+    /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
 });

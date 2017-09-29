@@ -1,0 +1,62 @@
+<main class="adm-content ">
+    <section class="adm-content__section">
+
+        <div class="adm-content__block">
+
+            <div class="adm-content__block--photo">
+                <img src="img/icons/add-photo.png" alt=""><a href="#">Загрузить фото</a>
+            </div>
+
+            <div class="adm-content__block--row">
+                <div class="adm-content__block--type"><span>Логин:</span></div>
+                <div class="adm-content__block--value"><input type="text" placeholder="Будет сгенерирован по имени" disabled></div>
+            </div>
+            <div class="adm-content__block--row">
+                <div class="adm-content__block--type"><span>Пароль:</span></div>
+                <div class="adm-content__block--value"><input type="text" placeholder="Будет сгенерирован автоматически" disabled></div>
+            </div>
+            <div class="adm-content__block--row">
+                <div class="adm-content__block--type"><span>ФИО:</span></div>
+                <div class="adm-content__block--value"><input type="text"><span class="find">Найти</span></div>
+            </div>
+            <div class="adm-content__block--row">
+                <div class="adm-content__block--type"><span>Роль:</span></div>
+                <div class="adm-content__block--value">
+                    <select>
+                        <option value="" selected disabled hidden>Выберите роль</option>
+                        <option value="admin">Администратор</option>
+                        <option value="manager">Менеджер</option>
+                        <option value="issuer">Эмитент</option>
+                        <option value="registered-user">Зарег. лицо</option>
+                    </select>
+                </div>
+            </div>
+            <div class="adm-content__block--row">
+                <div class="adm-content__block--type"><span>E-mail:</span></div>
+                <div class="adm-content__block--value"><input type="email"></div>
+            </div>
+            <div class="adm-content__block--row">
+                <div class="adm-content__block--type"><span>Телефон:</span></div>
+                <div class="adm-content__block--value"><input type="tel"></div>
+            </div>
+            <div class="adm-content__block--row">
+                <div class="adm-content__block--type"><span>Двухфакторная идентификация:</span></div>
+                <div class="adm-content__block--value">
+                    <input type="checkbox" id="identification">
+                    <label for="identification">Включена</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="adm-content__block">
+
+            <div class="adm-content__block--row">
+                <a href="/admin-list.html" class="save">сохранить</a> <!--Класс return-to-cabinet для табов-->
+                <a href="/admin-list.html" class="cancel">Отмена</a>
+            </div>
+
+        </div>
+
+    </section>
+</main>

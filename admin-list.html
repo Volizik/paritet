@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/libs.min.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!-- open .header -->
+<div class="adm-wrap">
+<aside class="adm-sidebar">
+    <div class="adm-sidebar__logo">
+        <span class="logo"></span>
+        <h2>паритет <span>интернет реестр</span></h2>
+    </div>
+    <div class="adm-sidebar__item">
+        <div class="adm-sidebar__item--header">
+            <img src="img/icons/sidebar-icon3.png" alt="">
+            <a href="/admin-users-list.html">Пользователи</a>
+        </div>
+        <ul>
+            <li><a href="/admin-users-list.html">Все пользователи</a></li>
+            <li><a href="#">Внутренние</a></li>
+            <li><a href="#">Внешние</a></li>
+        </ul>
+    </div>
+    <div class="adm-sidebar__item">
+        <div class="adm-sidebar__item--header"><img src="img/icons/sidebar-icon2.png" alt=""><span>Группы</span></div>
+    </div>
+    <div class="adm-sidebar__item">
+        <div class="adm-sidebar__item--header"><img src="img/icons/sidebar-icon1.png" alt=""><span>Эмитенты</span></div>
+    </div>
+</aside>
+<div class="adm-container">
+<header class="adm-header">
+
+    <div class="adm-header__filter">
+
+    </div>
+
+    <div class="action-btn">
+        <a href="/admin-new-account.html" class="action-btn--edit">Создать</a>   <!--Класс user-edit требуется скрипту табов между кабинетом и редактированием профиля-->
+        <span class="action-btn--arrow"></span>
+        <ul>
+            <li><a href="#">Изменить</a></li>
+            <li><a href="#">Сбросить пароль</a></li>
+            <li><a href="#">Блокировать</a></li>
+            <li><a href="#">Разблокировать</a></li>
+            <li><a href="#">Удалить</a></li>
+        </ul>
+    </div>
+
+    <div class="adm-header__user">
+        <img src="img/icons/user-icon.png" alt="">
+        <a href="#" class="someone">Анатолий Полевой<span>Администратор</span></a>
+    </div>
+
+</header>
+<main class="adm-content">
+    <table class="users-list">
+
+        <thead>
+            <tr>
+                <th class="t-login"><span>Логин</span></th>
+                <th class="t-rol"><span>Роль</span></th>
+                <th class="t-name"><span>ФИО</span></th>
+                <th class="t-status"><span>Статус</span></th>
+                <th class="t-visited"><span>Вход</span></th>
+                <th class="t-online-status"><span>В сети</span></th>
+                <th class="t-actions"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="someone t-login"><a href="#">admin</a></td>
+                <td class="t-rol"><span>Администратор</span></td>
+                <td class="t-name"><span>Александр Василенко</span></td>
+                <td class="t-status t-status-active"><span>Активен</span></td>
+                <td class="t-visited"><span>12:10</span></td>
+                <td class="t-online-status"><span class="t-online"></span></td>
+                <td class="t-actions"><span class="t-unblock-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">maxim</a></td>
+                <td class="t-rol"><span>Администратор</span></td>
+                <td class="t-name"><span>Максим Прохоров</span></td>
+                <td class="t-status t-status-block"><span>Блок</span></td>
+                <td class="t-visited"><span>27.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"><span class="t-block-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">ekaterina.somova</a></td>
+                <td class="t-rol"><span>Менеджер</span></td>
+                <td class="t-name"><span>Екатерина Сомова</span></td>
+                <td class="t-status t-status-not-active"><span>Неактивен</span></td>
+                <td class="t-visited"><span>12:04</span></td>
+                <td class="t-online-status"><span class="t-online"></span></td>
+                <td class="t-actions"><span class="t-unblock-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">portos</a></td>
+                <td class="t-rol"><span>Эмитент</span></td>
+                <td class="t-name"><span>Дмитрий Длиннофамильныйчеловекскороткимименем</span></td>
+                <td class="t-status t-status-deleted"><span>Удален</span></td>
+                <td class="t-visited"><span>26.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">anastasiya.melnikova</a></td>
+                <td class="t-rol"><span>Менеджер</span></td>
+                <td class="t-name"><span>Анастасия Мельникова</span></td>
+                <td class="t-status t-status-auto-block"><span>Автоблок</span></td>
+                <td class="t-visited"><span>26.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"><span class="t-block-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">admin</a></td>
+                <td class="t-rol"><span>Администратор</span></td>
+                <td class="t-name"><span>Александр Василенко</span></td>
+                <td class="t-status t-status-active"><span>Активен</span></td>
+                <td class="t-visited"><span>12:10</span></td>
+                <td class="t-online-status"><span class="t-online"></span></td>
+                <td class="t-actions"><span class="t-unblock-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">maxim</a></td>
+                <td class="t-rol"><span>Администратор</span></td>
+                <td class="t-name"><span>Максим Прохоров</span></td>
+                <td class="t-status t-status-block"><span>Блок</span></td>
+                <td class="t-visited"><span>27.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"><span class="t-block-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">ekaterina.somova</a></td>
+                <td class="t-rol"><span>Менеджер</span></td>
+                <td class="t-name"><span>Екатерина Сомова</span></td>
+                <td class="t-status t-status-not-active"><span>Неактивен</span></td>
+                <td class="t-visited"><span>12:04</span></td>
+                <td class="t-online-status"><span class="t-online"></span></td>
+                <td class="t-actions"><span class="t-unblock-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">portos</a></td>
+                <td class="t-rol"><span>Эмитент</span></td>
+                <td class="t-name"><span>Дмитрий Длиннофамильныйчеловек</span></td>
+                <td class="t-status t-status-deleted"><span>Удален</span></td>
+                <td class="t-visited"><span>26.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">anastasiya.melnikova</a></td>
+                <td class="t-rol"><span>Менеджер</span></td>
+                <td class="t-name"><span>Анастасия Мельникова</span></td>
+                <td class="t-status t-status-auto-block"><span>Автоблок</span></td>
+                <td class="t-visited"><span>26.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"><span class="t-block-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">admin</a></td>
+                <td class="t-rol"><span>Администратор</span></td>
+                <td class="t-name"><span>Александр Василенко</span></td>
+                <td class="t-status t-status-active"><span>Активен</span></td>
+                <td class="t-visited"><span>12:10</span></td>
+                <td class="t-online-status"><span class="t-online"></span></td>
+                <td class="t-actions"><span class="t-unblock-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">maxim</a></td>
+                <td class="t-rol"><span>Администратор</span></td>
+                <td class="t-name"><span>Максим Прохоров</span></td>
+                <td class="t-status t-status-block"><span>Блок</span></td>
+                <td class="t-visited"><span>27.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"><span class="t-block-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">ekaterina.somova</a></td>
+                <td class="t-rol"><span>Менеджер</span></td>
+                <td class="t-name"><span>Екатерина Сомова</span></td>
+                <td class="t-status t-status-not-active"><span>Неактивен</span></td>
+                <td class="t-visited"><span>12:04</span></td>
+                <td class="t-online-status"><span class="t-online"></span></td>
+                <td class="t-actions"><span class="t-unblock-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">portos</a></td>
+                <td class="t-rol"><span>Эмитент</span></td>
+                <td class="t-name"><span>Дмитрий Длиннофамильныйчеловек</span></td>
+                <td class="t-status t-status-deleted"><span>Удален</span></td>
+                <td class="t-visited"><span>26.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">anastasiya.melnikova</a></td>
+                <td class="t-rol"><span>Менеджер</span></td>
+                <td class="t-name"><span>Анастасия Мельникова</span></td>
+                <td class="t-status t-status-auto-block"><span>Автоблок</span></td>
+                <td class="t-visited"><span>26.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"><span class="t-block-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">admin</a></td>
+                <td class="t-rol"><span>Администратор</span></td>
+                <td class="t-name"><span>Александр Василенко</span></td>
+                <td class="t-status t-status-active"><span>Активен</span></td>
+                <td class="t-visited"><span>12:10</span></td>
+                <td class="t-online-status"><span class="t-online"></span></td>
+                <td class="t-actions"><span class="t-unblock-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">maxim</a></td>
+                <td class="t-rol"><span>Администратор</span></td>
+                <td class="t-name"><span>Максим Прохоров</span></td>
+                <td class="t-status t-status-block"><span>Блок</span></td>
+                <td class="t-visited"><span>27.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"><span class="t-block-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">ekaterina.somova</a></td>
+                <td class="t-rol"><span>Менеджер</span></td>
+                <td class="t-name"><span>Екатерина Сомова</span></td>
+                <td class="t-status t-status-not-active"><span>Неактивен</span></td>
+                <td class="t-visited"><span>12:04</span></td>
+                <td class="t-online-status"><span class="t-online"></span></td>
+                <td class="t-actions"><span class="t-unblock-user"></span> <span class="t-delete"></span></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">portos</a></td>
+                <td class="t-rol"><span>Эмитент</span></td>
+                <td class="t-name"><span>Дмитрий Длиннофамильныйчеловек</span></td>
+                <td class="t-status t-status-deleted"><span>Удален</span></td>
+                <td class="t-visited"><span>26.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"></td>
+            </tr>
+            <tr>
+                <td class="someone t-login"><a href="#">anastasiya.melnikova</a></td>
+                <td class="t-rol"><span>Менеджер</span></td>
+                <td class="t-name"><span>Анастасия Мельникова</span></td>
+                <td class="t-status t-status-auto-block"><span>Автоблок</span></td>
+                <td class="t-visited"><span>26.09.2017</span></td>
+                <td class="t-online-status"><span class="t-offline"></span></td>
+                <td class="t-actions"><span class="t-block-user"></span> <span class="t-delete"></span></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <div class="users-list__footer">
+        <p>Больше нет пользователей для показа</p>
+    </div>
+</main>
+</div>
+</div>
+<script src='js/jquery-3.2.1.min.js' type="text/javascript"></script>
+<script src="js/script.min.js" type="text/javascript"></script>
+</body>
+</html>

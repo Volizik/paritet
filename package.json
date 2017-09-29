@@ -43,5 +43,8 @@
     "rimraf": "^2.6.2",
     "stylefmt": "^6.0.0",
     "stylelint-config-standard": "^17.0.0"
+  },
+  "dependencies": {
+    "simplebar": "^2.4.4"
   }
 }

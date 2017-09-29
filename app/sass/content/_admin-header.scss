@@ -65,3 +65,9 @@
     margin-right: calc(100% - 815px);
   }
 }
+
+.new-account {
+  .action-btn {
+    display: none;
+  }
+}

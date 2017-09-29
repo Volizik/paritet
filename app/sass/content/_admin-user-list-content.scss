@@ -1,0 +1,134 @@
+table.users-list {
+  width: 100%;
+  border-collapse: collapse;
+  tr:last-of-type td {
+    border-bottom: 1px solid #ccc;
+  }
+  th, td {
+    padding: 10px 5px;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+    .someone {
+      a {
+        color: $someone;
+      }
+    }
+  }
+  th {
+    font-size: 13px;
+    color: #777777;
+    span {
+      display: inline!important;
+      position: relative;
+      cursor: pointer;
+      &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 10px;
+        right: -15px;
+        background: url(../img/icons/sort-icon.png) no-repeat center;
+      }
+    }
+  }
+  td {
+    font-size: 13px;
+    color: #000;
+  }
+
+
+  .t-login {
+    width: 23%;
+  }
+  .t-rol {
+    width: 15%;
+  }
+  .t-name {
+    width: 24%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    span {
+      display: inline-block;
+      width: 170px;
+      white-space: nowrap;
+    }
+  }
+  .t-status {
+    width: 10%;
+  }
+  .t-visited {
+    width: 10%;
+  }
+  .t-online-status {
+    width: 8%;
+  }
+  .t-actions {
+    width: 10%;
+  }
+
+
+  .t-status-active {
+    color: #5ccc3d
+  }
+  .t-status-not-active {
+    color: #777
+  }
+  .t-status-block {
+    color: #f29c24;
+  }
+  .t-status-auto-block {
+    color: #e62e2e;
+  }
+  .t-status-deleted {
+    color: #777
+  }
+  
+  .t-online {
+    display: block;
+    position: relative;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: #5ccc3d;
+  }
+  .t-offline {
+    display: block;
+    position: relative;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: #aaa;
+  }
+
+  .t-block-user,
+  .t-unblock-user,
+  .t-delete {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .t-block-user {
+    background: url(../img/icons/block.png) no-repeat center;
+  }
+  .t-unblock-user {
+    background: url(../img/icons/unblock.png) no-repeat center;
+  }
+  .t-delete {
+    background: url(../img/icons/delete.png) no-repeat center;
+  }
+}
+
+.users-list__footer {
+  width: 100%;
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  font-size: 14px;
+  color: #bbb;
+  padding: 30px 0;
+}
