@@ -126,7 +126,7 @@ $(function () {
     /*-------------------SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
     $(document).on('click', '.someone', function() {
-        window.location = "/admin-cabinet.html";
+        window.location = "/paritet/admin-cabinet.html";
     })
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
