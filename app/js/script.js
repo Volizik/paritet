@@ -129,4 +129,6 @@ $(function () {
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
+
+
 });
