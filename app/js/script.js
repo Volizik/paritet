@@ -66,7 +66,7 @@ $(function () {
             $(this).attr('href', '#user-cabinet')
         } else {
             $(this).text('Изменить').removeClass('user-edit-active');
-            $(this).attr('href', '#user-edit')
+            $(this).attr('href', '#user-cabinet-edit')
         }
     });
 
@@ -75,7 +75,7 @@ $(function () {
         var tabId = $(this).attr('href');
         $('.adm-content__user').hide(0);
         $(tabId).fadeIn();
-        $('.action-btn > .user-edit').text('Изменить').removeClass('user-edit-active').attr('href', '#user-edit');
+        $('.action-btn > .user-edit').text('Изменить').removeClass('user-edit-active').attr('href', '#user-cabinet-edit');
     });
 
 
@@ -113,10 +113,8 @@ $(function () {
     
     $(document).on('click', '.edit-pass', function () {
         var input = $(this).parent().find('input[type=password]');
-        // var inpValueLength = input.val().length;
-        // console.log(inpValueLength);
         input.removeAttr('disabled').focus();
-    })
+    });
     
     /*------------------------end edit password btn--------------------*/
 
