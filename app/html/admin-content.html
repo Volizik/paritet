@@ -137,7 +137,67 @@
 
     <!--Группы-->
     <section id="groups-content" class="adm-content__section">
-        .adm-content__groups
+
+        <div class="adm-content__groups" id="user-groups">
+            <div class="adm-content__block">
+                <div class="adm-content__block--row">
+                    <div class="adm-content__block--type"><span>Логин:</span></div>
+                    <div class="adm-content__block--value"><span>admin</span></div>
+                </div>
+                <div class="adm-content__block--row">
+                    <div class="adm-content__block--type"><span>ФИО:</span></div>
+                    <div class="adm-content__block--value"><span>Андрей Орехов</span></div>
+                </div>
+                <div class="adm-content__block--row">
+                    <div class="adm-content__block--type"><span>Роль:</span></div>
+                    <div class="adm-content__block--value"><span>Администратор</span></div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <select>
+                                <option value="" selected disabled hidden>Выбрать группу</option>
+                                <option value="Обычная группа">Группа 1</option>
+                                <option value="Группа розничных реестров системы">Группа 2</option>
+                                <option value="Группа VIP клиентов системы">Группа 3</option>
+                                <option value="Группа клиентов филиала Питер">Группа 4</option>
+                                <option value="Группа клиентов филиала Питер">Филиал «Питер»</option>
+                            </select>
+                        </th>
+                        <th>
+                            <button>Включить в группу</button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="t-group">Группа 1</span></td>
+                        <td><span>Обычная группа</span></td>
+                        <td><span class="t-delete"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="t-group">Группа 2</span></td>
+                        <td><span>Группа розничных реестров системы</span></td>
+                        <td><span class="t-delete"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="t-group">Группа 3</span></td>
+                        <td><span>Группа VIP клиентов системы</span></td>
+                        <td><span class="t-delete"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="t-group">Филиал «Питер»</span></td>
+                        <td><span>Группа клиентов филиала Питер</span></td>
+                        <td><span class="t-delete"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="adm-content__groups" id="user-groups-edit"></div>
+
     </section>
     <!--!Группы-->
 
