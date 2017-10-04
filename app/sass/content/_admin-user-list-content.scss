@@ -8,6 +8,7 @@ table.users-list {
     padding: 10px 5px;
     box-sizing: border-box;
     border-top: 1px solid #ccc;
+    text-align: left;
     .someone {
       a {
         color: $someone;
@@ -27,7 +28,7 @@ table.users-list {
         height: 100%;
         width: 10px;
         right: -15px;
-        background: url(../img/icons/sort-icon.png) no-repeat center;
+        background: url(../images/icons/sort-icon.png) no-repeat center;
       }
     }
   }
@@ -36,88 +37,6 @@ table.users-list {
     color: #000;
   }
 
-
-  .t-login {
-    width: 23%;
-  }
-  .t-rol {
-    width: 15%;
-  }
-  .t-name {
-    width: 24%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    span {
-      display: inline-block;
-      width: 170px;
-      white-space: nowrap;
-    }
-  }
-  .t-status {
-    width: 10%;
-  }
-  .t-visited {
-    width: 10%;
-  }
-  .t-online-status {
-    width: 8%;
-  }
-  .t-actions {
-    width: 10%;
-  }
-
-
-  .t-status-active {
-    color: #5ccc3d
-  }
-  .t-status-not-active {
-    color: #777
-  }
-  .t-status-block {
-    color: #f29c24;
-  }
-  .t-status-auto-block {
-    color: #e62e2e;
-  }
-  .t-status-deleted {
-    color: #777
-  }
-  
-  .t-online {
-    display: block;
-    position: relative;
-    height: 13px;
-    width: 13px;
-    border-radius: 50%;
-    background-color: #5ccc3d;
-  }
-  .t-offline {
-    display: block;
-    position: relative;
-    height: 13px;
-    width: 13px;
-    border-radius: 50%;
-    background-color: #aaa;
-  }
-
-  .t-block-user,
-  .t-unblock-user,
-  .t-delete {
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
-  }
-
-  .t-block-user {
-    background: url(../img/icons/block.png) no-repeat center;
-  }
-  .t-unblock-user {
-    background: url(../img/icons/unblock.png) no-repeat center;
-  }
-  .t-delete {
-    background: url(../img/icons/delete.png) no-repeat center;
-  }
 }
 
 .users-list__footer {

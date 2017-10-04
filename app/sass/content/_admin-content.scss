@@ -1,6 +1,7 @@
 .adm-content {
   position: relative;
-  padding: 40px 40px 0;
+  margin: 40px 40px 0;
+  padding-right: 40px;
   box-sizing: border-box;
   &__block {
     position: relative;
@@ -9,7 +10,7 @@
     box-sizing: border-box;
     &:last-of-type {
       border-bottom: 1px solid #ccc;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
 
@@ -98,7 +99,7 @@
           left: 1px;
           width: 10px;
           height: 10px;
-          background: url(../img/icons/checked.png) no-repeat center center;
+          background: url(../images/icons/checked.png) no-repeat center center;
         }
       }
       &:checked + label{
@@ -151,8 +152,52 @@
 
   }
 
-  >table {
-    width: 100%;
-    border-collapse: collapse;
+  &__section {
+    height: calc(100vh - 130px);
+  }
+
+  #groups-content {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 14px;
+      line-height: 16px;
+      color: #777777;
+
+      th {
+        height:50px;
+        &:first-of-type {
+          min-width:200px;
+          width: 20%;
+        }
+        &:last-of-type {
+          width: 30px;
+        }
+
+        select {
+          width: 180px;
+          height: 30px;
+          padding: 0px 5px;
+          box-sizing: border-box;
+          font-weight: 400;
+        }
+        button {
+          text-transform: uppercase;
+          padding: 8px 20px;
+          box-sizing: border-box;
+          border: none;
+          background-color: #0070cc;
+          font-weight: 400;
+          color: #fff;
+        }
+      }
+      td {
+        padding: 8px 0;
+        border-bottom: 1px solid #ccc;
+        &:first-of-type {
+          padding-left: 5px;
+        }
+      }
+    }
   }
 }

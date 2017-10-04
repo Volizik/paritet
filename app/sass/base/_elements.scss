@@ -17,10 +17,12 @@ $someone-hover: #004680;
   color: $status!important;
   font-weight: 700;
 }
-.someone {
+.someone,
+.someone-group{
   color: $someone!important;
   font-weight: 700;
   transition: .4s;
+  cursor: pointer;
   &:hover {
     color: $someone-hover!important;
     transition: .4s;
@@ -137,6 +139,103 @@ $someone-hover: #004680;
     }
   }
 }
+
+
+/*---table---*/
+.t-login {
+  width: 23%;
+}
+.t-rol {
+  width: 15%;
+}
+.t-name {
+  width: calc(29% - 50px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  span {
+    display: inline-block;
+    width: 170px;
+    white-space: nowrap;
+  }
+}
+.t-status {
+  width: 10%;
+}
+.t-visited {
+  width: 10%;
+}
+.t-online-status {
+  width: 8%;
+}
+.t-actions {
+  width: 80px;
+}
+
+
+.t-status-active {
+  color: #5ccc3d
+}
+.t-status-not-active {
+  color: #777
+}
+.t-status-block {
+  color: #f29c24;
+}
+.t-status-auto-block {
+  color: #e62e2e;
+}
+.t-status-deleted {
+  color: #777
+}
+
+.t-online {
+  display: block;
+  position: relative;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background-color: #5ccc3d;
+}
+.t-offline {
+  display: block;
+  position: relative;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background-color: #aaa;
+}
+
+.t-block-user,
+.t-unblock-user,
+.t-delete {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.t-block-user {
+  background: url(../images/icons/block.png) no-repeat center;
+}
+.t-unblock-user {
+  background: url(../images/icons/unblock.png) no-repeat center;
+}
+.t-delete {
+  background: url(../images/icons/delete.png) no-repeat center;
+}
+/*---table---*/
+
+
+
+
+/*---Custom scroll---*/
+.mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #b8d1e6; width: 8px;  border-radius: 0px }
+.mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail{ background-color: #e9eff5; border-radius: 0px}
+.mCSB_1_scrollbar .mCSB_dragger .mCSB_draggerRail{ width: 8px; }
+.mCSB_scrollTools .mCSB_draggerRail { width: 8px;  padding: 0; margin: 0px;}
+.mCSB_scrollTools .mCSB_draggerContainer { width: 8px; }
+#mCSB_1_dragger_vertical { width: 8px; }
+/*---!Custom scroll---*/
 
 
 @keyframes animateLogo {

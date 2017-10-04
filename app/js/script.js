@@ -125,9 +125,17 @@ $(function () {
 
     $(document).on('click', '.someone', function() {
         window.location = "/paritet/admin-cabinet.html";
-    })
+    });
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
+
+
+
+    $('.adm-content__section').mCustomScrollbar({
+        theme: "my-theme"
+    })
+
+
 
 
 

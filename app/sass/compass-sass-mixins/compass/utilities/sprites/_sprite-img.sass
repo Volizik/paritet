@@ -2,9 +2,9 @@
 // Example 1:
 //
 //     a.twitter
-//       +sprite-img("icons-32.png", 1)
+//       +sprite-images("icons-32.png", 1)
 //     a.facebook
-//       +sprite-img("icons-32png", 2)
+//       +sprite-images("icons-32png", 2)
 //
 // Example 2:
 //
@@ -64,6 +64,6 @@ $sprite-image-default-height: $sprite-default-size !default
 
 // Similar to 'replace-text-with-dimensions' but with sprites
 // To use, create your sprite and then pass it in the `$map` param
-// The name of the image in the sprite folder should be `$img-name`
+// The name of the image in the sprite folder should be `$images-name`
 =sprite-replace-text-with-dimensions($map, $sprite, $offset-x: 0, $offset-y: 0)
   +sprite-replace-text($map, $sprite, true, $offset-x, $offset-y)
