@@ -1,18 +1,26 @@
-.adm-wrap {
+.wrap {
     display: flex;
     position: relative;
     width:100%;
     min-height:100vh;
     height: 100%;
 }
-.adm-container {
+.container {
     position: relative;
     width:calc(100% - 260px);
     min-height:100vh;
     height: 100%;
 }
+.sidebar {
+    position: relative;
+    width: 260px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #00467f;
+}
 
-.container {
+.w-container {
     box-sizing: border-box;
     padding-right: 10px;
     padding-left: 10px;
@@ -21,22 +29,22 @@
     position: relative;
 }
 
-.container {
+.w-container {
     @extend %clearfix;
 }
 @media (min-width: 768px) {
-    .container {
+    .w-container {
         width: 766px;
     }
 }
 @media (min-width: 992px) {
-    .container {
+    .w-container {
         width: 990px;
     }
 }
 
 @media (min-width: 1200px) {
-    .container {
+    .w-container {
         width: 1170px;
     }
 }

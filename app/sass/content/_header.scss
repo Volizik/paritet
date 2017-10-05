@@ -1,4 +1,4 @@
-.adm-header {
+.header {
   position: relative;
   padding: 20px 40px;
   background-color: #fafafa;
@@ -10,7 +10,8 @@
   &__menu {
     position: relative;
     margin: 0;
-    margin-right: auto;
+    width:calc(100% - 470px);
+    margin-right: 20px;
     padding: 0;
     display: flex;
     li {
@@ -66,8 +67,3 @@
   }
 }
 
-.new-account {
-  .action-btn {
-    display: none;
-  }
-}

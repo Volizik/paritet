@@ -27,18 +27,18 @@ $(function () {
 
     /*------------------start header tabs--------------------*/
 
-    $('.adm-content__section').each(function (i) {
+    $('.content__section').each(function (i) {
         if(i !=0) {
             $(this).hide(0);
         }
     });
 
-    $(document).on('click', '.adm-header__menu a', function (e) {
+    $(document).on('click', '.header__menu a', function (e) {
         e.preventDefault();
         var tabId = $(this).attr('href');
-        $('.adm-header__menu a').removeClass('adm-header__menu--active');
-        $(this).addClass('adm-header__menu--active');
-        $('.adm-content__section').hide(0);
+        $('.header__menu a').removeClass('header__menu--active');
+        $(this).addClass('header__menu--active');
+        $('.content__section').hide(0);
         $(tabId).fadeIn();
     });
 
@@ -49,7 +49,7 @@ $(function () {
 
     /*------------------start edit user tabs--------------------*/
 
-    $('.adm-content__user').each(function (i) {
+    $('.content__user').each(function (i) {
         if(i !=0) {
             $(this).hide(0);
         }
@@ -59,7 +59,7 @@ $(function () {
     $(document).on('click', '.action-btn > .user-edit', function (e) {
         e.preventDefault();
         var tabId = $(this).attr('href');
-        $('.adm-content__user').hide(0);
+        $('.content__user').hide(0);
         $(tabId).fadeIn();
         if(!$(this).hasClass('user-edit-active')) {
             $(this).text('Сохранить').addClass('user-edit-active');
@@ -73,7 +73,7 @@ $(function () {
     $(document).on('click', '.return-to-cabinet', function (e) {
         e.preventDefault();
         var tabId = $(this).attr('href');
-        $('.adm-content__user').hide(0);
+        $('.content__user').hide(0);
         $(tabId).fadeIn();
         $('.action-btn > .user-edit').text('Изменить').removeClass('user-edit-active').attr('href', '#user-cabinet-edit');
     });
@@ -131,10 +131,14 @@ $(function () {
 
 
 
-    $('.adm-content__section').mCustomScrollbar({
+    $('.content__section').mCustomScrollbar({
         theme: "my-theme"
-    })
+    });
 
+
+    $(document).on('click', '.open-filter-modal', function () {
+        $('.filter__modal').fadeToggle('fast');
+    });
 
 
 

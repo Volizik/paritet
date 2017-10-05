@@ -1,4 +1,4 @@
-.adm-content {
+.content {
   position: relative;
   margin: 40px 40px 0;
   padding-right: 40px;
@@ -132,23 +132,6 @@
       font-size: 14px;
       cursor: pointer;
     }
-    .save {
-      display: inline-block;
-      font-size: 13px;
-      text-transform: uppercase;
-      color: #fff;
-      padding: 10px 20px;
-      background-color: #0070cc;
-      margin-right: 10px;
-    }
-    .cancel {
-      display: inline-block;
-      font-size: 13px;
-      text-transform: uppercase;
-      padding: 10px 20px;
-      color: #000;
-      background-color: #f5f5f5;
-    }
 
   }
 
@@ -166,6 +149,7 @@
 
       th {
         height:50px;
+        text-align: left;
         &:first-of-type {
           min-width:200px;
           width: 20%;

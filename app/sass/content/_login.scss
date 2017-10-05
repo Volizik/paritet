@@ -3,13 +3,13 @@
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  background: url(../img/bg.png) center center no-repeat;
+  background: url(../images/bg.png) center center no-repeat;
   background-size: cover;
   padding-top: 90px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  .container {
+  .w-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
