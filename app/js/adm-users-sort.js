@@ -1,8 +1,12 @@
 $(function() {
 
-    function sortTable(n) {
+    var userList = document.querySelector(".users-list");
+    var registersList = document.querySelector(".content__registers table");
+    var billsList = document.querySelector(".content__bills table");
+
+    function sortTable(tbl, n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-        table = document.querySelector(".users-list");
+        table = tbl;
         switching = true;
         //Set the sorting direction to ascending:
         dir = "asc";
@@ -56,24 +60,49 @@ $(function() {
         }
     }
 
-    $(document).on('click', 'th.t-login', function () {
-        sortTable(0);
+
+    /*------------users-list--------------*/
+    $(document).on('click', '.users-list th.t-login', function () {
+        sortTable(userList, 0);
     });
-    $(document).on('click', 'th.t-rol', function () {
-        sortTable(1);
+    $(document).on('click', '.users-list th.t-rol', function () {
+        sortTable(userList, 1);
     });
-    $(document).on('click', 'th.t-name', function () {
-        sortTable(2);
+    $(document).on('click', '.users-list th.t-name', function () {
+        sortTable(userList, 2);
     });
-    $(document).on('click', 'th.t-status', function () {
-        sortTable(3);
+    $(document).on('click', '.users-list th.t-status', function () {
+        sortTable(userList, 3);
     });
-    $(document).on('click', 'th.t-visited', function () {
-        sortTable(4);
+    $(document).on('click', '.users-list th.t-visited', function () {
+        sortTable(userList, 4);
     });
-    $(document).on('click', 'th.t-online-status', function () {
-        sortTable(5);
+    $(document).on('click', '.users-list th.t-online-status', function () {
+        sortTable(userList, 5);
     });
+    /*------------!users-list--------------*/
+
+
+
+    /*------------registersList--------------*/
+    $(document).on('click', '.content__registers table .th-number', function () {
+        sortTable(registersList, 0);
+    });
+    $(document).on('click', '.content__registers table .th-name', function () {
+        sortTable(registersList, 1);
+    });
+    /*------------!registersList--------------*/
+
+
+
+    /*------------billsList--------------*/
+    $(document).on('click', '.content__bills table .th-number', function () {
+        sortTable(billsList, 0);
+    });
+    $(document).on('click', '.content__bills table .th-name', function () {
+        sortTable(billsList, 1);
+    });
+    /*------------!billsList--------------*/
 
 
 });

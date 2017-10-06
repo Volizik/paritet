@@ -1,15 +1,20 @@
 $(function () {
 
-    $(document).on('keyup', '.filter--input', function () {
-        admInputFilter();
-    });
+    var inpUserList = document.querySelector(".filter--input");
+    var tblUserList = document.querySelector(".users-list");
 
-    function admInputFilter() {
+    var inpRegList = document.querySelector(".content__registers .t-search");
+    var tblRegList = document.querySelector(".content__registers table");
+
+    var inpBillsList = document.querySelector(".content__bills .t-search");
+    var tblBillsList = document.querySelector(".content__bills table");
+
+    function admInputFilter(inp, tbl) {
         // Declare variables
         var input, filter, table, tr, td, i;
-        input = document.querySelector(".filter--input");
+        input = inp;
         filter = input.value.toUpperCase();
-        table = document.querySelector(".users-list");
+        table = tbl;
         tr = table.querySelectorAll("tbody tr");
 
         // Loop through all table rows, and hide those who don't match the search query
@@ -24,6 +29,24 @@ $(function () {
             }
         }
     }
+
+    /*-------usersList------*/
+    $(document).on('keyup', inpUserList, function () {
+        admInputFilter(inpUserList, tblUserList);
+    });
+    /*-------!usersList------*/
+
+    /*-------RegistersList------*/
+    $(document).on('keyup', inpRegList, function () {
+        admInputFilter(inpRegList, tblRegList);
+    });
+    /*-------!RegistersList------*/
+
+    /*-------BillsList------*/
+    $(document).on('keyup', inpBillsList, function () {
+        admInputFilter(inpBillsList, tblBillsList);
+    });
+    /*-------!BillsList------*/
 
 
 

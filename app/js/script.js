@@ -136,6 +136,7 @@ $(function () {
     });
 
 
+
     $(document).on('click', '.open-filter-modal', function () {
         $('.filter__modal').fadeToggle('fast');
     });

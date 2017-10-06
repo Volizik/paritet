@@ -3,6 +3,7 @@
   margin: 40px 40px 0;
   padding-right: 40px;
   box-sizing: border-box;
+
   &__block {
     position: relative;
     border-top: 1px solid #ccc;
@@ -60,7 +61,10 @@
     }
 
 
-    input:not([type="checkbox"]) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"]{
       min-width: 300px;
       height: 30px;
       border: 1px solid #ccc;
@@ -72,6 +76,7 @@
         font-weight: 400;
       }
     }
+
     input[type="checkbox"] {
       &:not(checked) {
         position: absolute;
@@ -137,9 +142,10 @@
 
   &__section {
     height: calc(100vh - 130px);
+    min-height: calc(100vh - 350px);
   }
 
-  #groups-content {
+  &__groups {
     table {
       border-collapse: collapse;
       width: 100%;
@@ -184,4 +190,71 @@
       }
     }
   }
+
+  &__registers {
+    .content__block {
+      margin: 0;
+    }
+    table {
+      width: 100%;
+      margin-right: 40px;
+      position: relative;
+      font-size: 14px;
+      border-collapse: collapse;
+      thead,tbody {
+        width: 100%;
+      }
+      th,td {
+        font-weight: 400;
+        border-bottom: 1px solid #ccc;
+        padding: 8px 0;
+      }
+      th {
+        color: #777;
+        &:nth-of-type(1) {
+          width: 20%;
+        }
+        &:nth-of-type(2) {
+          width: 50%;
+        }
+        &:nth-of-type(3) {
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  &__bills {
+    .content__block {
+      margin: 0;
+    }
+    table {
+      width: 100%;
+      margin-right: 40px;
+      position: relative;
+      font-size: 14px;
+      border-collapse: collapse;
+      thead,tbody {
+        width: 100%;
+      }
+      th,td {
+        font-weight: 400;
+        border-bottom: 1px solid #ccc;
+        padding: 8px 0;
+      }
+      th {
+        color: #777;
+        &:nth-of-type(1) {
+          width: 20%;
+        }
+        &:nth-of-type(2) {
+          width: 50%;
+        }
+        &:nth-of-type(3) {
+          width: 30%;
+        }
+      }
+    }
+  }
+
 }
