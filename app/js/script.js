@@ -155,7 +155,9 @@ $(function () {
             var checkbox = trArr[i].querySelector('input[type="checkbox"]:checked');
             var span = trArr[i].querySelectorAll('td > span');
            if (checkbox !== null) {
-               console.log(span)
+               for(var j = 0; j<span.length; j++) {
+                   $('.new-account .t-search').val(span[j].innerHTML)
+               }
            }
         }
     });
