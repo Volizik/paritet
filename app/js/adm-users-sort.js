@@ -25,7 +25,6 @@ $(function() {
                 one from current row and one from the next:*/
                 x = rows[i].querySelectorAll("td")[n];
                 y = rows[i + 1].querySelectorAll("td")[n];
-                console.log(x);
                 /*check if the two rows should switch place,
                 based on the direction, asc or desc:*/
                 if (dir == "asc") {

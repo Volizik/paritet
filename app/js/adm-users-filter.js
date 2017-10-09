@@ -1,25 +1,14 @@
 $(function () {
 
-    var inpUserList = document.querySelector(".filter--input");
-    var tblUserList = document.querySelector(".users-list");
-
-    var inpRegList = document.querySelector(".content__registers .t-search");
-    var tblRegList = document.querySelector(".content__registers table");
-
-    var inpBillsList = document.querySelector(".content__bills .t-search");
-    var tblBillsList = document.querySelector(".content__bills table");
-
-    function admInputFilter(inp, tbl) {
+    function admInputFilter(input, table) {
         // Declare variables
-        var input, filter, table, tr, td, i;
-        input = inp;
-        filter = input.value.toUpperCase();
-        table = tbl;
-        tr = table.querySelectorAll("tbody tr");
+        var filter, tr;
+        filter = input.val().toUpperCase();
+        tr = table.find("tbody tr");
 
         // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].querySelectorAll("td")[0];
+        for (var i = 0; i < tr.length; i++) {
+            var td = tr[i].querySelectorAll("td")[0];
             if (td) {
                 if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
                     tr[i].style.display = "";
@@ -31,20 +20,20 @@ $(function () {
     }
 
     /*-------usersList------*/
-    $(document).on('keyup', inpUserList, function () {
-        admInputFilter(inpUserList, tblUserList);
+    $(document).on('keyup', '.filter--input', function () {
+        admInputFilter($(this), $('.users-list'));
     });
     /*-------!usersList------*/
 
     /*-------RegistersList------*/
-    $(document).on('keyup', inpRegList, function () {
-        admInputFilter(inpRegList, tblRegList);
+    $(document).on('keyup', '.content__registers .t-search', function () {
+        admInputFilter($(this), $('.content__registers table'));
     });
     /*-------!RegistersList------*/
 
     /*-------BillsList------*/
-    $(document).on('keyup', inpBillsList, function () {
-        admInputFilter(inpBillsList, tblBillsList);
+    $(document).on('keyup', '.content__bills .t-search', function () {
+        admInputFilter($(this), $('.content__bills table'));
     });
     /*-------!BillsList------*/
 
