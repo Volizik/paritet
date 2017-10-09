@@ -130,16 +130,36 @@ $(function () {
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
 
-
+    /*----------------scrollbar----------------*/
     $('.content__section').mCustomScrollbar({
         theme: "my-theme"
     });
-
-
-
-    $(document).on('click', '.open-filter-modal', function () {
-        $('.filter__modal').fadeToggle('fast');
+    $('.content__section .filter__body').mCustomScrollbar({
+        theme: "my-theme"
     });
+    /*----------------!scrollbar----------------*/
+
+    $(document).on('click', '.filter--user-list', function () {
+        $('.filter').fadeToggle('fast');
+    });
+
+
+    /*----------filter in new user-----------*/
+    $(document).on('click', '.new-account .filter tr', function () {
+        var checkbox = $(this).find('input[type="checkbox"]');
+        checkbox.is(':checked') ? checkbox.prop('checked', false) : checkbox.prop('checked', true);
+    });
+    $(document).on('click', '.new-account .filter .submit', function () {
+        var trArr = document.querySelectorAll('.new-account .filter tr');
+        for(var i = 0; i< trArr.length; i++) {
+            var checkbox = trArr[i].querySelector('input[type="checkbox"]:checked');
+            var span = trArr[i].querySelectorAll('td > span');
+           if (checkbox !== null) {
+               console.log(span)
+           }
+        }
+    });
+    /*----------!filter in new user-----------*/
 
 
 

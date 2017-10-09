@@ -1,14 +1,17 @@
 $(function () {
 
-    function admInputFilter(input, table) {
+    function admInputFilter(input, table, n) {
         // Declare variables
+        if (n === undefined) {
+            n = 0;
+        }
         var filter, tr;
         filter = input.val().toUpperCase();
         tr = table.find("tbody tr");
 
         // Loop through all table rows, and hide those who don't match the search query
         for (var i = 0; i < tr.length; i++) {
-            var td = tr[i].querySelectorAll("td")[0];
+            var td = tr[i].querySelectorAll("td")[n];
             if (td) {
                 if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
                     tr[i].style.display = "";
@@ -36,6 +39,13 @@ $(function () {
         admInputFilter($(this), $('.content__bills table'));
     });
     /*-------!BillsList------*/
+
+
+    /*search user for new account*/
+    $(document).on('keyup', '.new-account .t-search', function () {
+        $('.new-account .filter').fadeIn('fast');
+        admInputFilter($(this), $('.new-account .filter table'), 1)
+    })
 
 
 

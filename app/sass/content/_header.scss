@@ -59,6 +59,29 @@
       }
     }
   }
+  &__filter {
+    width:calc(100% - 470px);
+    margin-right: 20px;
+    &--field {
+      .open-filter-modal {
+        display: block;
+        >img {
+          margin-right: 10px;
+        }
+      }
+      input {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        font-size: 14px;
+      }
+      display: flex;
+      align-items: center;
+    }
+    .filter {
+      top: 65px;
+    }
+  }
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
