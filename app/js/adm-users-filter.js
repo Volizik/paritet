@@ -28,24 +28,36 @@ $(function () {
     });
     /*-------!usersList------*/
 
+    /*-------groupsList------*/
+    $(document).on('keyup', '.content__groups .t-search', function () {
+        admInputFilter($(this), $('.content__groups .filter table'));
+        $('.content__groups .filter').fadeIn('fast')
+    });
+    /*-------!groupsList------*/
+
     /*-------RegistersList------*/
     $(document).on('keyup', '.content__registers .t-search', function () {
-        admInputFilter($(this), $('.content__registers table'));
+        admInputFilter($(this), $('.content__registers table'), 1);
     });
     /*-------!RegistersList------*/
 
     /*-------BillsList------*/
     $(document).on('keyup', '.content__bills .t-search', function () {
-        admInputFilter($(this), $('.content__bills table'));
+        admInputFilter($(this), $('.content__bills table'), 1);
     });
     /*-------!BillsList------*/
 
 
     /*search user for new account*/
-    $(document).on('keyup', '.new-account .t-search', function () {
-        $('.new-account .filter').fadeIn('fast');
-        admInputFilter($(this), $('.new-account .filter table'), 1)
+    $(document).on('keyup', '#user-cabinet-new .t-search', function (event) {
+        $('#user-cabinet-new .filter tr').find('input[type="checkbox"]').prop('checked', false);
+        if(event.keyCode === 13 && $(this).val().length > 0 || event.keyCode === 8) {
+            $('#user-cabinet-new .filter').fadeIn('fast');
+            admInputFilter($(this), $('#user-cabinet-new .filter table'), 1)
+        }
+        admInputFilter($(this), $('#user-cabinet-new .filter table'), 1)
     })
+
 
 
 

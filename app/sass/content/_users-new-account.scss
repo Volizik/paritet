@@ -1,4 +1,4 @@
-.new-account {
+#user-cabinet-new {
   .content__block:last-of-type {
     border-bottom: 1px solid #ccc;
     margin-bottom: 50px;
@@ -10,19 +10,6 @@
     width: 520px;
     &__body {
       height: 175px;
-    }
-    table {
-      font-weight: 400;
-      font-size: 13px;
-    }
-    td {
-      padding-bottom: 5px;
-    }
-    tr {
-      cursor: pointer;
-      &:hover {
-        color: $someone
-      }
     }
   }
 }

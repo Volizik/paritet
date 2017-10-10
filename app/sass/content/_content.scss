@@ -107,47 +107,42 @@
   }
 
   &__groups {
+    padding-bottom: 60px;
+    .content__block {
+      margin: 0;
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
     table {
       border-collapse: collapse;
-      width: 100%;
+      width: 95%;
       font-size: 14px;
-      line-height: 16px;
       color: #777777;
-
-      th {
-        height:50px;
-        text-align: left;
-        &:first-of-type {
-          min-width:200px;
-          width: 20%;
-        }
-        &:last-of-type {
-          width: 30px;
-        }
-
-        select {
-          width: 180px;
-          height: 30px;
-          padding: 0px 5px;
-          box-sizing: border-box;
-          font-weight: 400;
-        }
-        button {
-          text-transform: uppercase;
-          padding: 8px 20px;
-          box-sizing: border-box;
-          border: none;
-          background-color: #0070cc;
-          font-weight: 400;
-          color: #fff;
-        }
+      tr {
+        height:41px;
+        border-top: 1px solid #ccc;
       }
-      td {
+      td, th {
         padding: 8px 0;
         border-bottom: 1px solid #ccc;
         &:first-of-type {
           padding-left: 5px;
         }
+        &:last-of-type {
+          width: 30px;
+        }
+      }
+    }
+    .filter {
+      top: 45px;
+      width: 320px;
+      tr {
+        height: auto;
+        border-top: none;
+      }
+      &__body {
+        max-height: 170px;
       }
     }
   }
@@ -165,6 +160,9 @@
       thead,tbody {
         width: 100%;
       }
+      tr {
+        height: 41px;
+      }
       th,td {
         font-weight: 400;
         border-bottom: 1px solid #ccc;
@@ -172,6 +170,7 @@
       }
       th {
         color: #777;
+        border-top: 1px solid #ccc;
         &:nth-of-type(1) {
           width: 20%;
         }
@@ -198,6 +197,9 @@
       thead,tbody {
         width: 100%;
       }
+      tr {
+        height: 41px;
+      }
       th,td {
         font-weight: 400;
         border-bottom: 1px solid #ccc;
@@ -205,6 +207,7 @@
       }
       th {
         color: #777;
+        border-top: 1px solid #ccc;
         &:nth-of-type(1) {
           width: 20%;
         }

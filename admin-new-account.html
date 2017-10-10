@@ -31,9 +31,6 @@
     <div class="sidebar__item">
         <div class="sidebar__item--header"><img src="images/icons/sidebar-icon2.png" alt=""><span>Группы</span></div>
     </div>
-    <div class="sidebar__item">
-        <div class="sidebar__item--header"><img src="images/icons/sidebar-icon1.png" alt=""><span>Эмитенты</span></div>
-    </div>
 </aside>
     <div class="container new-account">
 <header class="header">
@@ -46,10 +43,11 @@
     </ul>
 
     <div class="action-btn">
-        <a href="#user-cabinet-edit" class="action-btn--edit user-edit">Изменить</a>   <!--Класс user-edit требуется скрипту табов между кабинетом и редактированием профиля-->
+        <a href="#user-cabinet-edit" class="action-btn--edit">Изменить</a>
         <span class="action-btn--arrow"></span>
         <ul>
-            <li><a href="#">Изменить</a></li>
+            <li><a href="#user-cabinet-new">Создать</a></li>
+            <li><a href="#user-cabinet-edit">Изменить</a></li>
             <li><a href="#">Сбросить пароль</a></li>
             <li><a href="#">Блокировать</a></li>
             <li><a href="#">Разблокировать</a></li>
@@ -94,7 +92,7 @@
             </div>
             <div class="content__block--row">
                 <div class="content__block--type"><span>ФИО:</span></div>
-                <div class="content__block--value">
+                <div class="content__block--value search">
                     <input type="text" class="t-search" placeholder="Введите ФИО и нажмите Enter">
                     <div class="filter">
                         <div class="filter__body">

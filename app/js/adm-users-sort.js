@@ -1,6 +1,7 @@
 $(function() {
 
     var userList = document.querySelector(".users-list");
+    var groupsList = document.querySelector(".content__groups>table");
     var registersList = document.querySelector(".content__registers table");
     var billsList = document.querySelector(".content__bills table");
 
@@ -80,6 +81,17 @@ $(function() {
         sortTable(userList, 5);
     });
     /*------------!users-list--------------*/
+
+
+
+    /*------------groupsList--------------*/
+    $(document).on('click', '.content__groups table .th-number', function () {
+        sortTable(groupsList, 0);
+    });
+    $(document).on('click', '.content__groups table .th-name', function () {
+        sortTable(groupsList, 1);
+    });
+    /*------------!groupsList--------------*/
 
 
 

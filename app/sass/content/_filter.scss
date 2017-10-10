@@ -4,7 +4,7 @@
   margin-top: 5px;
   border: 1px solid #ccc;
   box-shadow: 1px 5px 10px 0 #ccc;
-  min-width: 300px;
+  min-width: 320px;
   box-sizing: border-box;
   background-color: #fff;
   z-index: 5;
@@ -28,6 +28,22 @@
     box-sizing: border-box;
     position: relative;
     width: 100%;
+    table {
+      font-weight: 400;
+      font-size: 13px;
+      color: #000!important;
+    }
+    td {
+      padding: 4px 0!important;
+      border:none!important;
+    }
+    tr {
+      cursor: pointer;
+      width: 100%;
+      &:hover {
+        color: $someone
+      }
+    }
   }
   &__footer {
     padding: 15px;
