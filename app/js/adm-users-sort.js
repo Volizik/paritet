@@ -62,22 +62,22 @@ $(function() {
 
 
     /*------------users-list--------------*/
-    $(document).on('click', '.users-list th.t-login', function () {
+    $(document).on('click', '.users-list th.u-login', function () {
         sortTable(userList, 0);
     });
-    $(document).on('click', '.users-list th.t-rol', function () {
+    $(document).on('click', '.users-list th.u-rol', function () {
         sortTable(userList, 1);
     });
-    $(document).on('click', '.users-list th.t-name', function () {
+    $(document).on('click', '.users-list th.u-name', function () {
         sortTable(userList, 2);
     });
-    $(document).on('click', '.users-list th.t-status', function () {
+    $(document).on('click', '.users-list th.u-status', function () {
         sortTable(userList, 3);
     });
-    $(document).on('click', '.users-list th.t-visited', function () {
+    $(document).on('click', '.users-list th.u-visited', function () {
         sortTable(userList, 4);
     });
-    $(document).on('click', '.users-list th.t-online-status', function () {
+    $(document).on('click', '.users-list th.u-online-status', function () {
         sortTable(userList, 5);
     });
     /*------------!users-list--------------*/

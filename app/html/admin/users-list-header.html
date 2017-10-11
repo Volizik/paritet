@@ -3,7 +3,7 @@
     <div class="header__filter">
 
         <div class="header__filter--field">
-            <span class="filter--user-list"><img src="images/icons/filter-icon.png" alt=""></span>
+            <span class="filter--icon"><img src="images/icons/filter-icon.png" alt=""></span>
             <input class="filter--input" type="text" placeholder="Примените фильтр или введите слово">
         </div>
 
@@ -13,7 +13,30 @@
                 <span class="t-delete"></span>
             </div>
             <div class="filter__body">
-
+                <div class="filter__body--item">
+                    <h3>Статус</h3>
+                    <select>
+                        <option>Не выбран</option>
+                        <option>Активен</option>
+                        <option>Неактивен</option>
+                        <option>Автоблок</option>
+                        <option>Блок</option>
+                        <option>Удален</option>
+                    </select>
+                </div>
+                <div class="filter__body--item">
+                    <h3>Группа</h3>
+                    <input type="text" class="t-search" placeholder="Найти группу">
+                </div>
+                <div class="filter__body--item">
+                    <h3>Категория</h3>
+                    <select>
+                        <option>Не выбрана</option>
+                        <option>Администратор</option>
+                        <option>Менеджер</option>
+                        <option>Эмитент</option>
+                    </select>
+                </div>
             </div>
             <div class="filter__footer">
                 <button class="submit">Подобрать</button>

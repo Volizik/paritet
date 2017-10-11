@@ -37,5 +37,81 @@ table.users-list {
     //color: #000;
   }
 
+
+  .u-login {
+    width: 23%;
+  }
+  .u-rol {
+    width: 15%;
+  }
+  .u-name {
+    width: calc(29% - 50px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    span {
+      display: inline-block;
+      width: 170px;
+      white-space: nowrap;
+    }
+  }
+  .u-status {
+    width: 10%;
+  }
+  .u-visited {
+    width: 10%;
+  }
+  .u-online-status {
+    width: 8%;
+  }
+  .u-actions {
+    width: 80px;
+  }
+
+
+  .u-status-active {
+    color: #5ccc3d
+  }
+  .u-status-not-active {
+    color: #777
+  }
+  .u-status-block {
+    color: #f29c24;
+  }
+  .u-status-auto-block {
+    color: #e62e2e;
+  }
+  .u-status-deleted {
+    color: #777
+  }
+  .u-online {
+    display: block;
+    position: relative;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: #5ccc3d;
+  }
+  .u-offline {
+    display: block;
+    position: relative;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: #aaa;
+  }
+  .u-block-user,
+  .u-unblock-user {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+  .u-block-user {
+    background: url(../images/icons/block.png) no-repeat center;
+  }
+  .u-unblock-user {
+    background: url(../images/icons/unblock.png) no-repeat center;
+  }
+
 }
 

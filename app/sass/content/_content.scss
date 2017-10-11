@@ -124,6 +124,7 @@
         border-top: 1px solid #ccc;
       }
       td, th {
+        text-align: left;
         padding: 8px 0;
         border-bottom: 1px solid #ccc;
         &:first-of-type {
@@ -136,6 +137,7 @@
     }
     .filter {
       top: 45px;
+      left: 0;
       width: 320px;
       tr {
         height: auto;
@@ -164,6 +166,7 @@
         height: 41px;
       }
       th,td {
+        text-align: left;
         font-weight: 400;
         border-bottom: 1px solid #ccc;
         padding: 8px 0;
@@ -201,6 +204,7 @@
         height: 41px;
       }
       th,td {
+        text-align: left;
         font-weight: 400;
         border-bottom: 1px solid #ccc;
         padding: 8px 0;

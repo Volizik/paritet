@@ -123,7 +123,7 @@ $(function () {
     /*-------------------SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
     $(document).on('click', '.someone', function() {
-        window.location = "/paritet/admin-cabinet.html";
+        window.location = "/paritet/admin-users-cabinet.html";
     });
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
@@ -138,7 +138,7 @@ $(function () {
     });
     /*----------------!scrollbar----------------*/
 
-    $(document).on('click', '.filter--user-list', function () {
+    $(document).on('click', '.filter--icon', function () {
         $('.filter').fadeToggle('fast');
     });
 
@@ -182,8 +182,11 @@ $(function () {
         }
         $('#user-cabinet-new .filter').hide();
     });
-    $(document).on('click', '#user-cabinet-new .filter .cancel', function () {
-        $('#user-cabinet-new .filter').hide();
+    $(document).on('click', '.filter .cancel', function () {
+        $('.filter').hide();
+    });
+    $(document).on('click', '.filter__header .t-delete', function () {
+        $('.filter').hide();
     });
     $(document).on('click', '#user-cabinet-new .search > span', function () {
         $('#user-cabinet-new .t-search').val('');

@@ -32,7 +32,7 @@
       img {
         margin: 0px 15px;
       }
-      span,a {
+      span, a {
         font-size: 16px;
         text-transform: uppercase;
         &:hover {
@@ -47,6 +47,9 @@
         transition: .4s;
         color: #7fc6ff;
       }
+    }
+    .active-item {
+      color: $blue-hover;
     }
     ul {
       position: relative;
@@ -67,3 +70,4 @@
     }
   }
 }
+
