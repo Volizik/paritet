@@ -55,7 +55,7 @@ $(function () {
         }
     });
 
-    $(document).on('click', '.action-btn a', function (e) {
+    $(document).on('click', '.user-header .action-btn a', function (e) {
         e.preventDefault();
         var btn = $('.action-btn > a');
         var tabId = $(this).attr('href');
@@ -75,6 +75,34 @@ $(function () {
         }
 
     });
+    $('.content__group').each(function (i) {
+        if(i !=0) {
+            $(this).hide(0);
+        }
+    });
+    $(document).on('click', '.group-header .action-btn a', function (e) {
+        e.preventDefault();
+        var btn = $('.action-btn > a');
+        var tabId = $(this).attr('href');
+        $('.content__group').hide(0);
+        $(tabId).fadeIn();
+        if (btn.attr('href') !== '#group-cabinet') {
+            btn.html('Сохранить');
+            btn.attr('href', '#group-cabinet');
+            $('.header__menu a').removeClass('header__menu--active');
+            $('.header__menu a[href="#group-content"]').addClass('header__menu--active');
+            $('.content__section').hide();
+            $('#group-content').show();
+        } else {
+            if (tabId === '#group-cabinet') {
+                btn.attr('href', '#group-cabinet-edit').text('Изменить')
+            }
+        }
+
+    });
+
+
+
 
 
 
@@ -124,6 +152,9 @@ $(function () {
 
     $(document).on('click', '.someone', function() {
         window.location = "/paritet/admin-users-cabinet.html";
+    });
+    $(document).on('click', '.someone-group', function() {
+        window.location = "/paritet/admin-groups-cabinet.html";
     });
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
@@ -236,6 +267,21 @@ $(function () {
     });
     $(document).on('click', '.content__groups .filter .cancel', function () {
         $('.content__groups .filter').hide();
+    });
+
+
+
+
+    $(document).on('click', '.content__registers .filter tr', function () {
+        $('.content__registers .filter tr').removeClass('activeTr');
+        $(this).addClass('activeTr');
+    });
+    $(document).on('click', '.content__registers .filter .submit', function () {
+        if($('.activeTr').length >0) {
+            $('.content__registers .t-search').val($('.activeTr').text());
+            $('.content__registers .filter').hide();
+            $('.content__registers .insert').addClass('insert-active').removeAttr('disabled')
+        }
     });
 
 

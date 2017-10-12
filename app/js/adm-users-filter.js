@@ -37,13 +37,20 @@ $(function () {
 
     /*-------RegistersList------*/
     $(document).on('keyup', '.content__registers .t-search', function () {
-        admInputFilter($(this), $('.content__registers table'), 1);
+        if($(this).parent().find($('.filter'))) {
+            $('#registers-content .filter').fadeIn('fast');
+            admInputFilter($(this), $('#registers-content .filter table'), 0);
+            admInputFilter($(this), $('#registers-content .filter table'), 1);
+        } else {
+            admInputFilter($(this), $('.content__registers>table'), 1);
+        }
+
     });
     /*-------!RegistersList------*/
 
     /*-------BillsList------*/
     $(document).on('keyup', '.content__bills .t-search', function () {
-        admInputFilter($(this), $('.content__bills table'), 1);
+        admInputFilter($(this), $('.content__bills>table'), 1);
     });
     /*-------!BillsList------*/
 

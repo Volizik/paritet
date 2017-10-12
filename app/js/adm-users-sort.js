@@ -2,8 +2,8 @@ $(function() {
 
     var userList = document.querySelector(".users-list");
     var groupsList = document.querySelector(".content__groups>table");
-    var registersList = document.querySelector(".content__registers table");
-    var billsList = document.querySelector(".content__bills table");
+    var registersList = document.querySelector(".content__registers>table");
+    var billsList = document.querySelector(".content__bills>table");
 
     function sortTable(tbl, n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
