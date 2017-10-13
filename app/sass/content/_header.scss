@@ -81,6 +81,8 @@
     }
     .filter {
       top: 65px;
+      width: auto;
+      left: auto;
       &__body {
         max-height: none;
         height: auto;
