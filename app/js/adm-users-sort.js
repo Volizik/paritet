@@ -5,6 +5,7 @@ $(function() {
     var registersList = document.querySelector(".content__registers>table");
     var billsList = document.querySelector(".content__bills>table");
 
+
     function sortTable(tbl, n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = tbl;

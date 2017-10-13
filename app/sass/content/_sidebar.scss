@@ -58,9 +58,10 @@
       li {
         list-style: none;
         position: relative;
-        a {
+        a,span {
           font-size: 13px;
           color: #fff;
+          cursor: pointer;
           &:hover {
             transition: .4s;
             color: #7fc6ff;

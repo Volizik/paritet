@@ -166,10 +166,13 @@ $(function () {
     $('.content__section .filter__body').mCustomScrollbar({
         theme: "my-theme"
     });
+    $('.filter .filter .filter__body').mCustomScrollbar({
+        theme: "my-theme"
+    });
     /*----------------!scrollbar----------------*/
 
     $(document).on('click', '.filter--icon', function () {
-        $('.filter').fadeToggle('fast');
+        $('.header__filter>.filter').fadeToggle('fast');
     });
 
 
@@ -282,6 +285,46 @@ $(function () {
             $('.content__registers .insert').addClass('insert-active').removeAttr('disabled')
         }
     });
+
+
+
+
+    $(document).on('click', '.sidebar__item .users_inside',function () {
+        var curLoc = window.location.href.toString();
+        if (~curLoc.indexOf('admin-users-list')) {
+            $('.header__filter--field .filter--input').hide();
+            $('.autofilter[data-id="user_inside"]').css('display', 'flex');
+        } else {
+            window.location = "/paritet/admin-users-list.html"
+        }
+
+    });
+    $(document).on('click', '.sidebar__item .users_outside',function () {
+        var curLoc = window.location.href.toString();
+        if (~curLoc.indexOf('admin-users-list')) {
+            $('.header__filter--field .filter--input').hide();
+            $('.autofilter').hide();
+            $('.autofilter[data-id="user_outside"]').css({'display': 'flex'});
+        } else {
+            window.location = "/paritet/admin-users-list.html"
+        }
+
+    });
+    $(document).on('click', '.autofilter .t-delete', function () {
+        $(this).parent().hide();
+        $('.header__filter--field .filter--input').show();
+    });
+
+    $(document).on('click', '.filter .filter tr', function () {
+        $('.filter .filter tr').removeClass('activeTr');
+        $(this).addClass('activeTr');
+    });
+    $(document).on('click', '.filter .filter .submit', function () {
+        if($('.filter .filter .activeTr').length > 0) {
+            $(this).closest('.filter__body--item').find('.t-search').val($('.activeTr').text());
+            $('.header__filter .filter .filter').hide();
+        }
+    })
 
 
 });

@@ -13,7 +13,7 @@
 <body>
 <!-- open .header -->
 <!-- end html_open.html-->
-<div class="wrap">
+<div class="wrap wrap-users">
 <!-- start user-sidebar.html-->
 <aside class="sidebar">
     <div class="sidebar__logo">
@@ -27,8 +27,8 @@
         </div>
         <ul>
             <li><a href="/paritet/admin-users-list.html">Все пользователи</a></li>
-            <li><a href="#">Внутренние</a></li>
-            <li><a href="#">Внешние</a></li>
+            <li><span class="users_inside">Внутренние</span></li>
+            <li><span class="users_outside">Внешние</span></li>
         </ul>
     </div>
     <div class="sidebar__item">
@@ -45,6 +45,8 @@
         <div class="header__filter--field">
             <span class="filter--icon"><img src="images/icons/filter-icon.png" alt=""></span>
             <input class="filter--input" type="text" placeholder="Примените фильтр или введите слово">
+            <div class="autofilter" data-id="user_inside"><span>Внутренние</span><span class="t-delete"></span></div>
+            <div class="autofilter" data-id="user_outside"><span>Внешние</span><span class="t-delete"></span></div>
         </div>
 
         <div class="filter">
@@ -67,6 +69,31 @@
                 <div class="filter__body--item">
                     <h3>Группа</h3>
                     <input type="text" class="t-search" placeholder="Найти группу">
+                    <div class="filter">
+                        <div class="filter__body">
+                            <table>
+                                <tr><td><span>Филиал «Питер»</span></td></tr>
+                                <tr><td><span>Филиал «Южносахалинск»</span></td></tr>
+                                <tr><td><span>Филиал «Москва»</span></td></tr>
+                                <tr><td><span>Филиал «Воронеж»</span></td></tr>
+                                <tr><td><span>Филиал «Иваново»</span></td></tr>
+                                <tr><td><span>Филиал «Питер»</span></td></tr>
+                                <tr><td><span>Филиал «Южносахалинск»</span></td></tr>
+                                <tr><td><span>Филиал «Москва»</span></td></tr>
+                                <tr><td><span>Филиал «Воронеж»</span></td></tr>
+                                <tr><td><span>Филиал «Иваново»</span></td></tr>
+                                <tr><td><span>Филиал «Питер»</span></td></tr>
+                                <tr><td><span>Филиал «Южносахалинск»</span></td></tr>
+                                <tr><td><span>Филиал «Москва»</span></td></tr>
+                                <tr><td><span>Филиал «Воронеж»</span></td></tr>
+                                <tr><td><span>Филиал «Иваново»</span></td></tr>
+                            </table>
+                        </div>
+                        <div class="filter__footer">
+                            <button class="submit">Выбрать</button>
+                            <button class="cancel">Отмена</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="filter__body--item">
                     <h3>Категория</h3>
