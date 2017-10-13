@@ -62,6 +62,7 @@
   &__filter {
     width:calc(100% - 470px);
     margin-right: 20px;
+
     &--field {
       .open-filter-modal {
         display: block;
@@ -80,6 +81,10 @@
     }
     .filter {
       top: 65px;
+      &__body {
+        max-height: none;
+        height: auto;
+      }
     }
   }
 }

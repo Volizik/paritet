@@ -161,7 +161,7 @@ $someone-hover: #004680;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border: 1px solid #ccc;
-  animation: animateModal 0.4s;
+  animation: animateModalIn 0.4s;
   &__header {
     display: flex;
     justify-content: space-between;
@@ -364,7 +364,11 @@ input[type="checkbox"] {
     transform: rotate(45deg);
   }
 }
-@keyframes animateModal {
+@keyframes animateModalIn {
   from {top: -50%; opacity: 0}
   to {top: 50%; opacity: 1}
+}
+@keyframes animateModalOut {
+  from {top: 50%; opacity: 1}
+  to {top: -50%; opacity: 0}
 }
