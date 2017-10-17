@@ -5,18 +5,33 @@ $(function () {
         var filter, tr;
         filter = input.val().toUpperCase();
         tr = table.find("tbody tr");
-        if (n === undefined) {
-            n = 0;
-        }
+        var td;
 
         // Loop through all table rows, and hide those who don't match the search query
         for (var i = 0; i < tr.length; i++) {
-            var td = tr[i].querySelectorAll("td")[n];
-            if (td) {
-                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
+
+            var tdText = '';
+            if (n === undefined) {
+                td = tr[i].querySelectorAll("td");
+                for(var j=0; j<td.length; j++) {
+                    tdText = tdText + td[j].innerText
+                }
+                if (td) {
+                    if (tdText.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            } else {
+                td = tr[i].querySelectorAll("td")[n];
+
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
                 }
             }
         }
@@ -38,17 +53,17 @@ $(function () {
     /*-------RegistersList------*/
     $(document).on('keyup', '.wrap-groups .content__registers .t-search', function () {
         $('#registers-content .filter').fadeIn('fast');
-        admInputFilter($(this), $('#registers-content .filter table'), 1);
+        admInputFilter($(this), $('#registers-content .filter table'));
     });
     $(document).on('keyup', '.wrap-users .content__registers .t-search', function () {
-        admInputFilter($(this), $('#registers-content table'), 1);
+        admInputFilter($(this), $('#registers-content table'));
 
     });
     /*-------!RegistersList------*/
 
     /*-------BillsList------*/
     $(document).on('keyup', '.content__bills .t-search', function () {
-        admInputFilter($(this), $('.content__bills>table'), 1);
+        admInputFilter($(this), $('.content__bills>table'));
     });
     /*-------!BillsList------*/
 
@@ -67,7 +82,7 @@ $(function () {
 
     $(document).on('keyup', '.filter__body--item .t-search',function () {
         $(this).parent().find('.filter').fadeIn('fast');
-        admInputFilter($(this), $('.header__filter .filter .filter table'), 1);
+        admInputFilter($(this), $('.header__filter .filter .filter table'));
     })
 
     /*-----------------------------------------------------------------------------------*/
