@@ -19,6 +19,7 @@ $someone-hover: #004680;
 }
 .someone,
 .someone-group,
+.bill-num,
 .t-number {
   color: $someone!important;
   font-weight: 700;
@@ -335,6 +336,8 @@ input[type="checkbox"] {
   position: relative;
   margin-top: 40px;
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
   align-items: center;
   background-color: #fafafa;
@@ -343,6 +346,7 @@ input[type="checkbox"] {
   padding: 30px 0;
   p {
     max-width: 260px;
+    margin: 10px 0;
   }
 }
 

@@ -148,7 +148,7 @@ gulp.task('clear', function (callback) {
     return cache.clearAll();
 });
 
-gulp.task('default', [/*'watch',*/ 'browser-sync']);
+gulp.task('default', ['watch', 'browser-sync']);
 
 /*
  npm i gulp gulp-sass browser-sync gulp-concat gulp-uglifyjs gulp-rename del gulp-imagemin imagemin-pngquant calipers-png calipers-jpeg calipers-gif gulp.spritesmith gulp-svgstore gulp-svgmin gulp-cache gulp-html-extend gulp-sourcemaps rimraf gulp-plumber gulp-postcss autoprefixer cssnano postcss-pxtorem postcss-px-to-em postcss-short stylefmt postcss-assets postcss-short-spacing postcss-focus postcss-sorting postcss-font-magician postcss-fixes stylelint-config-standard --save-dev*/

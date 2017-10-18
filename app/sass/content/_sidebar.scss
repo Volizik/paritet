@@ -1,4 +1,6 @@
 .sidebar {
+  display: flex;
+  flex-direction: column;
   &__logo {
     display: flex;
     justify-content: center;
@@ -30,7 +32,7 @@
       display: flex;
       align-items: center;
       img {
-        margin: 0px 15px;
+        margin: 0px 25px;
       }
       span, a {
         font-size: 16px;
@@ -53,7 +55,7 @@
     }
     ul {
       position: relative;
-      padding-left: 57px;
+      padding-left: 77px;
       margin: 0;
       li {
         list-style: none;
@@ -67,6 +69,27 @@
             color: #7fc6ff;
           }
         }
+      }
+    }
+  }
+  &__footer {
+    position: relative;
+    border-top: 3px solid #fff;
+    margin-top:auto;
+    box-sizing: border-box;
+    padding: 20px;
+    p {
+      font-size: 13px;
+      width: 100%;
+      b {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      span {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
       }
     }
   }
