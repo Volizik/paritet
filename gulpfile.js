@@ -43,23 +43,6 @@ gulp.task('css-libs', function () { // Создаем таск css-libs
         .pipe(browserSync.stream({})); // Обновляем CSS на странице при изменении
 });
 
-gulp.task('png-sprite', function () {// PNG Sprites
-    var spriteData =
-        gulp.src('app/img/sprites/*.*')// путь, откуда берем картинки для спрайта
-            .pipe(spritesmith({
-                imgName: 'sprite.png',//имя генерируемой картинки
-                cssName: '_png-sprite.sass',//имя css файла, который получится на выходе
-                cssFormat: 'sass',//формат css файла
-                algorithm: 'binary-tree',//способ сортировки изображений
-                cssTemplate: 'sass.template.mustache',//функция или путь до mustache шаблона, дающие возможность настроить CSS-файл на выходе
-                cssVarMap: function (sprite) {//цикл, настраивающий названия CSS переменных
-                    sprite.name = 's-' + sprite.name
-                }
-            }));
-
-    spriteData.img.pipe(gulp.dest('img/sprites/'));// путь, куда сохраняем картинку
-    spriteData.css.pipe(gulp.dest('app/sass/libs/'));// путь, куда сохраняем стили
-});
 
 gulp.task('sass', function () { // Создаем таск Sass
     var processors = [// подключаем постпроцессоры в массиве
@@ -138,7 +121,7 @@ gulp.task('extend-blocks', function () {
 
 gulp.task('watch', ['compress', 'extend-pages', 'css-libs', 'img', 'sass'], function () {
     gulp.watch('app/libs/**/*', ['css-libs']); // Наблюдение за папкой libs
-    gulp.watch('app/img/**/*', ['img']);// Наблюдение за папкой img
+    gulp.watch('app/images/**/*', ['img']);// Наблюдение за папкой img
     gulp.watch('app/sass/**/*.scss', ['sass']); // Наблюдение за sass файлами в папке sass
     gulp.watch(['app/html/**/*.html'], ['extend-pages']);// Наблюдение за HTML-файлами в папке html
     gulp.watch('app/js/**/*.js', ['compress']); // Наблюдение за js-файлами
@@ -155,7 +138,7 @@ gulp.task('img', function () {
             }],
             use: [pngquant()]
         })))
-        .pipe(gulp.dest('img'))
+        .pipe(gulp.dest('images'))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -165,7 +148,7 @@ gulp.task('clear', function (callback) {
     return cache.clearAll();
 });
 
-gulp.task('default', ['watch', 'browser-sync']);
+gulp.task('default', [/*'watch',*/ 'browser-sync']);
 
 /*
  npm i gulp gulp-sass browser-sync gulp-concat gulp-uglifyjs gulp-rename del gulp-imagemin imagemin-pngquant calipers-png calipers-jpeg calipers-gif gulp.spritesmith gulp-svgstore gulp-svgmin gulp-cache gulp-html-extend gulp-sourcemaps rimraf gulp-plumber gulp-postcss autoprefixer cssnano postcss-pxtorem postcss-px-to-em postcss-short stylefmt postcss-assets postcss-short-spacing postcss-focus postcss-sorting postcss-font-magician postcss-fixes stylelint-config-standard --save-dev*/
