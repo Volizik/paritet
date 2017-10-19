@@ -1,25 +1,4 @@
 .iss-bills-list {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  th {
-    font-size: 13px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    height: 40px;
-    font-weight: 400;
-    color: #777;
-  }
-  td {
-    font-size: 13px;
-    border-bottom: 1px solid #ccc;
-    height: 40px;
-    overflow: hidden;
-    -ms-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
 
   .b-number {
     width: 13%;

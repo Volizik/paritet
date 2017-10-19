@@ -155,6 +155,9 @@ $(function () {
     $(document).on('click', '.someone-group', function() {
         window.location = "/paritet/admin-groups-cabinet.html";
     });
+    $(document).on('click', '.bill-num', function() {
+        window.location = "/paritet/issuer-bills-cabinet.html";
+    });
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 

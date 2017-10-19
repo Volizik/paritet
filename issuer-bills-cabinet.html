@@ -33,7 +33,7 @@
     <div class="sidebar__item">
         <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon5-blue.png" alt="">
-            <a class="active-item" href="#">Счета</a>
+            <a class="active-item" href="/paritet/issuer-bills-list.html">Счета</a>
         </div>
     </div>
     <div class="sidebar__footer">
@@ -54,7 +54,7 @@
 
     <div class="action-btn">
         <a href="#" class="action-btn--edit">Выписка</a>
-        <span class="action-btn--arrow"></span>
+        <span class="action-btn--arrow arrow-down"></span>
         <ul>
             <li><a href="#">Создать</a></li>
             <li><a href="#">Изменить</a></li>
@@ -75,7 +75,6 @@
 <!-- start bills-cabinet.html-->
 <main class="content">
 
-    <!--Кабинет группы-->
     <section id="issuer-bills-bill" class="content__section">
 
         <div class="issuer-bills-bill">
@@ -127,9 +126,8 @@
 
 
     </section>
-    <!--!Кабинет группы-->
 
-    <!--Реестры-->
+
     <section id="issuer-bills-balance" class="content__section">
 
         <div class="issuer-bills-balance">
@@ -144,7 +142,7 @@
                 <div class="content__block--value"><span>АО «Теплотехстроймаш»</span></div>
             </div>
 
-            <table>
+            <table class="table">
                 <thead>
                 <tr>
                     <th class="bl-type"><span>Тип ЦБ</span></th>
@@ -184,76 +182,80 @@
         </div>
 
     </section>
-    <!--!Реестры-->
 
-    <!--Счета-->
     <section id="issuer-bills-statement" class="content__section">
 
-        <div class="content__bills">
-            <div class="content__block">
+        <div class="issuer-bills-statement">
+            <h2>Справка об операциях</h2>
 
-                <div class="content__block--row">
-                    <div class="content__block--type"><span>Имя:</span></div>
-                    <div class="content__block--value"><span>Филиал «Питер»</span></div>
+            <div class="content__block--row">
+                <div class="content__block--type"><span>Номер счета:</span></div>
+                <div class="content__block--value"><span>9898765</span></div>
+            </div>
+            <div class="content__block--row">
+                <div class="content__block--type"><span>Эмитент:</span></div>
+                <div class="content__block--value"><span>АО «Теплотехстроймаш»</span></div>
+            </div>
+            <div class="content__block--row">
+                <div class="content__block--type"><span>Тип ценных бумаг:</span></div>
+                <div class="content__block--value"><span class="blue-bold">Акция обыкновенная</span> <span class="arrow-down"></span></div>
+            </div>
+            <div class="content__block--row">
+                <div class="content__block--type"><span>Состояние:</span></div>
+                <div class="content__block--value"><span class="blue-bold">ЦБ не обремененные обязательствами</span><span class="arrow-down"></span></div>
+            </div>
+            <div class="content__block--row">
+                <div class="content__block--type"><span>Период:</span></div>
+                <div class="content__block--value">
+                    <span class="blue-bold mr5">Месяц</span>
+                    <span class="blue-bold mr5">Квартал</span>
+                    <span class="blue-bold mr5">Год</span>
                 </div>
-                <div class="content__block--row">
-                    <div class="content__block--type"><span>Описание:</span></div>
-                    <div class="content__block--value"><span>Все реестры и счета филиала Питер</span></div>
-                </div>
-                <div class="content__block--row">
-                    <div class="content__block--type"><span>Автогруппа:</span></div>
-                    <div class="content__block--value"><span>Нет</span></div>
-                </div>
+            </div>
 
-            </div>
-            <div class="content__block">
-                <div class="content__block--row">
-                    <input type="text" class="t-search" placeholder="Найти счет">
-                </div>
-            </div>
-            <table>
+            <table class="table">
                 <thead>
                 <tr>
-                    <th class="th-number"><span class="t-sort">Номер</span></th>
-                    <th class="th-name"><span class="t-sort">Наименование</span></th>
-                    <th></th>
+                    <th class="st-date"><span>Дата</span></th>
+                    <th class="st-review"><span>Описание</span></th>
+                    <th class="st-enroll"><span>Зачисление</span></th>
+                    <th class="st-off"><span>Списание</span></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td class="t-number"><span>789766728</span></td>
-                    <td><span>Петров Владимир Петрович</span></td>
-                    <td><span class="t-delete"></span></td>
+                    <td><span>20.08.2017</span></td>
+                    <td><span>Остаток на начало периода</span></td>
+                    <td><span>1000</span></td>
+                    <td><span></span></td>
                 </tr>
                 <tr>
-                    <td class="t-number"><span>789722728</span></td>
-                    <td><span>АО &#171;СМУ теплотехнических сооружений&#187;</span></td>
-                    <td><span class="t-delete"></span></td>
+                    <td><span>22.08.2017</span></td>
+                    <td><span>Внесение по договору купли-продажи №286 от 09.09.2017</span></td>
+                    <td><span>200</span></td>
+                    <td><span></span></td>
                 </tr>
                 <tr>
-                    <td class="t-number"><span>789766728</span></td>
-                    <td><span>ООО &#171;Инвестиции и страхование&#187;</span></td>
-                    <td><span class="t-delete"></span></td>
+                    <td><span>05.09.2017</span></td>
+                    <td><span>Списание по договору купли-продажи №296 от 09.09.2017</span></td>
+                    <td><span></span></td>
+                    <td><span>-700</span></td>
                 </tr>
                 <tr>
-                    <td class="t-number"><span>781266728</span></td>
-                    <td><span>ПАО &#171;Стройинвестбанк&#187;</span></td>
-                    <td><span class="t-delete"></span></td>
-                </tr>
-                <tr>
-                    <td class="t-number"><span>789766728</span></td>
-                    <td><span>АО &#171;КБ теплотехники&#187;</span></td>
-                    <td><span class="t-delete"></span></td>
+                    <td><span>20.09.2017</span></td>
+                    <td><span>Остаток на конец периода</span></td>
+                    <td><span>500</span></td>
+                    <td><span></span></td>
                 </tr>
                 </tbody>
             </table>
             <div class="list__footer">
-                <p>Больше нет реестров для показа</p>
+                <p>Больше нет операций для показа</p>
             </div>
+
         </div>
 
     </section>
-    <!--!Счета-->
 
 </main>
 <!-- end bills-cabinet.html-->

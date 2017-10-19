@@ -1,4 +1,4 @@
-#issuer-bills-bill {
+.issuer-bills-bill {
   .content__block {
     &:last-of-type {
       border-bottom: none;
@@ -27,11 +27,7 @@
 
 .issuer-bills-balance {
   >table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
     th,td {
-      font-size: 13px;
       &:nth-of-type(4) {
         text-align: right;
       }
@@ -39,20 +35,42 @@
         text-align: right;
       }
     }
-    th {
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      height: 40px;
-      font-weight: 400;
-      color: #777;
+  }
+}
+
+.issuer-bills-statement {
+  >table {
+    th,td {
+      &:nth-of-type(3) {
+        text-align: right;
+      }
+      &:nth-of-type(4) {
+        text-align: right;
+      }
     }
-    td {
-      border-bottom: 1px solid #ccc;
-      height: 40px;
-      overflow: hidden;
-      -ms-text-overflow: ellipsis;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+  }
+  .arrow-down {
+    display: inline-flex;
+    margin-left: 10px;
+    &:before {
+      border-top-color: $someone;
     }
+  }
+  .mr5 {
+    margin-right: 5px;
+  }
+
+
+  .st-date {
+    width: 20%;
+  }
+  .st-review {
+    width: 54%;
+  }
+  .st-enroll{
+    width: 13%;
+  }
+  .st-off {
+    width: 13%;
   }
 }
