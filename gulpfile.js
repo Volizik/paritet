@@ -29,6 +29,7 @@ var postcss = require('gulp-postcss'),//Блиотека-парсер стиле
     sorting = require('postcss-sorting'),
     fontmagic = require('postcss-font-magician'),
     fixes = require('postcss-fixes');
+var preprocess = require('gulp-preprocess');
 
 gulp.task('css-libs', function () { // Создаем таск css-libs
     var processors = [
@@ -120,6 +121,7 @@ gulp.task('extend-blocks', function () {
 });
 
 gulp.task('watch', ['compress', 'extend-pages', 'css-libs', 'img', 'sass'], function () {
+
     gulp.watch('app/libs/**/*', ['css-libs']); // Наблюдение за папкой libs
     gulp.watch('app/images/**/*', ['img']);// Наблюдение за папкой img
     gulp.watch('app/sass/**/*.scss', ['sass']); // Наблюдение за sass файлами в папке sass
