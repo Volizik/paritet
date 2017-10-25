@@ -10,7 +10,11 @@
     }
   }
 }
-
+.admin-groups-content {
+  .content__block--type {
+    min-width: 105px;
+  }
+}
 .admin-groups-content .content__registers,
 .admin-groups-content .content__bills {
   >table {

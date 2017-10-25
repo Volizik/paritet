@@ -1,9 +1,25 @@
+.issuer-bills {
+  .content__block {
+    &:first-of-type {
+      border-top: none;
+    }
+  }
+  .content__block--type {
+    min-width: 150px;
+  }
+  .content__block--row{
+    height: 25px;
+  }
+}
+
 .issuer-bills-bill {
   .content__block {
     &:last-of-type {
       border-bottom: none;
     }
   }
+
+
 
   //.bl-type {
   //  width: 26%;
@@ -27,6 +43,7 @@
 
 .issuer-bills-balance {
   >table {
+    width: 90%;
     th,td {
       &:nth-of-type(4) {
         text-align: right;
@@ -40,6 +57,7 @@
 
 .issuer-bills-statement {
   >table {
+    width: 90%;
     th,td {
       &:nth-of-type(3) {
         text-align: right;
