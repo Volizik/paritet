@@ -60,9 +60,9 @@ $someone-hover: #004680;
     bottom: 10px;
     left: 22px;
     width: 20px;
-    height: 0;
     background-color: #00467f;
-    animation: animateLogo 2s ease-in-out forwards;
+    height: 60px;
+    transform: rotate(45deg);
   }
   &:after {
     content: '';
@@ -70,9 +70,9 @@ $someone-hover: #004680;
     bottom: 10px;
     left: 50px;
     width: 20px;
-    height: 0px;
+    height: 60px;
+    transform: rotate(45deg);
     background-color: #ef4056;
-    animation: animateLogo 2s ease-in-out forwards;
   }
 }
 
