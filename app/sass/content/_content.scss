@@ -8,6 +8,9 @@
     font-weight: 300;
     margin-top: 0;
   }
+  table {
+    font-weight: 700;
+  }
   &__block {
     position: relative;
     border-top: 1px solid #ccc;
@@ -40,6 +43,7 @@
       display: flex;
       align-items: center;
       font-size: 14px;
+      font-weight: 700;
       position: relative;
       color: #000;
       padding-left: 10px;
@@ -124,12 +128,16 @@
       border-collapse: collapse;
       width: 95%;
       font-size: 14px;
-      color: #777777;
+
+      th {
+        color: #777777;
+      };
       tr {
         height:41px;
         border-top: 1px solid #ccc;
       }
       td, th {
+        font-weight: 700;
         text-align: left;
         padding: 8px 0;
         border-bottom: 1px solid #ccc;
@@ -172,8 +180,8 @@
         height: 41px;
       }
       th,td {
+        font-weight: 700;
         text-align: left;
-        font-weight: 400;
         border-bottom: 1px solid #ccc;
         padding: 8px 0;
       }
@@ -211,7 +219,6 @@
       }
       th,td {
         text-align: left;
-        font-weight: 400;
         border-bottom: 1px solid #ccc;
         padding: 8px 0;
       }
