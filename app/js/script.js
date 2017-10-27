@@ -330,4 +330,15 @@ $(function () {
     })
 
 
+
+    //dropdown-----------------------------------------------
+    $(document).on('click', '.drop', function () {
+        $(this).find('ul').toggle()
+    });
+    $(document).on('click', '.drop li', function () {
+        $(this).parent().parent().find('span.blue-bold').text($(this).text())
+    });
+    //dropdown-----------------------------------------------
+
+
 });
