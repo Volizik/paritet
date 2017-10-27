@@ -4,6 +4,7 @@
     width:100%;
     min-height:100vh;
     height: 100%;
+    min-width: 1280px;
 }
 .container {
     position: relative;
@@ -15,6 +16,7 @@
 .sidebar {
     position: relative;
     width: 260px;
+    min-width: 260px;
     box-sizing: border-box;
     color: #fff;
     background-color: #00467f;

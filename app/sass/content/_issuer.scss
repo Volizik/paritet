@@ -1,3 +1,12 @@
+.issuer-bills-cabinet {
+  .content__block--row {
+    align-items: baseline;
+    min-height: 25px;
+    height: auto;
+  }
+}
+
+
 .issuer-bills {
   .content__block {
     &:first-of-type {
@@ -79,9 +88,9 @@
   }
 
 
-  //.st-date {
-  //  width: 20%;
-  //}
+  .st-date {
+    width: 160px;
+  }
   //.st-review {
   //  width: 54%;
   //}
@@ -90,5 +99,25 @@
   //}
   //.st-off {
   //  width: 13%;
+  //}
+}
+
+
+.iss-bills-list {
+
+  //.b-number {
+  //  width: 13%;
+  //}
+  //.b-issuer {
+  //  width: 20%;
+  //}
+  //.b-sort {
+  //  width: 13%;
+  //}
+  //.b-mode {
+  //  width: 37%;
+  //}
+  //.b-owner {
+  //  width: 20%;
   //}
 }
