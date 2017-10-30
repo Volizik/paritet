@@ -158,6 +158,9 @@ $(function () {
     $(document).on('click', '.bill-num', function() {
         window.location = "/paritet/issuer-bills-cabinet.html";
     });
+    $(document).on('click', '.mi-register', function() {
+        window.location = "/paritet/manager-issuer-cabinet.html";
+    });
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 

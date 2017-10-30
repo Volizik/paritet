@@ -1,0 +1,52 @@
+thead {
+  .mi-register,
+  .mv-register {
+    width: 10%;
+  }
+}
+tbody {
+  .mi-register,
+  .mv-register {
+    color: $someone!important;
+    font-weight: 700;
+    transition: .4s;
+    cursor: pointer;
+    &:hover {
+      color: $someone-hover!important;
+      transition: .4s;
+    }
+    a {
+      color: $someone!important;
+      &:visited {
+        color: $someone;
+      }
+    }
+  }
+}
+
+.orange {
+  color: #f29c24;
+}
+.green {
+  color: #5ccc3d
+}
+.red {
+  color: #e62e2e;
+}
+
+.manager-issuer-cabinet {
+  .content__block {
+    &:first-of-type {
+      border-top: none;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  .content__block--type {
+    min-width: 180px;
+  }
+  .content__block--row {
+    height: 30px;
+  }
+}
