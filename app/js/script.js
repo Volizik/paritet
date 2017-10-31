@@ -155,11 +155,17 @@ $(function () {
     $(document).on('click', '.someone-group', function() {
         window.location = "/paritet/admin-groups-cabinet.html";
     });
-    $(document).on('click', '.bill-num', function() {
+    $(document).on('click', 'tbody .bill-num', function() {
         window.location = "/paritet/issuer-bills-cabinet.html";
     });
-    $(document).on('click', '.mi-register', function() {
+    $(document).on('click', 'tbody .mi-register', function() {
         window.location = "/paritet/manager-issuer-cabinet.html";
+    });
+    $(document).on('click', 'tbody .mv-register', function() {
+        window.location = "/paritet/manager-voting-issuer-list.html";
+    });
+    $(document).on('click', 'tbody .vil-bill', function() {
+        window.location = "/paritet/manager-voting-form.html";
     });
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
@@ -344,4 +350,10 @@ $(function () {
     //dropdown-----------------------------------------------
 
 
+
+    /*------------gropdown-user-icon---------------*/
+    $(document).on('click', '.header__user', function () {
+        $(this).find('.header__user--menu').fadeToggle('fast')
+    })
+    /*------------gropdown-user-icon---------------*/
 });

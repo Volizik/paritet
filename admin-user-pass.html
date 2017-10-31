@@ -1,3 +1,43 @@
+<!-- start html_open.html-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/libs.min.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!-- open .header -->
+<!-- end html_open.html-->
+<div class="wrap">
+<!-- start user-sidebar.html-->
+<aside class="sidebar">
+    <div class="sidebar__logo">
+        <span class="logo"></span>
+        <h2>паритет <span>интернет реестр</span></h2>
+    </div>
+    <div class="sidebar__item">
+        <div class="sidebar__item--header">
+            <img src="images/icons/sidebar-icon3-blue.png" alt="">
+            <a class="active-item" href="/paritet/admin-users-list.html">Пользователи</a>
+        </div>
+        <ul>
+            <li><a href="/paritet/admin-users-list.html">Все пользователи</a></li>
+            <li><span class="users_inside">Внутренние</span></li>
+            <li><span class="users_outside">Внешние</span></li>
+        </ul>
+    </div>
+    <div class="sidebar__item">
+        <div class="sidebar__item--header"><img src="images/icons/sidebar-icon2.png" alt=""><a href="/paritet/admin-groups-list.html">Группы</a></div>
+    </div>
+</aside>
+<!-- end user-sidebar.html-->
+    <div class="container">
+<!-- start users-list-header.html-->
 <header class="header">
 
     <div class="header__filter">
@@ -96,3 +136,57 @@
     </div>
 
 </header>
+<!-- end users-list-header.html-->
+<!-- start user-change-pass.html-->
+<main class="content">
+    <section class="change-pass">
+
+        <h2>Изменение пароля</h2>
+
+        <div class="content__block">
+            <div class="content__block--row">
+                <div class="content__block--value">
+                    <span>После изменения пароля Вы будете переадресованы на экран входа в систему, где сможете войти, используя новый пароль.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content__block">
+            <div class="content__block--row">
+                <div class="content__block--type"><span>Текущий пароль:</span></div>
+                <div class="content__block--value"><input type="password"></div>
+            </div>
+            <div class="content__block--row">
+                <div class="content__block--type"></div>
+                <div class="content__block--value"><a class="forgot-pass" href="#">Забыли пароль?</a></div>
+            </div>
+
+            <div class="content__block--row">
+                <div class="content__block--type"><span>Новый пароль:</span></div>
+                <div class="content__block--value"><input type="password"></div>
+            </div>
+            <div class="content__block--row">
+                <div class="content__block--type"><span>Новый пароль еще раз:</span></div>
+                <div class="content__block--value"><input type="password"></div>
+            </div>
+        </div>
+
+        <div class="content__block">
+            <div class="content__block--row">
+                <a href="/paritet/form_login.html" class="submit">сохранить</a>
+                <a href="/paritet/admin-users-cabinet.html" class="cancel">Отмена</a>
+            </div>
+        </div>
+
+    </section>
+</main>
+<!-- end user-change-pass.html-->
+    </div>
+</div>
+<!-- start html_close.html-->
+<script src='js/jquery-3.2.1.min.js' type="text/javascript"></script>
+<script src="js/script.min.js" type="text/javascript"></script>
+
+</body>
+</html>
+<!-- end html_close.html-->

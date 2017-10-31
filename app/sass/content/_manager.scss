@@ -1,12 +1,17 @@
 thead {
   .mi-register,
-  .mv-register {
+  .mv-register,
+  .vil-bill {
+    width: 10%;
+  }
+  .vil-lk {
     width: 10%;
   }
 }
 tbody {
   .mi-register,
-  .mv-register {
+  .mv-register,
+  .vil-bill {
     color: $someone!important;
     font-weight: 700;
     transition: .4s;
@@ -25,13 +30,22 @@ tbody {
 }
 
 .orange {
-  color: #f29c24;
+  color: #f29c24!important;
 }
 .green {
-  color: #5ccc3d
+  color: #5ccc3d!important;
+}
+.bg-green {
+  background-color: #5ccc3d!important;
 }
 .red {
-  color: #e62e2e;
+  color: #e62e2e!important;
+}
+.bg-red {
+  background-color: #e62e2e!important;
+}
+.grey {
+  color: #777!important;
 }
 
 .manager-issuer-cabinet {
@@ -48,5 +62,112 @@ tbody {
   }
   .content__block--row {
     height: 30px;
+  }
+}
+
+.manager-voting-issuer-list {
+  .content__block--row {
+    height: 31px;
+  }
+  .content__block--type {
+    padding: 0;
+    min-width: inherit;
+  }
+}
+
+.manager-voting-form {
+
+  h2 {
+    padding-left: 0;
+  }
+  h3 {
+    margin: 10px 0;
+    font-weight: 700;
+  }
+  p {
+    margin: 0;
+    max-width: 570px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .content__block {
+    &:first-of-type {
+      border-top: none;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  .content__block--row {
+    height: 31px;
+    padding-left: 0;
+  }
+  .content__block--type {
+    padding: 0;
+    min-width: inherit;
+  }
+
+  .voting-title {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  .voting-results {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 13px;
+  }
+  .voting-answer {
+    color: grey;
+    font-size: 13px;
+
+  }
+  .voting-question {
+    font-size: 14px;
+    color: #000;
+  }
+  .voting-actions {
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    &__choice {
+      position: relative;
+      display: flex;
+      align-items: center;
+      &--item {
+        display: block;
+        padding: 10px 20px;
+        color: #777;
+        text-transform: uppercase;
+      }
+      .voting-selected {
+        background-color: #5ccc3d;
+        color: #fff;
+      }
+    }
+    &__results {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      &--item {
+        display: block;
+        padding: 10px 20px;
+        color: #000;
+        font-size: 13px;
+        font-weight: 700;
+        &--key {
+          padding-right: 15px;
+          box-sizing: border-box;
+        }
+      }
+    }
   }
 }
