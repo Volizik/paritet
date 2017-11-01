@@ -356,4 +356,10 @@ $(function () {
         $(this).find('.header__user--menu').fadeToggle('fast')
     })
     /*------------gropdown-user-icon---------------*/
+
+
+    $(document).on('click', '.issuer-bills-statement .period', function () {
+        $('.issuer-bills-statement .period').removeClass('active-period');
+        $(this).addClass('active-period');
+    })
 });
