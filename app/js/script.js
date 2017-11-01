@@ -342,7 +342,12 @@ $(function () {
 
     //dropdown-----------------------------------------------
     $(document).on('click', '.drop', function () {
-        $(this).find('ul').toggle()
+        if($(this).find('ul').hasClass('visible-drop')) {
+            $(this).find('ul').removeClass('visible-drop');
+        } else {
+            $('.drop ul').removeClass('visible-drop');
+            $(this).find('ul').addClass('visible-drop')
+        }
     });
     $(document).on('click', '.drop li', function () {
         $(this).parent().parent().find('span.blue-bold').text($(this).text())
