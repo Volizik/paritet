@@ -240,6 +240,10 @@ tbody {
     width: 20%;
   }
 
+
+  .content__section {
+    width: calc(100% - 380px);
+  }
   .list__footer {
     span {
       margin-bottom: 10px;
