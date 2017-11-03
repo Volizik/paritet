@@ -367,4 +367,57 @@ $(function () {
         $('.issuer-bills-statement .period').removeClass('active-period');
         $(this).addClass('active-period');
     })
+
+
+
+    $('.manager-meeting-agenda').each(function (i) {
+        if(i !=0) {
+            $(this).hide(0);
+        }
+    });
+    $(document).on('click', '.manager-header .action-btn a', function (e) {
+        e.preventDefault();
+        var btn = $('.action-btn > a');
+        var tabId = $(this).attr('href');
+        $('.manager-meeting-agenda').hide(0);
+        $(tabId).fadeIn();
+        if (btn.attr('href') !== '#manager-agenda') {
+            btn.html('Сохранить');
+            btn.attr('href', '#manager-agenda');
+            $('.header__menu a').removeClass('header__menu--active');
+            $('.header__menu a[href="#manager-meeting-agenda"]').addClass('header__menu--active');
+            $('.content__section').hide();
+            $('#manager-meeting-agenda').show();
+        } else {
+            if (tabId === '#manager-agenda') {
+                btn.attr('href', '#manager-agenda-settings').text('Изменить')
+            }
+        }
+
+    });
+
+
+    $(document).on('click', '.bullet-number', function () {
+        $('.bullet-number').removeClass('activeBullet');
+        $(this).addClass('activeBullet');
+    })
+    $(document).on('click', '.show-condition', function () {
+        $('.condition-hidden').addClass('show-condition-hidden');
+        $(this).hide();
+    })
+    $(document).on('click', '.hide-condition', function () {
+        $('.condition-hidden').removeClass('show-condition-hidden');
+        $('.show-condition').show();
+    })
+    $(document).on('click', '.hide-voting-settings', function () {
+
+        if ($('.agenda-settings__hidden').hasClass('is-hidden')) {
+            $('.hide-voting-settings').text('Скрыть настройки голосования')
+            $('.agenda-settings__hidden').removeClass('is-hidden').slideDown('fast')
+        } else {
+            $('.agenda-settings__hidden').addClass('is-hidden').slideUp('fast')
+            $('.hide-voting-settings').text('Показать настройки голосования')
+        }
+
+    })
 });
