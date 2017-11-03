@@ -327,6 +327,7 @@ tbody {
     color: #fff;
     font-size: 13px;
     cursor: pointer;
+    border: none;
   }
   .voting-answer {
     color: grey;
@@ -404,6 +405,9 @@ tbody {
 }
 
 .manager-meeting-cabinet {
+  h2 {
+    padding: 0;
+  }
   .content__block {
     &:first-of-type {
       border-top: none;
@@ -446,12 +450,14 @@ tbody {
       width: 170px;
       padding-right: 10px;
       box-sizing: border-box;
+      font-size: 13px;
     }
     &--desc {
       width: calc(100% - 170px);
       span {
         display: block;
         padding: 3px 0;
+        font-size: 13px;
       }
     }
   }
@@ -532,6 +538,12 @@ tbody {
     }
   }
 
+  .voting-order {
+    color: $blue;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
   .divide-voting {
     display: block;
     font-size: 13px;
@@ -548,6 +560,19 @@ tbody {
       box-sizing: border-box;
       background-color: #777;
       border-radius: 50%;
+    }
+  }
+  label.voting-actions__choice--item {
+    background-color: #ccc;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+    &:checked + label {
+      background-color: #5ccc3d;
+      transition: .3s;
     }
   }
 }
