@@ -419,5 +419,32 @@ $(function () {
             $('.hide-voting-settings').text('Показать настройки голосования')
         }
 
+    });
+
+
+
+    $(document).on( 'click', '.load-list', function () {
+        if($(this).hasClass('grey')) return false;
+        $(this).attr('data-btn-text', 'Список загружается...').addClass('orange');
+
+        setTimeout(function () {
+            $('.load-list').attr('data-btn-text', 'Список получен 12.05. 2017, 15:06').removeClass('orange').addClass('grey');
+        }, 2000)
+    })
+
+    $(document).on('click', 'label[for="applies"]',function () {
+        if($('#applies').is(':checked')) {
+            $(this).closest('.content__block').find('.voting-date').addClass('voting-date-hidden')
+        } else {
+            $(this).closest('.content__block').find('.voting-date').removeClass('voting-date-hidden')
+        }
+    })
+    
+    $(document).on('click', '.show-constraints', function () {
+        $('.constraints').toggleClass('constraints-hidden');
+    })
+    
+    $(document).on('click', '.info-affix', function () {
+        $(this).closest('.content__block').find('.add-files').fadeIn('fast')
     })
 });
