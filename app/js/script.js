@@ -167,6 +167,9 @@ $(function () {
     $(document).on('click', 'tbody .vil-bill', function() {
         window.location = "/paritet/manager-voting-form.html";
     });
+    $(document).on('click', 'tbody .ai-register', function() {
+        window.location = "/paritet/admin-issuer-cabinet.html";
+    });
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
