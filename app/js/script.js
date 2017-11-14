@@ -27,20 +27,20 @@ $(function () {
 
     /*------------------start header tabs--------------------*/
 
-    $('.content__section').each(function (i) {
-        if(i !=0) {
-            $(this).hide(0);
-        }
-    });
-
-    $(document).on('click', '.header__menu a', function (e) {
-        e.preventDefault();
-        var tabId = $(this).attr('href');
-        $('.header__menu a').removeClass('header__menu--active');
-        $(this).addClass('header__menu--active');
-        $('.content__section').hide(0);
-        $(tabId).fadeIn();
-    });
+    // $('.content__section').each(function (i) {
+    //     if(i !=0) {
+    //         $(this).hide(0);
+    //     }
+    // });
+    //
+    // $(document).on('click', '.header__menu a', function (e) {
+    //     e.preventDefault();
+    //     var tabId = $(this).attr('href');
+    //     $('.header__menu a').removeClass('header__menu--active');
+    //     $(this).addClass('header__menu--active');
+    //     $('.content__section').hide(0);
+    //     $(tabId).fadeIn();
+    // });
 
     /*--------------------end header tabs--------------------*/
 
@@ -170,6 +170,13 @@ $(function () {
     $(document).on('click', 'tbody .ai-register', function() {
         window.location = "/paritet/admin-issuer-cabinet.html";
     });
+    $(document).on('click', 'tbody .iml-number', function() {
+        window.location = "/paritet/issuer-meeting-cabinet.html";
+    });
+    $(document).on('click', 'tbody .mml-number', function() {
+        window.location = "/paritet/manager-meeting-cabinet.html";
+    });
+
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
@@ -329,6 +336,27 @@ $(function () {
         $(this).parent().hide();
         $('.header__filter--field .filter--input').show();
     });
+
+
+
+
+    $(document).on('click', '.sidebar__item .active-now',function () {
+        $('.header__filter--field .filter--input').hide();
+        $('.autofilter').hide();
+        $('.autofilter[data-id="active-now"]').css('display', 'flex');
+
+    });
+    $(document).on('click', '.sidebar__item .meeting',function () {
+        $('.header__filter--field .filter--input').hide();
+        $('.autofilter').hide();
+        $('.autofilter[data-id="meeting"]').css({'display': 'flex'});
+
+    });
+
+
+
+
+
 
     $(document).on('click', '.filter .filter tr', function () {
         $('.filter .filter tr').removeClass('activeTr');

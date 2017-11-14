@@ -29,7 +29,6 @@
   }
 
 
-
   //.bl-type {
   //  width: 26%;
   //}
@@ -123,4 +122,32 @@
   //.b-owner {
   //  width: 20%;
   //}
+}
+
+thead {
+  .iml-number {
+    width: 10%;
+  }
+  .iml-status,
+  .iml-date {
+    width: 20%;
+  }
+}
+tbody {
+  .iml-number {
+    color: $someone!important;
+    font-weight: 700;
+    transition: .4s;
+    cursor: pointer;
+    &:hover {
+      color: $someone-hover!important;
+      transition: .4s;
+    }
+    a {
+      color: $someone!important;
+      &:visited {
+        color: $someone;
+      }
+    }
+  }
 }
