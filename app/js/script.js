@@ -1,115 +1,6 @@
 $(function () {
 
 
-    /*------------------start login tabs--------------------*/
-
-    $('.main__form--content').each(function (i) {
-        if(i !=0) {
-            $(this).hide(0);
-        }
-    });
-
-    $(document).on('click', '.main__form--buttons a', function (e) {
-        e.preventDefault();
-        var tabId = $(this).attr('href');
-        $('.main__form--buttons a').removeClass('active');
-        $(this).addClass('active');
-        $('.main__form--content').hide(0);
-        $(tabId).fadeIn();
-    });
-
-    /*------------------end login tabs--------------------*/
-
-
-
-
-
-
-    /*------------------start header tabs--------------------*/
-
-    // $('.content__section').each(function (i) {
-    //     if(i !=0) {
-    //         $(this).hide(0);
-    //     }
-    // });
-    //
-    // $(document).on('click', '.header__menu a', function (e) {
-    //     e.preventDefault();
-    //     var tabId = $(this).attr('href');
-    //     $('.header__menu a').removeClass('header__menu--active');
-    //     $(this).addClass('header__menu--active');
-    //     $('.content__section').hide(0);
-    //     $(tabId).fadeIn();
-    // });
-
-    /*--------------------end header tabs--------------------*/
-
-
-
-
-    /*------------------start edit user tabs--------------------*/
-
-    $('.content__user').each(function (i) {
-        if(i !=0) {
-            $(this).hide(0);
-        }
-    });
-
-    $(document).on('click', '.user-header .action-btn a', function (e) {
-        e.preventDefault();
-        var btn = $('.action-btn > a');
-        var tabId = $(this).attr('href');
-        $('.content__user').hide(0);
-        $(tabId).fadeIn();
-        if (btn.attr('href') !== '#user-cabinet') {
-            btn.html('Сохранить');
-            btn.attr('href', '#user-cabinet');
-            $('.header__menu a').removeClass('header__menu--active');
-            $('.header__menu a[href="#account-content"]').addClass('header__menu--active');
-            $('.content__section').hide();
-            $('#account-content').show();
-        } else {
-            if (tabId === '#user-cabinet') {
-                btn.attr('href', '#user-cabinet-edit').text('Изменить')
-            }
-        }
-
-    });
-    $('.content__group').each(function (i) {
-        if(i !=0) {
-            $(this).hide(0);
-        }
-    });
-    $(document).on('click', '.group-header .action-btn a', function (e) {
-        e.preventDefault();
-        var btn = $('.action-btn > a');
-        var tabId = $(this).attr('href');
-        $('.content__group').hide(0);
-        $(tabId).fadeIn();
-        if (btn.attr('href') !== '#group-cabinet') {
-            btn.html('Сохранить');
-            btn.attr('href', '#group-cabinet');
-            $('.header__menu a').removeClass('header__menu--active');
-            $('.header__menu a[href="#group-content"]').addClass('header__menu--active');
-            $('.content__section').hide();
-            $('#group-content').show();
-        } else {
-            if (tabId === '#group-cabinet') {
-                btn.attr('href', '#group-cabinet-edit').text('Изменить')
-            }
-        }
-
-    });
-
-
-
-
-
-    /*--------------------end edit user tabs--------------------*/
-
-
-
-
 
     /*-------------------start action-btn---------------------*/
 
@@ -150,13 +41,13 @@ $(function () {
     /*-------------------SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
     $(document).on('click', '.someone', function() {
-        window.location = "/paritet/admin-users-cabinet.html";
+        window.location = "/paritet/admin-user-cabinet-account-main.html";
     });
     $(document).on('click', '.someone-group', function() {
-        window.location = "/paritet/admin-groups-cabinet.html";
+        window.location = "/paritet/admin-groups-cabinet-group-main.html";
     });
     $(document).on('click', 'tbody .bill-num', function() {
-        window.location = "/paritet/issuer-bills-cabinet.html";
+        window.location = "/paritet/issuer-bills-cabinet-bill.html";
     });
     $(document).on('click', 'tbody .mi-register', function() {
         window.location = "/paritet/manager-issuer-cabinet.html";
@@ -171,10 +62,10 @@ $(function () {
         window.location = "/paritet/admin-issuer-cabinet.html";
     });
     $(document).on('click', 'tbody .iml-number', function() {
-        window.location = "/paritet/issuer-meeting-cabinet.html";
+        window.location = "/paritet/issuer-meeting-cabinet-info.html";
     });
     $(document).on('click', 'tbody .mml-number', function() {
-        window.location = "/paritet/manager-meeting-cabinet.html";
+        window.location = "/paritet/manager-meeting-cabinet-info.html";
     });
 
 
@@ -401,31 +292,6 @@ $(function () {
 
 
 
-    $('.manager-meeting-agenda').each(function (i) {
-        if(i !=0) {
-            $(this).hide(0);
-        }
-    });
-    $(document).on('click', '.manager-header .action-btn a', function (e) {
-        e.preventDefault();
-        var btn = $('.action-btn > a');
-        var tabId = $(this).attr('href');
-        $('.manager-meeting-agenda').hide(0);
-        $(tabId).fadeIn();
-        if (btn.attr('href') !== '#manager-agenda') {
-            btn.html('Сохранить');
-            btn.attr('href', '#manager-agenda');
-            $('.header__menu a').removeClass('header__menu--active');
-            $('.header__menu a[href="#manager-meeting-agenda"]').addClass('header__menu--active');
-            $('.content__section').hide();
-            $('#manager-meeting-agenda').show();
-        } else {
-            if (tabId === '#manager-agenda') {
-                btn.attr('href', '#manager-agenda-settings').text('Изменить')
-            }
-        }
-
-    });
 
 
     $(document).on('click', '.bullet-number', function () {
