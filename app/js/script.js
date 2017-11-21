@@ -281,7 +281,10 @@ $(function () {
     /*------------gropdown-user-icon---------------*/
     $(document).on('click', '.header__user', function () {
         $(this).find('.header__user--menu').fadeToggle('fast')
-    })
+    });
+    $(document).on('click', '.header__user .user-icon', function (e) {
+        e.preventDefault()
+    });
     /*------------gropdown-user-icon---------------*/
 
 

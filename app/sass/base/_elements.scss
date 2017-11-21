@@ -113,8 +113,12 @@ $someone-hover: #004680;
     height: 100%;
     transition: .4s;
     &:before {
-      border-top-color: #fff;
+      content: '';
+      position: relative;
       @include center;
+      border-top: 5px solid;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
     }
     &:active {
       background-color: $green-btn-active;
