@@ -151,3 +151,128 @@ tbody {
     }
   }
 }
+
+.content__aside {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 0;
+  padding-left: 40px;
+  box-sizing: border-box;
+  &--item {
+    margin-bottom: 30px;
+  }
+  &--title {
+    color: $blue;
+    font-size: 16px;
+  }
+  &--text {
+    color: #777;
+    font-size: 14px;
+    max-width: 280px
+  }
+  &--order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &--price {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+  }
+  &--btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 30px;
+    min-width: 100px;
+    border: none;
+    color: #fff;
+    background-color: $someone;
+    cursor: pointer;
+  }
+}
+
+.content__messages {
+  display: flex;
+  flex-direction: column;
+  .not-read-message {
+    border-color: #5ccc3d!important;
+    .content__message--title {
+      font-weight: 700!important;
+    }
+  }
+  .read-message {
+    border-color: #f29c24!important;
+  }
+  .not-active-message {
+    border-color: #777!important;
+    color: #777!important;
+  }
+}
+.content__message {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-left: 3px solid transparent;
+  margin-bottom: 20px;
+  &--row {
+    display: flex;
+    padding: 4px 0;
+  }
+  &--title {
+    font-size: 15px;
+  }
+  &--more {
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0px 5px 5px;
+    span {
+      display: block;
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      border: 1px solid $blue;
+      margin: 0px 1px;
+      box-sizing: border-box;
+    }
+    &:before,
+    &:after {
+      display: block;
+      content: '';
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      border: 1px solid $blue;
+      margin: 0px 1px;
+      box-sizing: border-box;
+    }
+  }
+  &--add {
+    box-sizing: border-box;
+    padding: 0px 3px;
+    cursor: pointer;
+    input {
+      display: none;
+    }
+  }
+  &--date {
+    margin-left: auto;
+    font-size: 13px;
+  }
+  &--from {
+    margin: 0;
+    font-size: 13px;
+  }
+  &--term {
+    margin: 0;
+    font-size: 13px;
+    color: #777;
+  }
+}

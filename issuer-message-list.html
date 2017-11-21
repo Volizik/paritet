@@ -14,7 +14,7 @@
 <!-- open .header -->
 <!-- end html_open.html-->
 <div class="wrap">
-<!-- start meeting-sidebar.html-->
+<!-- start message-list-sidebar.html-->
 <aside class="sidebar">
     <div class="sidebar__logo">
         <span class="logo"></span>
@@ -22,8 +22,8 @@
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
-            <img src="images/icons/sidebar-icon4.png" alt="">
-            <a href="issuer-message-list.html">Сообщения</a>
+            <img src="images/icons/sidebar-icon4-blue.png" alt="">
+            <a class="active-item" href="issuer-message-list.html">Сообщения</a>
         </div>
         <ul>
             <li><span class="">Документы</span></li>
@@ -33,8 +33,8 @@
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
-            <img src="images/icons/sidebar-icon4-blue.png" alt="">
-            <a class="active-item" href="issuer-meeting-list.html">Корп. Действия</a>
+            <img src="images/icons/sidebar-icon4.png" alt="">
+            <a href="/paritet/issuer-meeting-list.html">Корп. Действия</a>
         </div>
         <ul>
             <li><span class="active-now">Активные сейчас</span></li>
@@ -44,7 +44,7 @@
     <div class="sidebar__item">
         <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon5.png" alt="">
-            <a href="issuer-bills-list.html">Счета</a>
+            <a href="/paritet/issuer-bills-list.html">Счета</a>
         </div>
     </div>
     <div class="sidebar__footer">
@@ -52,9 +52,9 @@
         <p>a.melnikova@paritet.ru<span>+7 495 994 7275</span></p>
     </div>
 </aside>
-<!-- end meeting-sidebar.html-->
+<!-- end message-list-sidebar.html-->
     <div class="container">
-<!-- start meeting-list-header.html-->
+<!-- start message-list-header.html-->
 <header class="header">
 
     <div class="header__filter">
@@ -134,44 +134,82 @@
     </div>
 
 </header>
-<!-- end meeting-list-header.html-->
-<!-- start meeting-list.html-->
+<!-- end message-list-header.html-->
+<!-- start message-list-content.html-->
 <main class="content manager-meeting-list">
 
     <div class="content__section">
-        <table class="manager-voting-list table">
 
-            <thead>
-            <tr>
-                <th class="iml-number"><span>Номер</span></th>
-                <th class="iml-name"><span>Наименование</span></th>
-                <th class="iml-status"><span>Статус</span></th>
-                <th class="iml-date"><span>Дата</span></th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr>
-                <td><a href="#" class="iml-number">5003456</a></td>
-                <td class="iml-name"><span>Годовое общее собрание акционеров АО«Теплотехстроймаш»</span></td>
-                <td class="green"><span>Голосование</span></td>
-                <td><span>04.06.2017</span></td>
-            </tr>
-            <tr class="grey">
-                <td><a href="#" class="iml-number">5003456</a></td>
-                <td class="iml-name"><span>Внеочередное общее собрание акционеров АО«Теплотехстроймаш»</span></td>
-                <td><span>Закрыто</span></td>
-                <td><span>03.06.2017</span></td>
-            </tr>
-            <tr class="grey">
-                <td><a href="#" class="iml-number">5003456</a></td>
-                <td class="iml-name"><span>Годовое общее собрание акционеров АО«Теплотехстроймаш»</span></td>
-                <td><span>Закрыто</span></td>
-                <td><span>04.06.2017</span></td>
-            </tr>
-            </tbody>
-
-        </table>
+        <div class="content__messages">
+            <div class="content__message not-read-message">
+                <div class="content__message--row">
+                    <span class="content__message--title">Запрос на проведение собрания (4)</span>
+                    <span class="content__message--more"><span></span></span>
+                    <label  class="content__message--add">
+                        <img src="images/icons/affix.png" alt="add-files">
+                        <input type="file">
+                    </label>
+                    <span class="content__message--date">15:29</span>
+                </div>
+                <div class="content__message--row">
+                    <p class="content__message--from">Потапов Владимир Иванович | ОАО «Теплотехстроймаш» (87583)</p>
+                </div>
+                <div class="content__message--row">
+                    <p class="content__message--term">Срок: 10.10.2017 | Исполнитель: Евгений Потребин</p>
+                </div>
+            </div>
+            <div class="content__message read-message">
+                <div class="content__message--row">
+                    <span class="content__message--title">Запрос на проведение собрания (4)</span>
+                    <span class="content__message--more"><span></span></span>
+                    <label  class="content__message--add">
+                        <img src="images/icons/affix.png" alt="add-files">
+                        <input type="file">
+                    </label>
+                    <span class="content__message--date">15:29</span>
+                </div>
+                <div class="content__message--row">
+                    <p class="content__message--from">Потапов Владимир Иванович | ОАО «Теплотехстроймаш» (87583)</p>
+                </div>
+                <div class="content__message--row">
+                    <p class="content__message--term">Срок: 10.10.2017 | Исполнитель: Евгений Потребин</p>
+                </div>
+            </div>
+            <div class="content__message not-active-message">
+                <div class="content__message--row">
+                    <span class="content__message--title">Запрос на проведение собрания (4)</span>
+                    <span class="content__message--more"><span></span></span>
+                    <label  class="content__message--add">
+                        <img src="images/icons/affix.png" alt="add-files">
+                        <input type="file">
+                    </label>
+                    <span class="content__message--date">15:29</span>
+                </div>
+                <div class="content__message--row">
+                    <p class="content__message--from">Потапов Владимир Иванович | ОАО «Теплотехстроймаш» (87583)</p>
+                </div>
+                <div class="content__message--row">
+                    <p class="content__message--term">Срок: 10.10.2017 | Исполнитель: Евгений Потребин</p>
+                </div>
+            </div>
+            <div class="content__message not-active-message">
+                <div class="content__message--row">
+                    <span class="content__message--title">Запрос на проведение собрания (4)</span>
+                    <span class="content__message--more"><span></span></span>
+                    <label  class="content__message--add">
+                        <img src="images/icons/affix.png" alt="add-files">
+                        <input type="file">
+                    </label>
+                    <span class="content__message--date">15:29</span>
+                </div>
+                <div class="content__message--row">
+                    <p class="content__message--from">Потапов Владимир Иванович | ОАО «Теплотехстроймаш» (87583)</p>
+                </div>
+                <div class="content__message--row">
+                    <p class="content__message--term">Срок: 10.10.2017 | Исполнитель: Евгений Потребин</p>
+                </div>
+            </div>
+        </div>
 
         <div class="list__footer">
             <p><span>Больше нет документов для просмотра</span> <span>Для создания нового
@@ -180,17 +218,38 @@
         </div>
     </div>
 
-    <div class="calendar">
-        <table id="calendar2">
-            <thead>
-            <tr class="calendar__head"><td class="calendar__arrow">‹<td colspan="5"><td class="calendar__arrow">›
-            <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
-            <tbody>
-        </table>
+    <div class="content__aside">
+        <div class="content__aside--item">
+            <div class="calendar">
+            <table id="calendar2">
+                <thead>
+                <tr class="calendar__head"><td class="calendar__arrow">‹<td colspan="5"><td class="calendar__arrow">›
+                <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+                <tbody>
+            </table>
+        </div>
+        </div>
+        <div class="content__aside--item">
+            <p class="content__aside--title">Услуги счетной комиссии</p>
+            <p class="content__aside--text">Сбор и обработка бюллетеней, пример описательного текста в три строки (не более)</p>
+            <div class="content__aside--order">
+                <span class="content__aside--price">6000 руб.</span>
+                <button class="content__aside--btn">Заказать</button>
+            </div>
+        </div>
+        <div class="content__aside--item">
+            <p class="content__aside--title">Услуги счетной комиссии</p>
+            <p class="content__aside--text">Сбор и обработка бюллетеней, пример описательного текста в три строки (не более)</p>
+            <div class="content__aside--order">
+                <span class="content__aside--price">6000 руб.</span>
+                <button class="content__aside--btn">Заказать</button>
+            </div>
+        </div>
     </div>
 
+
 </main>
-<!-- end meeting-list.html-->
+<!-- end message-list-content.html-->
     </div>
 </div>
 <!-- start html_close.html-->

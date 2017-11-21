@@ -76,6 +76,9 @@ $(function () {
     $('.content__section').mCustomScrollbar({
         theme: "my-theme"
     });
+    $('.content__aside').mCustomScrollbar({
+        theme: "my-theme"
+    });
     $('.content__section .filter__body').mCustomScrollbar({
         theme: "my-theme"
     });
