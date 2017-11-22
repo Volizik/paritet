@@ -22,7 +22,9 @@ $(function () {
     });
 
     /*---------------------end action-btn---------------------*/
-    
+
+
+
     
     
     
@@ -284,6 +286,10 @@ $(function () {
     /*------------gropdown-user-icon---------------*/
     $(document).on('click', '.header__user', function () {
         $(this).find('.header__user--menu').fadeToggle('fast')
+    });
+    $(document).click(function(event) {
+        if ($(event.target).closest(".header__user").length) return;
+        $(".header__user--menu").fadeOut("fast");
     });
     $(document).on('click', '.header__user .user-icon', function (e) {
         e.preventDefault()
