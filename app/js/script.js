@@ -350,4 +350,22 @@ $(function () {
     $(document).on('click', '.info-affix', function () {
         $(this).closest('.content__block').find('.add-files').fadeIn('fast')
     })
+    
+    
+    $(document).on('click', '.active-question>span', function () {
+        $(this).parent().find('.active-question__content').fadeIn('fast')
+    })
+    $(document).on('click', '.active-question .cancel', function () {
+        $(this).closest('.active-question__content').fadeOut('fast')
+    })
+
+    $(document).on('click', '.show-all-state', function () {
+        if($('.hidden-row').hasClass('hidden')) {
+            $('.hidden-row').removeClass('hidden');
+            $(this).text('Всего(скрыть)')
+        } else {
+            $('.hidden-row').addClass('hidden');
+            $(this).text('Всего(показать)')
+        }
+    })
 });

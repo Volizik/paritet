@@ -13,6 +13,45 @@ $someone-hover: #004680;
   transform: translate(-50%, -50%);
 }
 
+.active-question {
+  display: inline-block;
+  position: relative;
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: $blue;
+    color: #fff;
+  }
+  &__content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    box-shadow: 0 5px 10px 5px #ddd;
+    background-color: #fff;
+    z-index: 20;
+    p {
+      color: #000;
+      font-size: 14px;
+      margin: 10px 0 ;
+    }
+  }
+  &__text {
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  &__actions {
+    padding: 20px 15px;
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+}
 
 .arrow-down {
   &:before {
