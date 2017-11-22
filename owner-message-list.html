@@ -23,7 +23,7 @@
     <div class="sidebar__item">
         <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon4-blue.png" alt="">
-            <a class="active-item" href="issuer-message-list.html">Сообщения <span class="number-amount">1</span></a>
+            <a class="active-item" href="owner-message-list.html">Сообщения <span class="number-amount">2</span></a>
         </div>
         <ul>
             <li><span class="">Документы</span></li>
@@ -33,20 +33,23 @@
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
-            <img src="images/icons/sidebar-icon4.png" alt="">
-            <a href="/paritet/issuer-meeting-list.html">Корп. Действия</a>
+            <img src="images/icons/sidebar-icon5.png" alt="">
+            <a href="owner-bills-cabinet-info.html">Счета</a>
         </div>
-        <ul>
-            <li><span class="active-now">Активные сейчас</span></li>
-            <li><span class="meeting">Собрания</span></li>
-        </ul>
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
-            <img src="images/icons/sidebar-icon5.png" alt="">
-            <a href="/paritet/issuer-bills-list.html">Счета</a>
+            <img src="images/icons/sidebar-icon1.png" alt="">
+            <a href="owner-issuer-list.html">Эмитент</a>
         </div>
     </div>
+    <div class="sidebar__item">
+        <div class="sidebar__item--header">
+            <img src="images/icons/sidebar-icon6.png" alt="">
+            <a href="#">Голосование <span class="number-amount">1</span></a>
+        </div>
+    </div>
+
     <div class="sidebar__footer">
         <p>Ваш персональный менеджер:<b>Анастасия Мельникова</b></p>
         <p>a.melnikova@paritet.ru<span>+7 495 994 7275</span></p>
@@ -129,16 +132,31 @@
     </div>
 
     <div class="header__user">
-        <img src="images/icons/issuer-icon.png" alt="">
-        <a href="#" class="someone">Евгения Власова<span>Эмитент АО «Теплотехстроймаш»</span></a>
+        <img src="images/icons/add-photo.png" alt="">
+        <a href="#" class="someone">Павел Михайлов<span>Зарегистрированное лицо</span></a>
     </div>
 
 </header>
 <!-- end message-list-header.html-->
 <!-- start message-list-content.html-->
-<main class="content manager-meeting-list">
+<main class="content owner">
 
     <div class="content__section">
+
+        <div class="write-msg">
+            <form>
+                <div class="write-msg__header">
+                    <span class="blue-bold">Кому</span>
+                </div>
+                <div class="write-msg__body">
+                    <textarea placeholder="Введите текст сообщения здесь"></textarea>
+                </div>
+                <div class="write-msg__footer">
+                    <input type="submit" class="submit" value="Отправить">
+                    <input type="button" class="cancel" value="Отмена">
+                </div>
+            </form>
+        </div>
 
         <div class="content__messages">
             <div class="content__message not-read-message">

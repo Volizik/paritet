@@ -366,12 +366,26 @@ $(function () {
     })
 
     $(document).on('click', '.show-all-state', function () {
-        if($('.hidden-row').hasClass('hidden')) {
-            $('.hidden-row').removeClass('hidden');
+        var parent = $(this).closest('tr');
+        var row = $('.hidden-row');
+        if(parent.find(row).hasClass('hidden')) {
+            parent.find(row).removeClass('hidden');
             $(this).text('Всего(скрыть)')
         } else {
-            $('.hidden-row').addClass('hidden');
+            parent.find(row).addClass('hidden');
             $(this).text('Всего(показать)')
         }
     })
+
+
+
+    if($('.write-msg')) {
+        $(document).on('click', '.show-write-msg', function () {
+            $('.write-msg').fadeIn('fast');
+        })
+        $(document).on('click', '.write-msg .cancel', function () {
+            $('.write-msg').fadeOut('fast');
+        })
+    }
+
 });
