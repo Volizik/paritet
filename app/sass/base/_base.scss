@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 html{
     width: 100%;
 }
@@ -10,11 +13,10 @@ body{
     font-style: inherit;
     text-align: left;
     vertical-align: baseline;
-    //font-family: 'Open Sans', sans-serif;
-    //font-family: 'PT Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
-    //font-family: 'Source Sans Pro', sans-serif;
-    //font-family: 'Lato', sans-serif;
+    height: 100vh;
+    overflow-y: hidden;
+
 }
 
 a {
@@ -36,6 +38,10 @@ textarea{
     &:hover, &:focus, &:active{
         outline: none;
     }
+}
+
+li {
+    list-style: none;
 }
 
 %clearfix {

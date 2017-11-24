@@ -1,0 +1,181 @@
+.issuer-bills-cabinet {
+  .content__block--row {
+    align-items: baseline;
+    min-height: 25px;
+    height: auto;
+  }
+}
+
+
+.issuer-bills {
+  .content__block {
+    &:first-of-type {
+      border-top: none;
+    }
+  }
+  .content__block--type {
+    min-width: 150px;
+    width: 200px;
+  }
+}
+
+.issuer-bills-bill {
+  .content__block {
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+
+  //.bl-type {
+  //  width: 26%;
+  //}
+  //.bl-num {
+  //  width: 15%;
+  //}
+  //.bl-state {
+  //  width: 31%;
+  //}
+  //.bl-par {
+  //  width: 14%;
+  //  text-align: right;
+  //}
+  //.bl-sum {
+  //  width: 14%;
+  //  text-align: right;
+  //}
+
+}
+
+.issuer-bills-balance {
+  >table {
+    width: 90%;
+    th,td {
+      &:nth-of-type(4) {
+        text-align: right;
+      }
+      &:nth-of-type(5) {
+        text-align: right;
+      }
+    }
+    tbody {
+      td {
+        vertical-align: top;
+        padding-top: 14px;
+        box-sizing: border-box;
+      }
+    }
+    .hidden-row {
+      span {
+        display: block;
+        padding: 5px 0;
+        &:first-of-type {
+          padding-top: 10px;
+        }
+      }
+    }
+    .show-all-state {
+      display: block;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+
+    .bl-par,
+    .bl-sum {
+      width: 13%;
+    }
+  }
+}
+
+.issuer-bills-statement {
+  >table {
+    width: 90%;
+    th,td {
+      &:nth-of-type(3) {
+        text-align: right;
+      }
+      &:nth-of-type(4) {
+        text-align: right;
+      }
+    }
+  }
+  .arrow-down {
+    display: inline-flex;
+    margin-left: 10px;
+    &:before {
+      border-top-color: $someone;
+    }
+  }
+  .mr5 {
+    margin-right: 5px;
+  }
+  .active-period {
+    color: #000!important;
+  }
+  .st-date {
+    width: 160px;
+  }
+  //.st-review {
+  //  width: 54%;
+  //}
+  //.st-enroll{
+  //  width: 13%;
+  //}
+  //.st-off {
+  //  width: 13%;
+  //}
+}
+
+
+.iss-bills-list {
+
+  //.b-number {
+  //  width: 13%;
+  //}
+  //.b-issuer {
+  //  width: 20%;
+  //}
+  //.b-sort {
+  //  width: 13%;
+  //}
+  //.b-mode {
+  //  width: 37%;
+  //}
+  //.b-owner {
+  //  width: 20%;
+  //}
+}
+
+thead {
+  .iml-number {
+    width: 10%;
+  }
+  .iml-status,
+  .iml-date {
+    width: 20%;
+  }
+}
+tbody {
+  .iml-number {
+    color: $someone!important;
+    font-weight: 700;
+    transition: .4s;
+    cursor: pointer;
+    &:hover {
+      color: $someone-hover!important;
+      transition: .4s;
+    }
+    a {
+      color: $someone!important;
+      &:visited {
+        color: $someone;
+      }
+    }
+  }
+}
+
+
+
+
