@@ -9,8 +9,7 @@
             <div class="content__block">
                 <div class="content__block--row">
                     <div class="content__block--type"><span>Статус собрания:</span></div>
-                    <div class="content__block--value"><a href="#editing-registrar" class="link-color open_modal">Редактируется
-                        регистратором</a></div>
+                    <div class="content__block--value"><span class="edit-status-meeting blue-bold">Редактируется регистратором</span></div>
                 </div>
                 <div class="content__block--row blue">
                     <div class="content__block--type"><span>Эмитент:</span></div>
@@ -74,11 +73,28 @@
                     <div class="content__block--value"><span>31.05.2017 - 23:59 (московское время)</span></div>
                 </div>
             </div>
-            <button class="show-meetings">Показать ход собрания</button>
 
-            <div class="meetings meetings-hidden">
-                Собрания
+            <div class="content__block">
+                <div class="content__block--row">
+                    <button class="show-meetings">Показать ход собрания</button>
+                </div>
+                <div class="meetings meetings-hidden">
+                    <div class="content__block--row">
+                        <div class="content__block--type"><span>Время начала регистрации:</span></div>
+                        <div class="content__block--value"><span>13:35</span></div>
+                    </div>
+                    <div class="content__block--row">
+                        <div class="content__block--type"><span>Время окончания регистрации:</span></div>
+                        <div class="content__block--value"><span>13:35</span></div>
+                    </div>
+                    <div class="content__block--row">
+                        <div class="content__block--type"><span>Время начала подсчета голосов:</span></div>
+                        <div class="content__block--value"><span>13:35</span></div>
+                    </div>
+                </div>
+
             </div>
+
             <div class="content__block">
                 <div class="agenda-settings__row">
                     <div class="agenda-settings__key">Участвуют</div>
@@ -144,29 +160,23 @@
 
             </div>
 
+            <div class="modal">
+                <div class="modal__header">
+                    <h2>Текущий статус: Редактирование регистратором</h2>
+                    <span class="t-delete"></span>
+                </div>
+                <div class="modal__body">
+                    <label><input type="radio" name="question-agenda">Редактирование эмитентом</label>
+                    <label><input type="radio" name="question-agenda">Собрание открыто</label>
+                    <label><input type="radio" name="question-agenda">Досрочное голосование</label>
+                </div>
+                <div class="modal__footer">
+                    <button class="submit">Создать</button>
+                    <button class="cancel">Отмена</button>
+                </div>
+            </div>
+
         </div>
 
     </section>
-    <div id="editing-registrar" class="modal_div">
-        <div class="editing-registrar-head">
-            <h3>Текущий статус: Редактирование регистратором</h3>
-            <span class="modal_close"><i class="fa fa-times link-color" aria-hidden="true"></i></span>
-        </div>
-        <div class="editing-registrar-content">
-            <form action="#">
-                <input type="radio" id="editing-issuer" name="gender" value="female">
-                <label for="editing-issuer"> Редактирование эмитентом </label>
-                <input type="radio" id="meeting-open" name="gender" value="male">
-                <label for="meeting-open"> Собрание открыто</label>
-
-                <input type="radio" id="early-voting" name="gender" value="other">
-                <label for="early-voting">Досрочное голосование</label>
-            </form>
-        </div>
-        <div class="editing-registrar-footer">
-            <button>Перевести в статус</button>
-            <button>Отмена</button>
-        </div>
-    </div>
-    <div id="overlay"></div>
 </main>

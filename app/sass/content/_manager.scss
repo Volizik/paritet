@@ -358,6 +358,14 @@ tbody {
       border-radius: 50%;
     }
   }
+
+  .agenda-question-edit {
+    display: none;
+  }
+  .is-hidden {
+    display: none;
+  }
+
 }
 
 .manager-meeting-cabinet {
@@ -564,17 +572,17 @@ tbody {
     .meeting-question-title {
       margin-right: 15px;
     }
-    .agenda-btn {
-      border: none;
-      background-color: transparent;
-      height: 30px;
-      width: 30px;
-      cursor: pointer;
-      img {
-        height: 15px;
-        width: 15px;
-        object-fit: contain;
-      }
+  }
+  .agenda-btn {
+    border: none;
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    img {
+      height: 15px;
+      width: 15px;
+      object-fit: contain;
     }
   }
 }
@@ -585,7 +593,45 @@ tbody {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
+
 .manager-meeting-agenda {
+
+  .agenda-table {
+    width: 100%;
+    border-bottom: none;
+    border-collapse: separate!important;
+    tr {
+      height: 31px;
+      border: none;
+    }
+    td {
+      border-bottom: none!important;
+      box-sizing: border-box;
+      &:nth-of-type(1),
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        width: 30px;
+        text-align: center;
+      }
+      &:nth-of-type(2) {
+        width: 70%;
+        border: 1px solid #ccc!important;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+  .modal {
+    position: fixed;
+  }
+  .modal__body {
+    max-height: 215px;
+  }
+  .modal__footer {
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+  }
 
   .agenda-settings {
     &__cell {
@@ -672,15 +718,18 @@ tbody {
       &:last-of-type {
         padding-bottom: 0;
       }
-
-      .settings-btn {
-        font-size: 13px;
-        color: $blue;
-        font-weight: 700;
-        padding: 0;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
+      &--item {
+        display: flex;
+        align-items: center;
+        input {
+          display: block;
+          min-width: inherit;
+          width: 50px;
+          height: 30px;
+          margin-left: 10px;
+          margin-right: 30px;
+          text-align: center;
+        }
       }
     }
     &__key {
@@ -726,8 +775,20 @@ tbody {
 
       }
     }
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+    }
   }
-
+  .settings-btn {
+    font-size: 13px;
+    color: $blue;
+    font-weight: 700;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
   .bullet-numbers {
     margin-left: 20px;
     .bullet-number {
@@ -919,4 +980,22 @@ tbody {
       max-height: none;
     }
   }
+
+  .modal {
+    position: fixed;
+    h2 {
+      font-weight: 700;
+    }
+    &__footer {
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+    }
+  }
+
+  .meetings {
+    .content__block--type {
+      min-width: 250px;
+    }
+  }
+
 }

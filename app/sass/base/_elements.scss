@@ -237,6 +237,7 @@ $someone-hover: #004680;
   &__body {
     padding: 20px;
     box-sizing: border-box;
+    overflow: hidden;
     b {
       padding-top: 10px;
       font-size: 15px;
@@ -244,6 +245,19 @@ $someone-hover: #004680;
     }
     p {
       font-size: 14px;
+    }
+    select {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      padding: 4px 0;
+
+    }
+    input {
+      display: inline-block!important;
+      margin-right: 10px;
     }
   }
   &__footer {

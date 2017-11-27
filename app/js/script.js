@@ -87,6 +87,9 @@ $(function () {
     $('.filter .filter .filter__body').mCustomScrollbar({
         theme: "my-theme"
     });
+    $('.modal__body').mCustomScrollbar({
+        theme: "my-theme"
+    });
     /*----------------!scrollbar----------------*/
 
     $(document).on('click', '.filter--icon', function () {
@@ -320,12 +323,14 @@ $(function () {
     })
     $(document).on('click', '.hide-voting-settings', function () {
 
-        if ($('.agenda-settings__hidden').hasClass('is-hidden')) {
-            $('.hide-voting-settings').text('Скрыть настройки голосования')
-            $('.agenda-settings__hidden').removeClass('is-hidden').slideDown('fast')
+        var concrete = $(this).closest('.content__block');
+
+        if (concrete.find('.agenda-settings__hidden').hasClass('is-hidden')) {
+            concrete.find('.hide-voting-settings').text('Скрыть настройки голосования')
+            concrete.find('.agenda-settings__hidden').removeClass('is-hidden').slideDown('fast')
         } else {
-            $('.agenda-settings__hidden').addClass('is-hidden').slideUp('fast')
-            $('.hide-voting-settings').text('Показать настройки голосования')
+            concrete.find('.agenda-settings__hidden').addClass('is-hidden').slideUp('fast')
+            concrete.find('.hide-voting-settings').text('Показать настройки голосования')
         }
 
     });
@@ -354,7 +359,14 @@ $(function () {
     });
 
     $(document).on('click', '.show-meetings', function () {
-        $('.meetings').toggleClass('meetings-hidden');
+        if($('.meetings').hasClass('meetings-hidden')) {
+            $('.meetings').removeClass('meetings-hidden');
+            $(this).text('Скрыть ход собрания')
+        } else {
+            $('.meetings').addClass('meetings-hidden');
+            $(this).text('Показать ход собрания')
+        }
+
     });
 
     $(document).on('click', '.info-affix', function () {
@@ -382,6 +394,21 @@ $(function () {
     })
 
 
+    $(document).on('click', '.agenda-btn-edit', function () {
+        $(this).closest('.content__block').find('.agenda-question-content').toggle();
+        $(this).closest('.content__block').find('.agenda-question-edit').toggle();
+    })
+    $(document).on('click', '.agenda-btn-new-question', function () {
+        $('.manager-meeting-agenda .modal').hide();
+        $(this).closest('.content__block').find('.modal').show();
+    })
+    $(document).on('click', '.manager-meeting-agenda .cancel', function () {
+        $(this).closest('.content__block').find('.agenda-question-edit').hide();
+        $(this).closest('.content__block').find('.agenda-question-content').show();
+    })
+
+
+
 
     if($('.write-msg')) {
         $(document).on('click', '.show-write-msg', function () {
@@ -391,5 +418,15 @@ $(function () {
             $('.write-msg').fadeOut('fast');
         })
     }
+
+
+    $(document).on('click', '.modal__header .t-delete', function () {
+        $(this).closest('.modal').fadeOut('fast');
+    })
+
+    $(document).on('click', '.edit-status-meeting', function () {
+        $('.manager-meeting-info .modal').show()
+    })
+
 
 });
