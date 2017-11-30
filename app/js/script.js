@@ -79,9 +79,7 @@ $(function () {
         window.location = "owner-voting-cabinet-info.html";
     });
 
-
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
-
 
     /*----------------scrollbar----------------*/
     $('.content__section').mCustomScrollbar({

@@ -108,17 +108,12 @@ gulp.task("clean", function (cb) {
 
 gulp.task('extend-pages', function () {
     gulp.src('./app/html/pages/*.html')
-        .pipe(extender({annotations: true, verbose: false})) // default options
+        .pipe(extender({annotations: false, verbose: false})) // default options
         .pipe(gulp.dest('./'))
         .pipe(browserSync.stream({}));
 });
 
-gulp.task('extend-blocks', function () {
-    gulp.src('./app/html/*.html')
-        .pipe(extender({annotations: true, verbose: false})) // default options
-        .pipe(gulp.dest('./'))
-        .pipe(browserSync.stream({}));
-});
+
 
 gulp.task('watch', ['compress', 'extend-pages', 'css-libs', 'img', 'sass'], function () {
 
@@ -153,4 +148,4 @@ gulp.task('clear', function (callback) {
 gulp.task('default', ['watch', 'browser-sync']);
 
 /*
- npm i gulp gulp-sass browser-sync gulp-concat gulp-uglifyjs gulp-rename del gulp-imagemin imagemin-pngquant calipers-png calipers-jpeg calipers-gif gulp.spritesmith gulp-svgstore gulp-svgmin gulp-cache gulp-html-extend gulp-sourcemaps rimraf gulp-plumber gulp-postcss autoprefixer cssnano postcss-pxtorem postcss-px-to-em postcss-short stylefmt postcss-assets postcss-short-spacing postcss-focus postcss-sorting postcss-font-magician postcss-fixes stylelint-config-standard --save-dev*/
+ npm i gulp gulp-sass gulp-preprocess browser-sync gulp-concat gulp-uglifyjs gulp-rename del gulp-imagemin imagemin-pngquant calipers-png calipers-jpeg calipers-gif gulp.spritesmith gulp-svgstore gulp-svgmin gulp-cache gulp-html-extend gulp-sourcemaps rimraf gulp-plumber gulp-postcss autoprefixer cssnano postcss-pxtorem postcss-px-to-em postcss-short stylefmt postcss-assets postcss-short-spacing postcss-focus postcss-sorting postcss-font-magician postcss-fixes stylelint-config-standard --save-dev*/
