@@ -16,6 +16,33 @@
   }
 }
 
+thead {
+  .ov-register {
+    width: 10%;
+  }
+  .ov-voting {
+    width: 15%;
+  }
+}
+tbody {
+  .ov-register {
+    color: $someone!important;
+    font-weight: 700;
+    transition: .4s;
+    cursor: pointer;
+    &:hover {
+      color: $someone-hover!important;
+      transition: .4s;
+    }
+    a {
+      color: $someone!important;
+      &:visited {
+        color: $someone;
+      }
+    }
+  }
+}
+
 
 .owner-issuer-list {
   .table {

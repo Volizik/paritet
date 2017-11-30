@@ -8,6 +8,9 @@ thead {
   .vil-lk {
     width: 10%;
   }
+  .mi-inn {
+    width: 130px;
+  }
 }
 tbody {
   .mi-register,
@@ -202,7 +205,7 @@ tbody {
 
 
   .content__section {
-    width: calc(100% - 380px);
+    width: calc(100% - 320px);
   }
   .list__footer {
     span {
@@ -387,6 +390,7 @@ tbody {
   .content__block--type {
     padding: 0;
     min-width: inherit;
+    width: auto;
   }
 
   .meeting-question-title {

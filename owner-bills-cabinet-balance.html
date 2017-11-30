@@ -14,7 +14,7 @@
 <!-- open .header -->
 <!-- end html_open.html-->
 <div class="wrap">
-<!-- start bills-cabinet-sidebar.html-->
+<!-- start bills-sidebar.html-->
 <aside class="sidebar">
     <div class="sidebar__logo">
         <span class="logo"></span>
@@ -22,31 +22,20 @@
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
-            <img src="images/icons/sidebar-icon4.png" alt="">
-            <a href="owner-message-list.html">Сообщения <span class="number-amount">2</span></a>
-        </div>
-        <ul>
-            <li><span class="">Документы</span></li>
-            <li><span class="">Корп. действия</span></li>
-            <li><span class="">Собрания</span></li>
-        </ul>
-    </div>
-    <div class="sidebar__item">
-        <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon5-blue.png" alt="">
-            <a class="active-item" href="owner-bills-cabinet-info.html">Счета</a>
+            <a href="owner-bills-list.html" class="active-item">Счета</a>
         </div>
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon1.png" alt="">
-            <a href="owner-issuer-list.html">Эмитент</a>
+            <a href="owner-issuer-list.html">Эмитенты</a>
         </div>
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon6.png" alt="">
-            <a href="#">Голосование <span class="number-amount">1</span></a>
+            <a href="owner-voting-list.html">Голосование <span class="number-amount">1</span></a>
         </div>
     </div>
 
@@ -55,19 +44,19 @@
         <p>a.melnikova@paritet.ru<span>+7 495 994 7275</span></p>
     </div>
 </aside>
-<!-- end bills-cabinet-sidebar.html-->
+<!-- end bills-sidebar.html-->
     <div class="container">
-<!-- start bills-cabinet-header-balance.html-->
-<header class="header manager-header">
+<!-- start bills-header-balance.html-->
+<header class="header bills-header">
 
     <ul class="header__menu">
-        <li><a href="owner-bills-cabinet-info.html">Информация</a></li>
+        <li><a href="owner-bills-cabinet-bill.html">Счет</a></li>
         <li><a href="owner-bills-cabinet-balance.html" class="header__menu--active">Баланс</a></li>
-        <li><a href="owner-bills-cabinet-operation.html">Операции</a></li>
+        <li><a href="owner-bills-cabinet-statement.html">Выписка</a></li>
     </ul>
 
     <div class="action-btn">
-        <a href="#" class="action-btn--edit">Изменить</a>
+        <a href="#" class="action-btn--edit">Выписка</a>
         <span class="action-btn--arrow arrow-down"></span>
         <ul>
             <li><a href="#">Создать</a></li>
@@ -78,74 +67,120 @@
 
     <div class="header__user">
         <img src="images/icons/add-photo.png" alt="">
-        <a href="#" class="someone">Павел Михайлов<span>Зарегистрированное лицо</span></a>
+        <a href="#" class="someone">Павел Михайлов<span>Владелец</span></a>
     </div>
 
 </header>
 
 
 
-<!-- end bills-cabinet-header-balance.html-->
+<!-- end bills-header-balance.html-->
 <!-- start bills-cabinet-balance.html-->
-<main class="content owner">
+<main class="content issuer-bills-cabinet">
 
-    <section class="content__section">
+    <section id="issuer-bills-balance" class="content__section issuer-bills">
 
-        <div class="manager-meeting-agenda">
+        <div class="issuer-bills-balance">
             <h2>Остатки по счетам</h2>
 
             <div class="content__block">
                 <div class="content__block--row">
-                    <div class="content__block--type"><span>ФИО:</span></div>
-                    <div class="content__block--value"><span>ОАО «Теплостройтехмаш»</span></div>
+                    <div class="content__block--type"><span>Номер счета:</span></div>
+                    <div class="content__block--value"><span>9898765</span></div>
                 </div>
                 <div class="content__block--row">
-                    <div class="content__block--type"><span>ИНН:</span></div>
-                    <div class="content__block--value"><span>88909873654</span></div>
-                </div>
-                <div class="content__block--row">
-                    <div class="content__block--type"><span>Юридический адрес:</span></div>
-                    <div class="content__block--value"><span>119323, Москва, ул.Профсоюзная, 93, стр.3</span></div>
+                    <div class="content__block--type"><span>Эмитент:</span></div>
+                    <div class="content__block--value"><span>АО «Теплотехстроймаш»</span></div>
                 </div>
             </div>
-            <div class="content__block">
-                <div class="content__block--row">
-                    <div class="content__block--type"><span>Представители:</span></div>
-                    <div class="content__block--value"><span>Нет</span></div>
-                </div>
+
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="bl-num"><span>НГР</span></th>
+                    <th class="bl-type"><span>Тип ЦБ</span></th>
+                    <th class="bl-state">
+                        <span>Состояние.</span>
+                        <div class="active-question">
+                            <span>?</span>
+                            <div class="active-question__content">
+                                <div class="active-question__text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est minus sed sunt! A, aliquid amet dicta, ducimus, et id iusto laboriosam magni mollitia nemo quidem quo ratione recusandae rem rerum?</p>
+                                </div>
+                                <div class="active-question__actions">
+                                    <button class="cancel">Закрыть</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </th>
+                    <th class="bl-par"><span>Номинал.</span></th>
+                    <th class="bl-sum"><span>Количество</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="bl-num blue-bold"><span>10101439B</span></td>
+                    <td><span>Акция обыкновенная</span></td>
+                    <td><span>ЦБ не обремененные</span></td>
+                    <td><span>1000</span></td>
+                    <td><span>25</span></td>
+                </tr>
+                <tr>
+                    <td class="bl-num blue-bold"><span>10101439B</span></td>
+                    <td><span>Акция привилегированная</span></td>
+                    <td class="bl-state">
+                        <span class="show-all-state blue-bold">Всего(показать)</span>
+                        <div class="hidden-row hidden">
+                            <span>В залоге</span>
+                            <span>Блокированные</span>
+                        </div>
+                    </td>
+                    <td><span>1000</span></td>
+                    <td>
+                        <span>19</span>
+                        <div class="hidden-row hidden">
+                            <span>7</span>
+                            <span>12</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bl-num blue-bold"><span>10101439B</span></td>
+                    <td><span>Акция привилегированная</span></td>
+                    <td><span>Блокированная</span></td>
+                    <td><span>1000</span></td>
+                    <td><span>78</span></td>
+                </tr>
+                <tr>
+                    <td class="bl-num blue-bold"><span>10101439B</span></td>
+                    <td><span>Акция привилегированная</span></td>
+                    <td class="bl-state">
+                        <span class="show-all-state blue-bold">Всего(показать)</span>
+                        <div class="hidden-row hidden">
+                            <span>В залоге</span>
+                            <span>Блокированные</span>
+                        </div>
+                    </td>
+                    <td><span>1000</span></td>
+                    <td>
+                        <span>19</span>
+                        <div class="hidden-row hidden">
+                            <span>7</span>
+                            <span>12</span>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="list__footer">
+                <p>Больше нет остатков по счетам</p>
             </div>
         </div>
 
     </section>
-
-    <div class="content__aside">
-        <div class="content__aside--item">
-            <div class="calendar">
-                <table id="calendar2">
-                    <thead>
-                    <tr class="calendar__head"><td class="calendar__arrow">‹<td colspan="5"><td class="calendar__arrow">›
-                    <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
-                    <tbody>
-                </table>
-            </div>
-        </div>
-        <div class="content__aside--item">
-            <p class="content__aside--title">Услуги счетной комиссии</p>
-            <p class="content__aside--text">Сбор и обработка бюллетеней, пример описательного текста в три строки (не более)</p>
-            <div class="content__aside--order">
-                <span class="content__aside--price">6000 руб.</span>
-                <button class="content__aside--btn">Заказать</button>
-            </div>
-        </div>
-        <div class="content__aside--item">
-            <p class="content__aside--title">Услуги счетной комиссии</p>
-            <p class="content__aside--text">Сбор и обработка бюллетеней, пример описательного текста в три строки (не более)</p>
-            <div class="content__aside--order">
-                <span class="content__aside--price">6000 руб.</span>
-                <button class="content__aside--btn">Заказать</button>
-            </div>
-        </div>
-    </div>
 
 </main>
 <!-- end bills-cabinet-balance.html-->

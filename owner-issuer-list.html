@@ -14,7 +14,7 @@
 <!-- open .header -->
 <!-- end html_open.html-->
 <div class="wrap">
-<!-- start issuer-list-sidebar.html-->
+<!-- start issuer-sidebar.html-->
 <aside class="sidebar">
     <div class="sidebar__logo">
         <span class="logo"></span>
@@ -22,31 +22,20 @@
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
-            <img src="images/icons/sidebar-icon4.png" alt="">
-            <a href="owner-message-list.html">Сообщения <span class="number-amount">2</span></a>
-        </div>
-        <ul>
-            <li><span class="">Документы</span></li>
-            <li><span class="">Корп. действия</span></li>
-            <li><span class="">Собрания</span></li>
-        </ul>
-    </div>
-    <div class="sidebar__item">
-        <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon5.png" alt="">
-            <a href="owner-bills-cabinet-info.html">Счета</a>
+            <a href="owner-bills-list.html">Счета</a>
         </div>
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon1-blue.png" alt="">
-            <a class="active-item" href="owner-issuer-list.html">Эмитент</a>
+            <a href="owner-issuer-list.html" class="active-item">Эмитенты</a>
         </div>
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
             <img src="images/icons/sidebar-icon6.png" alt="">
-            <a href="#">Голосование <span class="number-amount">1</span></a>
+            <a href="owner-voting-list.html">Голосование <span class="number-amount">1</span></a>
         </div>
     </div>
 
@@ -55,7 +44,7 @@
         <p>a.melnikova@paritet.ru<span>+7 495 994 7275</span></p>
     </div>
 </aside>
-<!-- end issuer-list-sidebar.html-->
+<!-- end issuer-sidebar.html-->
     <div class="container">
 <!-- start issuer-list-header.html-->
 <header class="header">
@@ -65,8 +54,6 @@
         <div class="header__filter--field">
             <span class="filter--icon"><img src="images/icons/filter-icon.png" alt=""></span>
             <input class="filter--input" type="text" placeholder="Примените фильтр или введите слово">
-            <div class="autofilter" data-id="active-now"><span>Активные сейчас</span><span class="t-delete"></span></div>
-            <div class="autofilter" data-id="meeting"><span>Собрания</span><span class="t-delete"></span></div>
         </div>
 
         <div class="filter">
@@ -86,31 +73,6 @@
                 <div class="filter__body--item">
                     <h3>Счета</h3>
                     <input type="text" class="t-search" placeholder="Номер или наименование счета">
-                    <div class="filter">
-                        <div class="filter__body">
-                            <table>
-                                <tr><td>4567878</td><td><span>АО «Станкостроитель»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Лосиноостровской производственной»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Русские валенки»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Завод резинотехнических изделий»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Подшипник»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Станкостроитель»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Лосиноостровской производственной»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Русские валенки»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Завод резинотехнических изделий»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Подшипник»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Станкостроитель»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Лосиноостровской производственной»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Русские валенки»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Завод резинотехнических изделий»</span></td></tr>
-                                <tr><td>4567878</td><td><span>АО «Подшипник»</span></td></tr>
-                            </table>
-                        </div>
-                        <div class="filter__footer">
-                            <button class="submit">Выбрать</button>
-                            <button class="cancel">Отмена</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="filter__footer">
@@ -122,7 +84,7 @@
     </div>
 
     <div class="action-btn">
-        <a href="#" class="action-btn--edit show-write-msg">Написать</a>
+        <a href="#" class="action-btn--edit">Создать</a>
         <span class="action-btn--arrow arrow-down"></span>
         <ul>
             <li><a href="#">Создать</a></li>
@@ -133,30 +95,49 @@
 
     <div class="header__user">
         <img src="images/icons/add-photo.png" alt="">
-        <a href="#" class="someone">Павел Михайлов<span>Зарегистрированное лицо</span></a>
+        <a href="#" class="someone">Павел Михайлов<span>Владелец</span></a>
     </div>
-
 </header>
 <!-- end issuer-list-header.html-->
-<!-- start issuer-list-content.html-->
-<main class="content owner">
-
+<!-- start issuer-list.html-->
+<main class="content">
     <div class="content__section">
+        <table class="own-issuers-list table">
 
-        <table class="table">
             <thead>
             <tr>
-                <th>Эмитенты</th>
+                <th class="mi-register"><span>Реестр</span></th>
+                <th class="mi-name"><span>Наименование</span></th>
+                <th class="mi-inn"><span>ИНН</span></th>
+                <th class="mi-region"><span>Регион</span></th>
+                <th class="mi-manager"><span>Менеджер</span></th>
             </tr>
             </thead>
+
             <tbody>
             <tr>
-                <td class="blue-bold">АО «Теплотехстроймаш»</td>
+                <td><a href="#" class="mi-register">9898765</a></td>
+                <td><span>АО «Теплотехстроймаш»</span></td>
+                <td><span>77898765647</span></td>
+                <td><span>Московская обл.</span></td>
+                <td><span>Мельникова А.Н.</span></td>
             </tr>
             <tr>
-                <td class="blue-bold">АО «СМУ теплотехнических сооружений»</td>
+                <td><a href="#" class="mi-register">9898766</a></td>
+                <td><span>АО «Стройтельное управление №5»</span></td>
+                <td><span>77898898970</span></td>
+                <td><span>Республика Карачаево-Черкесия</span></td>
+                <td><span>Карамзина О.И.</span></td>
+            </tr>
+            <tr>
+                <td><a href="#" class="mi-register">9898767</a></td>
+                <td><span>АО «Самарский водоканал»</span></td>
+                <td><span>77898898970</span></td>
+                <td><span>Самарская обл.</span></td>
+                <td><span>Карамзина О.И.</span></td>
             </tr>
             </tbody>
+
         </table>
 
         <div class="list__footer">
@@ -164,38 +145,8 @@
         </div>
     </div>
 
-    <div class="content__aside">
-        <div class="content__aside--item">
-            <div class="calendar">
-                <table id="calendar2">
-                    <thead>
-                    <tr class="calendar__head"><td class="calendar__arrow">‹<td colspan="5"><td class="calendar__arrow">›
-                    <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
-                    <tbody>
-                </table>
-            </div>
-        </div>
-        <div class="content__aside--item">
-            <p class="content__aside--title">Услуги счетной комиссии</p>
-            <p class="content__aside--text">Сбор и обработка бюллетеней, пример описательного текста в три строки (не более)</p>
-            <div class="content__aside--order">
-                <span class="content__aside--price">6000 руб.</span>
-                <button class="content__aside--btn">Заказать</button>
-            </div>
-        </div>
-        <div class="content__aside--item">
-            <p class="content__aside--title">Услуги счетной комиссии</p>
-            <p class="content__aside--text">Сбор и обработка бюллетеней, пример описательного текста в три строки (не более)</p>
-            <div class="content__aside--order">
-                <span class="content__aside--price">6000 руб.</span>
-                <button class="content__aside--btn">Заказать</button>
-            </div>
-        </div>
-    </div>
-
-
 </main>
-<!-- end issuer-list-content.html-->
+<!-- end issuer-list.html-->
     </div>
 </div>
 <!-- start html_close.html-->

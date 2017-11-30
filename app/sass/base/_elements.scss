@@ -30,6 +30,7 @@ $someone-hover: #004680;
     border-radius: 50%;
     background-color: $blue;
     color: #fff;
+    cursor: pointer;
   }
   &__content {
     display: none;
@@ -88,11 +89,16 @@ $someone-hover: #004680;
     color: $someone-hover!important;
     transition: .4s;
   }
-  a {
+  a{
     color: $someone!important;
     &:visited {
       color: $someone;
     }
+  }
+}
+.blue-bold {
+  span {
+    font-weight: 700;
   }
 }
 
@@ -340,6 +346,11 @@ $someone-hover: #004680;
     height: 40px;
     font-weight: 400;
     color: #777;
+    .active-question {
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+    }
   }
   td {
     font-size: 13px;
@@ -420,6 +431,10 @@ $someone-hover: #004680;
       text-overflow: ellipsis;
       overflow: hidden;
       cursor: pointer;
+      a {
+        color: black;
+        font-weight:700;
+      }
       &:hover {
         color: $someone
       }

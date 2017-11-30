@@ -43,31 +43,40 @@ $(function () {
     /*-------------------SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
     $(document).on('click', '.someone', function() {
-        window.location = "/paritet/admin-user-cabinet-account-main.html";
+        window.location = "admin-user-cabinet-account-main.html";
     });
     $(document).on('click', '.someone-group', function() {
-        window.location = "/paritet/admin-groups-cabinet-group-main.html";
+        window.location = "admin-groups-cabinet-group-main.html";
     });
-    $(document).on('click', 'tbody .bill-num', function() {
-        window.location = "/paritet/issuer-bills-cabinet-bill.html";
+    $(document).on('click', '.iss-bills-list tbody .bill-num', function() {
+        window.location = "issuer-bills-cabinet-bill.html";
     });
-    $(document).on('click', 'tbody .mi-register', function() {
-        window.location = "/paritet/manager-issuer-cabinet.html";
+    $(document).on('click', '.own-bills-list tbody .bill-num', function() {
+        window.location = "owner-bills-cabinet-bill.html";
+    });
+    $(document).on('click', '.manager-issuers-list tbody .mi-register', function() {
+        window.location = "manager-issuer-cabinet.html";
+    });
+    $(document).on('click', '.own-issuers-list tbody .mi-register', function() {
+        window.location = "owner-issuer-cabinet.html";
     });
     $(document).on('click', 'tbody .mv-register', function() {
-        window.location = "/paritet/manager-voting-issuer-list.html";
+        window.location = "manager-voting-issuer-list.html";
     });
     $(document).on('click', 'tbody .vil-bill', function() {
-        window.location = "/paritet/manager-voting-form.html";
+        window.location = "manager-voting-form.html";
     });
     $(document).on('click', 'tbody .ai-register', function() {
-        window.location = "/paritet/admin-issuer-cabinet.html";
+        window.location = "admin-issuer-cabinet.html";
     });
     $(document).on('click', 'tbody .iml-number', function() {
-        window.location = "/paritet/issuer-meeting-cabinet-info.html";
+        window.location = "issuer-meeting-cabinet-info.html";
     });
     $(document).on('click', 'tbody .mml-number', function() {
-        window.location = "/paritet/manager-meeting-cabinet-info.html";
+        window.location = "manager-meeting-cabinet-info.html";
+    });
+    $(document).on('click', 'tbody .ov-register', function() {
+        window.location = "owner-voting-cabinet-info.html";
     });
 
 
@@ -380,16 +389,20 @@ $(function () {
     $(document).on('click', '.active-question .cancel', function () {
         $(this).closest('.active-question__content').fadeOut('fast')
     })
+    $(document).click(function(event) {
+        if ($(event.target).closest(".active-question").length) return;
+        $(".active-question__content").fadeOut("fast");
+    });
 
     $(document).on('click', '.show-all-state', function () {
         var parent = $(this).closest('tr');
         var row = $('.hidden-row');
         if(parent.find(row).hasClass('hidden')) {
             parent.find(row).removeClass('hidden');
-            $(this).text('Всего(скрыть)')
+            // $(this).text('Всего(скрыть)')
         } else {
             parent.find(row).addClass('hidden');
-            $(this).text('Всего(показать)')
+            // $(this).text('Всего(показать)')
         }
     })
 
@@ -423,10 +436,17 @@ $(function () {
     $(document).on('click', '.modal__header .t-delete', function () {
         $(this).closest('.modal').fadeOut('fast');
     })
+    $(document).on('click', '.modal .cancel', function () {
+        $(this).closest('.modal').fadeOut('fast');
+    })
 
     $(document).on('click', '.edit-status-meeting', function () {
         $('.manager-meeting-info .modal').show()
     })
+    $(document).click(function(event) {
+        if ($(event.target).closest(".edit-status-meeting").length || $(event.target).closest(".manager-meeting-info .modal").length) return;
+        $(".manager-meeting-info .modal").fadeOut("fast");
+    });
 
 
 });
