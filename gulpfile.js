@@ -30,6 +30,11 @@ var postcss = require('gulp-postcss'),//Блиотека-парсер стиле
     fontmagic = require('postcss-font-magician'),
     fixes = require('postcss-fixes');
 var preprocess = require('gulp-preprocess');
+var reporter    = require('postcss-reporter');
+var syntax_scss = require('postcss-scss');
+var stylelint   = require('stylelint');
+
+
 
 gulp.task('css-libs', function () { // Создаем таск css-libs
     var processors = [
@@ -43,7 +48,6 @@ gulp.task('css-libs', function () { // Создаем таск css-libs
         .pipe(gulp.dest('css')) // Выгружаем результата в папку app/css
         .pipe(browserSync.stream({})); // Обновляем CSS на странице при изменении
 });
-
 
 gulp.task('sass', function () { // Создаем таск Sass
     var processors = [// подключаем постпроцессоры в массиве
@@ -113,7 +117,54 @@ gulp.task('extend-pages', function () {
         .pipe(browserSync.stream({}));
 });
 
+gulp.task("scss-lint", function() {
 
+    // Stylelint config rules
+    var stylelintConfig = {
+        "rules": {
+            "block-no-empty": true,
+            "color-no-invalid-hex": true,
+            "declaration-colon-space-after": "always",
+            "declaration-colon-space-before": "never",
+            "function-comma-space-after": "always",
+            "function-url-quotes": "double",
+            "media-feature-colon-space-after": "always",
+            "media-feature-colon-space-before": "never",
+            "media-feature-name-no-vendor-prefix": true,
+            "max-empty-lines": 5,
+            "number-leading-zero": "never",
+            "number-no-trailing-zeros": true,
+            "property-no-vendor-prefix": true,
+            "rule-no-duplicate-properties": true,
+            "declaration-block-no-single-line": true,
+            "rule-trailing-semicolon": "always",
+            "selector-list-comma-space-before": "never",
+            "selector-list-comma-newline-after": "always",
+            "selector-no-id": true,
+            "string-quotes": "double",
+            "value-no-vendor-prefix": true
+        }
+    }
+
+    var processors = [
+        stylelint(stylelintConfig),
+        reporter({
+            clearMessages: true,
+            throwError: true
+        })
+    ];
+
+    return gulp.src(
+        ['app/sass/**/*.scss',
+            // Ignore linting vendor assets
+            // Useful if you have bower components
+            '!app/sass/breakpoint/**/*.scss',
+            '!app/sass/compass-sass-mixins/**/*.scss',
+            '!app/sass/libs/*.scss'
+        ]
+    )
+        .pipe(postcss(processors, {syntax: syntax_scss}));
+});
 
 gulp.task('watch', ['compress', 'extend-pages', 'css-libs', 'img', 'sass'], function () {
 
@@ -123,7 +174,6 @@ gulp.task('watch', ['compress', 'extend-pages', 'css-libs', 'img', 'sass'], func
     gulp.watch(['app/html/**/*.html'], ['extend-pages']);// Наблюдение за HTML-файлами в папке html
     gulp.watch('app/js/**/*.js', ['compress']); // Наблюдение за js-файлами
 });
-
 
 gulp.task('img', function () {
     return gulp.src('app/img/**/*')

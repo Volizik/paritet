@@ -446,5 +446,22 @@ $(function () {
         $(".manager-meeting-info .modal").fadeOut("fast");
     });
 
+    $(document).on('click', '.voting-actions__choice--item', function () {
+        var checkbox = $(this).find('input');
+        if (!checkbox.is(':checked')) {
+            $(this).closest('.voting-actions').find('.voting-actions__choice--item').removeClass('voting-selected');
+            $(this).addClass('voting-selected')
+        }
+    })
+
+    $(document).on('click', '.show-divide-voting', function () {
+        $(this).closest('.content__block').find('.voting-actions__divide').css('opacity', '1');
+        $(this).closest('.content__block').find('.voting-actions-hidden').css('display', 'flex');
+    })
+    $(document).on('click', '.del-divide-voting', function () {
+        $(this).closest('.content__block').find('.voting-actions__divide').css('opacity', '0');
+        $(this).closest('.content__block').find('.voting-actions-hidden').css('display', 'none');
+    })
+
 
 });

@@ -510,7 +510,134 @@ input[type="checkbox"] {
   }
 }
 
+.orange {
+  color: #f29c24!important;
+}
+.green {
+  color: #5ccc3d!important;
+}
+.bg-green {
+  background-color: #5ccc3d!important;
+}
+.red {
+  color: #e62e2e!important;
+}
+.bg-red {
+  background-color: #e62e2e!important;
+}
+.grey {
+  color: #777!important;
+}
+.bg-grey {
+  background-color: #ccc!important;
+}
+.bg-blue {
+  background-color: #0062b3!important;
+}
 
+.voting-actions {
+  padding: 20px 0 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline!important;
+  &__choice {
+    position: relative;
+    display: flex;
+    align-items: center;
+    &--item {
+      display: block;
+      padding: 8px 20px;
+      font-size: 14px;
+      color: #777;
+      text-transform: uppercase;
+    }
+    .voting-true.voting-selected {
+      background-color: #5ccc3d;
+      color: #fff;
+    }
+    .voting-false.voting-selected {
+      background-color: #e62e2e;
+      color: #fff;
+    }
+    .voting-abstained.voting-selected {
+      background-color: #f29c24;
+      color: #fff;
+    }
+  }
+  &__divide {
+    opacity: 0;
+    display: flex;
+    align-items: baseline;
+    font-size: 14px;
+    margin-left: 30px;
+    .voting-dividing {
+      display: flex;
+      flex-direction: column;
+      &__row {
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+        box-sizing: border-box;
+        margin: 0 10px 5px;
+        font-size: 14px;
+        input,p {
+          width: 40px;
+          height: 30px;
+          min-width: 40px!important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+          margin-right: 10px;
+          font-size: 14px;
+        }
+        input {
+          padding-left: 2px!important;
+          padding-right: 2px!important;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__results {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    &--item {
+      display: block;
+      padding: 10px 20px;
+      color: #000;
+      font-size: 13px;
+      font-weight: 700;
+      &--key {
+        padding-right: 15px;
+        box-sizing: border-box;
+      }
+    }
+
+  }
+  .divide-voting {
+    display: block;
+    font-size: 13px;
+    color: $blue;
+    span {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+      width: 20px;
+      color: #fff;
+      margin: 0 3px;
+      box-sizing: border-box;
+      background-color: $blue;
+      border-radius: 50%;
+    }
+  }
+}
+.voting-actions-hidden {
+  display: none;
+}
 
 .blue-question {
   display: flex;

@@ -43,6 +43,10 @@ tbody {
   }
 }
 
+.edit-status-meeting {
+  cursor: pointer;
+  font-weight: 700;
+}
 
 .owner-issuer-list {
   .table {
@@ -52,3 +56,14 @@ tbody {
     }
   }
 }
+
+.owner-voting-info {
+  .content__block--type {
+    width: 130px;
+  }
+}
+
+.owner-voting-bulleting {
+
+}
+
