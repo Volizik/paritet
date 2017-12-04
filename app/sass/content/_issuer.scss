@@ -53,9 +53,15 @@
     th,td {
       &:nth-of-type(4) {
         text-align: right;
+        .hidden-row {
+          align-items: flex-end;
+        }
       }
       &:nth-of-type(5) {
         text-align: right;
+        .hidden-row {
+          align-items: flex-end;
+        }
       }
     }
     tbody {
@@ -69,6 +75,8 @@
       span {
         display: block;
         padding: 5px 0;
+        height: 30px;
+        position: relative;
         &:first-of-type {
           padding-top: 10px;
         }

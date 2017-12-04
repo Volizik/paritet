@@ -18,11 +18,16 @@ $someone-hover: #004680;
   transform: translate(-50%, -50%);
 }
 
+.padding-bottom-20 {
+  padding-bottom: 20px;
+}
+
 .active-question {
   display: inline-block;
   position: relative;
-  span {
-    display: flex;
+  &__sign {
+    display: flex!important;
+    position: relative;
     justify-content: center;
     align-items: center;
     height: 16px;
@@ -31,13 +36,14 @@ $someone-hover: #004680;
     background-color: $blue;
     color: #fff;
     cursor: pointer;
+    min-height: inherit!important;
   }
   &__content {
     display: none;
-    position: absolute;
-    top: calc(100% + 10px);
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 500px;
     box-shadow: 0 5px 10px 5px #ddd;
     background-color: #fff;
@@ -340,6 +346,7 @@ $someone-hover: #004680;
   border-collapse: collapse;
   table-layout: fixed;
   th {
+    position: relative;
     font-size: 13px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -353,7 +360,10 @@ $someone-hover: #004680;
     }
   }
   td {
+    position: relative;
     font-size: 13px;
+    padding-left: 5px;
+    padding-right: 10px;
     border-bottom: 1px solid #ccc;
     height: 40px;
     overflow: hidden;
@@ -361,9 +371,15 @@ $someone-hover: #004680;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-
+  .sub-table {
+    position: absolute!important;
+  }
 }
 
+.hidden-row {
+  display: flex;
+  flex-direction: column;
+}
 
 .t-delete {
   background: url(../images/icons/delete.png) no-repeat center;
@@ -536,7 +552,7 @@ input[type="checkbox"] {
 }
 
 .voting-actions {
-  padding: 20px 0 0;
+  padding-top: 20px;
   box-sizing: border-box;
   display: flex;
   align-items: baseline!important;
@@ -649,6 +665,39 @@ input[type="checkbox"] {
   background-color: $blue;
   color: #fff;
   margin-left: 10px;
+}
+
+
+.sub-table {
+  height: 32px!important;
+  position: relative!important;
+  top: 0;
+  right: 0px!important;
+  td {
+    vertical-align: middle!important;
+  }
+  &__total {
+    height: 32px!important;
+    border: none!important;
+    vertical-align: middle!important;
+    padding: inherit!important;
+    padding-right: 3px!important;
+  }
+  &__numerator {
+    text-align: center!important;
+    font-size: 7px!important;
+    height: 15px!important;
+    padding: 0!important;
+    border-bottom: 1px solid #000!important;
+    box-sizing: border-box;
+  }
+  &__denominator {
+    text-align: center!important;
+    font-size: 7px!important;
+    height: 15px!important;
+    padding: 0!important;
+    border: none!important;
+  }
 }
 
 

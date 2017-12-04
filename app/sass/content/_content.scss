@@ -53,6 +53,13 @@
       color: #000;
       padding-left: 10px;
       box-sizing: border-box;
+      span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 20px;
+        position: relative;
+        margin-right: 5px;
+      }
     }
     &--photo {
       display: flex;

@@ -43,10 +43,10 @@ $(function () {
     /*-------------------SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
     $(document).on('click', '.someone', function() {
-        window.location = "admin-user-cabinet-account-main.html";
+        window.location = "../html/admin_pages/admin-user-cabinet-account-main.html";
     });
     $(document).on('click', '.someone-group', function() {
-        window.location = "admin-groups-cabinet-group-main.html";
+        window.location = "../html/admin_pages/admin-groups-cabinet-group-main.html";
     });
     $(document).on('click', '.iss-bills-list tbody .bill-num', function() {
         window.location = "issuer-bills-cabinet-bill.html";
@@ -67,7 +67,7 @@ $(function () {
         window.location = "manager-voting-form.html";
     });
     $(document).on('click', 'tbody .ai-register', function() {
-        window.location = "admin-issuer-cabinet.html";
+        window.location = "../html/admin_pages/admin-issuer-cabinet.html";
     });
     $(document).on('click', 'tbody .iml-number', function() {
         window.location = "issuer-meeting-cabinet-info.html";
@@ -223,7 +223,7 @@ $(function () {
             $('.header__filter--field .filter--input').hide();
             $('.autofilter[data-id="user_inside"]').css('display', 'flex');
         } else {
-            window.location = "/paritet/admin-users-list.html"
+            window.location = "/app/html/admin_pages/admin-users-list.html"
         }
 
     });
@@ -234,7 +234,7 @@ $(function () {
             $('.autofilter').hide();
             $('.autofilter[data-id="user_outside"]').css({'display': 'flex'});
         } else {
-            window.location = "/paritet/admin-users-list.html"
+            window.location = "/app/html/admin_pages/admin-users-list.html"
         }
 
     });
@@ -397,10 +397,10 @@ $(function () {
         var row = $('.hidden-row');
         if(parent.find(row).hasClass('hidden')) {
             parent.find(row).removeClass('hidden');
-            // $(this).text('Всего(скрыть)')
+            $(this).text('Всего(скрыть)')
         } else {
             parent.find(row).addClass('hidden');
-            // $(this).text('Всего(показать)')
+            $(this).text('Всего(показать)')
         }
     })
 
@@ -463,5 +463,14 @@ $(function () {
         $(this).closest('.content__block').find('.voting-actions-hidden').css('display', 'none');
     })
 
+    
+    $(document).on('click', '.voting-order', function () {
+        var text = $(this).closest('.content__block').find('.voting-order__text')
+        if (text.hasClass('j-invisible')) {
+            text.removeClass('j-invisible')
+        } else {
+            text.addClass('j-invisible')
+        }
+    })
 
 });
