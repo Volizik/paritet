@@ -272,6 +272,9 @@ tbody {
   .voting-answer {
     color: grey;
     font-size: 13px;
+    span {
+      color: #000;
+    }
 
   }
   .voting-question {
@@ -776,6 +779,7 @@ tbody {
     width: 20px;
     object-fit: contain;
     margin-left: 10px;
+    cursor: pointer;
   }
   .delete--item {
     height: 10px;
@@ -791,6 +795,10 @@ tbody {
     margin: 0;
     padding: 0;
     counter-reset: materials-list-counter;
+    li {
+      display: flex;
+      align-items: baseline;
+    }
   }
   .materials-list__item {
     cursor: pointer;
@@ -836,7 +844,7 @@ tbody {
     input[type="file"] {
       display: none;
     }
-    label[for="add-file"] {
+    .select-file {
       display: block;
       font-size: 14px;
       font-weight: 700;
@@ -844,7 +852,14 @@ tbody {
       cursor: pointer;
     }
     .filter__body {
-      max-height: none;
+      max-height: 300px;
+    }
+    .selected-file {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
   }
 

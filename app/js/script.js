@@ -313,21 +313,32 @@ $(function () {
     })
 
 
-
+    $(document).on('change', '.add-files input[type="file"]', function() {
+        var parent = $(this).parent();
+        var chosenFiles = $(this)[0].files;
+        for (var i=0; i<chosenFiles.length; i++) {
+            $('.selected-file').remove();
+            $('<p>', {text: chosenFiles[i].name}).addClass('selected-file').appendTo(parent)
+        }
+    });
+    $(document).on('click', '.add-files .cancel', function () {
+        var parent = $(this).closest('.add-files')
+        parent.find('.selected-file').remove()
+    })
 
 
     $(document).on('click', '.bullet-number', function () {
         $('.bullet-number').removeClass('activeBullet');
         $(this).addClass('activeBullet');
-    })
+    });
     $(document).on('click', '.show-condition', function () {
         $('.condition-hidden').addClass('show-condition-hidden');
         $(this).hide();
-    })
+    });
     $(document).on('click', '.hide-condition', function () {
         $('.condition-hidden').removeClass('show-condition-hidden');
         $('.show-condition').show();
-    })
+    });
     $(document).on('click', '.hide-voting-settings', function () {
 
         var concrete = $(this).closest('.content__block');
@@ -351,7 +362,7 @@ $(function () {
         setTimeout(function () {
             $('.load-list').attr('data-btn-text', 'Список получен 12.05. 2017, 15:06').removeClass('orange').addClass('grey');
         }, 2000)
-    })
+    });
 
     $(document).on('click', 'label[for="applies"]',function () {
         if($('#applies').is(':checked')) {
@@ -383,10 +394,10 @@ $(function () {
 
     $(document).on('click', '.active-question>span', function () {
         $(this).parent().find('.active-question__content').fadeIn('fast')
-    })
+    });
     $(document).on('click', '.active-question .cancel', function () {
         $(this).closest('.active-question__content').fadeOut('fast')
-    })
+    });
     $(document).click(function(event) {
         if ($(event.target).closest(".active-question").length) return;
         $(".active-question__content").fadeOut("fast");
@@ -402,21 +413,21 @@ $(function () {
             parent.find(row).addClass('hidden');
             $(this).text('Всего(показать)')
         }
-    })
+    });
 
 
     $(document).on('click', '.agenda-btn-edit', function () {
         $(this).closest('.content__block').find('.agenda-question-content').toggle();
         $(this).closest('.content__block').find('.agenda-question-edit').toggle();
-    })
+    });
     $(document).on('click', '.agenda-btn-new-question', function () {
         $('.manager-meeting-agenda .modal').hide();
         $(this).closest('.content__block').find('.modal').show();
-    })
+    });
     $(document).on('click', '.manager-meeting-agenda .cancel', function () {
         $(this).closest('.content__block').find('.agenda-question-edit').hide();
         $(this).closest('.content__block').find('.agenda-question-content').show();
-    })
+    });
 
 
 
@@ -424,23 +435,23 @@ $(function () {
     if($('.write-msg')) {
         $(document).on('click', '.show-write-msg', function () {
             $('.write-msg').fadeIn('fast');
-        })
+        });
         $(document).on('click', '.write-msg .cancel', function () {
             $('.write-msg').fadeOut('fast');
-        })
+        });
     }
 
 
     $(document).on('click', '.modal__header .t-delete', function () {
         $(this).closest('.modal').fadeOut('fast');
-    })
+    });
     $(document).on('click', '.modal .cancel', function () {
         $(this).closest('.modal').fadeOut('fast');
-    })
+    });
 
     $(document).on('click', '.edit-status-meeting', function () {
         $('.manager-meeting-info .modal').show()
-    })
+    });
     $(document).click(function(event) {
         if ($(event.target).closest(".edit-status-meeting").length || $(event.target).closest(".manager-meeting-info .modal").length) return;
         $(".manager-meeting-info .modal").fadeOut("fast");
@@ -449,19 +460,22 @@ $(function () {
     $(document).on('click', '.voting-actions__choice--item', function () {
         var checkbox = $(this).find('input');
         if (!checkbox.is(':checked')) {
+            if($(this).closest('.voting-actions').hasClass('voting-actions-disable')) {
+                return false
+            }
             $(this).closest('.voting-actions').find('.voting-actions__choice--item').removeClass('voting-selected');
             $(this).addClass('voting-selected')
         }
-    })
+    });
 
     $(document).on('click', '.show-divide-voting', function () {
         $(this).closest('.content__block').find('.voting-actions__divide').css('opacity', '1');
         $(this).closest('.content__block').find('.voting-actions-hidden').css('display', 'flex');
-    })
+    });
     $(document).on('click', '.del-divide-voting', function () {
         $(this).closest('.content__block').find('.voting-actions__divide').css('opacity', '0');
         $(this).closest('.content__block').find('.voting-actions-hidden').css('display', 'none');
-    })
+    });
 
     
     $(document).on('click', '.voting-order', function () {
@@ -471,6 +485,25 @@ $(function () {
         } else {
             text.addClass('j-invisible')
         }
+    });
+
+    $(document).on('click', '.voting-send', function () {
+        var btn = $(this).closest('.content__block').find('.voting-actions__choice--item');
+        if (btn.hasClass('voting-selected')) {
+            $(this).val('Подписано и отправлено')
+                .removeClass('bg-blue')
+                .addClass('bg-grey')
+                .attr('disabled', 'true');
+            btn.find('input[type="radio"]:not(:checked)').parent().css({
+                background: '#fff',
+                color: '#777'
+            });
+            btn.find('input[type="radio"]:not(:checked)').attr('disabled', 'true');
+            $(this).closest('.content__block').find('.voting-actions').addClass('voting-actions-disable');
+        } else {
+            return false
+        }
     })
+
 
 });
