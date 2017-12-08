@@ -46,7 +46,7 @@ $(function () {
         window.location = "../html/admin_pages/admin-user-cabinet-account-main.html";
     });
     $(document).on('click', '.someone-group', function() {
-        window.location = "../html/admin_pages/admin-groups-cabinet-group-main.html";
+        window.location = "../html/pages/admin-groups-cabinet-group-main.html";
     });
     $(document).on('click', '.iss-bills-list tbody .bill-num', function() {
         window.location = "issuer-bills-cabinet-bill.html";
@@ -223,7 +223,7 @@ $(function () {
             $('.header__filter--field .filter--input').hide();
             $('.autofilter[data-id="user_inside"]').css('display', 'flex');
         } else {
-            window.location = "/app/html/admin_pages/admin-users-list.html"
+            window.location = "/app/html/pages/admin-users-list.html"
         }
 
     });
@@ -234,7 +234,7 @@ $(function () {
             $('.autofilter').hide();
             $('.autofilter[data-id="user_outside"]').css({'display': 'flex'});
         } else {
-            window.location = "/app/html/admin_pages/admin-users-list.html"
+            window.location = "/app/html/pages/admin-users-list.html"
         }
 
     });
@@ -328,7 +328,7 @@ $(function () {
 
 
     $(document).on('click', '.bullet-number', function () {
-        $('.bullet-number').removeClass('activeBullet');
+        $(this).closest('.bullet-numbers').find('.bullet-number').removeClass('activeBullet');
         $(this).addClass('activeBullet');
     });
     $(document).on('click', '.show-condition', function () {
@@ -503,6 +503,10 @@ $(function () {
         } else {
             return false
         }
+    })
+
+    $(document).on('click', '.users-list .t-delete', function () {
+        $('.modal-delete').show();
     })
 
 

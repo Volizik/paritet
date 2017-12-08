@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="../../../css/libs.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../css/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="css/libs.min.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- open .header -->
-<div class="wrap wrap-users">
+<div class="wrap">
 <aside class="sidebar">
     <div class="sidebar__logo">
         <span class="logo"></span>
@@ -19,22 +19,22 @@
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
-            <img src="../../../images/icons/sidebar-icon3-blue.png" alt="">
-            <a class="active-item" href="/paritet/admin-users-list.html">Пользователи</a>
+            <img src="images/icons/sidebar-icon3-blue.png" alt="">
+            <a class="active-item" href="admin-users-list.html">Пользователи</a>
         </div>
         <ul>
-            <li><a href="/paritet/admin-users-list.html">Все пользователи</a></li>
+            <li><a href="admin-users-list.html">Все пользователи</a></li>
             <li><span class="users_inside">Внутренние</span></li>
             <li><span class="users_outside">Внешние</span></li>
         </ul>
     </div>
     <div class="sidebar__item">
-        <div class="sidebar__item--header"><img src="../../../images/icons/sidebar-icon2.png" alt=""><a href="/paritet/admin-groups-list.html">Группы</a></div>
+        <div class="sidebar__item--header"><img src="images/icons/sidebar-icon2.png" alt=""><a href="admin-groups-list.html">Группы</a></div>
     </div>
     <div class="sidebar__item">
         <div class="sidebar__item--header">
-            <img src="../../../images/icons/sidebar-icon1.png" alt="">
-            <a href="/paritet/admin-issuers-list.html">Эмитенты</a>
+            <img src="images/icons/sidebar-icon1.png" alt="">
+            <a href="admin-issuers-list.html">Эмитенты</a>
         </div>
     </div>
 </aside>
@@ -44,7 +44,7 @@
     <div class="header__filter">
 
         <div class="header__filter--field">
-            <span class="filter--icon"><img src="../../../images/icons/filter-icon.png" alt=""></span>
+            <span class="filter--icon"><img src="images/icons/filter-icon.png" alt=""></span>
             <input class="filter--input" type="text" placeholder="Примените фильтр или введите слово">
             <div class="autofilter" data-id="user_inside"><span>Внутренние</span><span class="t-delete"></span></div>
             <div class="autofilter" data-id="user_outside"><span>Внешние</span><span class="t-delete"></span></div>
@@ -127,10 +127,10 @@
     </div>
 
     <div class="header__user">
-        <img src="../../../images/icons/user-icon.png" alt="">
+        <img src="images/icons/user-icon.png" alt="">
         <a href="#" class="user-icon">Анатолий Полевой<span>Администратор</span></a>
         <ul class="header__user--menu">
-            <li><a href="/paritet/admin-user-pass.html">Изменить пароль</a></li>
+            <li><a href="admin-user-pass.html">Изменить пароль</a></li>
             <li><a href="#">Настройки</a></li>
             <li><a href="#">Выход</a></li>
         </ul>
@@ -338,6 +338,26 @@
 
         </table>
 
+        <div class="modal modal-delete">
+            <div class="modal__header">
+                <h2>Удаление группы</h2>
+                <span class="t-delete"></span>
+            </div>
+            <div class="modal__body">
+                <b>Внимание!</b>
+                <p>
+                    Удаление группы безвозвратно. Вы не сможете отменить это действие.
+                    Права на счета и реестры данной группы будут отозваны у всех
+                    пользователей, включенных в эту группу.
+                </p>
+                <b>Вы действительно хотите удалить группу?</b>
+            </div>
+            <div class="modal__footer">
+                <button class="delete-btn">Удалить</button>
+                <button class="cancel">Отмена</button>
+            </div>
+        </div>
+
         <div class="list__footer">
             <p>Больше нет пользователей для показа</p>
         </div>
@@ -349,7 +369,7 @@
 
 
 
-<script src='../../../js/jquery-3.2.1.min.js' type="text/javascript"></script>
-<script src="../../../js/script.min.js" type="text/javascript"></script>
+<script src='js/jquery-3.2.1.min.js' type="text/javascript"></script>
+<script src="js/script.min.js" type="text/javascript"></script>
 </body>
 </html>

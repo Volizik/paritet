@@ -36,10 +36,13 @@
       display: flex;
       align-items: center;
       img {
-        margin: 0px 25px;
+        margin: 0;
+        margin-left: 30px;
+        margin-right: 25px;
       }
       span, a {
         font-size: 16px;
+        font-weight: 400;
         text-transform: uppercase;
         &:hover {
           transition: .4s;
@@ -59,13 +62,14 @@
     }
     ul {
       position: relative;
-      padding-left: 80px;
+      padding-left: 85px;
       margin: 0;
       li {
         list-style: none;
         position: relative;
         a,span {
           font-size: 13px;
+          font-weight: 400;
           color: #fff;
           cursor: pointer;
           &:hover {
@@ -81,7 +85,7 @@
     border-top: 3px solid #fff;
     margin-top:auto;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 20px 30px;
     p {
       font-size: 13px;
       width: 100%;

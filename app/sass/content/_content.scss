@@ -13,14 +13,17 @@
     padding-left: 5px;
     box-sizing: border-box;
   }
-  table {
-    font-weight: 700;
-  }
+  //table {
+  //  font-weight: 700;
+  //}
   &__block {
     position: relative;
     border-top: 1px solid #ccc;
     padding: 10px 0;
     box-sizing: border-box;
+    h2 {
+      font-size: 18px;
+    }
     &:last-of-type {
       border-bottom: 1px solid #ccc;
       margin-bottom: 20px;
@@ -37,7 +40,7 @@
     &--type {
       display: flex;
       align-items: center;
-      font-size: 14px;
+      font-size: 13px;
       position: relative;
       color: #777;
       min-width: 100px;
@@ -47,7 +50,7 @@
     &--value {
       display: flex;
       align-items: center;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       position: relative;
       color: #000;
@@ -75,7 +78,7 @@
       }
       a {
         margin-top: 10px;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 400;
         color: $someone;
       }
@@ -106,7 +109,7 @@
       height: 30px;
       border: 1px solid #ccc;
       padding: 0px 10px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 400;
       color: #000000;
       outline: none;

@@ -222,8 +222,7 @@ tbody {
     font-weight: 300;
   }
   .meeting-question {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
   }
   .meeting-answer-title {
     font-size: 13px;
@@ -232,7 +231,6 @@ tbody {
   }
   .meeting-answer {
     font-size: 13px;
-    font-weight: 700;
   }
   .meeting__row {
     display: flex;
@@ -278,7 +276,7 @@ tbody {
 
   }
   .voting-question {
-    font-size: 14px;
+    font-size: 13px;
     color: #000;
   }
   .voting-answer-desc,
@@ -328,7 +326,7 @@ tbody {
     font-weight: 300;
   }
   .meeting-question {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
   }
   .meeting-answer-title {
@@ -338,7 +336,7 @@ tbody {
   }
   .meeting-answer {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 400;
   }
   .meeting__row {
     display: flex;
@@ -379,10 +377,10 @@ tbody {
   .voting-answer {
     color: grey;
     font-size: 13px;
-
+    font-weight: 400;
   }
   .voting-question {
-    font-size: 14px;
+    font-size: 13px;
     color: #000;
   }
   .voting-answer-desc,
@@ -390,12 +388,12 @@ tbody {
     margin: 0;
     max-width: 570px;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .voting-order {
     color: $blue;
-    font-weight: 700;
+    //font-weight: 700;
     font-size: 13px;
   }
 
@@ -412,7 +410,6 @@ tbody {
 
   .bulleting-number {
     font-size: 13px;
-    font-weight: 700;
     display: block;
     margin: 10px 0;
   }
@@ -424,7 +421,6 @@ tbody {
   .bulleting-item {
     margin-right: 15px;
     font-size: 13px;
-    font-weight: 700;
     &--key {
       color: #777;
       padding-right: 5px;
@@ -444,16 +440,19 @@ tbody {
     }
   }
   .agenda-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     background-color: transparent;
     height: 30px;
     width: 30px;
     cursor: pointer;
-    img {
-      height: 15px;
-      width: 15px;
-      object-fit: contain;
-    }
+    //img {
+    //  height: 15px;
+    //  width: 15px;
+    //  object-fit: contain;
+    //}
   }
 }
 
@@ -466,6 +465,10 @@ tbody {
 
 
 .manager-meeting-agenda {
+
+  .agenda-question-edit {
+    display: none;
+  }
 
   .agenda-table {
     width: 100%;
@@ -514,7 +517,6 @@ tbody {
       }
       p {
         font-size: 13px;
-        font-weight: 700;
         margin: 0;
       }
       table {
@@ -610,14 +612,12 @@ tbody {
       padding-right: 20px;
       box-sizing: border-box;
       font-size: 13px;
-      font-weight: 700;
     }
     &__value {
       display: flex;
       flex-wrap: wrap;
       position: relative;
       font-size: 13px;
-      font-weight: 700;
       select {
         height: 31px;
         margin-right: 10px;
@@ -653,7 +653,7 @@ tbody {
   .settings-btn {
     font-size: 13px;
     color: $blue;
-    font-weight: 700;
+    font-weight: 400;
     padding: 0;
     border: none;
     background-color: transparent;
@@ -666,11 +666,15 @@ tbody {
       cursor: pointer;
       color: $blue;
       font-size: 13px;
-      font-weight: 700;
-      padding: 7px;
+      padding: 5px 8px;
       box-sizing: border-box;
       margin: 5px;
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
+      input[type="radio"] {
+        display: none;
+      }
     }
     .activeBullet {
       background-color: $blue;
@@ -726,6 +730,7 @@ tbody {
     padding: 0;
     margin: 10px 0;
     color: $blue;
+    cursor: pointer;
   }
 
   .load-list {
@@ -751,14 +756,12 @@ tbody {
     padding-right: 20px;
     box-sizing: border-box;
     font-size: 13px;
-    font-weight: 700;
   }
   .agenda-settings__value {
     display: flex;
     flex-wrap: wrap;
     position: relative;
     font-size: 13px;
-    font-weight: 700;
   }
   .agenda-settings__input {
     width: 100%;
@@ -856,8 +859,7 @@ tbody {
     }
     .selected-file {
       display: block;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 13px;
       margin-top: 5px;
       margin-bottom: 5px;
     }

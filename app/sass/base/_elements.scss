@@ -156,8 +156,11 @@ $someone-hover: #004680;
     padding: 0px 10px;
     box-sizing: border-box;
     white-space: nowrap;
+    font-size: 15px;
     color: #fff;
-    &:active {
+    cursor: pointer;
+    &:active,
+    &:hover {
       background-color: $green-btn-active;
       transition: .4s;
     }
@@ -168,6 +171,7 @@ $someone-hover: #004680;
     width: 30px;
     height: 100%;
     transition: .4s;
+    cursor: pointer;
     &:before {
       content: '';
       position: relative;
@@ -176,7 +180,8 @@ $someone-hover: #004680;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
     }
-    &:active {
+    &:active,
+    &:hover {
       background-color: $green-btn-active;
       transition: .4s;
     }
@@ -210,6 +215,7 @@ $someone-hover: #004680;
       a,span {
         display: block;
         font-size: 15px;
+        font-weight: 400;
         color: #000;
         white-space: nowrap;
         padding: 5px 20px;
@@ -224,7 +230,7 @@ $someone-hover: #004680;
   display: none;
   max-width: 600px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   box-shadow: 5px 10px 20px #ccc;
   z-index: 10!important;
   left: 50%;
@@ -243,7 +249,7 @@ $someone-hover: #004680;
     h2 {
       margin: 0;
       font-size: 20px;
-      font-weight: 400;
+      font-weight: 400!important;
     }
   }
   &__body {
@@ -261,11 +267,12 @@ $someone-hover: #004680;
     select {
       width: 100%;
       margin-bottom: 15px;
+
     }
     label {
       display: block;
       padding: 4px 0;
-
+      font-size: 14px;
     }
     input {
       display: inline-block!important;
@@ -290,7 +297,13 @@ $someone-hover: #004680;
   padding: 10px 20px;
   background-color: #0070cc;
   margin-right: 10px;
+  transition: .3s;
   border:none;
+  cursor: pointer;
+  &:hover {
+    color: #005499;
+    transition: .3s;
+  }
   &:focus {
     outline: none
   }
@@ -302,7 +315,13 @@ $someone-hover: #004680;
   padding: 10px 20px;
   color: #000;
   background-color: #f5f5f5;
+  transition: .3s;
   border:none;
+  cursor: pointer;
+  &:hover {
+    color: #dbdbdb;
+    transition: .3s;
+  }
   &:focus {
     outline: none
   }
@@ -353,6 +372,9 @@ $someone-hover: #004680;
     height: 40px;
     font-weight: 400;
     color: #777;
+    &:first-of-type {
+      padding-left: 10px;
+    }
     .active-question {
       height: 100%;
       display: inline-flex;
@@ -370,6 +392,9 @@ $someone-hover: #004680;
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
+    &:first-of-type {
+      padding-left: 10px;
+    }
   }
   .sub-table {
     position: absolute!important;
@@ -499,6 +524,9 @@ input[type="checkbox"] {
   }
 }
 
+label {
+  cursor: pointer;
+}
 
 .list__footer {
   width: 100%;
@@ -508,7 +536,7 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
   background-color: #fafafa;
-  font-size: 14px;
+  font-size: 13px;
   color: #bbb;
   padding: 30px 0;
   p {
@@ -696,7 +724,6 @@ input[type="checkbox"] {
   height: 32px!important;
   position: relative!important;
   top: 0;
-  right: 0px!important;
   td {
     vertical-align: middle!important;
   }

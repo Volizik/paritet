@@ -51,14 +51,12 @@
   >table {
     width: 90%;
     th,td {
-      &:nth-of-type(4) {
-        text-align: right;
-        .hidden-row {
-          align-items: flex-end;
-        }
-      }
+      &:nth-of-type(4),
       &:nth-of-type(5) {
         text-align: right;
+        .sub-table {
+          right: 0px!important;
+        }
         .hidden-row {
           align-items: flex-end;
         }
