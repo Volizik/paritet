@@ -546,10 +546,17 @@ label {
     justify-content: center;
     align-items: center;
     max-width: 260px;
-    margin: 10px 0;
+    margin: 0;
     span {
       display: block;
       margin-bottom: 20px;
+      &:first-of-type {
+        font-size: 14px;
+      }
+      &:last-of-type {
+        font-size: 13px;
+        margin-bottom: 0;
+      }
     }
   }
 }
