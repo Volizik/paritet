@@ -446,8 +446,9 @@ tbody {
     border: none;
     background-color: transparent;
     height: 30px;
-    width: 30px;
+    width: 25px;
     cursor: pointer;
+    padding: 0;
     //img {
     //  height: 15px;
     //  width: 15px;
@@ -716,7 +717,11 @@ tbody {
 
 }
 
-
+.manager-meeting-agenda {
+  .agenda-settings__row {
+    position: relative;
+  }
+}
 .manager-meeting-info {
 
   .show-constraints,
@@ -740,6 +745,7 @@ tbody {
     }
   }
   .agenda-settings__row {
+    position: relative;
     display: flex;
     align-items: baseline;
     padding-bottom: 15px;

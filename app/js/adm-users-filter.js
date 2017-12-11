@@ -85,6 +85,15 @@ $(function () {
         admInputFilter($(this), $('.header__filter .filter .filter table'));
     })
 
+    $(document).on('keyup', '.agenda-settings__row .t-search', function () {
+        var filter = $(this).parent().find('.filter');
+        var table = $(this).parent().find('.filter table');
+        filter.show();
+        admInputFilter($(this), table);
+    })
+
+
+
     /*-----------------------------------------------------------------------------------*/
 })
 

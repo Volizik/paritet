@@ -301,7 +301,7 @@ $someone-hover: #004680;
   border:none;
   cursor: pointer;
   &:hover {
-    color: #005499;
+    background-color: #005499;
     transition: .3s;
   }
   &:focus {
@@ -319,7 +319,7 @@ $someone-hover: #004680;
   border:none;
   cursor: pointer;
   &:hover {
-    color: #dbdbdb;
+    background-color: #dbdbdb;
     transition: .3s;
   }
   &:focus {
