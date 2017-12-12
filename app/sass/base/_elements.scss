@@ -267,7 +267,6 @@ $someone-hover: #004680;
     select {
       width: 100%;
       margin-bottom: 15px;
-
     }
     label {
       display: block;
@@ -285,6 +284,16 @@ $someone-hover: #004680;
     align-items: center;
     padding: 0px 20px 20px;
     box-sizing: border-box;
+    .submit {
+      height: 40px;
+    }
+    .cancel {
+      height: 40px;
+    }
+  }
+
+  .mCSB_dragger_bar {
+    width: 6px!important;
   }
 }
 
@@ -436,9 +445,30 @@ $someone-hover: #004680;
   color: #000;
   box-sizing: border-box;
   font-weight: 400;
-  background: url(../images/icons/search.png) 98% 50% no-repeat;
+  background: url(../images/icons/search2.png) 98% 50% no-repeat;
+  &:hover {
+    background: url(../images/icons/search2-hover.png) 98% 50% no-repeat;
+  }
 }
 /*---table---*/
+
+.select {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 6px;
+    background: url(../images/icons/icon_dropdown.png) center center no-repeat;
+    pointer-events: none;
+  }
+}
 
 .drop {
   position: relative;
@@ -582,6 +612,9 @@ label {
 .bg-grey {
   background-color: #ccc!important;
 }
+.blue {
+  color: #0062b3!important;
+}
 .bg-blue {
   background-color: #0062b3!important;
 }
@@ -707,8 +740,8 @@ label {
 }
 
 .short-input {
-  min-width: 30px!important;
-  width: 30px!important;
+  min-width: 70px!important;
+  width: 70px!important;
   padding-left: 2px!important;
   padding-right: 2px!important;
   text-align: center;
@@ -762,6 +795,7 @@ label {
 
 /*---Custom scroll---*/
 .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #b8d1e6; width: 8px;  border-radius: 0px }
+.mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover{ background-color: #73b2e6;}
 .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail{ background-color: #e9eff5; border-radius: 0px}
 .mCSB_1_scrollbar .mCSB_dragger .mCSB_draggerRail{ width: 8px; }
 .mCSB_scrollTools .mCSB_draggerRail { width: 8px;  padding: 0; margin: 0px;}

@@ -7,7 +7,7 @@ Reference: http://jsfiddle.net/BB3JK/47/
         var $this = $(this), numberOfOptions = $(this).children('option').length;
 
         $this.addClass('select-hidden');
-        $this.wrap('<div class="select"></div>');
+        $this.wrap('<div class="select-custom"></div>');
         $this.after('<div class="select-styled"></div>');
 
         var $styledSelect = $this.next('div.select-styled');

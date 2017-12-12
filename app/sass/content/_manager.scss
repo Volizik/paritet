@@ -619,21 +619,32 @@ tbody {
       flex-wrap: wrap;
       position: relative;
       font-size: 13px;
+      .select {
+        margin-right: 10px;
+        select {
+          appearance: none;
+          &::-ms-expand {
+            display: none;
+          }
+        }
+      }
       select {
         height: 31px;
-        margin-right: 10px;
         padding-left: 10px;
         padding-right: 10px;
         box-sizing: border-box;
       }
       .width-sm {
         width: 200px;
+        min-width: 200px;
       }
       .width-md {
         width: 300px;
+        min-width: 300px;
       }
       .width-lg {
         width: 510px;
+        min-width: 510px;
       }
 
     }
@@ -707,11 +718,7 @@ tbody {
     box-sizing: border-box;
     background-color: transparent;
     border: none;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
+
   }
 
 

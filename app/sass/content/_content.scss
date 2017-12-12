@@ -56,6 +56,9 @@
       color: #000;
       padding-left: 10px;
       box-sizing: border-box;
+      .sub-table {
+        left: -3px;
+      }
       span {
         display: inline-flex;
         align-items: center;
@@ -93,7 +96,7 @@
       height: 30px;
       border: 1px solid #ccc;
       padding: 0px 10px;
-      font-size: 14px;
+      font-size: 13px;
       color: #000000;
       box-sizing: border-box;
       &::placeholder {
