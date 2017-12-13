@@ -52,6 +52,7 @@ $someone-hover: #004680;
       color: #000;
       font-size: 14px;
       margin: 10px 0 ;
+      line-height: 20px;
     }
   }
   &__text {
@@ -62,7 +63,19 @@ $someone-hover: #004680;
     padding: 20px 15px;
     border-top: 1px solid #ccc;
     box-sizing: border-box;
+    button {
+      height: 40px;
+    }
   }
+}
+.mr5 {
+  margin-right: 5px!important;
+}
+.mr20 {
+  margin-right: 20px!important;
+}
+.mb10 {
+  margin-bottom: 10px!important;
 }
 
 .arrow-down {
@@ -264,9 +277,13 @@ $someone-hover: #004680;
     p {
       font-size: 14px;
     }
-    select {
+    .select {
       width: 100%;
       margin-bottom: 15px;
+      select {
+        width: 100%;
+
+      }
     }
     label {
       display: block;
@@ -276,6 +293,19 @@ $someone-hover: #004680;
     input {
       display: inline-block!important;
       margin-right: 10px;
+    }
+    #mCSB_1_dragger_vertical, .mCSB_scrollTools .mCSB_draggerContainer {
+      width: 6px!important;
+    }
+    .mCSB_scrollTools .mCSB_draggerRail {
+      width: 6px!important;
+    }
+    .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+      width: 6px!important;
+    }
+    .mCSB_inside>.mCSB_container {
+      margin-right: 0!important;
+      padding-right: 20px;
     }
   }
   &__footer {
@@ -292,9 +322,7 @@ $someone-hover: #004680;
     }
   }
 
-  .mCSB_dragger_bar {
-    width: 6px!important;
-  }
+
 }
 
 
@@ -367,6 +395,10 @@ $someone-hover: #004680;
   color: $someone;
 }
 
+.input-number {
+  height: 31px;
+  margin-right: 10px;
+}
 
 /*---table---*/
 .table {
@@ -381,6 +413,7 @@ $someone-hover: #004680;
     height: 40px;
     font-weight: 400;
     color: #777;
+    text-align: left;
     &:first-of-type {
       padding-left: 10px;
     }
@@ -467,6 +500,12 @@ $someone-hover: #004680;
     height: 6px;
     background: url(../images/icons/icon_dropdown.png) center center no-repeat;
     pointer-events: none;
+  }
+  select {
+    appearance: none;
+  }
+  select::-ms-expand {
+    display: none;
   }
 }
 
@@ -577,6 +616,7 @@ label {
     align-items: center;
     max-width: 260px;
     margin: 0;
+    font-size: 14px;
     span {
       display: block;
       margin-bottom: 20px;
@@ -617,6 +657,21 @@ label {
 }
 .bg-blue {
   background-color: #0062b3!important;
+}
+
+.small-input {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 2px!important;
+  padding-right: 2px!important;
+  width: 40px!important;
+  min-width: 40px!important;
+}
+.table-select {
+  min-width: 100%!important;
+  width: 100%!important;
+  padding-right: 20px!important;
+  padding-left: 3px!important;
 }
 
 .voting-actions {
@@ -801,8 +856,11 @@ label {
 .mCSB_scrollTools .mCSB_draggerRail { width: 8px;  padding: 0; margin: 0px;}
 .mCSB_scrollTools .mCSB_draggerContainer { width: 8px; }
 #mCSB_1_dragger_vertical { width: 8px; }
+.mCSB_scrollTools {
+  width: 8px;
+}
 .mCSB_inside>.mCSB_container {
-  margin-right: 30px!important;
+  margin-right: 40px!important;
 }
 /*---!Custom scroll---*/
 

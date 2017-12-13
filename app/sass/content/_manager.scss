@@ -564,13 +564,13 @@ tbody {
           width: 7%;
         }
         .ast-voting {
-          width: 8%;
+          width: 145px;
         }
         .ast-reason {
-          width: calc(100% - 72% - 45px);
+          width: 185px;
         }
         .ast-actions {
-          width: 45px;
+          width: 60px;
         }
       }
     }
@@ -633,6 +633,10 @@ tbody {
         padding-left: 10px;
         padding-right: 10px;
         box-sizing: border-box;
+      }
+      .width-xs {
+        width: 140px;
+        min-width: 140px;
       }
       .width-sm {
         width: 200px;
@@ -701,12 +705,15 @@ tbody {
   }
 
   .restraint {
+    height: auto;
     min-height: 95px;
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px;
     box-sizing: border-box;
     margin: 20px 0!important;
+    font-size: 13px;
+    resize: none;
   }
   .t-search {
     margin: 0px 10px;

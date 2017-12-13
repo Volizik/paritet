@@ -46,6 +46,9 @@ li {
 button {
     cursor: pointer;
 }
+select {
+    appearance: none;
+}
 
 %clearfix {
     *zoom: 1;

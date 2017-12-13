@@ -408,10 +408,10 @@ $(function () {
         var row = $('.hidden-row');
         if(parent.find(row).hasClass('hidden')) {
             parent.find(row).removeClass('hidden');
-            $(this).text('Всего(скрыть)')
+            $(this).text('Всего (скрыть)')
         } else {
             parent.find(row).addClass('hidden');
-            $(this).text('Всего(показать)')
+            $(this).text('Всего (показать)')
         }
     });
 

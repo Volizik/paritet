@@ -261,11 +261,13 @@
                                 <div class="agenda-settings__row">
                                     <div class="agenda-settings__key">Кворум</div>
                                     <div class="agenda-settings__value">
-                                        <select class="width-sm">
-                                            <option>&gt;25%</option>
-                                            <option>&gt;50%</option>
-                                            <option>&gt;75%</option>
-                                        </select>
+                                        <div class="select">
+                                            <select class="width-sm">
+                                                <option>&gt;25%</option>
+                                                <option>&gt;50%</option>
+                                                <option>&gt;75%</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="agenda-settings__row">
@@ -336,10 +338,7 @@
                         </div>
                         <div class="agenda-settings__cell agenda-settings__hidden is-hidden">
                             <p>Ограничения</p>
-                            <p class="restraint">
-                                Иванов Иван Иванович, паспорт №34433234 (ограничен до 6 700 акций, по уставу) ООО «Жилстройсервис»
-                                ИНН 4455787765, ООО «Рога и копыта», Петров Алексей Александрович, Новицкий Сергей Викторович
-                            </p>
+                            <textarea class="restraint">Иванов Иван Иванович, паспорт №34433234 (ограничен до 6 700 акций, по уставу) ООО «Жилстройсервис» ИНН 4455787765, ООО «Рога и копыта», Петров Алексей Александрович, Новицкий Сергей Викторович</textarea>
                             <div class="agenda-settings__row">
                                 <p>Ограничения</p>
                                 <input type="text" class="t-search" placeholder="Номер счета или имя">
@@ -382,8 +381,20 @@
                                     <td>Иванов Александр</td>
                                     <td>обыкновенная</td>
                                     <td>67 000</td>
-                                    <td>40 200</td>
-                                    <td>Не сделал обязательное что-то</td>
+                                    <td>
+                                        <input type="text" class="small-input">
+                                        <input type="text" class="small-input">
+                                        <input type="text" class="small-input">
+                                    </td>
+                                    <td>
+                                        <div class="select">
+                                            <select class="table-select">
+                                                <option value="">qwertyuioasdfghjklqwertyuiop</option>
+                                                <option value="">asdfghjklqwertyuiop</option>
+                                                <option value="">zxcvbnmqwertyuiopasdfghjkl</option>
+                                            </select>
+                                        </div>
+                                    </td>
                                     <td>
                                         <button class="ast-action-btn"><img src="/images/icons/edit2.png" alt=""></button>
                                         <button class="ast-action-btn"><img src="/images/icons/cross.png" alt=""></button>
@@ -586,10 +597,10 @@
                         </div>
                         <div class="agenda-settings__cell agenda-settings__hidden is-hidden">
                             <p>Ограничения</p>
-                            <p class="restraint">
+                            <textarea class="restraint">
                                 Иванов Иван Иванович, паспорт №34433234 (ограничен до 6 700 акций, по уставу) ООО «Жилстройсервис»
                                 ИНН 4455787765, ООО «Рога и копыта», Петров Алексей Александрович, Новицкий Сергей Викторович
-                            </p>
+                            </textarea>
                             <div class="agenda-settings__row">
                                 <p>Ограничения</p>
                                 <input type="text" class="t-search" placeholder="Номер счета или имя">
