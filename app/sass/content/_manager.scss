@@ -223,6 +223,7 @@ tbody {
   }
   .meeting-question {
     font-size: 13px;
+
   }
   .meeting-answer-title {
     font-size: 13px;
@@ -328,6 +329,7 @@ tbody {
   .meeting-question {
     font-size: 13px;
     font-weight: 700;
+    padding-right: 10px;
   }
   .meeting-answer-title {
     font-size: 13px;
@@ -398,13 +400,10 @@ tbody {
   }
 
 
-  label.voting-actions__choice--item {
+  .voting-actions__choice--item {
     background-color: #eee;
     color: $someone;
     margin-right: 10px;
-  }
-  input[type="radio"] {
-    display: none;
   }
 
 
@@ -449,11 +448,15 @@ tbody {
     width: 25px;
     cursor: pointer;
     padding: 0;
-    //img {
-    //  height: 15px;
-    //  width: 15px;
-    //  object-fit: contain;
-    //}
+    &--small {
+      width: 20px;
+      height: 25px;
+      img {
+        height: 12px;
+        width: 12px;
+        object-fit: contain;
+      }
+    }
   }
 }
 
@@ -573,6 +576,11 @@ tbody {
           width: 60px;
         }
       }
+      .noborder {
+        width: 100%!important;
+        margin: 0!important;
+        padding: 0!important;
+      }
     }
     &__line {
       display: flex;
@@ -594,6 +602,7 @@ tbody {
       &--item {
         display: flex;
         align-items: center;
+        width: 100%;
         input {
           display: block;
           min-width: inherit;
