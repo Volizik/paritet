@@ -394,7 +394,7 @@ tbody {
   }
 
   .voting-order {
-    color: $blue;
+    color: #0062b2;
     //font-weight: 700;
     font-size: 13px;
   }
@@ -677,7 +677,7 @@ tbody {
   }
   .settings-btn {
     font-size: 13px;
-    color: $blue;
+    color: #0062b2;
     font-weight: 400;
     padding: 0;
     border: none;
@@ -727,15 +727,6 @@ tbody {
   .t-search {
     margin: 0px 10px;
   }
-  .ast-action-btn {
-    width: 20px;
-    height: 20px;
-    padding: 3px;
-    box-sizing: border-box;
-    background-color: transparent;
-    border: none;
-
-  }
 
 
 }
@@ -757,7 +748,7 @@ tbody {
     font-weight: 700;
     padding: 0;
     margin: 10px 0;
-    color: $blue;
+    color: #0062b2;
     cursor: pointer;
   }
 
@@ -834,7 +825,7 @@ tbody {
   }
   .materials-list__item {
     cursor: pointer;
-    color: $blue;
+    color: #0062b2;
     font-size: 13px;
     font-weight: 700;
     counter-increment: materials-list-counter;

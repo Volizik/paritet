@@ -1,37 +1,74 @@
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.submit, .add {
+  display: inline-block;
   font-size: 13px;
-  padding-right: 20px;
-  padding-left: 20px;
-  box-sizing: border-box;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #0070cc;
+  margin-right: 10px;
   transition: .3s;
+  border:none;
+  cursor: pointer;
   &:hover {
+    background-color: #005499;
     transition: .3s;
   }
-  &__big {
-    height: 40px;
-    min-width: 90px;
-    text-transform: lowercase;
+  &:focus {
+    outline: none
   }
-  &__small {
-    height: 31px;
-    min-width: 95px;
-    text-transform: uppercase;
+}
+.cancel {
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  color: #000;
+  background-color: #f5f5f5;
+  transition: .3s;
+  border:none;
+  cursor: pointer;
+  &:hover {
+    background-color: #dbdbdb;
+    transition: .3s;
   }
-  &--blue {
-    color: #fff;
+  &:focus {
+    outline: none
+  }
+}
+.insert {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #aaaaaa;
+  font-weight: 400;
+  color: #fff;
+  margin-left: 10px;
+  font-size: 13px;
+  &-active {
     background-color: #0070cc;
-    &:hover {
-      color: #005499;
-    }
   }
-  &--grey {
-    color: #000;
-    background-color: #f5f5f5;
-    &:hover {
-      color: #dbdbdb;
-    }
+}
+.delete-btn {
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #e62e2e;
+  margin-right: 10px;
+  border:none;
+  &:focus {
+    outline: none
   }
+}
+
+.ast-action-btn {
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+
 }

@@ -105,10 +105,12 @@ $(function () {
 
 
     /*----------filter in new user-----------*/
-    $(document).on('click', '#user-cabinet-new .filter tr', function () {
-        var checkbox = $(this).find('input[type="checkbox"]');
+
+    $(document).on('click', '#user-cabinet-new .filter label, .filter__row-text', function () {
+        var checkbox = $(this).closest('tr').find('input[type="checkbox"]');
         checkbox.is(':checked') ? checkbox.prop('checked', false) : checkbox.prop('checked', true);
     });
+
     $(document).on('click', '#user-cabinet-new .filter .submit', function () {
         var trArr = document.querySelectorAll('#user-cabinet-new .filter tr');
         var users = '';
@@ -121,25 +123,12 @@ $(function () {
                 for(var j = 0; j<span.length; j++) {
                     user = user + span[j].innerHTML + ' '
                 }
-                users = users + user + '; '
+                users = users + user + ';'
             }
         }
-        $('#user-cabinet-new .t-search').val(users);
-        var parent = $('#user-cabinet-new .search');
-        var child = document.createElement('span');
-        $(child).css({
-            'display': 'block',
-            'position': 'absolute',
-            'right': '1px',
-            'top': '1px',
-            'height': '28px',
-            'width': '25px',
-            'padding': '0',
-            'cursor': 'pointer',
-            'background': 'url(../images/icons/delete.png) no-repeat center #fff'
-        });
-        if ($('#user-cabinet-new .t-search').val().length > 0) {
-            $(parent).append(child);
+        $('#user-cabinet-new .admin-represent').text(users);
+        if($('#user-cabinet-new .admin-represent').text().replace(' ', '').length === 0) {
+            $('#user-cabinet-new .admin-represent').text('Нет')
         }
         $('#user-cabinet-new .filter').hide();
     });
