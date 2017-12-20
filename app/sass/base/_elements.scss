@@ -339,6 +339,67 @@ $someone-hover: #004680;
 
 }
 
+.voting-bill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #0062b3;
+  font-weight: 400;
+  &:hover {
+    .voting-bill__hint {
+      display: block;
+    }
+  }
+  &__status {
+    height: 10px;
+    width: 10px;
+    min-height: 10px!important;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 15px!important;
+    &--true {
+      background-color: #5ccc3d;
+    }
+    &--false {
+      background-color: #e62e2e;
+    }
+    &--abstained {
+      background-color: #f29c24;
+    }
+  }
+  &--active {
+    color: #000;
+  }
+  &__hint {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #004680;
+    z-index: 10;
+    padding: 5px;
+    font-size: 13px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom: 5px solid #004680;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+    p {
+      margin: 0;
+      margin-bottom: 5px;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+
 
 .activeTr {
   color: $someone;

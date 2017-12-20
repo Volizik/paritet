@@ -114,19 +114,24 @@ $(function () {
     $(document).on('click', '#user-cabinet-new .filter .submit', function () {
         var trArr = document.querySelectorAll('#user-cabinet-new .filter tr');
         var users = '';
+        var options = '';
         for(var i = 0; i< trArr.length; i++) {
             var checkbox = trArr[i].querySelector('input[type="checkbox"]:checked');
             var span = trArr[i].querySelectorAll('td > span');
+            var select = $('.selected-issuers');
 
             if (checkbox !== null) {
                 var user = '';
                 for(var j = 0; j<span.length; j++) {
                     user = user + span[j].innerHTML + ' '
                 }
-                users = users + user + ';'
+                users +=  user;
+                options += '<option>'  + user + '</option>';
             }
         }
+        select.append(options);
         $('#user-cabinet-new .admin-represent').text(users);
+
         if($('#user-cabinet-new .admin-represent').text().replace(' ', '').length === 0) {
             $('#user-cabinet-new .admin-represent').text('Нет')
         }
@@ -500,6 +505,9 @@ $(function () {
     })
 
 
-
+    $(document).on('click', '.voting-bill', function () {
+        $(this).siblings('.voting-bill').removeClass('voting-bill--active');
+        $(this).addClass('voting-bill--active')
+    })
 
 });
