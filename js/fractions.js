@@ -55,6 +55,7 @@ function KeyupDistributionOfVotes(id, iMinuendWhole, iMinuendNumerator, iMinuend
         iSubtractedDenominator = getDenominatorFromText(sText);
         //alert("знаменатель="+iSubtractedDenominator);
         if (iMinuendNumerator == 0) iMinuendDenominator = 1;
+        if (iSubtractedNumerator == 0) iSubtractedDenominator = 1;
         iWhole = getDifferenceWhole(iMinuendWhole, iMinuendNumerator, iMinuendDenominator, iSubtractedWhole, iSubtractedNumerator, iSubtractedDenominator);
         iNumerator = getDifferenceNumerator(iMinuendWhole, iMinuendNumerator, iMinuendDenominator, iSubtractedWhole, iSubtractedNumerator, iSubtractedDenominator);
         iDenominator = getDifferenceDenominator(iMinuendWhole, iMinuendNumerator, iMinuendDenominator, iSubtractedWhole, iSubtractedNumerator, iSubtractedDenominator);

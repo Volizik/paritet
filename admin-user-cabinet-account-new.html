@@ -232,7 +232,7 @@ gHEa0S8HAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 -267 208.89)">
                     <div class="content__block--row">
                         <div class="content__block--type"><span>Представляет:</span></div>
                         <div class="content__block--value">
-                            <span class="admin-represent">Нет</span>
+                            <input class="noborder admin-represent" type="text" value="Нет">
                             <div class="select" style="display: none;">
                                 <select class="selected-issuers"></select>
                             </div>
@@ -383,11 +383,11 @@ gHEa0S8HAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 -267 208.89)">
                                         <div class="filter__body--row">
                                             <div class="filter__body--key"></div>
                                             <div class="filter__body--value">
-                                                <label><input type="radio" name="name" checked>Юр. лицо</label>
-                                                <label><input type="radio" name="name">Физ. лицо</label>
+                                                <label class="modal__tab" data-id="entity"><input type="radio" name="name" checked>Юр. лицо</label>
+                                                <label class="modal__tab" data-id="individual"><input type="radio" name="name">Физ. лицо</label>
                                             </div>
                                         </div>
-                                        <div class="filter__entity">
+                                        <div class="filter__block" data-id="entity">
                                             <div class="filter__body--row">
                                                 <div class="filter__body--key">Наименование</div>
                                                 <div class="filter__body--value"><input type="text"></div>
@@ -397,7 +397,7 @@ gHEa0S8HAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 -267 208.89)">
                                                 <div class="filter__body--value"><input type="text"></div>
                                             </div>
                                         </div>
-                                        <div class="filter__individual">
+                                        <div class="filter__block" data-id="individual">
                                             <div class="filter__body--row">
                                                 <div class="filter__body--key">ФИО</div>
                                                 <div class="filter__body--value"><input type="text"></div>

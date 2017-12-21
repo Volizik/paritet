@@ -9,10 +9,11 @@ table.users-list {
     box-sizing: border-box;
     border-top: 1px solid #ccc;
     text-align: left;
-    .someone {
-      a {
-        color: $someone;
-      }
+  }
+  td:first-of-type {
+    a {
+      color: $someone;
+      font-weight: 700;
     }
   }
   th {
