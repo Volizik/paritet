@@ -72,3 +72,18 @@
   border: none;
 
 }
+
+.voting-send,
+.sign-up {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+}

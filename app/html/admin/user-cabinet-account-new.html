@@ -50,9 +50,6 @@
                         <div class="content__block--type"><span>Представляет:</span></div>
                         <div class="content__block--value">
                             <input class="noborder admin-represent" type="text" value="Нет">
-                            <div class="select" style="display: none;">
-                                <select class="selected-issuers"></select>
-                            </div>
                             <div class="filter">
                                 <div class="filter__body">
                                     <table>
@@ -192,7 +189,7 @@
                                 </div>
                                 <div class="filter__footer">
                                     <button class="submit">Выбрать</button>
-                                    <button type="button" class="add">Добавить</button>
+                                    <button type="button" class=" add">Добавить</button>
                                     <button class="cancel">Отмена</button>
                                 </div>
                                 <div class="filter">
@@ -200,34 +197,34 @@
                                         <div class="filter__body--row">
                                             <div class="filter__body--key"></div>
                                             <div class="filter__body--value">
-                                                <label class="modal__tab" data-id="entity"><input type="radio" name="name" checked>Юр. лицо</label>
+                                                <label class="modal__tab modal__tab--active" data-id="entity"><input type="radio" name="name" checked>Юр. лицо</label>
                                                 <label class="modal__tab" data-id="individual"><input type="radio" name="name">Физ. лицо</label>
                                             </div>
                                         </div>
                                         <div class="filter__block" data-id="entity">
                                             <div class="filter__body--row">
                                                 <div class="filter__body--key">Наименование</div>
-                                                <div class="filter__body--value"><input type="text"></div>
+                                                <div class="filter__body--value"><input class="entity-name" type="text"></div>
                                             </div>
                                             <div class="filter__body--row">
                                                 <div class="filter__body--key">ИНН</div>
-                                                <div class="filter__body--value"><input type="text"></div>
+                                                <div class="filter__body--value"><input class="entity-doc" type="text"></div>
                                             </div>
                                         </div>
                                         <div class="filter__block" data-id="individual">
                                             <div class="filter__body--row">
                                                 <div class="filter__body--key">ФИО</div>
-                                                <div class="filter__body--value"><input type="text"></div>
+                                                <div class="filter__body--value"><input class="individual-name" type="text"></div>
                                             </div>
                                             <div class="filter__body--row">
                                                 <div class="filter__body--key">Номер паспорта</div>
-                                                <div class="filter__body--value"><input type="text"></div>
+                                                <div class="filter__body--value"><input class="individual-doc" type="text"></div>
                                             </div>
                                         </div>
-
+                                        <form class="add-issuer-form"></form>
                                     </div>
                                     <div class="filter__footer">
-                                        <button class="submit">Сохранить</button>
+                                        <button class="submit add-issuer-btn">Сохранить</button>
                                         <button class="cancel">Отмена</button>
                                     </div>
                                 </div>

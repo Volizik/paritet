@@ -105,11 +105,9 @@ $(function () {
     $(document).on('click', '#user-cabinet-new .filter .submit', function () {
         var trArr = document.querySelectorAll('#user-cabinet-new .filter tr');
         var users = '';
-        var options = '';
         for(var i = 0; i< trArr.length; i++) {
             var checkbox = trArr[i].querySelector('input[type="checkbox"]:checked');
             var span = trArr[i].querySelectorAll('td > span');
-            var select = $('.selected-issuers');
 
             if (checkbox !== null) {
                 var user = '';
@@ -117,11 +115,8 @@ $(function () {
                     user = user + span[j].innerHTML + ' '
                 }
                 users +=  user;
-
-                options += '<option>'  + user + '</option>';
             }
         }
-        select.append(options);
         var inp = document.querySelector('#user-cabinet-new .admin-represent');
         inp.setAttribute('value', users);
 
@@ -476,20 +471,26 @@ $(function () {
         } else {
             return false
         }
-    })
+    });
+    $(document).on('click', '.sign-up', function () {
+        $(this).val('Зарегистрироваться')
+            .removeClass('bg-blue')
+            .addClass('bg-grey')
+            .attr('disabled', 'true');
+    });
 
     $(document).on('click', '.users-list .t-delete', function (e) {
         e.preventDefault();
         $('.modal-delete').show();
         var href = $(this).closest('a').attr('href');
         $('.modal-delete .delete-btn').attr('href', href);
-    })
+    });
 
 
     $(document).on('click', '.voting-bill', function () {
         $(this).siblings('.voting-bill').removeClass('voting-bill--active');
         $(this).addClass('voting-bill--active')
-    })
+    });
 
 //modal tabs
     $('.filter__block').each(function (i) {
