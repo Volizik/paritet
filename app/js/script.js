@@ -1,9 +1,6 @@
 $(function () {
 
-
-
     /*-------------------start action-btn---------------------*/
-
 
     $(document).on('click', '.action-btn--arrow', function () {
         $(this).toggleClass('action-btn--active');
@@ -24,10 +21,6 @@ $(function () {
     /*---------------------end action-btn---------------------*/
 
 
-
-
-
-
     /*------------------------start edit password btn--------------------*/
 
     $(document).on('click', '.edit-pass', function () {
@@ -36,8 +29,6 @@ $(function () {
     });
 
     /*------------------------end edit password btn--------------------*/
-
-
 
 
     /*-------------------SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
@@ -105,10 +96,12 @@ $(function () {
 
 
     /*----------filter in new user-----------*/
-    $(document).on('click', '#user-cabinet-new .filter tr', function () {
-        var checkbox = $(this).find('input[type="checkbox"]');
+
+    $(document).on('click', '#user-cabinet-new .filter label, .filter__row-text', function () {
+        var checkbox = $(this).closest('tr').find('input[type="checkbox"]');
         checkbox.is(':checked') ? checkbox.prop('checked', false) : checkbox.prop('checked', true);
     });
+
     $(document).on('click', '#user-cabinet-new .filter .submit', function () {
         var trArr = document.querySelectorAll('#user-cabinet-new .filter tr');
         var users = '';
@@ -121,25 +114,14 @@ $(function () {
                 for(var j = 0; j<span.length; j++) {
                     user = user + span[j].innerHTML + ' '
                 }
-                users = users + user + '; '
+                users +=  user;
             }
         }
-        $('#user-cabinet-new .t-search').val(users);
-        var parent = $('#user-cabinet-new .search');
-        var child = document.createElement('span');
-        $(child).css({
-            'display': 'block',
-            'position': 'absolute',
-            'right': '1px',
-            'top': '1px',
-            'height': '28px',
-            'width': '25px',
-            'padding': '0',
-            'cursor': 'pointer',
-            'background': 'url(../images/icons/delete.png) no-repeat center #fff'
-        });
-        if ($('#user-cabinet-new .t-search').val().length > 0) {
-            $(parent).append(child);
+        var inp = document.querySelector('#user-cabinet-new .admin-represent');
+        inp.setAttribute('value', users);
+
+        if($('#user-cabinet-new .admin-represent').val().replace(' ', '').length === 0) {
+            inp.setAttribute('value', 'Нет')
         }
         $('#user-cabinet-new .filter').hide();
     });
@@ -203,8 +185,6 @@ $(function () {
     });
 
 
-
-
     $(document).on('click', '.content__registers .filter tr', function () {
         $('.content__registers .filter tr').removeClass('activeTr');
         $(this).addClass('activeTr');
@@ -216,8 +196,6 @@ $(function () {
             $('.content__registers .insert').addClass('insert-active').removeAttr('disabled')
         }
     });
-
-
 
 
     $(document).on('click', '.sidebar__item .users_inside',function () {
@@ -247,8 +225,6 @@ $(function () {
     });
 
 
-
-
     $(document).on('click', '.sidebar__item .active-now',function () {
         $('.header__filter--field .filter--input').hide();
         $('.autofilter').hide();
@@ -263,10 +239,6 @@ $(function () {
     });
 
 
-
-
-
-
     $(document).on('click', '.filter .filter tr', function () {
         $('.filter .filter tr').removeClass('activeTr');
         $(this).addClass('activeTr');
@@ -277,7 +249,6 @@ $(function () {
             $('.header__filter .filter .filter').hide();
         }
     })
-
 
 
     //dropdown-----------------------------------------------
@@ -293,7 +264,6 @@ $(function () {
         $(this).parent().parent().find('span.blue-bold').text($(this).text())
     });
     //dropdown-----------------------------------------------
-
 
 
     /*------------gropdown-user-icon---------------*/
@@ -355,7 +325,6 @@ $(function () {
         }
 
     });
-
 
 
     $(document).on( 'click', '.load-list', function () {
@@ -433,8 +402,6 @@ $(function () {
     });
 
 
-
-
     if($('.write-msg')) {
         $(document).on('click', '.show-write-msg', function () {
             $('.write-msg').fadeIn('fast');
@@ -478,7 +445,7 @@ $(function () {
         $(this).closest('.voting__block').find('.voting-actions-hidden').css('display', 'none');
     });
 
-    
+
     $(document).on('click', '.voting-order', function () {
         var text = $(this).closest('.content__block').find('.voting-order__text')
         if (text.hasClass('j-invisible')) {
@@ -504,13 +471,40 @@ $(function () {
         } else {
             return false
         }
-    })
+    });
+    $(document).on('click', '.sign-up', function () {
+        $(this).val('Зарегистрироваться')
+            .removeClass('bg-blue')
+            .addClass('bg-grey')
+            .attr('disabled', 'true');
+    });
 
-    $(document).on('click', '.users-list .t-delete', function () {
+    $(document).on('click', '.users-list .t-delete', function (e) {
+        e.preventDefault();
         $('.modal-delete').show();
-    })
+        var href = $(this).closest('a').attr('href');
+        $('.modal-delete .delete-btn').attr('href', href);
+    });
 
 
+    $(document).on('click', '.voting-bill', function () {
+        $(this).siblings('.voting-bill').removeClass('voting-bill--active');
+        $(this).addClass('voting-bill--active')
+    });
+
+//modal tabs
+    $('.filter__block').each(function (i) {
+        if(i !=0) {
+            $(this).hide(0);
+        }
+    });
+    $(document).on('click', '.modal__tab', function (e) {
+        var tabId = $(this).attr('data-id');
+        $(this).siblings('.modal__tab').removeClass('modal__tab--active');
+        $(this).addClass('modal__tab--active');
+        $('.filter__block').hide(0);
+        $('.filter__block[data-id='+ tabId +']').show();
+    });
 
 
 });

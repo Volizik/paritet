@@ -11,6 +11,7 @@ $someone-hover: #004680;
   font-weight: 600;
 }
 
+
 @mixin center {
   position: absolute;
   top: 50%;
@@ -177,7 +178,11 @@ $someone-hover: #004680;
     font-size: 15px;
     color: #fff;
     cursor: pointer;
-    &:active,
+    &:active {
+      background-color: $green-btn-active;
+      transition: .4s;
+      box-shadow: inset -4px 7px 10px #767a06;
+    }
     &:hover {
       background-color: $green-btn-active;
       transition: .4s;
@@ -198,7 +203,11 @@ $someone-hover: #004680;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
     }
-    &:active,
+    &:active {
+      background-color: $green-btn-active;
+      transition: .4s;
+      box-shadow: inset -4px 7px 10px #767a06;
+    }
     &:hover {
       background-color: $green-btn-active;
       transition: .4s;
@@ -330,71 +339,67 @@ $someone-hover: #004680;
 
 }
 
-
-.submit {
-  display: inline-block;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #fff;
-  padding: 10px 20px;
-  background-color: #0070cc;
-  margin-right: 10px;
-  transition: .3s;
-  border:none;
+.voting-bill {
+  position: relative;
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  &:hover {
-    background-color: #005499;
-    transition: .3s;
-  }
-  &:focus {
-    outline: none
-  }
-}
-.cancel {
-  display: inline-block;
-  font-size: 13px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  color: #000;
-  background-color: #f5f5f5;
-  transition: .3s;
-  border:none;
-  cursor: pointer;
-  &:hover {
-    background-color: #dbdbdb;
-    transition: .3s;
-  }
-  &:focus {
-    outline: none
-  }
-}
-.insert {
-  text-transform: uppercase;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  border: none;
-  background-color: #aaaaaa;
+  color: #0062b3;
   font-weight: 400;
-  color: #fff;
-  margin-left: 10px;
-  font-size: 13px;
-  &-active {
-    background-color: #0070cc;
+  &:hover {
+    .voting-bill__hint {
+      display: block;
+    }
+  }
+  &__status {
+    height: 10px;
+    width: 10px;
+    min-height: 10px!important;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 15px!important;
+    &--true {
+      background-color: #5ccc3d;
+    }
+    &--false {
+      background-color: #e62e2e;
+    }
+    &--abstained {
+      background-color: #f29c24;
+    }
+  }
+  &--active {
+    color: #000;
+  }
+  &__hint {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #004680;
+    z-index: 10;
+    padding: 5px;
+    font-size: 13px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom: 5px solid #004680;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+    p {
+      margin: 0;
+      margin-bottom: 5px;
+      text-align: center;
+      color: #fff;
+    }
   }
 }
-.delete-btn {
-  display: inline-block;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #fff;
-  padding: 10px 20px;
-  background-color: #e62e2e;
-  margin-right: 10px;
-  border:none;
-  &:focus {
-    outline: none
-  }
-}
+
 
 .activeTr {
   color: $someone;
@@ -474,20 +479,7 @@ $someone-hover: #004680;
     background: url(../images/icons/sort-icon.png) no-repeat 50%;
   }
 }
-.t-search {
-  min-width: 300px;
-  height: 30px;
-  border: 1px solid #ccc;
-  padding: 0 25px 0 10px!important;
-  font-size: 14px;
-  color: #000;
-  box-sizing: border-box;
-  font-weight: 400;
-  background: url(../images/icons/search2.png) 98% 50% no-repeat;
-  &:hover {
-    background: url(../images/icons/search2-hover.png) 98% 50% no-repeat;
-  }
-}
+
 /*---table---*/
 
 .select {
@@ -516,16 +508,17 @@ $someone-hover: #004680;
 
 .drop {
   position: relative;
+  cursor: pointer;
   &:before {
     content: '';
     display: block;
     position: absolute;
-    right: -15px;
+    right: -8px;
     top: 50%;
     transform: translateY(-50%);
-    border-top: 5px solid $someone;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
+    border-top: 4px solid $someone;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
   }
   ul {
     display: none;
@@ -548,7 +541,7 @@ $someone-hover: #004680;
       cursor: pointer;
       a {
         color: black;
-        font-weight:700;
+        font-weight:400;
       }
       &:hover {
         color: $someone
@@ -559,7 +552,6 @@ $someone-hover: #004680;
     display: block;
   }
 }
-
 
 input[type="checkbox"] {
   &:not(checked) {

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="css/libs.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.min.css" rel="stylesheet" type="text/css">
+    <script src="js/fractions.js"></script>
 </head>
 <body>
 <!-- open .header -->
@@ -180,7 +181,7 @@ gHEa0S8HAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 -267 208.89)">
     </div>
 
 </header>
-<main class="content">
+<main class="content user-cabinet-new">
 
     <section id="account-content" class="content__section">
 
@@ -202,171 +203,217 @@ gHEa0S8HAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 -267 208.89)">
                 <div class="content__block--row">
                     <div class="content__block--type"><span>Роль:</span></div>
                     <div class="content__block--value">
-                        <select>
-                            <option value="" selected disabled hidden>Выберите роль</option>
-                            <option value="admin">Администратор</option>
-                            <option value="manager">Менеджер</option>
-                            <option value="issuer">Эмитент</option>
-                            <option value="registered-user">Зарег. лицо</option>
-                        </select>
+                        <div class="select">
+                            <select class="admin-user-role">
+                                <option value="" selected disabled hidden>Выберите роль</option>
+                                <option value="admin">Администратор</option>
+                                <option value="SHAREHOLDER">Владелец</option>
+                                <option value="manager">Менеджер</option>
+                                <option value="issuer">Эмитент</option>
+                                <option value="registered-user">Зарег. лицо</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="content__block--row">
                     <div class="content__block--type"><span>ФИО:</span></div>
                     <div class="content__block--value search">
-                        <input type="text" class="t-search" placeholder="Введите ФИО и нажмите Enter">
-                        <div class="filter">
-                            <div class="filter__body">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user1">
-                                            <label for="new_user1"></label>
-                                            <span>67650098</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Михайлович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user2">
-                                            <label for="new_user2"></label>
-                                            <span>67650097</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Александрович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user3">
-                                            <label for="new_user3"></label>
-                                            <span>67650098</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Михайлович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user4">
-                                            <label for="new_user4"></label>
-                                            <span>67650097</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Александрович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user5">
-                                            <label for="new_user5"></label>
-                                            <span>67650098</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Михайлович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user6">
-                                            <label for="new_user6"></label>
-                                            <span>67650097</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Александрович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user7">
-                                            <label for="new_user7"></label>
-                                            <span>67650098</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Михайлович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user8">
-                                            <label for="new_user8"></label>
-                                            <span>67650097</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Александрович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user9">
-                                            <label for="new_user9"></label>
-                                            <span>67650098</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Михайлович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user10">
-                                            <label for="new_user10"></label>
-                                            <span>67650097</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Александрович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user11">
-                                            <label for="new_user11"></label>
-                                            <span>67650098</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Михайлович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user12">
-                                            <label for="new_user12"></label>
-                                            <span>67650097</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Александрович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user13">
-                                            <label for="new_user13"></label>
-                                            <span>67650098</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Михайлович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="new_user14">
-                                            <label for="new_user14"></label>
-                                            <span>67650097</span>
-                                        </td>
-                                        <td>
-                                            <span>Петров Николай Александрович, паспорт 476456676</span>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="filter__footer">
-                                <button class="submit">Выбрать</button>
-                                <button class="cancel">Отмена</button>
+                        <input type="text"  class="validate-input validate-input__true">
+                    </div>
+                </div>
+                <div class="owner-row hidden">
+                    <div class="content__block--row">
+                        <div class="content__block--type"><span>Номер документа:</span></div>
+                        <div class="content__block--value">
+                            <input type="text" class="validate-input validate-input__false">
+                            <span class="test-check">Проверить</span>
+                        </div>
+                    </div>
+                    <div class="content__block--row">
+                        <div class="content__block--type"><span>Представляет:</span></div>
+                        <div class="content__block--value">
+                            <input class="noborder admin-represent" type="text" value="Нет">
+                            <div class="filter">
+                                <div class="filter__body">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-1">
+                                                <label for="new_user-1"></label>
+                                                <span class="filter__row-text">ООО "Рога и копыта", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-2">
+                                                <label for="new_user-2"></label>
+                                                <span class="filter__row-text">ОАО "Теплостроймаш", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-3">
+                                                <label for="new_user-3"></label>
+                                                <span class="filter__row-text">ООО "Рога и копыта", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-4">
+                                                <label for="new_user-4"></label>
+                                                <span class="filter__row-text">ОАО "Теплостроймаш", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-1">
+                                                <label for="new_user-1"></label>
+                                                <span class="filter__row-text">ООО "Рога и копыта", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-2">
+                                                <label for="new_user-2"></label>
+                                                <span class="filter__row-text">ОАО "Теплостроймаш", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-3">
+                                                <label for="new_user-3"></label>
+                                                <span class="filter__row-text">ООО "Рога и копыта", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-4">
+                                                <label for="new_user-4"></label>
+                                                <span class="filter__row-text">ОАО "Теплостроймаш", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-1">
+                                                <label for="new_user-1"></label>
+                                                <span class="filter__row-text">ООО "Рога и копыта", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-2">
+                                                <label for="new_user-2"></label>
+                                                <span class="filter__row-text">ОАО "Теплостроймаш", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-3">
+                                                <label for="new_user-3"></label>
+                                                <span class="filter__row-text">ООО "Рога и копыта", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="new_user-4">
+                                                <label for="new_user-4"></label>
+                                                <span class="filter__row-text">ОАО "Теплостроймаш", ИНН 67650097</span>
+                                                <div class="filter__edit-btn">
+                                                    <button class="ast-action-btn"><img src="images/icons/edit2.png" alt=""></button>
+                                                    <button class="ast-action-btn"><img src="images/icons/cross.png" alt=""></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="filter__footer">
+                                    <button class="submit">Выбрать</button>
+                                    <button type="button" class=" add">Добавить</button>
+                                    <button class="cancel">Отмена</button>
+                                </div>
+                                <div class="filter">
+                                    <div class="filter__body">
+                                        <div class="filter__body--row">
+                                            <div class="filter__body--key"></div>
+                                            <div class="filter__body--value">
+                                                <label class="modal__tab modal__tab--active" data-id="entity"><input type="radio" name="name" checked>Юр. лицо</label>
+                                                <label class="modal__tab" data-id="individual"><input type="radio" name="name">Физ. лицо</label>
+                                            </div>
+                                        </div>
+                                        <div class="filter__block" data-id="entity">
+                                            <div class="filter__body--row">
+                                                <div class="filter__body--key">Наименование</div>
+                                                <div class="filter__body--value"><input class="entity-name" type="text"></div>
+                                            </div>
+                                            <div class="filter__body--row">
+                                                <div class="filter__body--key">ИНН</div>
+                                                <div class="filter__body--value"><input class="entity-doc" type="text"></div>
+                                            </div>
+                                        </div>
+                                        <div class="filter__block" data-id="individual">
+                                            <div class="filter__body--row">
+                                                <div class="filter__body--key">ФИО</div>
+                                                <div class="filter__body--value"><input class="individual-name" type="text"></div>
+                                            </div>
+                                            <div class="filter__body--row">
+                                                <div class="filter__body--key">Номер паспорта</div>
+                                                <div class="filter__body--value"><input class="individual-doc" type="text"></div>
+                                            </div>
+                                        </div>
+                                        <form class="add-issuer-form"></form>
+                                    </div>
+                                    <div class="filter__footer">
+                                        <button class="submit add-issuer-btn">Сохранить</button>
+                                        <button class="cancel">Отмена</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="content__block--row">
                     <div class="content__block--type"><span>E-mail:</span></div>

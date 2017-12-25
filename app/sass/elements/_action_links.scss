@@ -1,0 +1,17 @@
+.test-check,
+.edit-pass, .find,
+.admin-represent {
+  color: #0062b2!important;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .3s;
+  &:hover,
+  &:active {
+    color: #004680;
+  }
+}
+.test-check,
+.edit-pass, .find{
+  font-weight: 400;
+  padding-left: 10px;
+}
