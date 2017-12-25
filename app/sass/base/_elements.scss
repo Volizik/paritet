@@ -447,6 +447,11 @@ $someone-hover: #004680;
     &:first-of-type {
       padding-left: 10px;
     }
+    &:last-of-type {
+      .t-delete {
+        vertical-align: middle;
+      }
+    }
   }
   .sub-table {
     position: absolute!important;

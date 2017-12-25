@@ -20,7 +20,7 @@
   &__block {
     position: relative;
     border-top: 1px solid #ccc;
-    padding: 10px 0;
+    padding: 20px 0;
     box-sizing: border-box;
     h2 {
       font-size: 18px;
@@ -44,7 +44,7 @@
       font-size: 14px;
       position: relative;
       color: #777;
-      min-width: 100px;
+      min-width: 115px;
       padding: 0 30px 0 0;
       box-sizing: border-box;
       flex-shrink: 0;
@@ -53,7 +53,7 @@
       display: flex;
       align-items: center;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 400;
       position: relative;
       color: #000;
       padding-left: 10px;
@@ -142,7 +142,7 @@
     table {
       border-collapse: collapse;
       width: 95%;
-      font-size: 14px;
+      font-size: 13px;
 
       th {
         color: #777777;
@@ -199,6 +199,17 @@
         text-align: left;
         border-bottom: 1px solid #ccc;
         padding: 8px 0;
+      }
+      td {
+        &:first-of-type,
+        &:last-of-type {
+          color: #0062b2;
+          font-weight: 700;
+          a {
+            color: #0062b2;
+            font-weight: 700;
+          }
+        }
       }
       th {
         color: #777;
