@@ -2,9 +2,10 @@
   position: relative;
   margin-top: 40px;
   margin-left: 40px;
+  margin-bottom: 40px;
   //padding-right: 20px;
   box-sizing: border-box;
-  height:calc( 100% - (85px + 40px));
+  height:calc( 100% - (85px + 80px));
   overflow: hidden;
   h2 {
     font-size: 20px;
@@ -40,7 +41,7 @@
     &--type {
       display: flex;
       align-items: center;
-      font-size: 13px;
+      font-size: 14px;
       position: relative;
       color: #777;
       min-width: 100px;
@@ -50,12 +51,15 @@
     &--value {
       display: flex;
       align-items: center;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       position: relative;
       color: #000;
       padding-left: 10px;
       box-sizing: border-box;
+      .sub-table {
+        left: -3px;
+      }
       span {
         display: inline-flex;
         align-items: center;
@@ -93,7 +97,7 @@
       height: 30px;
       border: 1px solid #ccc;
       padding: 0px 10px;
-      font-size: 14px;
+      font-size: 13px;
       color: #000000;
       box-sizing: border-box;
       &::placeholder {
@@ -127,7 +131,7 @@
   }
 
   &__section {
-    height: calc(100vh - 130px);
+    height: calc(100vh - 170px);
     min-height: calc(100vh - 350px);
   }
 

@@ -184,19 +184,22 @@ $(function () {
     /*----------!filter in new user-----------*/
 
     /*filter in user-groups*/
-    $(document).on('click', '.content__groups .filter tr', function () {
-        $('.content__groups .filter tr').removeClass('activeTr');
+    $(document).on('click', '.filter tr', function () {
+        $('.filter tr').removeClass('activeTr');
         $(this).addClass('activeTr');
     });
-    $(document).on('click', '.content__groups .filter .submit', function () {
-        if($('.activeTr').length >0) {
-            $('.content__groups .t-search').val($('.activeTr').text());
-            $('.content__groups .filter').hide();
-            $('.content__groups .insert').addClass('insert-active').removeAttr('disabled')
+    $(document).on('click', '.filter .submit', function () {
+        var filter = $(this).closest('.filter');
+        var input = filter.siblings('.t-search');
+        var btn = filter.siblings('.insert');
+        if ($('.activeTr').length >0) {
+            input.val($('.activeTr').text());
+            filter.hide();
+            btn.addClass('insert-active').removeAttr('disabled');
         }
     });
-    $(document).on('click', '.content__groups .filter .cancel', function () {
-        $('.content__groups .filter').hide();
+    $(document).on('click', '.filter .cancel', function () {
+        $(this).closest('.filter').hide();
     });
 
 
@@ -408,10 +411,10 @@ $(function () {
         var row = $('.hidden-row');
         if(parent.find(row).hasClass('hidden')) {
             parent.find(row).removeClass('hidden');
-            $(this).text('Всего(скрыть)')
+            $(this).text('Всего (скрыть)')
         } else {
             parent.find(row).addClass('hidden');
-            $(this).text('Всего(показать)')
+            $(this).text('Всего (показать)')
         }
     });
 
@@ -457,24 +460,22 @@ $(function () {
         $(".manager-meeting-info .modal").fadeOut("fast");
     });
 
+
     $(document).on('click', '.voting-actions__choice--item', function () {
-        var checkbox = $(this).find('input');
-        if (!checkbox.is(':checked')) {
-            if($(this).closest('.voting-actions').hasClass('voting-actions-disable')) {
-                return false
-            }
-            $(this).closest('.voting-actions').find('.voting-actions__choice--item').removeClass('voting-selected');
-            $(this).addClass('voting-selected')
+        if ($(this).closest('.voting-actions').hasClass('voting-actions-disable')) {
+            return false
         }
+        $(this).closest('.voting-actions').find('.voting-actions__choice--item').removeClass('voting-selected');
+        $(this).addClass('voting-selected')
     });
 
-    $(document).on('click', '.show-divide-voting', function () {
-        $(this).closest('.content__block').find('.voting-actions__divide').css('opacity', '1');
-        $(this).closest('.content__block').find('.voting-actions-hidden').css('display', 'flex');
+    $(document).on('click', '.show-divide-voting>span', function () {
+        $(this).closest('.voting__block').find('.voting-actions__divide').css('display', 'flex');
+        $(this).closest('.voting__block').find('.voting-actions-hidden').css('display', 'flex');
     });
     $(document).on('click', '.del-divide-voting', function () {
-        $(this).closest('.content__block').find('.voting-actions__divide').css('opacity', '0');
-        $(this).closest('.content__block').find('.voting-actions-hidden').css('display', 'none');
+        $(this).closest('.voting__block').find('.voting-actions__divide').css('display', 'none');
+        $(this).closest('.voting__block').find('.voting-actions-hidden').css('display', 'none');
     });
 
     
@@ -494,11 +495,11 @@ $(function () {
                 .removeClass('bg-blue')
                 .addClass('bg-grey')
                 .attr('disabled', 'true');
-            btn.find('input[type="radio"]:not(:checked)').parent().css({
+            btn.not('.voting-selected').css({
                 background: '#fff',
                 color: '#777'
             });
-            btn.find('input[type="radio"]:not(:checked)').attr('disabled', 'true');
+
             $(this).closest('.content__block').find('.voting-actions').addClass('voting-actions-disable');
         } else {
             return false
@@ -508,6 +509,8 @@ $(function () {
     $(document).on('click', '.users-list .t-delete', function () {
         $('.modal-delete').show();
     })
+
+
 
 
 });

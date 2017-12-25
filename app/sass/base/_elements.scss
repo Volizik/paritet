@@ -22,6 +22,10 @@ $someone-hover: #004680;
   padding-bottom: 20px;
 }
 
+.noborder {
+  border:none!important;
+}
+
 .active-question {
   display: inline-block;
   position: relative;
@@ -52,6 +56,8 @@ $someone-hover: #004680;
       color: #000;
       font-size: 14px;
       margin: 10px 0 ;
+      line-height: 20px;
+      font-weight: 400;
     }
   }
   &__text {
@@ -62,7 +68,19 @@ $someone-hover: #004680;
     padding: 20px 15px;
     border-top: 1px solid #ccc;
     box-sizing: border-box;
+    button {
+      height: 40px;
+    }
   }
+}
+.mr5 {
+  margin-right: 5px!important;
+}
+.mr20 {
+  margin-right: 20px!important;
+}
+.mb10 {
+  margin-bottom: 10px!important;
 }
 
 .arrow-down {
@@ -264,10 +282,13 @@ $someone-hover: #004680;
     p {
       font-size: 14px;
     }
-    select {
+    .select {
       width: 100%;
       margin-bottom: 15px;
+      select {
+        width: 100%;
 
+      }
     }
     label {
       display: block;
@@ -278,6 +299,19 @@ $someone-hover: #004680;
       display: inline-block!important;
       margin-right: 10px;
     }
+    #mCSB_1_dragger_vertical, .mCSB_scrollTools .mCSB_draggerContainer {
+      width: 6px!important;
+    }
+    .mCSB_scrollTools .mCSB_draggerRail {
+      width: 6px!important;
+    }
+    .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+      width: 6px!important;
+    }
+    .mCSB_inside>.mCSB_container {
+      margin-right: 0!important;
+      padding-right: 20px;
+    }
   }
   &__footer {
     display: flex;
@@ -285,7 +319,15 @@ $someone-hover: #004680;
     align-items: center;
     padding: 0px 20px 20px;
     box-sizing: border-box;
+    .submit {
+      height: 40px;
+    }
+    .cancel {
+      height: 40px;
+    }
   }
+
+
 }
 
 
@@ -301,7 +343,7 @@ $someone-hover: #004680;
   border:none;
   cursor: pointer;
   &:hover {
-    color: #005499;
+    background-color: #005499;
     transition: .3s;
   }
   &:focus {
@@ -319,7 +361,7 @@ $someone-hover: #004680;
   border:none;
   cursor: pointer;
   &:hover {
-    color: #dbdbdb;
+    background-color: #dbdbdb;
     transition: .3s;
   }
   &:focus {
@@ -358,6 +400,10 @@ $someone-hover: #004680;
   color: $someone;
 }
 
+.input-number {
+  height: 31px;
+  margin-right: 10px;
+}
 
 /*---table---*/
 .table {
@@ -372,6 +418,7 @@ $someone-hover: #004680;
     height: 40px;
     font-weight: 400;
     color: #777;
+    text-align: left;
     &:first-of-type {
       padding-left: 10px;
     }
@@ -436,9 +483,36 @@ $someone-hover: #004680;
   color: #000;
   box-sizing: border-box;
   font-weight: 400;
-  background: url(../images/icons/search.png) 98% 50% no-repeat;
+  background: url(../images/icons/search2.png) 98% 50% no-repeat;
+  &:hover {
+    background: url(../images/icons/search2-hover.png) 98% 50% no-repeat;
+  }
 }
 /*---table---*/
+
+.select {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 6px;
+    background: url(../images/icons/icon_dropdown.png) center center no-repeat;
+    pointer-events: none;
+  }
+  select {
+    appearance: none;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+}
 
 .drop {
   position: relative;
@@ -546,10 +620,18 @@ label {
     justify-content: center;
     align-items: center;
     max-width: 260px;
-    margin: 10px 0;
+    margin: 0;
+    font-size: 14px;
     span {
       display: block;
       margin-bottom: 20px;
+      &:first-of-type {
+        font-size: 14px;
+      }
+      &:last-of-type {
+        font-size: 13px;
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -575,8 +657,26 @@ label {
 .bg-grey {
   background-color: #ccc!important;
 }
+.blue {
+  color: #0062b3!important;
+}
 .bg-blue {
   background-color: #0062b3!important;
+}
+
+.small-input {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 2px!important;
+  padding-right: 2px!important;
+  width: 40px!important;
+  min-width: 40px!important;
+}
+.table-select {
+  min-width: 100%!important;
+  width: 100%!important;
+  padding-right: 20px!important;
+  padding-left: 3px!important;
 }
 
 .voting-actions {
@@ -588,12 +688,15 @@ label {
     position: relative;
     display: flex;
     align-items: center;
+    padding: 0;
+    margin: 0;
     &--item {
       display: block;
       padding: 8px 20px;
       font-size: 14px;
       color: #777;
       text-transform: uppercase;
+      cursor: pointer;
     }
     .voting-true.voting-selected {
       background-color: #5ccc3d;
@@ -609,8 +712,7 @@ label {
     }
   }
   &__divide {
-    opacity: 0;
-    display: flex;
+    display: none;
     align-items: baseline;
     font-size: 14px;
     margin-left: 30px;
@@ -624,6 +726,16 @@ label {
         box-sizing: border-box;
         margin: 0 10px 5px;
         font-size: 14px;
+        .fraction {
+          margin-right: 10px;
+        }
+        .sub-table {
+          left: -2px;
+        }
+        >span {
+          display: inline-block;
+          margin-right: 2px;
+        }
         input,p {
           width: 40px;
           height: 30px;
@@ -665,18 +777,19 @@ label {
     display: block;
     font-size: 13px;
     color: $blue;
-    span {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      height: 20px;
-      width: 20px;
-      color: #fff;
-      margin: 0 3px;
-      box-sizing: border-box;
-      background-color: $blue;
-      border-radius: 50%;
-    }
+    cursor: pointer;
+    //span {
+    //  display: inline-flex;
+    //  justify-content: center;
+    //  align-items: center;
+    //  height: 20px;
+    //  width: 20px;
+    //  color: #fff;
+    //  margin: 0 3px;
+    //  box-sizing: border-box;
+    //  background-color: $blue;
+    //  border-radius: 50%;
+    //}
   }
 }
 .voting-actions-hidden {
@@ -700,8 +813,8 @@ label {
 }
 
 .short-input {
-  min-width: 30px!important;
-  width: 30px!important;
+  min-width: 70px!important;
+  width: 70px!important;
   padding-left: 2px!important;
   padding-right: 2px!important;
   text-align: center;
@@ -755,13 +868,17 @@ label {
 
 /*---Custom scroll---*/
 .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #b8d1e6; width: 8px;  border-radius: 0px }
+.mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover{ background-color: #73b2e6;}
 .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail{ background-color: #e9eff5; border-radius: 0px}
 .mCSB_1_scrollbar .mCSB_dragger .mCSB_draggerRail{ width: 8px; }
 .mCSB_scrollTools .mCSB_draggerRail { width: 8px;  padding: 0; margin: 0px;}
 .mCSB_scrollTools .mCSB_draggerContainer { width: 8px; }
 #mCSB_1_dragger_vertical { width: 8px; }
+.mCSB_scrollTools {
+  width: 8px;
+}
 .mCSB_inside>.mCSB_container {
-  margin-right: 30px!important;
+  margin-right: 40px!important;
 }
 /*---!Custom scroll---*/
 

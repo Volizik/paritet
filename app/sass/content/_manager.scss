@@ -223,6 +223,7 @@ tbody {
   }
   .meeting-question {
     font-size: 13px;
+
   }
   .meeting-answer-title {
     font-size: 13px;
@@ -328,6 +329,7 @@ tbody {
   .meeting-question {
     font-size: 13px;
     font-weight: 700;
+    padding-right: 10px;
   }
   .meeting-answer-title {
     font-size: 13px;
@@ -398,13 +400,10 @@ tbody {
   }
 
 
-  label.voting-actions__choice--item {
+  .voting-actions__choice--item {
     background-color: #eee;
     color: $someone;
     margin-right: 10px;
-  }
-  input[type="radio"] {
-    display: none;
   }
 
 
@@ -446,13 +445,18 @@ tbody {
     border: none;
     background-color: transparent;
     height: 30px;
-    width: 30px;
+    width: 25px;
     cursor: pointer;
-    //img {
-    //  height: 15px;
-    //  width: 15px;
-    //  object-fit: contain;
-    //}
+    padding: 0;
+    &--small {
+      width: 20px;
+      height: 25px;
+      img {
+        height: 12px;
+        width: 12px;
+        object-fit: contain;
+      }
+    }
   }
 }
 
@@ -563,14 +567,19 @@ tbody {
           width: 7%;
         }
         .ast-voting {
-          width: 8%;
+          width: 145px;
         }
         .ast-reason {
-          width: calc(100% - 72% - 45px);
+          width: 185px;
         }
         .ast-actions {
-          width: 45px;
+          width: 60px;
         }
+      }
+      .noborder {
+        width: 100%!important;
+        margin: 0!important;
+        padding: 0!important;
       }
     }
     &__line {
@@ -593,6 +602,7 @@ tbody {
       &--item {
         display: flex;
         align-items: center;
+        width: 100%;
         input {
           display: block;
           min-width: inherit;
@@ -618,21 +628,36 @@ tbody {
       flex-wrap: wrap;
       position: relative;
       font-size: 13px;
+      .select {
+        margin-right: 10px;
+        select {
+          appearance: none;
+          &::-ms-expand {
+            display: none;
+          }
+        }
+      }
       select {
         height: 31px;
-        margin-right: 10px;
         padding-left: 10px;
         padding-right: 10px;
         box-sizing: border-box;
       }
+      .width-xs {
+        width: 140px;
+        min-width: 140px;
+      }
       .width-sm {
         width: 200px;
+        min-width: 200px;
       }
       .width-md {
         width: 300px;
+        min-width: 300px;
       }
       .width-lg {
         width: 510px;
+        min-width: 510px;
       }
 
     }
@@ -689,12 +714,15 @@ tbody {
   }
 
   .restraint {
+    height: auto;
     min-height: 95px;
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px;
     box-sizing: border-box;
     margin: 20px 0!important;
+    font-size: 13px;
+    resize: none;
   }
   .t-search {
     margin: 0px 10px;
@@ -706,17 +734,17 @@ tbody {
     box-sizing: border-box;
     background-color: transparent;
     border: none;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
+
   }
 
 
 }
 
-
+.manager-meeting-agenda {
+  .agenda-settings__row {
+    position: relative;
+  }
+}
 .manager-meeting-info {
 
   .show-constraints,
@@ -740,6 +768,7 @@ tbody {
     }
   }
   .agenda-settings__row {
+    position: relative;
     display: flex;
     align-items: baseline;
     padding-bottom: 15px;

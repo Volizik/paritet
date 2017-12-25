@@ -43,6 +43,12 @@ textarea{
 li {
     list-style: none;
 }
+button {
+    cursor: pointer;
+}
+select {
+    appearance: none;
+}
 
 %clearfix {
     *zoom: 1;
