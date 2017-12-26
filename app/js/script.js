@@ -97,72 +97,15 @@ $(function () {
 
     /*----------filter in new user-----------*/
 
-    $(document).on('click', '#user-cabinet-new .filter label, .filter__row-text', function () {
-        var checkbox = $(this).closest('tr').find('input[type="checkbox"]');
-        checkbox.is(':checked') ? checkbox.prop('checked', false) : checkbox.prop('checked', true);
-    });
 
-    $(document).on('click', '#user-cabinet-new .filter .submit', function () {
-        var trArr = document.querySelectorAll('#user-cabinet-new .filter tr');
-        var users = '';
-        for(var i = 0; i< trArr.length; i++) {
-            var checkbox = trArr[i].querySelector('input[type="checkbox"]:checked');
-            var span = trArr[i].querySelectorAll('td > span');
 
-            if (checkbox !== null) {
-                var user = '';
-                for(var j = 0; j<span.length; j++) {
-                    user = user + span[j].innerHTML + ' '
-                }
-                users +=  user;
-            }
-        }
-        var inp = document.querySelector('#user-cabinet-new .admin-represent');
-        inp.setAttribute('value', users);
-
-        if($('#user-cabinet-new .admin-represent').val().replace(' ', '').length === 0) {
-            inp.setAttribute('value', 'Нет')
-        }
-        $('#user-cabinet-new .filter').hide();
-    });
     $(document).on('click', '.filter .cancel', function () {
         $('.filter').hide();
     });
     $(document).on('click', '.filter__header .t-delete', function () {
         $('.filter').hide();
     });
-    $(document).on('click', '#user-cabinet-new .search > span', function () {
-        $('#user-cabinet-new .t-search').val('');
-        $('#user-cabinet-new .filter').hide();
-        $(this).remove();
-    });
-    $(document).on('mouseover', '#user-cabinet-new .t-search', function () {
-        var tooltip = document.createElement('div');
-        tooltip.classList.add('tooltip');
-        if($(this).val().length > 5) {
-            $(tooltip).css({
-                'display': 'block',
-                'position': 'absolute',
-                'top': '50px',
-                'left': '-50%',
-                'transform': 'translateX(17%)',
-                'min-width': '440px',
-                'text-align': 'center',
-                'padding': '5px',
-                'line-height': '20px',
-                'color': '#fff',
-                'background': '#00467f',
-                'z-index': '2',
-                'font-weight': '400'
-            });
-            $(tooltip).text($(this).val());
-            $('#user-cabinet-new .search').append(tooltip);
-        }
 
-    });
-    $(document).on('mouseleave', '#user-cabinet-new .t-search', function () {
-        $('.tooltip').remove();
-    });
     /*----------!filter in new user-----------*/
 
     /*filter in user-groups*/
@@ -492,19 +435,7 @@ $(function () {
         $(this).addClass('voting-bill--active')
     });
 
-//modal tabs
-    $('.filter__block').each(function (i) {
-        if(i !=0) {
-            $(this).hide(0);
-        }
-    });
-    $(document).on('click', '.modal__tab', function (e) {
-        var tabId = $(this).attr('data-id');
-        $(this).siblings('.modal__tab').removeClass('modal__tab--active');
-        $(this).addClass('modal__tab--active');
-        $('.filter__block').hide(0);
-        $('.filter__block[data-id='+ tabId +']').show();
-    });
+
 
 
 });
