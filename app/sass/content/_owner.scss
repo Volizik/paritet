@@ -16,6 +16,14 @@
   }
 }
 
+.owner-voting {
+  font-size: 13px;
+  font-weight: 400;
+  height: 30px;
+  width: 100%;
+  position: relative;
+}
+
 thead {
   .ov-register {
     width: 10%;
@@ -62,8 +70,3 @@ tbody {
     width: 130px;
   }
 }
-
-.owner-voting-bulleting {
-
-}
-

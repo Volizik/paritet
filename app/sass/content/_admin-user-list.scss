@@ -19,7 +19,7 @@ table.users-list {
   th {
     font-size: 13px;
     font-weight: 400;
-    color: #777777;
+    color: #777;
     span {
       display: inline!important;
       position: relative;
@@ -36,9 +36,11 @@ table.users-list {
   }
   td {
     font-size: 13px;
-    //color: #000;
   }
 
+  .u-action {
+    width: 4%;
+  }
 
   .u-login {
     width: 23%;

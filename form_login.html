@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="css/libs.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.min.css" rel="stylesheet" type="text/css">
+    <script src="js/fractions.js"></script>
 </head>
 <body>
 <!-- open .header -->
-
 <main class="main">
     <div class="w-container">
 
@@ -34,10 +34,11 @@
                     <a href="#enter" class="active">Вход</a>
                     <a href="#guest"><i class="fa fa-bookmark-o"></i>Я — гость!</a>
                 </div>
+                <h2>Вход в систему</h2>
+                <p class="main__form--hint">Неправильный логин или пароль повторите попытку</p>
                 <div id="enter" class="main__form--content">
-                    <h2>Вход в систему</h2>
                     <input type="text" placeholder="Введите логин или E-mail">
-                    <input type="password" placeholder="Пароль">
+                    <input type="password" placeholder="Пароль" class="input-wrong">
                     <a href="#">Забыли пароль?</a>
                     <input type="submit" value="Войти">
                 </div>
@@ -77,8 +78,8 @@
 
 
 
-
 <script src='js/jquery-3.2.1.min.js' type="text/javascript"></script>
 <script src="js/script.min.js" type="text/javascript"></script>
+<script src="js/admin.js" type="text/javascript"></script>
 </body>
 </html>

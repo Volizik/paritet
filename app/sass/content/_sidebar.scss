@@ -55,8 +55,8 @@
           color: $blue-hover;
         }
         .sidebar__item--icon {
-          svg {
-            fill: $blue-hover;
+          [class^="icon-sidebar"] {
+            color: $blue-hover;
           }
         }
       }
@@ -64,8 +64,8 @@
     &--icon {
       margin-left: 30px;
       margin-right: 25px;
-      svg {
-        fill: #fff;
+      [class^="icon-sidebar"] {
+        color: #fff;
       }
     }
     &--active {
@@ -75,8 +75,8 @@
         }
     }
       .sidebar__item--icon {
-        svg {
-          fill: $blue-hover;
+        [class^="icon-sidebar"] {
+          color: $blue-hover;
         }
       }
     }
@@ -142,4 +142,41 @@
     }
   }
 }
+
+[class^="icon-sidebar"], [class*=" icon-sidebar"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &:before {
+    font-size: 30px;
+  }
+}
+
+.icon-sidebar-icon1:before {
+  content: "\e900";
+}
+.icon-sidebar-icon2:before {
+  content: "\e901";
+}
+.icon-sidebar-icon3:before {
+  content: "\e902";
+}
+.icon-sidebar-icon4:before {
+  content: "\e903";
+}
+.icon-sidebar-icon5:before {
+  content: "\e904";
+}
+.icon-sidebar-icon6:before {
+  content: "\e905";
+}
+
 
