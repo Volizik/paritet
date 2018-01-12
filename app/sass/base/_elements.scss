@@ -216,6 +216,16 @@ $someone-hover: #004680;
   &--active {
     background-color: $green-btn-active;
   }
+  &--disabled {
+    background-color: #aaa;
+    pointer-events: none;
+  }
+  &__item {
+    &--disabled {
+      color: #ddd!important;
+      pointer-events: none;
+    }
+  }
   ul {
     display: none;
     margin: 0;
@@ -677,8 +687,7 @@ label {
 }
 
 .input-wrong {
-  border: 1px solid red!important;
-  box-shadow: 0 0 20px 1px red;
+  border: 2px solid red!important;
 }
 
 .fraction-wrap {
@@ -906,6 +915,7 @@ label {
 }
 .mCSB_inside>.mCSB_container {
   margin-right: 40px!important;
+  height: 100%!important;
 }
 /*---!Custom scroll---*/
 

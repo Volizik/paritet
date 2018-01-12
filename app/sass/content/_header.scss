@@ -39,6 +39,12 @@
       border: 1px solid $blue !important;
       box-sizing: border-box;
     }
+    &--disabled {
+      &:not(.header__menu--active) {
+        color: #aaa!important;
+        pointer-events: none;
+      }
+    }
   }
   &__user {
     display: flex;

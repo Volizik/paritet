@@ -182,7 +182,7 @@
     .content__block {
       margin: 0;
     }
-    table {
+    .table {
       width: 100%;
       margin-right: 40px;
       position: relative;
@@ -232,7 +232,7 @@
     .content__block {
       margin: 0;
     }
-    table {
+    .table {
       width: 100%;
       margin-right: 40px;
       position: relative;
@@ -243,6 +243,9 @@
       }
       tr {
         height: 41px;
+      }
+      td:last-of-type {
+        text-align: right;
       }
       th,td {
         text-align: left;

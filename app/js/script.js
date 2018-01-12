@@ -116,7 +116,7 @@ $(function () {
     $(document).on('click', '.filter .submit', function () {
         var filter = $(this).closest('.filter');
         var input = filter.siblings('.t-search');
-        var btn = filter.siblings('.insert');
+        var btn = filter.parent().find('.insert');
         if ($('.activeTr').length >0) {
             input.val($('.activeTr').text());
             filter.hide();

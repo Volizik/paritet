@@ -37,35 +37,22 @@ $(function () {
         }
     }
 
+    $(document).on('keyup', '.t-search', function () {
+        var filter = $(this).closest('.content__block').find('.filter');
+        var filterTable = filter.find('table');
+        var table = $(this).closest('.content__section').find('.table');
+        if (filter.length > 0) {
+            filter.show();
+            admInputFilter($(this), filterTable)
+        } else {
+            admInputFilter($(this), table)
+        }
+    });
+
     /*-------usersList------*/
     $(document).on('keyup', '.filter--input', function () {
         admInputFilter($(this), $('.users-list'));
     });
-    /*-------!usersList------*/
-
-    /*-------groupsList------*/
-    $(document).on('keyup', '.content__groups .t-search', function () {
-        admInputFilter($(this), $('.content__groups .filter table'));
-        $('.content__groups .filter').fadeIn('fast')
-    });
-    /*-------!groupsList------*/
-
-    /*-------RegistersList------*/
-    $(document).on('keyup', '.wrap-groups .content__registers .t-search', function () {
-        $('#registers-content .filter').fadeIn('fast');
-        admInputFilter($(this), $('#registers-content .filter table'));
-    });
-    $(document).on('keyup', '.wrap-users .content__registers .t-search', function () {
-        admInputFilter($(this), $('#registers-content table'));
-
-    });
-    /*-------!RegistersList------*/
-
-    /*-------BillsList------*/
-    $(document).on('keyup', '.content__bills .t-search', function () {
-        admInputFilter($(this), $('.content__bills>table'));
-    });
-    /*-------!BillsList------*/
 
 
     /*search user for new account*/
@@ -78,19 +65,6 @@ $(function () {
         admInputFilter($(this), $('#user-cabinet-new .filter table'), 1)
     })
 
-
-
-    $(document).on('keyup', '.filter__body--item .t-search',function () {
-        $(this).parent().find('.filter').fadeIn('fast');
-        admInputFilter($(this), $('.header__filter .filter .filter table'));
-    })
-
-    $(document).on('keyup', '.agenda-settings__row .t-search', function () {
-        var filter = $(this).parent().find('.filter');
-        var table = $(this).parent().find('.filter table');
-        filter.show();
-        admInputFilter($(this), table);
-    })
 
 
 
