@@ -11,6 +11,22 @@
   &:hover {
     background: url(../images/icons/search2-hover.png) 98% 50% no-repeat;
   }
+  &--disabled {
+    background: url(../images/icons/delete.png) 98% 50% no-repeat;
+    &:hover {
+      background: url(../images/icons/delete.png) 98% 50% no-repeat;
+    }
+  }
+}
+.act_t-search {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  display: block;
+  left: 275px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .validate-input {

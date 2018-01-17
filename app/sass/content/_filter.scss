@@ -34,6 +34,8 @@
       font-size: 13px;
       color: #000!important;
       margin: 0!important;
+      table-layout: fixed;
+      width: 100%;
     }
     td {
       padding: 4px 0!important;
@@ -100,6 +102,10 @@
     .cancel {
       margin-left: auto;
     }
+  }
+  &__row-text {
+    overflow: hidden;
+    width: calc(100% - 70px);
   }
 
   &--icon {

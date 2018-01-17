@@ -1,9 +1,17 @@
 thead {
   .mi-register,
   .mv-register,
-  .mml-number,
   .vil-bill {
     width: 10%;
+  }
+  .mml-number {
+    width: 90px;
+  }
+  .mml-name {
+    width: 48%;
+  }
+  .mml-date {
+    width: 22%;
   }
   .vil-lk {
     width: 10%;
@@ -178,8 +186,7 @@ tbody {
       display: block;
     }
   }
-  .mml-status,
-  .mml-date {
+  .mml-status {
     width: 20%;
   }
 

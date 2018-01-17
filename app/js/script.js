@@ -115,13 +115,24 @@ $(function () {
     });
     $(document).on('click', '.filter .submit', function () {
         var filter = $(this).closest('.filter');
-        var input = filter.siblings('.t-search');
+        var input = filter.parent().find('.t-search');
         var btn = filter.parent().find('.insert');
-        if ($('.activeTr').length >0) {
+        if ($('.activeTr').length > 0) {
             input.val($('.activeTr').text());
             filter.hide();
-            btn.addClass('insert-active').removeAttr('disabled');
+            if (input.hasClass('t-search--disabled')) {
+                return false
+            } else {
+                btn.addClass('insert-active').removeAttr('disabled');
+                input.addClass('t-search--disabled').attr('disabled', 'disabled');
+                var cross = $('<span class="act_t-search"></span>');
+                input.after(cross);
+            }
         }
+    });
+    $(document).on('click', '.act_t-search', function () {
+        $(this).siblings('.t-search').removeClass('t-search--disabled').removeAttr('disabled').val('');
+        $(this).remove();
     });
     $(document).on('click', '.filter .cancel', function () {
         $(this).closest('.filter').hide();
@@ -435,7 +446,11 @@ $(function () {
         $(this).addClass('voting-bill--active')
     });
 
-
+    $(document).on('change', '.content__block--photo input[type="file"]', function() {
+        var span = $(this).closest('.content__block--photo').find('.content__block--photo-selected');
+        var chosenFiles = $(this)[0].files;
+        span.text(chosenFiles[0].name);
+    });
 
 
 });
