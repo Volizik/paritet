@@ -4,7 +4,7 @@
 html{
     width: 100%;
 }
-body{
+body {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -15,8 +15,11 @@ body{
     vertical-align: baseline;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
+    min-height: 450px;
     overflow-y: hidden;
-
+    @include breakpoint(max-height 450px) {
+        overflow: auto;
+    }
 }
 
 a {

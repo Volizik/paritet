@@ -56,6 +56,7 @@ tbody {
   }
   .content__block--type {
     min-width: 180px;
+    width: auto;
   }
   .content__block--row {
     height: 30px;
@@ -900,4 +901,16 @@ tbody {
     }
   }
 
+}
+.manager-issuers-list {
+  tbody {
+    td:first-of-type {
+      color: #0062b3;
+      font-weight: 700;
+      cursor: pointer;
+      a:visited {
+        color: #0062b3;
+      }
+    }
+  }
 }

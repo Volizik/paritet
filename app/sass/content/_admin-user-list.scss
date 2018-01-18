@@ -69,6 +69,9 @@ table.users-list {
   }
   .u-actions {
     width: 80px;
+    * {
+      vertical-align: middle;
+    }
   }
 
 
@@ -118,4 +121,21 @@ table.users-list {
   }
 
 }
-
+.admin-issuers-list {
+  tbody {
+    td:first-of-type {
+      color: #0062b3;
+      font-weight: 700;
+      cursor: pointer;
+      a {
+        color: #0062b3;
+      }
+      a:visited {
+        color: #0062b3;
+      }
+    }
+  }
+}
+.ai-register {
+  width: 120px;
+}

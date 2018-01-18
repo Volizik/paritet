@@ -51,7 +51,7 @@ $(function () {
 
     /*-------usersList------*/
     $(document).on('keyup', '.filter--input', function () {
-        admInputFilter($(this), $('.users-list'));
+        admInputFilter($(this), $('.table'));
     });
 
 
