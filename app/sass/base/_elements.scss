@@ -478,11 +478,12 @@ $someone-hover: #004680;
 }
 
 .t-delete {
-  background: url(../images/icons/delete.png) no-repeat center;
+  background: url(../images/icons/delete.png) no-repeat center transparent;
   display: inline-block;
   height: 20px;
   width: 20px;
   cursor: pointer;
+  border: none;
 }
 
 .t-sort {
@@ -919,6 +920,7 @@ label {
 }
 .mCSB_inside>.mCSB_container {
   margin-right: 40px!important;
+  min-height: 500px;
 }
 /*---!Custom scroll---*/
 

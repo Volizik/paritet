@@ -1,5 +1,4 @@
 thead {
-  .mi-register,
   .mv-register,
   .vil-bill {
     width: 10%;
@@ -16,8 +15,9 @@ thead {
   .vil-lk {
     width: 10%;
   }
-  .mi-inn {
-    width: 130px;
+  .mi-inn,
+  .ai-inn{
+    width: 100px;
   }
 }
 tbody {
