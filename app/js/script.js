@@ -124,14 +124,20 @@ $(function () {
                 return false
             } else {
                 btn.addClass('insert-active').removeAttr('disabled');
-                input.addClass('t-search--disabled').attr('disabled', 'disabled');
+                input.addClass('t-search--disabled').attr('readonly', '');
                 var cross = $('<span class="act_t-search"></span>');
                 input.after(cross);
+                var crossLeft = cross[0].getBoundingClientRect().right;
+                var inputLeft = input[0].getBoundingClientRect().right;
+                cross.css({
+                    'left': inputLeft - crossLeft + 300 - 30
+                });
             }
         }
     });
     $(document).on('click', '.act_t-search', function () {
-        $(this).siblings('.t-search').removeClass('t-search--disabled').removeAttr('disabled').val('');
+        $(this).siblings('.t-search').removeClass('t-search--disabled').removeAttr('readonly').val('');
+        $(this).siblings('.insert').removeClass('insert-active');
         $(this).remove();
     });
     $(document).on('click', '.filter .cancel', function () {

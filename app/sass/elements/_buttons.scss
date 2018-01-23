@@ -45,8 +45,10 @@
   color: #fff;
   margin-left: 10px;
   font-size: 13px;
+  pointer-events: none;
   &-active {
     background-color: #0070cc;
+    pointer-events: auto;
   }
 }
 .delete-btn {

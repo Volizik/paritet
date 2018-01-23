@@ -172,6 +172,7 @@ tbody {
 
 .manager-meeting-list {
   display: flex;
+  height: 100%;
 
   table {
     tbody {
@@ -181,6 +182,9 @@ tbody {
       }
     }
   }
+  .mml-number {
+    width: 65px;
+  }
   .mml-name {
     span {
       padding: 10px;
@@ -188,7 +192,10 @@ tbody {
     }
   }
   .mml-status {
-    width: 20%;
+    width: 90px;
+  }
+  .mml-actions {
+    width: 30px;
   }
 
 
@@ -722,6 +729,15 @@ tbody {
   }
   .t-search {
     margin: 0px 10px;
+  }
+
+  .content__block {
+    &:last-of-type {
+      .filter {
+        top: auto;
+        bottom: 35px;
+      }
+    }
   }
 
 
