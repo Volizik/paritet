@@ -32,30 +32,43 @@ function FindsProbableRepresentativesForUser() {
 // парсим страницу на предмет выбранных представителей
 function GetChoosenRepresentatives() {
     Representatives = [];
-    $(".filter_wrapper  input:checked[data-isregistry=false]").each(function () { Representatives.push(this.id); });
+    RegistryPersonRepresentatives = [];
+    RegistryLegalRepresentatives = [];
+    $(".filter_wrapper input:checked[data-isregistry=False]").each(function () { Representatives.push(this.id); });
+    $(".filter_wrapper input:checked[data-isregistry=True][data-islegal=True]").each(function () {
+        RegistryLegalRepresentatives.push({
+            "lname": $(this).data("lname"), "OGRN": $(this).data("ogrn")
+        })
+    });
+    $(".filter_wrapper input:checked[data-isregistry=True][data-islegal=False]").each(function () {
+        RegistryPersonRepresentatives.push({
+            "pname": $(this).data("pname"), "docnum": $(this).data("docnum")
+        })
+    });
 }
 
 // добавляем в массив новых представителей
 function AddRegistryRepresentative() {
     var lname = $(".entity-name").val();
-    var OGRN = $(".entity-name").val();
+    var OGRN = $(".entity-doc").val();
     var pname = $(".individual-name").val();
     var docnum = $(".individual-doc").val();
     var rowtext;
+    var htmlData;
     if ($("label.modal__tab[data-id='entity'] input").prop("checked")) {
-        RegistryLegalRepresentatives.push({ "lname": lname, "OGRN": OGRN });
         rowtext = lname + ", " + OGRN;
+        htmlData = "data-islegal=True data-lname=" + lname + " data-ogrn=" + OGRN;
     }
     if ($("label.modal__tab[data-id='individual'] input").prop("checked")) {
-        RegistryPersonRepresentatives.push({ "pname": pname, "docnum": docnum });
         rowtext = pname + ", " + docnum;
+        htmlData = "data-islegal=False data-pname=" + pname + " data-docnum=" + docnum;
     }
     // Добавляем нового представителя в список выбора
     $(".filter__body table tr:last").after("\
         <tr>\
         <td>\
-        <input type='checkbox'\
-        data-isregistry=true\
+        <input type='checkbox' \
+        data-isregistry=True "+ htmlData+" \
         'checked'>\
         <label></label>\
         <span class='filter__row-text'>"+rowtext+"</span>\
@@ -65,6 +78,24 @@ function AddRegistryRepresentative() {
         </div>\
         </td>\
         </tr>");
+}
+
+// удаляем всех представителй и добавляем новых
+function RemoveAllRepresentativesAndAddNew() {
+    GetChoosenRepresentatives();
+    var model = {
+        UserId: $("#UserId").val(),
+        Representatives: Representatives,
+        RegistryLegalRepresentatives: RegistryLegalRepresentatives,
+        RegistryPersonRepresentatives: RegistryPersonRepresentatives
+    }
+
+    $.ajax({
+        url: "../RemoveAllRepresentativesAndAddNew",
+        type: "POST",
+        data:  JSON.stringify(model),
+        contentType: "application/json"}
+    );
 }
 
 // вызываем функцию добавления пользователя
@@ -147,7 +178,7 @@ $(function () {
 
     //показать или скрыть полей "номер документа" и "представители" при выборе роли владельца
     $(document).on('click', '.admin-user-role', function () {
-        if ($(this).val() === 'SHAREHOLDER') {
+        if ($(this).val() === 'SHAREHOLDER' || $(this).val() === 'ISSUER') {
             $('.owner-row').slideDown("slow");
         } else {
             $('.owner-row').slideUp("slow");
@@ -166,8 +197,8 @@ $(function () {
     });
 
     //клик на кнопку "Выбрать" в окне представителей
-    $(document).on('click', '#user-cabinet-new .filter .submit', function () {
-        var trArr = document.querySelectorAll('#user-cabinet-new .filter tr');
+    $(document).on('click', '.represent-filter .submit', function () {
+        var trArr = document.querySelectorAll('.represent-filter tr');
         var users = '';
         for (var i = 0; i < trArr.length; i++) {
             var checkbox = trArr[i].querySelector('input[type="checkbox"]:checked');
@@ -181,17 +212,21 @@ $(function () {
                 users += user;
             }
         }
-        var inp = document.querySelector('#user-cabinet-new .admin-represent');
+        var inp = document.querySelector('.admin-represent');
         inp.setAttribute('value', users);
 
-        if ($('#user-cabinet-new .admin-represent').val().replace(' ', '').length === 0) {
+        if ($('.admin-represent').val().replace(' ', '').length === 0) {
             inp.setAttribute('value', 'Нет')
         }
-        $('#user-cabinet-new .filter').hide();
+    });
+
+    // закрываем окошко с представителями
+    $(document).on('click', '.represent-modal-filter button', function () {
+        $('.represent-modal-filter').hide();
     });
 
 
-    $(document).on('click', '#user-cabinet-new .filter label, .filter__row-text', function () {
+    $(document).on('click', '.represent-filter label, .filter__row-text', function () {
         var checkbox = $(this).closest('tr').find('input[type="checkbox"]');
         checkbox.is(':checked') ? checkbox.prop('checked', false) : checkbox.prop('checked', true);
     });

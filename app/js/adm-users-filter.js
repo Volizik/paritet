@@ -37,12 +37,16 @@ $(function () {
         }
     }
 
-    $(document).on('keyup', '.t-search', function () {
+    $(document).on('focus', '.t-search', function () {
         var filter = $(this).closest('.content__block').find('.filter');
         var filterTable = filter.find('table');
         var table = $(this).closest('.content__section').find('.table');
         if (filter.length > 0) {
             filter.show();
+            var parent = filter.closest('.mCSB_container')
+            var parHeight = parent.height()
+            console.log(filter)
+
             admInputFilter($(this), filterTable)
         } else {
             admInputFilter($(this), table)

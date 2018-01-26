@@ -13,6 +13,7 @@
   }
   &--disabled {
     background: url(../images/icons/delete.png) 98% 50% no-repeat;
+    pointer-events: none;
     &:hover {
       background: url(../images/icons/delete.png) 98% 50% no-repeat;
     }

@@ -10,8 +10,5 @@ $(function () {
     $(document).on('click', '.modal__footer>.delete-btn', function () {
         modal.hide();
     });
-    $(document).on('click', '.delete', function () {
-        modal.show();
-    });
 
 });

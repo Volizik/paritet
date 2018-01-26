@@ -439,12 +439,12 @@ $(function () {
             .attr('disabled', 'true');
     });
 
-    $(document).on('click', '.users-list .t-delete', function (e) {
-        e.preventDefault();
-        $('.modal-delete').show();
-        var href = $(this).closest('a').attr('href');
-        $('.modal-delete .delete-btn').attr('href', href);
-    });
+    //$(document).on('click', '.users-list .t-delete', function (e) {
+    //    e.preventDefault();
+    //    $('.modal-delete').show();
+    //    var href = $(this).closest('a').attr('href');
+    //    $('.modal-delete .delete-btn').attr('href', href);
+    //});
 
 
     $(document).on('click', '.voting-bill', function () {

@@ -69,16 +69,14 @@
       }
     }
     &--active {
-      .sidebar__item--header {
-        a {
-          color: $blue-hover;
-        }
-    }
-      .sidebar__item--icon {
-        [class^="icon-sidebar"] {
-          color: $blue-hover;
-        }
+      >a {
+        color: $blue-hover!important;
       }
+    .sidebar__item--icon {
+      [class^="icon-sidebar"] {
+        color: $blue-hover;
+      }
+    }
     }
     &--amount {
       display: inline-flex;

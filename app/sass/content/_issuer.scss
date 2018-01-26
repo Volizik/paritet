@@ -25,25 +25,16 @@
       border-bottom: none;
     }
   }
+  .content__block--row {
+    padding-bottom: 10px;
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
 
-
-  //.bl-type {
-  //  width: 26%;
-  //}
   .bl-num {
     width: 150px;
   }
-  //.bl-state {
-  //  width: 31%;
-  //}
-  //.bl-par {
-  //  width: 14%;
-  //  text-align: right;
-  //}
-  //.bl-sum {
-  //  width: 14%;
-  //  text-align: right;
-  //}
 
 }
 
@@ -101,7 +92,6 @@
     }
   }
 }
-
 .issuer-bills-statement {
   >table {
     width: 100%;
