@@ -42,10 +42,16 @@ $(function () {
         var filterTable = filter.find('table');
         var table = $(this).closest('.content__section').find('.table');
         if (filter.length > 0) {
+            filter.removeAttr('style');
             filter.show();
-            var parent = filter.closest('.mCSB_container')
-            var parHeight = parent.height()
-            console.log(filter)
+            var parent = filter.closest('.content__section')[0].getBoundingClientRect().bottom;
+            var filterBottom = filter[0].getBoundingClientRect().bottom;
+            if (filterBottom > parent) {
+                filter.css({
+                    'top': 'auto',
+                    'bottom': '35px'
+                })
+            }
 
             admInputFilter($(this), filterTable)
         } else {

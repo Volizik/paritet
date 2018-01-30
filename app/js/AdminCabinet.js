@@ -68,10 +68,10 @@ function AddRegistryRepresentative() {
         <tr>\
         <td>\
         <input type='checkbox' \
-        data-isregistry=True "+ htmlData+" \
+        data-isregistry=True "+ htmlData + " \
         'checked'>\
         <label></label>\
-        <span class='filter__row-text'>"+rowtext+"</span>\
+        <span class='filter__row-text'>"+ rowtext + "</span>\
         <div class='filter__edit-btn'>\
         <button class='ast-action-btn'><img src='~/images/icons/edit2.png' alt=''></button>\
         <button class='ast-action-btn'><img src='~/images/icons/cross.png' alt=''></button>\
@@ -93,36 +93,39 @@ function RemoveAllRepresentativesAndAddNew() {
     $.ajax({
         url: "../RemoveAllRepresentativesAndAddNew",
         type: "POST",
-        data:  JSON.stringify(model),
-        contentType: "application/json"}
+        data: JSON.stringify(model),
+        contentType: "application/json"
+    }
     );
 }
 
 // вызываем функцию добавления пользователя
 function AddUser() {
-    GetChoosenRepresentatives();
-    var model = {
-        UserName: $("#UserName").val(),
-        Password: $("#Password").val(),
-        Email: $("#Email").val(),
-        Role: $("#Role").val(),
-        FullName: $("#FullName").val(),
-        DocumentNumber: $("#DocumentNumber").val(),
-        PhoneNumber: $("#PhoneNumber").val(),
-        TwoFactorEnabled: $("#identification-new").prop("checked"),
-        Representatives: Representatives,
-        RegistryLegalRepresentatives: RegistryLegalRepresentatives,
-        RegistryPersonRepresentatives: RegistryPersonRepresentatives
-    }
+    if ($("#validate-form").valid()) {
+        GetChoosenRepresentatives();
+        var model = {
+            UserName: $("#UserName").val(),
+            Password: $("#Password").val(),
+            Email: $("#Email").val(),
+            Role: $("#Role").val(),
+            FullName: $("#FullName").val(),
+            DocumentNumber: $("#DocumentNumber").val(),
+            PhoneNumber: $("#PhoneNumber").val(),
+            TwoFactorEnabled: $("#identification-new").prop("checked"),
+            Representatives: Representatives,
+            RegistryLegalRepresentatives: RegistryLegalRepresentatives,
+            RegistryPersonRepresentatives: RegistryPersonRepresentatives
+        }
 
-    $.ajax({
-        url: "AddUser",
-        type: "POST",
-        data: JSON.stringify(model),
-        success: ShowModalResultSuccess,
-        error: ShowModalResultFail,
-        contentType: "application/json"
-    });
+        $.ajax({
+            url: "AddUser",
+            type: "POST",
+            data: JSON.stringify(model),
+            success: ShowModalResultSuccess,
+            error: ShowModalResultFail,
+            contentType: "application/json"
+        });
+    }
 }
 
 function ShowModalResultSuccess() {
@@ -139,7 +142,8 @@ function ShowModalAddUserCancel() {
 
 // Проверка существоания группы
 function NewGroup() {
-    if ($("#GroupName").val() !== "") {
+    if (("#validate-form").valid()) {
+
         $.post("NewGroup", { GroupName: $("#GroupName").val(), GroupDescription: $("#GroupDescription").val() },
             function (data) {
                 if (data === false) {
@@ -149,6 +153,7 @@ function NewGroup() {
                     window.location.replace(data);
                 }
             });
+
     }
 }
 
@@ -156,7 +161,7 @@ function SelectIssuer() {
     $('#selectedIssuerId').attr('value', $('.filter__body .activeTr').data('issuerid'));
 }
 
-function SelectAccount(){
+function SelectAccount() {
     $('#selectedAccountId').attr('value', $('.filter__body .activeTr').data('accountid'));
 }
 
