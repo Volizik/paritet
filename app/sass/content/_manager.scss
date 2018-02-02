@@ -47,6 +47,7 @@ tbody {
 
 .manager-issuer-cabinet {
   .content__block {
+    padding: 8px 0;
     &:first-of-type {
       border-top: none;
     }
@@ -192,7 +193,9 @@ tbody {
     }
   }
   .mml-status {
-    width: 90px;
+    min-width: 90px;
+    max-width: 190px;
+    width: 15%;
   }
   .mml-actions {
     width: 30px;
@@ -340,8 +343,16 @@ tbody {
     color: #777;
   }
   .meeting-answer {
+    font-family: inherit;
     font-size: 13px;
     font-weight: 400;
+    white-space: pre-wrap;
+  }
+  .overflow-height {
+    max-height: 45px;
+    overflow: hidden;
+    margin-bottom: 0;
+    line-height: 15px;
   }
   .meeting__row {
     display: flex;
@@ -514,6 +525,18 @@ tbody {
   }
 
   .agenda-settings {
+    &__cell-edit {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
+      p {
+        font-size: 13px;
+        margin: 0;
+        min-height: 50px;
+        padding: 0 15px;
+      }
+    }
     &__cell {
       width: 100%;
       padding: 20px;
