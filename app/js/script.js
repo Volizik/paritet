@@ -458,5 +458,36 @@ $(function () {
         span.text(chosenFiles[0].name);
     });
 
+    $('.select2-docs').select2({
+        width: 'resolve',
+        dropdownParent: $('.select2-docs').parent()
+    });
+
+    // $(document).on('click', '.select2-take-all', function () {
+    //     var options = $(this).closest('.content__block').find('.select2-hidden-accessible option');
+    //     var list =  $(this).closest('.content__block').find('.select2-selection__rendered');
+    //     options.each(function () {
+    //
+    //     })
+    // });
+
+    if ($('.contenteditable')) {
+        $('.contenteditable').last().focus()
+    }
+    if($('.noborder')) {
+        $('.noborder').first().focus()
+    }
+
+    $(document).on('click', '.manager-meeting-list .modal label', function () {
+        var inputRemeeting = $(this).parent().find('input[value="Remeeting"]');
+        var inputCopy = $(this).parent().find('input[value="Copyof"]');
+        var select = $(this).parent().find('select[name="basedOnMeetingId"]');
+
+        if (inputCopy.is(':checked') || inputRemeeting.is(':checked')) {
+           select.parent().show()
+        } else {
+            select.parent().hide()
+        }
+    })
 
 });

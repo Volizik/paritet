@@ -4,7 +4,7 @@ $(function () {
 
     text.each(function () {
         if ($(this).height() > 45) {
-            $(this).after('<button class="meeting-answer-btn">больше...</button>')
+            $(this).after('<button class="meeting-answer-btn">больше...</button>');
             $(this).addClass('overflow-height')
         }
     });

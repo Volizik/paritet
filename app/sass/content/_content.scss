@@ -21,8 +21,11 @@
       font-size: 18px;
     }
     &:last-of-type {
-      border-bottom: 1px solid #ccc;
+      //border-bottom: 1px solid #ccc;
       margin-bottom: 20px;
+    }
+    &:first-of-type {
+      border-top: none
     }
 
     &--row {
@@ -31,7 +34,7 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
-      height: 41px;
+      height: 31px;
     }
     &--type {
       display: flex;
@@ -64,9 +67,9 @@
         position: relative;
         margin-right: 5px;
       }
-      >.noborder {
-        width: 100%;
-      }
+      //>.noborder {
+      //  width: 100%;
+      //}
     }
     &--photo {
       display: flex;

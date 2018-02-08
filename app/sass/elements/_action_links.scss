@@ -1,7 +1,8 @@
 .test-check,
 .edit-pass, .find,
 .admin-represent,
-.meeting-answer-btn {
+.meeting-answer-btn,
+.select2-take-all {
   color: #0062b2!important;
   font-size: 13px;
   cursor: pointer;
@@ -21,4 +22,9 @@
 .meeting-answer-btn {
   margin-left: auto;
   display: block;
+}
+.select2-take-all {
+  position: absolute;
+  top: 100%;
+  padding: 0;
 }

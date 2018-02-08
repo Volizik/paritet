@@ -7,10 +7,10 @@ thead {
     width: 90px;
   }
   .mml-name {
-    width: 48%;
+    width: 36%;
   }
   .mml-date {
-    width: 22%;
+    width: 10%;
   }
   .vil-lk {
     width: 10%;
@@ -710,28 +710,6 @@ tbody {
     background-color: transparent;
     cursor: pointer;
   }
-  .bullet-numbers {
-    margin-left: 20px;
-    .bullet-number {
-      display: inline-block;
-      cursor: pointer;
-      color: $blue;
-      font-size: 13px;
-      padding: 5px 8px;
-      box-sizing: border-box;
-      margin: 5px;
-      &:hover {
-        text-decoration: underline;
-      }
-      input[type="radio"] {
-        display: none;
-      }
-    }
-    .activeBullet {
-      background-color: $blue;
-      color: #fff;
-    }
-  }
   .condition-hidden {
     display: none;
   }
@@ -758,7 +736,6 @@ tbody {
 
 
 }
-
 .manager-meeting-agenda {
   .agenda-settings__row {
     position: relative;
@@ -792,7 +769,7 @@ tbody {
   .agenda-settings__row {
     position: relative;
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     padding-bottom: 15px;
     min-height: 31px;
     &:last-of-type {
@@ -813,13 +790,22 @@ tbody {
     flex-wrap: wrap;
     position: relative;
     font-size: 13px;
+    width: 100%;
+  }
+  .select2-docs {
+    width: 100%!important;
+  }
+  .select2-selection--multiple {
+    height: 200px!important;
   }
   .agenda-settings__input {
+    display: flex;
+    align-items: center;
     width: 100%;
+    min-height: 31px;
     label {
       display: block;
       width: 100%;
-      padding-bottom: 10px;
       color: #000;
     }
   }
@@ -945,4 +931,8 @@ tbody {
       }
     }
   }
+}
+.select2-dropdown {
+  font-size: 13px;
+  width: 300px!important;
 }

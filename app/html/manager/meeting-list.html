@@ -65,5 +65,33 @@
         </div>
     </div>
 
+    <div class="modal">
+        <div class="modal__body">
+            <strong class="modal__body-title">Эмитент</strong>
+            <div class="select">
+                <select name="newMeetingIssuer">
+                    <option value="1">Племзавод Родники ОАО</option>
+                    <option value="2">КМЗ ПАО</option>
+                    <option value="3">ДИОД ОАО</option>
+                </select>
+            </div>
+            <strong class="modal__body-title">Шаблон собрания</strong>
+            <label><input type="radio" name="newMeetingType" value="Annual" checked="&quot;checked&quot;">Годовое общее собрание</label>
+            <label><input type="radio" name="newMeetingType" value="Extraordinary">Внеочередное общее собрание</label>
+            <label><input type="radio" name="newMeetingType" value="Remeeting">Повторное собрание</label>
+            <label><input type="radio" name="newMeetingType" value="Copyof">Создать по прошедшему собранию</label>
+
+            <div class="select" style="display: none">
+                <select name="basedOnMeetingId"><option value="1">Годовое общее собрание акционеров ОАО "Племзавод Родники"</option>
+                    <option value="2">Годовое общее собрание акционеров ОАО "Племзавод Родники"</option>
+                    <option value="3">Внеочередное общее собрание акционеров ОАО "Племзавод Родники"</option>
+                    <option value="4">Внеочередное общее собрание акционеров ОАО "Племзавод Родники"</option>
+                    <option value="5">Внеочередное общее собрание акционеров ОАО "Племзавод Родники"</option>
+                    <option value="6">Внеочередное общее собрание акционеров ОАО "Племзавод Родники"</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
 
 </main>

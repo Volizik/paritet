@@ -11,6 +11,11 @@
   &:hover {
     background: url(../images/icons/search2-hover.png) 98% 50% no-repeat;
   }
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
   &--disabled {
     background: url(../images/icons/delete.png) 98% 50% no-repeat;
     pointer-events: none;

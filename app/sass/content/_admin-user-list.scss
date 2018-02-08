@@ -39,17 +39,17 @@ table.users-list {
   }
 
   .u-action {
-    width: 4%;
+
   }
 
   .u-login {
-    width: 23%;
+    width: 160px;
   }
   .u-rol {
-    width: 15%;
+    width: 130px;
   }
   .u-name {
-    width: calc(29% - 50px);
+    width: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
     span {
@@ -65,10 +65,12 @@ table.users-list {
     width: 10%;
   }
   .u-online-status {
-    width: 8%;
+    width: 50px;
+    text-align: center;
   }
   .u-actions {
     width: 80px;
+    text-align: right;
     * {
       vertical-align: middle;
     }
@@ -91,6 +93,7 @@ table.users-list {
     color: #777
   }
   .u-online {
+    margin: 0 auto;
     display: block;
     position: relative;
     height: 13px;
@@ -99,6 +102,7 @@ table.users-list {
     background-color: #5ccc3d;
   }
   .u-offline {
+    margin: 0 auto;
     display: block;
     position: relative;
     height: 13px;

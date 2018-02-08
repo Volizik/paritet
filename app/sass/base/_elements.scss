@@ -5,6 +5,8 @@ $green-btn-active: #888c07;
 $status: #5ccc3d;
 $someone: #0062b3;
 $someone-hover: #004680;
+$pink: #ef3f56;
+
 .width-80 {
   width: 80px;
 }
@@ -29,8 +31,37 @@ $someone-hover: #004680;
 
 .noborder {
   border:none!important;
+  &:hover, &:focus {
+    box-shadow: inset 0 0 3px #00aeef;
+  }
 }
-
+.content__user, .content__group {
+  .noborder {
+    font-family: monospace,monospace;
+  }
+}
+.bullet-numbers {
+  margin-left: 20px;
+  .bullet-number {
+    display: inline-block;
+    cursor: pointer;
+    color: $blue;
+    font-size: 13px;
+    padding: 5px 8px;
+    box-sizing: border-box;
+    margin: 5px;
+    &:hover {
+      text-decoration: underline;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+  }
+  .activeBullet {
+    background-color: $blue;
+    color: #fff;
+  }
+}
 .active-question {
   display: inline-block;
   position: relative;
@@ -630,8 +661,11 @@ input[type="checkbox"] {
   }
 }
 
+
+
 label {
   cursor: pointer;
+  min-height: 13px;
 }
 
 .list__footer {
@@ -770,6 +804,34 @@ label {
     .voting-abstained.voting-selected {
       background-color: #f29c24;
       color: #fff;
+    }
+    .voting-not-valid.voting-selected {
+      background-color: $pink;
+      color: #fff;
+      &:before, &:after {
+        background-color: #fff;
+      }
+    }
+    .voting-not-valid {
+      color: $pink;
+      &:before {
+        position: absolute;
+        top: 50%;
+        content: '';
+        width: 30px;
+        height: 1px;
+        background-color: $pink;
+        transform: rotate(45deg);
+      }
+      &:after {
+        position: absolute;
+        top: 50%;
+        content: '';
+        width: 30px;
+        height: 1px;
+        background-color: $pink;
+        transform: rotate(-45deg);
+      }
     }
   }
   &__divide {
