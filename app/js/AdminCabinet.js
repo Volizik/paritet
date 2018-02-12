@@ -4,7 +4,7 @@ var RegistryLegalRepresentatives = []; //Добавленные прдестав
 
 // проверяем если в реестре счета для данного пользователя
 function FindAccountsForUser() {
-    $.post("FindsAccountsForUser", { Name: $(".user_name").val(), DocNum: $(".user_doc").val() }, function (data) {
+    $.post("/admin/user/FindsAccountsForUser", { Name: $(".user_name").val(), DocNum: $(".user_doc").val() }, function (data) {
         $(".user_name").removeClass("validate-input__true");
         $(".user_doc").removeClass("validate-input__true");
         $(".user_name").removeClass("validate-input__false");
@@ -22,9 +22,20 @@ function FindAccountsForUser() {
     FindsProbableRepresentativesForUser();
 }
 
+function ChangePassword() {
+    $.post("/user/ChangePassword", $("#ChangePasswordForm").serialize(), function (data) {
+        if (data) {
+            $(".modal-change-password-success").show();
+        }
+        else {
+            $(".modal-change-password-fail").show();
+        }
+    });
+}
+
 // Ищем возможных представителей для пользователя
 function FindsProbableRepresentativesForUser() {
-    $.post("FindsProbableRepresentativesForUser", { Name: $(".user_name").val(), DocNum: $(".user_doc").val() }, function (data) {
+    $.post("/admin/user/FindsProbableRepresentativesForUser", { Name: $(".user_name").val(), DocNum: $(".user_doc").val() }, function (data) {
         $(".filter_wrapper").html(data);
     });
 }
@@ -81,7 +92,7 @@ function AddRegistryRepresentative() {
 }
 
 // удаляем всех представителй и добавляем новых
-function RemoveAllRepresentativesAndAddNew() {
+function UpdateRepresentatives() {
     GetChoosenRepresentatives();
     var model = {
         UserId: $("#UserId").val(),
@@ -91,7 +102,7 @@ function RemoveAllRepresentativesAndAddNew() {
     }
 
     $.ajax({
-        url: "../RemoveAllRepresentativesAndAddNew",
+        url: "../UpdateRepresentatives",
         type: "POST",
         data: JSON.stringify(model),
         contentType: "application/json"
@@ -121,7 +132,7 @@ function AddUser() {
             url: "AddUser",
             type: "POST",
             data: JSON.stringify(model),
-            success: ShowModalResultSuccess,
+            success: function (linkToNewUser) { window.location.replace(linkToNewUser) },
             error: ShowModalResultFail,
             contentType: "application/json"
         });
@@ -139,23 +150,6 @@ function ShowModalResultFail() {
 function ShowModalAddUserCancel() {
     $('.modal-add-user-cancel').show();
 };
-
-// Проверка существоания группы
-function NewGroup() {
-    if (("#validate-form").valid()) {
-
-        $.post("NewGroup", { GroupName: $("#GroupName").val(), GroupDescription: $("#GroupDescription").val() },
-            function (data) {
-                if (data === false) {
-                    $('.modal-add-group-result-fail').show();
-                }
-                else {
-                    window.location.replace(data);
-                }
-            });
-
-    }
-}
 
 function SelectIssuer() {
     $('#selectedIssuerId').attr('value', $('.filter__body .activeTr').data('issuerid'));
@@ -203,25 +197,21 @@ $(function () {
 
     //клик на кнопку "Выбрать" в окне представителей
     $(document).on('click', '.represent-filter .submit', function () {
-        var trArr = document.querySelectorAll('.represent-filter tr');
-        var users = '';
-        for (var i = 0; i < trArr.length; i++) {
-            var checkbox = trArr[i].querySelector('input[type="checkbox"]:checked');
-            var span = trArr[i].querySelectorAll('td > span');
+        var users = [];
+        $(".filter_wrapper input:checked").each(function () {
+            if ($(this).data("lname")) {
+                users.push($(this).data("lname"));
+            };
+            if ($(this).data("pname")) {
+                users.push($(this).data("pname"))
+            };
+        });
 
-            if (checkbox !== null) {
-                var user = '';
-                for (var j = 0; j < span.length; j++) {
-                    user = user + span[j].innerHTML + ' '
-                }
-                users += user;
-            }
+        if (users.length > 0) {
+            $('.admin-represent').text(users.join(", "));
         }
-        var inp = document.querySelector('.admin-represent');
-        inp.setAttribute('value', users);
-
-        if ($('.admin-represent').val().replace(' ', '').length === 0) {
-            inp.setAttribute('value', 'Нет')
+        else {
+            $('.admin-represent').text('Нет');
         }
     });
 
@@ -253,22 +243,6 @@ $(function () {
     $(document).on('click', '.users-list .user-delete', function () {
         $('#userToDelete').attr("value", $(this).data('userid'));
         $('.modal-delete-user').show();
-    });
-
-    // смена пароля
-    $(document).on('click', '#user-cabinet-recovery-password button', function () {
-        $.post("PasswordRecovery", {
-            OldPassword: $("#OldPassword").val(),
-            NewPassword: $("#NewPassword").val(),
-            UserName: $("#UserName").val(),
-        }, function (data) {
-            if (data) {
-                $('.modal-change-password-succes').show();
-            }
-            else {
-                $('.modal-change-password-fail').show();
-            }
-        });
     });
 
     // клик в меню удалить группу

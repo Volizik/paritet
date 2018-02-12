@@ -488,6 +488,58 @@ $(function () {
         } else {
             select.parent().hide()
         }
-    })
+    });
+
+    function selectAllVoting(e) {
+        var items = $('.voting-enter__table').find('.voting-actions__choice--item');
+        var votingTrue =  $('.voting-enter__table').find('.voting-true');
+        var votingFalse =  $('.voting-enter__table').find('.voting-false');
+        var votingAbstained =  $('.voting-enter__table').find('.voting-abstained');
+        var votingNotValid =  $('.voting-enter__table').find('.voting-not-valid');
+        if(e.hasClass('voting-true')) {
+            items.removeClass('voting-selected').find('input').removeAttr('checked')
+            votingTrue.addClass('voting-selected');
+            votingTrue.find('input').attr('checked', 'checked');
+        }
+        if(e.hasClass('voting-false')) {
+            items.removeClass('voting-selected').find('input').removeAttr('checked')
+            votingFalse.addClass('voting-selected');
+            votingFalse.find('input').attr('checked', 'checked');
+        }
+        if(e.hasClass('voting-abstained')) {
+            items.removeClass('voting-selected').find('input').removeAttr('checked')
+            votingAbstained.addClass('voting-selected');
+            votingAbstained.find('input').attr('checked', 'checked');
+        }
+        if(e.hasClass('voting-not-valid')) {
+            items.removeClass('voting-selected').find('input').removeAttr('checked')
+            votingNotValid.addClass('voting-selected');
+            votingNotValid.find('input').attr('checked', 'checked');
+        }
+    }
+
+    $(document).on('click', 'label[for="select-all-question"]', function () {
+        var items = $('.voting-enter__table').find('.voting-actions__choice--item');
+        var votingForAll = $('.voting-for-all');
+        if($(this).prev().is(':checked')) {
+            console.log('not checked');
+            items.find('input').removeAttr('readonly');
+            items.removeAttr('style');
+            votingForAll.removeClass('voting-for-all--active').find('.voting-actions__choice--item').removeClass('voting-selected').find('input').removeAttr('checked')
+        } else {
+            console.log('checked');
+            items.css({
+                pointerEvents: 'none'
+            });
+            items.find('input').attr('readonly', 'true');
+            items.removeClass('voting-selected');
+            votingForAll.addClass('voting-for-all--active')
+        }
+    });
+    $(document).on('click', '.voting-for-all .voting-actions__choice--item', function () {
+        if ($('.voting-enter__select-all__label input').is(':checked')) {
+            selectAllVoting($(this))
+        }
+    });
 
 });
