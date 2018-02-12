@@ -37,11 +37,9 @@ $(function () {
         }
     }
 
-    $(document).on('focus', '.t-search', function () {
-        var filter = $(this).closest('.content__block').find('.filter');
-        var filterTable = filter.find('table');
-        var table = $(this).closest('.content__section').find('.table');
-        if (filter.length > 0) {
+    $(document).on('click', '.t-search', function () {
+        var filter = $(this).closest('.content__section').find('.filter');
+        if(filter.length > 0) {
             filter.removeAttr('style');
             filter.show();
             var parent = filter.closest('.content__section')[0].getBoundingClientRect().bottom;
@@ -52,7 +50,14 @@ $(function () {
                     'bottom': '35px'
                 })
             }
+        }
+    });
 
+    $(document).on('keyup', '.t-search', function () {
+        var filter = $(this).closest('.content__section').find('.filter');
+        var filterTable = filter.find('table');
+        var table = $(this).closest('.content__section').find('.table');
+        if (filter.length > 0) {
             admInputFilter($(this), filterTable)
         } else {
             admInputFilter($(this), table)
@@ -73,12 +78,12 @@ $(function () {
             admInputFilter($(this), $('#user-cabinet-new .filter table'), 1)
         }
         admInputFilter($(this), $('#user-cabinet-new .filter table'), 1)
-    })
+    });
 
 
 
 
     /*-----------------------------------------------------------------------------------*/
-})
+});
 
 

@@ -136,8 +136,8 @@ $(function () {
         }
     });
     $(document).on('click', '.act_t-search', function () {
-        $(this).siblings('.t-search').removeClass('t-search--disabled').removeAttr('readonly').val('');
-        $(this).siblings('.insert').removeClass('insert-active');
+        $(this).parent().find('.t-search').removeClass('t-search--disabled').removeAttr('readonly').val('');
+        $(this).parent().find('.insert').removeClass('insert-active');
         $(this).remove();
     });
     $(document).on('click', '.filter .cancel', function () {
