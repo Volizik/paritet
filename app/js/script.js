@@ -495,12 +495,14 @@ $(function () {
     $(document).on('click', '.manager-meeting-list .modal label', function () {
         var inputRemeeting = $(this).parent().find('input[value="Remeeting"]');
         var inputCopy = $(this).parent().find('input[value="Copyof"]');
+        var allSelect = $(this).siblings('.select');
         var select = $(this).next('.select');
 
         if (inputCopy.is(':checked') || inputRemeeting.is(':checked')) {
-           select.show()
+            allSelect.hide();
+            select.show()
         } else {
-            select.hide()
+            allSelect.hide();
         }
     });
 
