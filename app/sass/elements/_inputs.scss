@@ -23,6 +23,12 @@
       background: url(../images/icons/delete.png) 98% 50% no-repeat;
     }
   }
+  &--cross {
+    background: url(../images/icons/delete.png) 98% 50% no-repeat;
+    &:hover {
+      background: url(../images/icons/delete.png) 98% 50% no-repeat;
+    }
+  }
 }
 .act_t-search {
   position: absolute;

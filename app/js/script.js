@@ -113,6 +113,17 @@ $(function () {
         $('.filter tr').removeClass('activeTr');
         $(this).addClass('activeTr');
     });
+
+    function createCross(input) {
+        var cross = $('<span class="act_t-search"></span>');
+        input.after(cross);
+        var crossLeft = cross[0].getBoundingClientRect().right;
+        var inputLeft = input[0].getBoundingClientRect().right;
+        cross.css({
+            'left': inputLeft - crossLeft + 300 - 30
+        });
+    }
+
     $(document).on('click', '.filter .submit', function () {
         var filter = $(this).closest('.filter');
         var input = filter.parent().find('.t-search');
@@ -125,18 +136,21 @@ $(function () {
             } else {
                 btn.addClass('insert-active').removeAttr('disabled');
                 input.addClass('t-search--disabled').attr('readonly', '');
-                var cross = $('<span class="act_t-search"></span>');
-                input.after(cross);
-                var crossLeft = cross[0].getBoundingClientRect().right;
-                var inputLeft = input[0].getBoundingClientRect().right;
-                cross.css({
-                    'left': inputLeft - crossLeft + 300 - 30
-                });
+                createCross(input)
             }
         }
     });
+    $(document).on('keyup', '.t-search', function () {
+        if($(this).val() !== '') {
+            if ($(this).siblings('.act_t-search').length > 0) {
+                return false
+            }
+            createCross($(this));
+            $(this).addClass('t-search--cross')
+        }
+    })
     $(document).on('click', '.act_t-search', function () {
-        $(this).parent().find('.t-search').removeClass('t-search--disabled').removeAttr('readonly').val('');
+        $(this).parent().find('.t-search').removeClass('t-search--disabled').removeAttr('readonly').val('').removeClass('t-search--cross');
         $(this).parent().find('.insert').removeClass('insert-active');
         $(this).remove();
     });
@@ -481,12 +495,12 @@ $(function () {
     $(document).on('click', '.manager-meeting-list .modal label', function () {
         var inputRemeeting = $(this).parent().find('input[value="Remeeting"]');
         var inputCopy = $(this).parent().find('input[value="Copyof"]');
-        var select = $(this).parent().find('select[name="basedOnMeetingId"]');
+        var select = $(this).next('.select');
 
         if (inputCopy.is(':checked') || inputRemeeting.is(':checked')) {
-           select.parent().show()
+           select.show()
         } else {
-            select.parent().hide()
+            select.hide()
         }
     });
 
