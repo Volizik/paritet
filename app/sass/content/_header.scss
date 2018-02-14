@@ -142,6 +142,11 @@
         border: none;
         background-color: transparent;
         font-size: 14px;
+        &:focus {
+          &::placeholder {
+            color: transparent;
+          }
+        }
       }
       display: flex;
       align-items: center;

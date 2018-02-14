@@ -147,6 +147,9 @@ $(function () {
             }
             createCross($(this));
             $(this).addClass('t-search--cross')
+        }else {
+            $(this).removeClass('t-search--cross');
+            $(this).siblings('.act_t-search').remove();
         }
     })
     $(document).on('click', '.act_t-search', function () {
@@ -336,6 +339,9 @@ $(function () {
     $(document).on('click', '.info-affix', function () {
         $(this).closest('.content__block').find('.add-files').fadeIn('fast')
     });
+    $(document).on('click', '.materials-list__btn', function () {
+        $(this).closest('.content__block').find('.add-files').fadeIn('fast')
+    });
 
 
     $(document).on('click', '.active-question>span', function () {
@@ -495,7 +501,7 @@ $(function () {
     $(document).on('click', '.manager-meeting-list .modal label', function () {
         var inputRemeeting = $(this).parent().find('input[value="Remeeting"]');
         var inputCopy = $(this).parent().find('input[value="Copyof"]');
-        var allSelect = $(this).siblings('.select');
+        var allSelect = $(this).siblings('.sub-select');
         var select = $(this).next('.select');
 
         if (inputCopy.is(':checked') || inputRemeeting.is(':checked')) {

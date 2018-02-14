@@ -39,6 +39,78 @@ $(function () {
                     $('.hotkeys').find('.cancel-hotkey').click()
                 },
                 keys: [27]
+            },
+            {
+                // ctrl + 1
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[0].click()
+                },
+                keys: [17, 49]
+            },
+            {
+                // ctrl + 2
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[1].click()
+                },
+                keys: [17, 50]
+            },
+            {
+                // ctrl + 3
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[2].click()
+                },
+                keys: [17, 51]
+            },
+            {
+                // ctrl + 4
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[3].click()
+                },
+                keys: [17, 52]
+            },
+            {
+                // ctrl + 5
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[4].click()
+                },
+                keys: [17, 53]
+            },
+            {
+                // ctrl + 6
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[5].click()
+                },
+                keys: [17, 54]
+            },
+            {
+                // ctrl + 7
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[6].click()
+                },
+                keys: [17, 55]
+            },
+            {
+                // ctrl + 8
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[7].click()
+                },
+                keys: [17, 56]
+            },
+            {
+                // ctrl + 9
+                func: function () {
+                    event.preventDefault();
+                    $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[8].click()
+                },
+                keys: [17, 57]
             }
         ];
 

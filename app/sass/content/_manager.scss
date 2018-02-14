@@ -764,7 +764,8 @@ tbody {
   .show-constraints,
   .load-list,
   .show-meetings,
-  .delete--item {
+  .delete--item,
+  .materials-list__btn {
     border: none;
     background-color: transparent;
     font-size: 13px;
@@ -837,7 +838,8 @@ tbody {
     margin-left: 10px;
     cursor: pointer;
   }
-  .delete--item {
+  .delete--item,
+  .materials-list__btn {
     height: 10px;
     width: 10px;
     cursor: pointer;
@@ -846,6 +848,9 @@ tbody {
       height: 10px;
       width: 10px;
     }
+  }
+  .delete--item {
+    margin-left: 0;
   }
   .materials-list {
     margin: 0;
