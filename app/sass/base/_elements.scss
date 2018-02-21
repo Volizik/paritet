@@ -31,18 +31,26 @@ $pink: #ef3f56;
 
 .noborder {
   height: 27px!important;
-  border:none!important;
+  font-family: monospace,monospace;
+  border: 1px solid transparent!important;
   border-bottom: 1px solid #ddd!important;
   &:hover, &:focus {
-    border-bottom: 1px solid transparent!important;
-    box-shadow: inset 0 0 3px #00aeef;
+    border: 1px solid rgba(0, 174, 239, .5)!important;
   }
 }
-.content__user, .content__group {
-  .noborder {
-    font-family: monospace,monospace;
+.noborder-select {
+  border-bottom: 1px solid #ddd;
+  &:hover, &:focus {
+    select {
+      border: 1px solid rgba(0, 174, 239, .5)!important;
+    }
+  }
+  select {
+    height: 25px!important;
+    border: 1px solid transparent!important;
   }
 }
+
 .bullet-numbers {
   margin-left: 20px;
   .bullet-number {
@@ -303,12 +311,17 @@ $pink: #ef3f56;
 }
 .contenteditable {
   width: 100%;
-  font-family: inherit;
+  font-family: monospace,monospace;
   font-size: 13px;
   margin: 0;
   min-height: 50px;
   padding: 0 15px;
   white-space: pre-wrap;
+  border: 1px solid #ccc;
+  outline: none;
+  &:hover, &:focus {
+    border: 1px solid rgba(0, 174, 239, .5)!important;
+  }
 }
 .modal {
   display: none;

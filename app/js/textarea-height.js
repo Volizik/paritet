@@ -6,7 +6,6 @@ $(function () {
         var that = input[i];
         $(that).siblings('.contenteditable').text($(that)[0].value);
     }
-
     $(document).on('keyup', '.contenteditable', function () {
         $(this).siblings('.contenteditable-input')[0].value = $(this).text();
     })

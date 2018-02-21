@@ -120,7 +120,7 @@ $(function () {
 
             document.onkeydown = function (e) {
                 e = e || window.event;
-                pressed.push(e.keyCode); //массив нажатых клавиш
+                pressed.push(e.keyCode);
                 for (var j=0; j<keysObj.length; j++) {
                     if(pressed.length !== keysObj[j]["keys"].length) continue;
                     var on = 0;
@@ -139,7 +139,12 @@ $(function () {
             };
 
             document.onkeyup = function () {
-                pressed = [];
+                if (pressed.length === 2) {
+                    pressed.splice(1, 1);
+                }
+                else {
+                    pressed = []
+                }
             };
 
         })()

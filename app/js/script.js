@@ -337,10 +337,10 @@ $(function () {
     });
 
     $(document).on('click', '.info-affix', function () {
-        $(this).closest('.content__block').find('.add-files').fadeIn('fast')
+        $(this).parent().siblings('.add-files').fadeIn('fast')
     });
     $(document).on('click', '.materials-list__btn', function () {
-        $(this).closest('.content__block').find('.add-files').fadeIn('fast')
+        $(this).siblings('.add-files').fadeIn('fast')
     });
 
 
@@ -563,5 +563,18 @@ $(function () {
             selectAllVoting($(this))
         }
     });
+
+
+    (function() {
+        var text = $('.voting-enter__td-text');
+       text.each(function () {
+           if($(this).height() > 30) {
+               $(this).addClass('voting-enter__td-text--hidden')
+           }
+       })
+    })();
+    $(document).on('click', '.voting-enter__td-text--hidden', function () {
+        $(this).toggleClass('voting-enter__td-text--visible')
+    })
 
 });

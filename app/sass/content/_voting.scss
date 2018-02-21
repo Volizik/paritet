@@ -92,6 +92,27 @@
   &__td-text {
     margin: 0;
     font-size: 13px;
+    &--hidden {
+      position: relative;
+      height: 30px;
+      overflow: hidden;
+      cursor: pointer;
+      &:before {
+        content: '...';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 15px;
+        background-color: #fff;
+      }
+    }
+    &--visible {
+      cursor: pointer;
+      height: auto;
+      &:before {
+        display: none;
+      }
+    }
   }
   &__tfoot {
     padding: 15px 0;

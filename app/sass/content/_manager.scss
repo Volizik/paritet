@@ -331,28 +331,32 @@ tbody {
     padding: 0;
     font-size: 18px;
     font-weight: 300;
+    color: #0062b2;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .meeting-question {
-    font-size: 13px;
-    font-weight: 700;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
     padding-right: 10px;
   }
   .meeting-answer-title {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     color: #777;
   }
   .meeting-answer {
     font-family: inherit;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     white-space: pre-wrap;
+    line-height: 15px;
   }
   .overflow-height {
     max-height: 45px;
     overflow: hidden;
-    margin-bottom: 0;
-    line-height: 15px;
+
   }
   .meeting__row {
     display: flex;
@@ -462,10 +466,15 @@ tbody {
     align-items: center;
     border: none;
     background-color: transparent;
-    height: 30px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     cursor: pointer;
     padding: 0;
+    img {
+      height: 13px;
+      width: 13px;
+      object-fit: contain;
+    }
     &--small {
       width: 20px;
       height: 25px;
@@ -503,17 +512,12 @@ tbody {
     td {
       border-bottom: none!important;
       box-sizing: border-box;
-      &:nth-of-type(1),
-      &:nth-of-type(3),
-      &:nth-of-type(4) {
-        width: 30px;
+      &:not(:nth-of-type(2)) {
+        width: 20px;
         text-align: center;
       }
       &:nth-of-type(2) {
         width: 70%;
-        border: 1px solid #ccc!important;
-        padding-left: 10px;
-        padding-right: 10px;
       }
     }
   }
@@ -533,7 +537,6 @@ tbody {
       width: 100%;
       padding: 5px;
       box-sizing: border-box;
-      border-bottom: 1px solid #ccc;
       p {
         font-size: 13px;
         margin: 0;
@@ -545,13 +548,13 @@ tbody {
       width: 100%;
       padding: 20px;
       box-sizing: border-box;
-      border-bottom: 1px solid #ccc;
       &:last-of-type {
         border-bottom: none;
       }
       p {
         font-size: 13px;
         margin: 0;
+        color: #777;
       }
       table {
         border-collapse: collapse;
@@ -616,6 +619,11 @@ tbody {
         margin: 0!important;
         padding: 0!important;
       }
+    }
+    &__paragraph {
+      font-size: 14px;
+      margin: 0;
+      color: #777;
     }
     &__line {
       display: flex;
@@ -707,7 +715,6 @@ tbody {
     }
     &__footer {
       display: flex;
-      justify-content: space-between;
     }
   }
   .settings-btn {
@@ -730,13 +737,17 @@ tbody {
     height: auto;
     min-height: 95px;
     width: 100%;
-    //border: 1px solid #ccc;
     padding: 10px;
     box-sizing: border-box;
     margin: 20px 0!important;
     font-size: 13px;
     resize: none;
-    color: #777
+    color: #000;
+    font-family: monospace, monospace;
+    border: 1px solid #ccc;
+    &:hover, &:focus {
+      border: 1px solid rgba(0, 174, 239, .5);
+    }
   }
   .t-search {
     margin: 0px 10px;
@@ -753,10 +764,12 @@ tbody {
 }
 .manager-meeting-info {
 
-
+  label {
+    left: -20px;
+  }
 
   .content__block--type {
-    min-width: 225px
+    min-width: 240px
   }
   .agenda-settings__cell {
     padding: 0;
@@ -796,11 +809,12 @@ tbody {
     display: flex;
     align-items: center;
     height: 31px;
-    width: 235px;
+    width: 250px;
     flex-shrink: 0;
     padding-right: 20px;
     box-sizing: border-box;
     font-size: 14px;
+    color: #777;
   }
   .agenda-settings__value {
     display: flex;
