@@ -1,15 +1,17 @@
 $(function () {
 
-    var text = $('.manager-meeting-agenda .meeting-answer');
+    var text = $('.need-hide');
 
-    text.each(function () {
-        if ($(this).height() > 45) {
-            $(this).after('<button class="meeting-answer-btn">больше...</button>');
-            $(this).addClass('overflow-height')
-        }
-    });
+    if (text.length > 0) {
+        text.each(function () {
+            if ($(this).height() > 51) {
+                $(this).after('<button type="button" class="need-hide-btn">больше...</button>');
+                $(this).addClass('overflow-height')
+            }
+        });
+    }
 
-    $(document).on('click', '.meeting-answer-btn', function () {
+    $(document).on('click', '.need-hide-btn', function () {
         $(this).prev().toggleClass('overflow-height');
 
         if ($(this).prev().hasClass('overflow-height')) {

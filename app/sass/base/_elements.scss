@@ -84,7 +84,7 @@ $pink: #ef3f56;
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background-color: $blue;
+    background-color: #0062b3;
     color: #fff;
     cursor: pointer;
     min-height: inherit!important;
@@ -727,6 +727,9 @@ label {
 .orange {
   color: #f29c24!important;
 }
+.bg-orange {
+  background-color:  #f29c24!important;
+}
 .green {
   color: #5ccc3d!important;
 }
@@ -751,6 +754,12 @@ label {
 .bg-blue {
   background-color: #0062b3!important;
 }
+.black {
+  color: #000!important;
+}
+.bg-black {
+  background-color: #000!important;
+}
 
 .small-input {
   padding-top: 0;
@@ -770,7 +779,9 @@ label {
 .input-wrong {
   border: 2px solid red!important;
 }
-
+.need-hide {
+  margin-bottom: 0;
+}
 .fraction-wrap {
   position: relative;
   width: 100%;
@@ -789,6 +800,7 @@ label {
 
 .voting-actions {
   padding-top: 20px;
+  padding-bottom: 10px;
   box-sizing: border-box;
   display: flex;
   align-items: baseline!important;
@@ -923,18 +935,9 @@ label {
     font-size: 13px;
     color: $blue;
     cursor: pointer;
-    //span {
-    //  display: inline-flex;
-    //  justify-content: center;
-    //  align-items: center;
-    //  height: 20px;
-    //  width: 20px;
-    //  color: #fff;
-    //  margin: 0 3px;
-    //  box-sizing: border-box;
-    //  background-color: $blue;
-    //  border-radius: 50%;
-    //}
+    >a {
+      color: $blue;
+    }
   }
 }
 .voting-actions-hidden {
@@ -1027,6 +1030,44 @@ label {
   min-height: 500px;
 }
 /*---!Custom scroll---*/
+
+.flex-row-center {
+  display: flex;
+  align-items: center;
+}
+.hr {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+  margin-top: 10px;
+  &:last-of-type {
+    display: none;
+  }
+}
+.need_hide {
+  &--hidden {
+    position: relative;
+    height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    &:before {
+      content: '...';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 15px;
+      background-color: #fff;
+    }
+  }
+  &--visible {
+    cursor: pointer;
+    height: auto;
+    &:before {
+      display: none;
+    }
+  }
+}
 
 
 @keyframes animateLogo {

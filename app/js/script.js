@@ -435,23 +435,23 @@ $(function () {
         }
     });
 
-    $(document).on('click', '.voting-send', function () {
-        var btn = $(this).closest('.content__block').find('.voting-actions__choice--item');
-        if (btn.hasClass('voting-selected')) {
-            $(this).val('Подписано и отправлено')
-                .removeClass('bg-blue')
-                .addClass('bg-grey')
-                .attr('disabled', 'true');
-            btn.not('.voting-selected').css({
-                background: '#fff',
-                color: '#777'
-            });
-
-            $(this).closest('.content__block').find('.voting-actions').addClass('voting-actions-disable');
-        } else {
-            return false
-        }
-    });
+    // $(document).on('click', '.voting-send', function () {
+    //     var btn = $(this).closest('.content__block').find('.voting-actions__choice--item');
+    //     if (btn.hasClass('voting-selected')) {
+    //         $(this).val('Подписано и отправлено')
+    //             .removeClass('bg-blue')
+    //             .addClass('bg-grey')
+    //             .attr('disabled', 'true');
+    //         btn.not('.voting-selected').css({
+    //             background: '#fff',
+    //             color: '#777'
+    //         });
+    //
+    //         $(this).closest('.content__block').find('.voting-actions').addClass('voting-actions-disable');
+    //     } else {
+    //         return false
+    //     }
+    // });
     $(document).on('click', '.sign-up', function () {
         $(this).val('Зарегистрироваться')
             .removeClass('bg-blue')
