@@ -368,18 +368,18 @@ $(function () {
     });
 
 
-    $(document).on('click', '.agenda-btn-edit', function () {
-        $(this).closest('.content__block').find('.agenda-question-content').toggle();
-        $(this).closest('.content__block').find('.agenda-question-edit').toggle();
-    });
+    // $(document).on('click', '.agenda-btn-edit', function () {
+    //     $(this).closest('.content__block').find('.agenda-question-content').toggle();
+    //     $(this).closest('.content__block').find('.agenda-question-edit').toggle();
+    // });
     $(document).on('click', '.agenda-btn-new-question', function () {
-        $('.manager-meeting-agenda .modal').hide();
+        $('.modal').hide();
         $(this).closest('.content__block').find('.modal').show();
     });
-    $(document).on('click', '.manager-meeting-agenda .cancel', function () {
-        $(this).closest('.content__block').find('.agenda-question-edit').hide();
-        $(this).closest('.content__block').find('.agenda-question-content').show();
-    });
+    // $(document).on('click', '.manager-meeting-agenda .cancel', function () {
+    //     $(this).closest('.content__block').find('.agenda-question-edit').hide();
+    //     $(this).closest('.content__block').find('.agenda-question-content').show();
+    // });
 
 
     if($('.write-msg')) {
@@ -400,12 +400,12 @@ $(function () {
     });
 
     $(document).on('click', '.edit-status-meeting', function () {
-        $('.manager-meeting-info .modal').show()
+        $(this).siblings('.modal').show()
     });
-    $(document).click(function(event) {
-        if ($(event.target).closest(".edit-status-meeting").length || $(event.target).closest(".manager-meeting-info .modal").length) return;
-        $(".manager-meeting-info .modal").fadeOut("fast");
-    });
+    // $(document).click(function(event) {
+    //     if ($(event.target).closest(".edit-status-meeting").length || $(event.target).siblings('.modal').length) return;
+    //     $(".modal").fadeOut("fast");
+    // });
 
 
     $(document).on('click', '.voting-actions__choice--item', function () {

@@ -29,27 +29,7 @@ $pink: #ef3f56;
   padding-bottom: 20px;
 }
 
-.noborder {
-  height: 27px!important;
-  font-family: monospace,monospace;
-  border: 1px solid transparent!important;
-  border-bottom: 1px solid #ddd!important;
-  &:hover, &:focus {
-    border: 1px solid rgba(0, 174, 239, .5)!important;
-  }
-}
-.noborder-select {
-  border-bottom: 1px solid #ddd;
-  &:hover, &:focus {
-    select {
-      border: 1px solid rgba(0, 174, 239, .5)!important;
-    }
-  }
-  select {
-    height: 25px!important;
-    border: 1px solid transparent!important;
-  }
-}
+
 
 .bullet-numbers {
   margin-left: 20px;
@@ -57,7 +37,7 @@ $pink: #ef3f56;
     display: inline-block;
     cursor: pointer;
     color: $blue;
-    font-size: 13px;
+    font-size: 14px;
     padding: 5px 8px;
     box-sizing: border-box;
     margin: 5px;
@@ -315,7 +295,7 @@ $pink: #ef3f56;
   font-size: 13px;
   margin: 0;
   min-height: 50px;
-  padding: 0 15px;
+  padding: 10px;
   white-space: pre-wrap;
   border: 1px solid #ccc;
   outline: none;
@@ -779,9 +759,7 @@ label {
 .input-wrong {
   border: 2px solid red!important;
 }
-.need-hide {
-  margin-bottom: 0;
-}
+
 .fraction-wrap {
   position: relative;
   width: 100%;
@@ -826,6 +804,10 @@ label {
       input[type="radio"] {
         display: none;
       }
+    }
+    .voting-veto.voting-selected {
+      background-color: #000;
+      color: #fff;
     }
     .voting-true.voting-selected {
       background-color: #5ccc3d;
@@ -1035,16 +1017,7 @@ label {
   display: flex;
   align-items: center;
 }
-.hr {
-  display: block;
-  height: 1px;
-  width: 100%;
-  background-color: #ccc;
-  margin-top: 10px;
-  &:last-of-type {
-    display: none;
-  }
-}
+
 .need_hide {
   &--hidden {
     position: relative;
