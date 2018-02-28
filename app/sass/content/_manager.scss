@@ -260,10 +260,10 @@ tbody {
   //  white-space: pre-wrap;
   //  line-height: 17px;
   //}
-  //.overflow-height {
-  //  max-height: 51px;
-  //  overflow: hidden;
-  //}
+  .overflow-height {
+    max-height: 51px;
+    overflow: hidden;
+  }
   .meeting__row {
     display: flex;
     padding: 5px 0;
@@ -390,13 +390,13 @@ tbody {
   //}
 }
 
-
-.agenda-settings__table {
-  padding: 10px 20px;
-  width: 100%;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+//
+//.agenda-settings__table {
+//  padding: 10px 20px;
+//  width: 100%;
+//  border: 1px solid #ccc;
+//  box-sizing: border-box;
+//}
 
 
 .manager-meeting-agenda {
@@ -435,9 +435,9 @@ tbody {
   //.modal {
   //  position: fixed;
   //}
-  .modal__body {
-    max-height: 215px;
-  }
+  //.modal__body {
+  //  max-height: 215px;
+  //}
   .modal__footer {
     padding-top: 20px;
     border-top: 1px solid #ccc;
@@ -525,11 +525,11 @@ tbody {
       //    width: 60px;
       //  }
       //}
-      .noborder {
-        width: 100%!important;
-        margin: 0!important;
-        padding: 0!important;
-      }
+      //.noborder {
+      //  width: 100%!important;
+      //  margin: 0!important;
+      //  padding: 0!important;
+      //}
     }
     &__paragraph {
       font-size: 14px;
@@ -638,12 +638,12 @@ tbody {
     background-color: transparent;
     cursor: pointer;
   }
-  .condition-hidden {
-    display: none;
-  }
-  .show-condition-hidden {
-    display: flex !important;
-  }
+  //.condition-hidden {
+  //  display: none;
+  //}
+  //.show-condition-hidden {
+  //  display: flex !important;
+  //}
 
 
   .t-search {

@@ -4,6 +4,9 @@
   width: 100%;
   font-size: 14px;
   min-height: 25px;
+  &__row-center {
+    align-items: center;
+  }
   &__key {
     display: flex;
     align-items: center;

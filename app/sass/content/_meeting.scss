@@ -16,6 +16,11 @@
       min-width: 260px;
     }
   }
+  &__agenda {
+    .string__key {
+      min-width: 200px;
+    }
+  }
 
 
   .meeting-question-title {
@@ -98,5 +103,12 @@
     &--value {
       color: #000;
     }
+  }
+
+  .condition-hidden {
+    display: none;
+  }
+  .show-condition-hidden {
+    display: flex;
   }
 }

@@ -158,6 +158,7 @@
 .noborder {
   height: 25px!important;
   font-family: monospace,monospace;
+  font-size: 13px;
   border: 1px solid transparent!important;
   border-bottom: 1px solid #ddd!important;
   &:hover, &:focus {
@@ -174,6 +175,7 @@
   select {
     height: 100%;
     border: none;
+    font-size: 13px;
   }
 }
 

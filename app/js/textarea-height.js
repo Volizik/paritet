@@ -10,5 +10,4 @@ $(function () {
         $(this).siblings('.contenteditable-input')[0].value = $(this).html();
     })
 
-
 });
