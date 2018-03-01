@@ -25,6 +25,7 @@
 
   .meeting-question-title {
     padding: 0;
+    margin: 0;
     font-size: 18px;
     font-weight: 300;
   }
@@ -36,6 +37,12 @@
     font-size: 14px;
     font-weight: 400;
     padding-right: 10px;
+  }
+  .voting-question {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
   }
   .meeting-answer-title {
     font-size: 14px;
@@ -111,4 +118,6 @@
   .show-condition-hidden {
     display: flex;
   }
+
+
 }

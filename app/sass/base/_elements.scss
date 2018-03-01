@@ -198,7 +198,7 @@ $pink: #ef3f56;
     height: 100%;
     transition: .4s;
     overflow: hidden;
-    padding: 0px 10px;
+    padding: 0px 20px;
     box-sizing: border-box;
     white-space: nowrap;
     font-size: 15px;
@@ -248,7 +248,7 @@ $pink: #ef3f56;
   }
   &__item {
     &--disabled {
-      color: #ddd!important;
+      color: #aaa!important;
       pointer-events: none;
     }
   }
@@ -775,7 +775,24 @@ label {
     }
   }
 }
-
+.voting-sent {
+  .voting-actions__choice {
+    pointer-events: none;
+  }
+  .voting-actions__choice--item:not(.voting-selected) {
+    background-color: transparent!important;
+    color: #777!important;
+  }
+}
+.voting-impossible {
+  .voting-actions__choice {
+    pointer-events: none;
+  }
+  .voting-actions__choice--item {
+    background-color: #ccc!important;
+    color: #fff!important;
+  }
+}
 .voting-actions {
   padding-top: 20px;
   padding-bottom: 10px;
@@ -793,11 +810,13 @@ label {
       align-items: center;
       justify-content: center;
       padding: 0;
-      font-size: 14px;
-      color: #777;
       text-transform: uppercase;
       cursor: pointer;
       height: 33px;
+      background-color: #eee;
+      color: #0062b3;
+      margin-right: 10px;
+      font-size: 13px;
       >* {
         padding: 0 20px;
       }
@@ -925,13 +944,13 @@ label {
 .voting-actions-hidden {
   display: none;
 }
-.voting-actions-disable {
-  .voting-actions {
-    &__results {
-      display: none;
-    }
-  }
-}
+//.voting-actions-disable {
+//  .voting-actions {
+//    &__results {
+//      display: none;
+//    }
+//  }
+//}
 
 .fraction-inputs {
   display: flex;

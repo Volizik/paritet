@@ -64,15 +64,15 @@ tbody {
   }
 }
 
-.manager-voting-issuer-list {
-  .content__block--row {
-    height: 31px;
-  }
-  .content__block--type {
-    padding: 0;
-    min-width: inherit;
-  }
-}
+//.manager-voting-issuer-list {
+//  .content__block--row {
+//    height: 31px;
+//  }
+//  .content__block--type {
+//    padding: 0;
+//    min-width: inherit;
+//  }
+//}
 
 .manager-voting-form {
 
@@ -131,44 +131,44 @@ tbody {
     font-size: 14px;
     color: #000;
   }
-  .voting-actions {
-    padding: 20px 0;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    &__choice {
-      position: relative;
-      display: flex;
-      align-items: center;
-      &--item {
-        display: block;
-        padding: 10px 20px;
-        color: #777;
-        text-transform: uppercase;
-      }
-      .voting-selected {
-        background-color: #5ccc3d;
-        color: #fff;
-      }
-    }
-    &__results {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      &--item {
-        display: block;
-        padding: 10px 20px;
-        color: #000;
-        font-size: 13px;
-        font-weight: 700;
-        &--key {
-          padding-right: 15px;
-          box-sizing: border-box;
-        }
-      }
-    }
-  }
+  //.voting-actions {
+  //  padding: 20px 0;
+  //  box-sizing: border-box;
+  //  display: flex;
+  //  align-items: center;
+  //  &__choice {
+  //    position: relative;
+  //    display: flex;
+  //    align-items: center;
+  //    &--item {
+  //      display: block;
+  //      padding: 10px 20px;
+  //      color: #777;
+  //      text-transform: uppercase;
+  //    }
+  //    .voting-selected {
+  //      background-color: #5ccc3d;
+  //      color: #fff;
+  //    }
+  //  }
+  //  &__results {
+  //    position: relative;
+  //    display: flex;
+  //    align-items: center;
+  //    width: 100%;
+  //    &--item {
+  //      display: block;
+  //      padding: 10px 20px;
+  //      color: #000;
+  //      font-size: 13px;
+  //      font-weight: 700;
+  //      &--key {
+  //        padding-right: 15px;
+  //        box-sizing: border-box;
+  //      }
+  //    }
+  //  }
+  //}
 }
 
 .manager-meeting-list {
@@ -283,29 +283,29 @@ tbody {
     }
   }
 
-  .voting-title {
-    font-size: 18px;
-    margin: 20px 20px 20px 0;
-    padding: 0;
-  }
-  .voting-answer {
-    color: grey;
-    font-size: 14px;
-    font-weight: 400;
-  }
-  .voting-question {
-    font-size: 16px;
-    font-weight: 400;
-    color: #000;
-  }
-  .voting-answer-desc,
-  .voting-question-desc {
-    margin: 0;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 400;
-    white-space: pre-wrap;
-  }
+  //.voting-title {
+  //  font-size: 18px;
+  //  margin: 20px 20px 20px 0;
+  //  padding: 0;
+  //}
+  //.voting-answer {
+  //  color: grey;
+  //  font-size: 14px;
+  //  font-weight: 400;
+  //}
+  //.voting-question {
+  //  font-size: 16px;
+  //  font-weight: 400;
+  //  color: #000;
+  //}
+  //.voting-answer-desc,
+  //.voting-question-desc {
+  //  margin: 0;
+  //  font-family: inherit;
+  //  font-size: 14px;
+  //  font-weight: 400;
+  //  white-space: pre-wrap;
+  //}
 
   .voting-order {
     color: #0062b2;
