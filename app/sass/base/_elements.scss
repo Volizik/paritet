@@ -438,6 +438,7 @@ $pink: #ef3f56;
     top: 30px;
     left: 50%;
     transform: translateX(-50%);
+    min-width: 100px;
     background-color: #004680;
     z-index: 10;
     padding: 5px;
@@ -453,7 +454,7 @@ $pink: #ef3f56;
       border-right: 5px solid transparent;
     }
     p {
-      margin: 0;
+      margin-top: 0;
       margin-bottom: 5px;
       text-align: center;
       color: #fff;
@@ -461,6 +462,12 @@ $pink: #ef3f56;
   }
 }
 
+.voting-order {
+  color: #0062b2;
+  height: 20px;
+  line-height: 1;
+  font-size: 13px;
+}
 
 .activeTr {
   color: $someone;

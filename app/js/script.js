@@ -492,7 +492,7 @@ $(function () {
     // });
 
     if ($('.contenteditable')) {
-        $('.contenteditable').last().focus()
+        $('.contenteditable').first().focus()
     }
     if($('.noborder')) {
         $('.noborder').first().focus()

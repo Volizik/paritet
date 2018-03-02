@@ -51,6 +51,7 @@
     align-items: center;
     width: 280px;
     margin-left: 40px;
+    flex-shrink: 0;
     &:hover {
       img {
         border: 1px solid $someone-hover;
