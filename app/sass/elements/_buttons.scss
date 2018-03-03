@@ -113,9 +113,11 @@
 
 .voting-send,
 .sign-up {
-  display: block;
+  display: flex;
+  align-items: center;
+  height: 30px;
   text-transform: uppercase;
-  padding: 10px 20px;
+  padding: 0 20px;
   box-sizing: border-box;
   color: #fff;
   font-size: 13px;
