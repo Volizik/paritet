@@ -959,6 +959,23 @@ label {
 //  }
 //}
 
+.load-list {
+  margin-left: 20px;
+  &:before {
+    content: attr(data-btn-text);
+  }
+}
+.voting-date-hidden{
+  display: none;
+}
+
+.constraints-hidden {
+  display: none;
+}
+.meetings-hidden{
+  display: none;
+}
+
 .fraction-inputs {
   display: flex;
   flex-direction: column;

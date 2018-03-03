@@ -687,12 +687,7 @@ tbody {
     cursor: pointer;
   }
 
-  .load-list {
-    margin-left: 20px;
-    &:before {
-      content: attr(data-btn-text);
-    }
-  }
+
   .agenda-settings__row {
     position: relative;
     display: flex;
@@ -826,16 +821,7 @@ tbody {
   //  margin-left: 0;
   //}
 
-  .voting-date-hidden{
-    display: none;
-  }
 
-  .constraints-hidden {
-    display: none;
-  }
-  .meetings-hidden{
-    display: none;
-  }
 
 
   .modal {
