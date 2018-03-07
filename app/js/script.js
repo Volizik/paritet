@@ -373,8 +373,8 @@ $(function () {
     //     $(this).closest('.content__block').find('.agenda-question-edit').toggle();
     // });
     $(document).on('click', '.agenda-btn-new-question', function () {
-        $('.modal').hide();
-        $(this).closest('.content__block').find('.modal').show();
+        $('.modal').closest('.overlay').hide();
+        $(this).closest('.content__block').find('.overlay').show();
     });
     // $(document).on('click', '.manager-meeting-agenda .cancel', function () {
     //     $(this).closest('.content__block').find('.agenda-question-edit').hide();
@@ -391,16 +391,19 @@ $(function () {
         });
     }
 
+    $(document).on('click', '.modal', function () {
+        e.stopPropagation();
+    });
 
     $(document).on('click', '.modal__header .t-delete', function () {
-        $(this).closest('.modal').fadeOut('fast');
+        $(this).closest('.overlay').fadeOut('fast');
     });
     $(document).on('click', '.modal .cancel', function () {
-        $(this).closest('.modal').fadeOut('fast');
+        $(this).closest('.overlay').fadeOut('fast');
     });
 
     $(document).on('click', '.edit-status-meeting', function () {
-        $(this).siblings('.modal').show()
+        $(this).siblings('.overlay').show()
     });
     // $(document).click(function(event) {
     //     if ($(event.target).closest(".edit-status-meeting").length || $(event.target).siblings('.modal').length) return;
@@ -494,9 +497,9 @@ $(function () {
     if ($('.contenteditable')) {
         $('.contenteditable').first().focus()
     }
-    if($('.noborder')) {
-        $('.noborder').first().focus()
-    }
+    // if($('.meeting .noborder')) {
+    //     $('.meeting .noborder').first().focus()
+    // }
 
     $(document).on('click', '.manager-meeting-list .modal label', function () {
         var inputRemeeting = $(this).parent().find('input[value="Remeeting"]');

@@ -1,3 +1,4 @@
+//Таблица находится в роли менеджера в собрании
 .constraint-table {
   border-collapse: collapse;
   margin: 20px 0;
@@ -15,9 +16,6 @@
   }
   tr {
     border-bottom: 1px solid #ccc;
-    &:last-of-type {
-      border-bottom: none;
-    }
   }
   td {
     font-size: 13px;
@@ -54,5 +52,70 @@
   }
   .ast-actions {
     width: 60px;
+  }
+}
+
+//Таблица находится в роли владельца во вкладке счета
+.bills-balance-table {
+  th,td {
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      text-align: right;
+      .sub-table {
+        right: 0!important;
+      }
+      .hidden-row {
+        align-items: flex-end;
+      }
+    }
+  }
+  tbody {
+    td {
+      vertical-align: top;
+      padding-top: 14px;
+      box-sizing: border-box;
+      &:last-of-type {
+        padding-right: 0;
+      }
+      span {
+        display: block;
+        height: 13px;
+      }
+    }
+  }
+  .hidden-row {
+    span {
+      display: block;
+      padding: 5px 0;
+      height: 30px;
+      position: relative;
+      &:first-of-type {
+        padding-top: 10px;
+      }
+    }
+  }
+  .show-all-state {
+    display: block;
+    cursor: pointer;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .bl-par,
+  .bl-sum {
+    width: 13%;
+  }
+}
+
+//Таблица находится в роли владельца во вкладке счета
+.bills-statement-table {
+  th,td {
+    &:nth-of-type(3) {
+      text-align: right;
+    }
+    &:nth-of-type(4) {
+      text-align: right;
+    }
   }
 }

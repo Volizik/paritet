@@ -1,4 +1,5 @@
 $(function () {
+
     var modal = $('.modal-delete');
 
     $(document).on('click', '.modal__header>.t-delete', function () {
@@ -10,5 +11,8 @@ $(function () {
     $(document).on('click', '.modal__footer>.delete-btn', function () {
         modal.hide();
     });
+
+
+
 
 });

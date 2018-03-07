@@ -35,116 +35,38 @@
 //    width: 150px;
 //  }
 //}
+//
+//.issuer-bills-bill {
+//  .content__block {
+//    &:last-of-type {
+//      border-bottom: none;
+//    }
+//  }
+//  .content__block--row {
+//    margin-bottom: 10px;
+//    &:last-of-type {
+//      margin-bottom: 0;
+//    }
+//  }
+//
+//  .bl-num {
+//    width: 150px;
+//  }
+//
+//}
 
-.issuer-bills-bill {
-  .content__block {
-    &:last-of-type {
-      border-bottom: none;
-    }
-  }
-  .content__block--row {
-    margin-bottom: 10px;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
 
-  .bl-num {
-    width: 150px;
-  }
 
-}
-
-.issuer-bills-balance {
-  >table {
-    width: 100%;
-    th,td {
-      &:nth-of-type(4),
-      &:nth-of-type(5) {
-        text-align: right;
-        .sub-table {
-          right: 0px!important;
-        }
-        .hidden-row {
-          align-items: flex-end;
-        }
-      }
-    }
-    tbody {
-      td {
-        vertical-align: top;
-        padding-top: 14px;
-        box-sizing: border-box;
-        &:last-of-type {
-          padding-right: 0;
-        }
-        span {
-          display: block;
-          height: 13px;
-        }
-      }
-    }
-    .hidden-row {
-      span {
-        display: block;
-        padding: 5px 0;
-        height: 30px;
-        position: relative;
-        &:first-of-type {
-          padding-top: 10px;
-        }
-      }
-    }
-    .show-all-state {
-      display: block;
-      cursor: pointer;
-    }
-    .hidden {
-      display: none;
-    }
-
-    .bl-par,
-    .bl-sum {
-      width: 13%;
-    }
-  }
-}
-.issuer-bills-statement {
-  >table {
-    width: 100%;
-    th,td {
-      &:nth-of-type(3) {
-        text-align: right;
-      }
-      &:nth-of-type(4) {
-        text-align: right;
-      }
-    }
-  }
-  .arrow-down {
-    display: inline-flex;
-    margin-left: 10px;
-    &:before {
-      border-top-color: $someone;
-    }
-  }
-
-  .active-period {
-    color: #000!important;
-  }
-  .st-date {
-    width: 160px;
-  }
-  //.st-review {
-  //  width: 54%;
-  //}
-  //.st-enroll{
-  //  width: 13%;
-  //}
-  //.st-off {
-  //  width: 13%;
-  //}
-}
+//.bills-statement-table {
+//  th,td {
+//    &:nth-of-type(3) {
+//      text-align: right;
+//    }
+//    &:nth-of-type(4) {
+//      text-align: right;
+//    }
+//  }
+//}
 
 
 .iss-bills-list {
