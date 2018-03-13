@@ -1,0 +1,49 @@
+#group-cabinet {
+  table {
+    td {
+      font-size: 14px;
+      padding: 10px 0;
+      &:first-of-type {
+        color: #777;
+        padding-right: 30px;
+      }
+    }
+  }
+}
+.admin-groups-content {
+  .content__block--type {
+    min-width: 105px;
+  }
+}
+.admin-groups-content .content__registers,
+.admin-groups-content .content__bills {
+  >table {
+    width: 100%;
+    td {
+      &:last-of-type {
+        text-align: right;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+.filter {
+  top: 25px;
+  left: 0;
+  width: 400px;
+  box-sizing: border-box;
+  tr {
+    height: auto!important;
+    border-top: none;
+  }
+  td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:first-of-type {
+      padding-right: 10px;
+    }
+  }
+  &__body {
+    max-height: 170px;
+  }
+}

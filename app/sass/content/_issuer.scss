@@ -1,0 +1,121 @@
+.issuer {
+
+  //Временные стили
+  .content__block {
+    padding: 0!important;
+    margin: 0!important;
+    border: none!important;
+  }
+  //Временные стили
+
+  .string__key {
+    min-width: 180px;
+  }
+
+}
+
+
+
+
+
+
+.issuer-bills-cabinet {
+  .content__block--row {
+    align-items: center;
+    min-height: 25px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
+
+
+//.issuer-bills {
+//  .content__block--type {
+//    min-width: 150px;
+//    width: 150px;
+//  }
+//}
+//
+//.issuer-bills-bill {
+//  .content__block {
+//    &:last-of-type {
+//      border-bottom: none;
+//    }
+//  }
+//  .content__block--row {
+//    margin-bottom: 10px;
+//    &:last-of-type {
+//      margin-bottom: 0;
+//    }
+//  }
+//
+//  .bl-num {
+//    width: 150px;
+//  }
+//
+//}
+
+
+
+//.bills-statement-table {
+//  th,td {
+//    &:nth-of-type(3) {
+//      text-align: right;
+//    }
+//    &:nth-of-type(4) {
+//      text-align: right;
+//    }
+//  }
+//}
+
+
+.iss-bills-list {
+
+  .b-number {
+    width: 130px;
+  }
+  //.b-issuer {
+  //  width: 20%;
+  //}
+  //.b-sort {
+  //  width: 13%;
+  //}
+  //.b-mode {
+  //  width: 37%;
+  //}
+  //.b-owner {
+  //  width: 20%;
+  //}
+}
+
+thead {
+  .iml-number {
+    width: 10%;
+  }
+  .iml-status,
+  .iml-date {
+    width: 20%;
+  }
+}
+tbody {
+  .iml-number {
+    color: $someone!important;
+    font-weight: 700;
+    transition: .4s;
+    cursor: pointer;
+    &:hover {
+      color: $someone-hover!important;
+      transition: .4s;
+    }
+    a {
+      color: $someone!important;
+      &:visited {
+        color: $someone;
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,71 @@
+.owner {
+  display: flex;
+  .content__section {
+    width: calc(100% - 400px);
+  }
+  .content__block {
+    &:first-of-type {
+      border-top: none;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  .content__block--type {
+    min-width: 180px;
+  }
+}
+
+.owner-voting {
+  font-size: 13px;
+  font-weight: 400;
+  height: 30px;
+  width: 100%;
+  position: relative;
+}
+
+thead {
+  .ov-register {
+    width: 10%;
+  }
+  .ov-voting {
+    width: 15%;
+  }
+}
+tbody {
+  .ov-register {
+    color: $someone!important;
+    font-weight: 700;
+    transition: .4s;
+    cursor: pointer;
+    &:hover {
+      color: $someone-hover!important;
+      transition: .4s;
+    }
+    a {
+      color: $someone!important;
+      &:visited {
+        color: $someone;
+      }
+    }
+  }
+}
+
+.edit-status-meeting {
+  cursor: pointer;
+}
+
+.owner-issuer-list {
+  .table {
+    td {
+      color: #0062b3;
+      font-weight: 700;
+    }
+  }
+}
+
+.owner-voting-info {
+  .content__block--type {
+    width: 130px;
+  }
+}
