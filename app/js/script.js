@@ -174,15 +174,15 @@ $(function () {
     });
 
 
-    $(document).on('click', '.content__registers .filter tr', function () {
-        $('.content__registers .filter tr').removeClass('activeTr');
+    $(document).on('click', '.admin-groups .filter tr', function () {
+        $('.admin-groups .filter tr').removeClass('activeTr');
         $(this).addClass('activeTr');
     });
-    $(document).on('click', '.content__registers .filter .submit', function () {
+    $(document).on('click', '.cadmin-groups .filter .submit', function () {
         if($('.activeTr').length >0) {
-            $('.content__registers .t-search').val($('.activeTr').text());
-            $('.content__registers .filter').hide();
-            $('.content__registers .insert').addClass('insert-active').removeAttr('disabled')
+            $('.admin-groups .t-search').val($('.activeTr').text());
+            $('.admin-groups .filter').hide();
+            $('.admin-groups .insert').addClass('insert-active').removeAttr('disabled')
         }
     });
 

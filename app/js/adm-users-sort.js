@@ -1,9 +1,9 @@
 $(function() {
 
     var userList = document.querySelector(".users-list");
-    var groupsList = document.querySelector(".content__groups>table");
-    var registersList = document.querySelector(".content__registers>table");
-    var billsList = document.querySelector(".content__bills>table");
+    var groupsList = document.querySelector(".group-users-table");
+    var registersList = document.querySelector(".group-registers-table");
+    var billsList = document.querySelector(".group-bills-table");
 
 
     function sortTable(tbl, n) {
@@ -86,10 +86,10 @@ $(function() {
 
 
     /*------------groupsList--------------*/
-    $(document).on('click', '.content__groups table .th-number', function () {
+    $(document).on('click', '.group-users-table .th-number', function () {
         sortTable(groupsList, 0);
     });
-    $(document).on('click', '.content__groups table .th-name', function () {
+    $(document).on('click', '.group-users-table .th-name', function () {
         sortTable(groupsList, 1);
     });
     /*------------!groupsList--------------*/
@@ -97,10 +97,10 @@ $(function() {
 
 
     /*------------registersList--------------*/
-    $(document).on('click', '.content__registers table .th-number', function () {
+    $(document).on('click', '.group-registers-table .th-number', function () {
         sortTable(registersList, 0);
     });
-    $(document).on('click', '.content__registers table .th-name', function () {
+    $(document).on('click', '.group-registers-table .th-name', function () {
         sortTable(registersList, 1);
     });
     /*------------!registersList--------------*/
@@ -108,10 +108,10 @@ $(function() {
 
 
     /*------------billsList--------------*/
-    $(document).on('click', '.content__bills table .th-number', function () {
+    $(document).on('click', '.group-bills-table .th-number', function () {
         sortTable(billsList, 0);
     });
-    $(document).on('click', '.content__bills table .th-name', function () {
+    $(document).on('click', '.group-bills-table .th-name', function () {
         sortTable(billsList, 1);
     });
     /*------------!billsList--------------*/

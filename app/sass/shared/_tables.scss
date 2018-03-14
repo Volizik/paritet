@@ -119,3 +119,26 @@
     }
   }
 }
+
+//Таблица находится в роли администратора во вкладке группы/группы
+.group-users-table {
+  td {
+    font-size: 14px;
+    padding: 10px 0;
+    &:first-of-type {
+      color: #777;
+      padding-right: 30px;
+    }
+  }
+}
+
+//Таблица находится в роли администратора во вкладке группы/реестры/счета
+.group-registers-table,
+.group-bills-table {
+  td {
+    &:last-of-type {
+      text-align: right;
+      padding-right: 5px;
+    }
+  }
+}
