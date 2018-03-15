@@ -3,17 +3,6 @@
   .content__section {
     width: calc(100% - 400px);
   }
-  .content__block {
-    &:first-of-type {
-      border-top: none;
-    }
-    &:last-of-type {
-      border-bottom: none;
-    }
-  }
-  .content__block--type {
-    min-width: 180px;
-  }
 }
 
 .owner-voting {
@@ -61,11 +50,5 @@ tbody {
       color: #0062b3;
       font-weight: 700;
     }
-  }
-}
-
-.owner-voting-info {
-  .content__block--type {
-    width: 130px;
   }
 }

@@ -590,6 +590,11 @@ $(function () {
     })();
     $(document).on('click', '.voting-enter__td-text--hidden', function () {
         $(this).toggleClass('voting-enter__td-text--visible')
-    })
+    });
+
+
+    $('.overlay').bind('mousewheel', function(){
+        return false
+    });
 
 });

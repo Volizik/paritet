@@ -25,6 +25,7 @@ $pink: #ef3f56;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, .2);
+  z-index: 200;
   .modal {
     display: block;
   }
@@ -537,6 +538,12 @@ $pink: #ef3f56;
     white-space: nowrap;
     &:first-of-type {
       padding-left: 10px;
+      a {
+        color: $someone!important;
+        &:visited {
+          color: $someone;
+        }
+      }
     }
     &:last-of-type {
       .t-delete {

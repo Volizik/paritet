@@ -1,52 +1,6 @@
-thead {
-  .mv-register,
-  .vil-bill {
-    width: 10%;
-  }
-  .mml-number {
-    width: 90px;
-  }
-  .mml-name {
-    width: 36%;
-  }
-  .mml-date {
-    width: 10%;
-  }
-  .vil-lk {
-    width: 10%;
-  }
-  .mi-inn,
-  .ai-inn{
-    width: 100px;
-  }
-}
-tbody {
-  .mi-register,
-  .mv-register,
-  .mml-number,
-  .vil-bill {
-    color: $someone!important;
-    font-weight: 700;
-    transition: .4s;
-    cursor: pointer;
-    &:hover {
-      color: $someone-hover!important;
-      transition: .4s;
-    }
-    a {
-      color: $someone!important;
-      &:visited {
-        color: $someone;
-      }
-    }
-  }
-
-}
-
 .manager-meeting-list {
   display: flex;
   height: 100%;
-
   table {
     tbody {
       td {
@@ -54,25 +8,6 @@ tbody {
       }
     }
   }
-  .mml-number {
-    width: 65px;
-  }
-  .mml-name {
-    span {
-      padding: 10px;
-      display: block;
-    }
-  }
-  .mml-status {
-    min-width: 90px;
-    max-width: 190px;
-    width: 15%;
-  }
-  .mml-actions {
-    width: 30px;
-  }
-
-
   .content__section {
     width: calc(100% - 320px);
   }
@@ -86,18 +21,6 @@ tbody {
   }
 }
 
-.manager-issuers-list {
-  tbody {
-    td:first-of-type {
-      color: #0062b3;
-      font-weight: 700;
-      cursor: pointer;
-      a:visited {
-        color: #0062b3;
-      }
-    }
-  }
-}
 .select2 {
   width: 100%!important;
   min-height: 200px;

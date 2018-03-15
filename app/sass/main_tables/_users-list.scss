@@ -37,11 +37,6 @@ table.users-list {
   td {
     font-size: 13px;
   }
-
-  .u-action {
-
-  }
-
   .u-login {
     width: 160px;
   }
@@ -75,8 +70,6 @@ table.users-list {
       vertical-align: middle;
     }
   }
-
-
   .u-status-active {
     color: #5ccc3d
   }
@@ -124,27 +117,4 @@ table.users-list {
     background: url(../images/icons/unblock.png) no-repeat center;
   }
 
-}
-.admin-issuers-list {
-  tbody {
-    td:first-of-type {
-      color: #0062b3;
-      font-weight: 700;
-      cursor: pointer;
-      a {
-        color: #0062b3;
-      }
-      a:visited {
-        color: #0062b3;
-      }
-    }
-  }
-}
-.ai-register,
-.mi-register {
-  width: 90px;
-}
-.ai-name,
-.mi-name {
-  width: 200px;
 }

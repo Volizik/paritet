@@ -1,0 +1,44 @@
+.mml-number {
+  width: 65px;
+}
+.mml-name {
+  span {
+    padding: 10px;
+    display: block;
+  }
+}
+.mml-status {
+  min-width: 90px;
+  max-width: 190px;
+  width: 15%;
+}
+.mml-actions {
+  width: 30px;
+}
+thead {
+  .mv-register,
+  .vil-bill {
+    width: 10%;
+  }
+  .mml-number {
+    width: 90px;
+  }
+  .mml-name {
+    width: 36%;
+  }
+  .mml-date {
+    width: 10%;
+  }
+  .vil-lk {
+    width: 10%;
+  }
+  .mi-inn,
+  .ai-inn{
+    width: 100px;
+  }
+}
+tbody {
+  .mml-number {
+    font-weight: 700;
+  }
+}

@@ -1,13 +1,10 @@
 table.groups-list {
-  width: 100%;
-  border-collapse: collapse;
+
   tr:last-of-type td {
     border-bottom: 1px solid #ccc;
   }
   th, td {
     padding: 10px 5px;
-    box-sizing: border-box;
-    border-top: 1px solid #ccc;
     text-align: left;
     .someone {
       a {
@@ -16,26 +13,17 @@ table.groups-list {
     }
   }
   th {
-    font-size: 13px;
-    color: #777777;
-    font-weight: 400;
     span {
       display: inline!important;
       position: relative;
     }
   }
-  td {
-    font-size: 13px;
-    //color: #000;
-  }
-
 
   .g-name {
     width: 18%;
   }
   .g-review {
     width: 24%;
-
   }
   .g-inside {
     width: calc(30% - 80px);
@@ -52,7 +40,6 @@ table.groups-list {
   .g-delete {
     width: 80px;
   }
-
   .g-inside,
   .g-outside,
   .g-regs,
