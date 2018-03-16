@@ -428,7 +428,9 @@ $(function () {
             return false
         }
         $(this).closest('.voting-actions').find('.voting-actions__choice--item').removeClass('voting-selected');
-        $(this).addClass('voting-selected')
+        // $(this).find('input[type="radio"]').attr('checked', 'checked');
+        $(this).addClass('voting-selected');
+
     });
 
     $(document).on('click', '.show-divide-voting>span', function () {
@@ -442,7 +444,7 @@ $(function () {
 
 
     $(document).on('click', '.voting-order', function () {
-        var text = $(this).closest('.content__block').find('.voting-order__text')
+        var text = $(this).closest('.content__block').find('.voting-order__text');
         if (text.hasClass('j-invisible')) {
             text.removeClass('j-invisible')
         } else {
@@ -596,5 +598,9 @@ $(function () {
     $('.overlay').bind('mousewheel', function(){
         return false
     });
+
+    if ($('.modal-show-on-load').length > 0) {
+        $('.modal-show-on-load').closest('.overlay').show();
+    }
 
 });
