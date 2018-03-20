@@ -379,19 +379,10 @@ $(function () {
         }
     });
 
-
-    // $(document).on('click', '.agenda-btn-edit', function () {
-    //     $(this).closest('.content__block').find('.agenda-question-content').toggle();
-    //     $(this).closest('.content__block').find('.agenda-question-edit').toggle();
-    // });
     $(document).on('click', '.agenda-btn-new-question', function () {
         $('.modal').closest('.overlay').hide();
         $(this).closest('.content__block').find('.overlay').show();
     });
-    // $(document).on('click', '.manager-meeting-agenda .cancel', function () {
-    //     $(this).closest('.content__block').find('.agenda-question-edit').hide();
-    //     $(this).closest('.content__block').find('.agenda-question-content').show();
-    // });
 
 
     if($('.write-msg')) {
@@ -417,20 +408,41 @@ $(function () {
     $(document).on('click', '.edit-status-meeting', function () {
         $(this).siblings('.overlay').show()
     });
-    // $(document).click(function(event) {
-    //     if ($(event.target).closest(".edit-status-meeting").length || $(event.target).siblings('.modal').length) return;
-    //     $(".modal").fadeOut("fast");
-    // });
 
 
     $(document).on('click', '.voting-actions__choice--item', function () {
-        if ($(this).closest('.voting-actions').hasClass('voting-actions-disable')) {
+        var parent = $(this).closest('.voting-actions');
+        var inputs = parent.find('input[type="radio"]');
+        var votingFalse = parent.find('.if-voting-false');
+        var votingTrue = parent.find('.if-voting-true');
+        var thisRadio = $(this).find('input[type="radio"]');
+
+        if (parent.hasClass('voting-actions-disable')) {
             return false
         }
-        $(this).closest('.voting-actions').find('.voting-actions__choice--item').removeClass('voting-selected');
-        // $(this).find('input[type="radio"]').attr('checked', 'checked');
-        $(this).addClass('voting-selected');
-
+        if ($(this).hasClass('voting-selected')) {
+            $(this).removeClass('voting-selected');
+            thisRadio.removeAttr('checked');
+            votingFalse.show();
+            votingTrue.hide();
+            return false
+        } else if (parent.find('.voting-selected').length > 0) {
+            parent.find('.voting-actions__choice--item').removeClass('voting-selected');
+            $(this).addClass('voting-selected');
+            inputs.each(function () {
+                $(this).removeAttr('checked')
+            });
+            thisRadio.attr('checked', 'checked');
+            votingFalse.hide();
+            votingTrue.show();
+            return false
+        } else {
+            $(this).addClass('voting-selected');
+            thisRadio.attr('checked', 'checked');
+            votingFalse.hide();
+            votingTrue.show();
+            return false
+        }
     });
 
     $(document).on('click', '.show-divide-voting>span', function () {
@@ -452,36 +464,12 @@ $(function () {
         }
     });
 
-    // $(document).on('click', '.voting-send', function () {
-    //     var btn = $(this).closest('.content__block').find('.voting-actions__choice--item');
-    //     if (btn.hasClass('voting-selected')) {
-    //         $(this).val('Подписано и отправлено')
-    //             .removeClass('bg-blue')
-    //             .addClass('bg-grey')
-    //             .attr('disabled', 'true');
-    //         btn.not('.voting-selected').css({
-    //             background: '#fff',
-    //             color: '#777'
-    //         });
-    //
-    //         $(this).closest('.content__block').find('.voting-actions').addClass('voting-actions-disable');
-    //     } else {
-    //         return false
-    //     }
-    // });
     $(document).on('click', '.sign-up', function () {
         $(this).val('Зарегистрироваться')
             .removeClass('bg-blue')
             .addClass('bg-grey')
             .attr('disabled', 'true');
     });
-
-    //$(document).on('click', '.users-list .t-delete', function (e) {
-    //    e.preventDefault();
-    //    $('.modal-delete').show();
-    //    var href = $(this).closest('a').attr('href');
-    //    $('.modal-delete .delete-btn').attr('href', href);
-    //});
 
 
     $(document).on('click', '.voting-bill', function () {
@@ -500,20 +488,10 @@ $(function () {
         dropdownParent: $('.select2-docs').parent()
     });
 
-    // $(document).on('click', '.select2-take-all', function () {
-    //     var options = $(this).closest('.content__block').find('.select2-hidden-accessible option');
-    //     var list =  $(this).closest('.content__block').find('.select2-selection__rendered');
-    //     options.each(function () {
-    //
-    //     })
-    // });
 
     if ($('.contenteditable')) {
         $('.contenteditable').first().focus()
     }
-    // if($('.meeting .noborder')) {
-    //     $('.meeting .noborder').first().focus()
-    // }
 
     $(document).on('click', '.manager-meeting-list .modal label', function () {
         var inputRemeeting = $(this).parent().find('input[value="Remeeting"]');

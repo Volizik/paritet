@@ -50,15 +50,31 @@ $(function() {
         var parent = $(this).closest('.cumulative-voting__block');
         var inputs = parent.find('.cumulative-voting__input');
         if (inputs.length > 0) {
-            if ($(this).hasClass('voting-selected')) {
-                return
-            }
-
+            // if ($(this).hasClass('voting-selected')) {
+            //     return
+            // }
             inputs.each(function () {
                 $(this).val('')
             });
             parent.find('.cumulative-voting-warning').remove();
             parent.find('.cumulative-voting__sum').removeClass('red').text(0);
+        }
+    });
+
+    $(document).on('click', '.cumulative-voting__block .voting-actions__choice--item', function () {
+        var parent = $(this).closest('.cumulative-voting__block');
+        if ($(this).hasClass('voting-false') || $(this).hasClass('voting-abstained')) {
+
+            var total = parent.find('.cumulative-voting__total').text();
+
+            parent.find('.noborder').attr('readonly', '').css({
+                pointerEvents: 'none'
+            });
+            $('.cumulative-voting__sum').text(total);
+        } else {
+            parent.find('.noborder').removeAttr('readonly').css({
+                pointerEvents: 'auto'
+            });
         }
     })
 

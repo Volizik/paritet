@@ -120,6 +120,17 @@
                             <li class="voting-actions__choice--item voting-false"><label><input type="radio" name="radio">Против</label></li>
                             <li class="voting-actions__choice--item voting-abstained"><label><input type="radio" name="radio">воздерживаюсь</label></li>
                         </ul>
+                        <div class="bulleting-items">
+
+                            <div class="bulleting-item if-voting-true" style="display: none">
+                                <span class="bulleting-item--key">Голосов отдано:</span>
+                                <span class="bulleting-item--value cumulative-voting__sum">0</span>
+                            </div>
+                            <div class="bulleting-item if-voting-false">
+                                <span class="bulleting-item--key">Голосов всего:</span>
+                                <span class="bulleting-item--value cumulative-voting__total">410&nbsp;800&nbsp;100 ⅓</span>
+                            </div>
+                        </div>
                         <div class="voting-actions__divide">
                             <span>Отдать голосов</span>
                             <div class="voting-dividing">
@@ -196,13 +207,14 @@
                                 <li class="voting-actions__choice--item voting-abstained"><label>воздерживаюсь</label></li>
                             </ul>
                             <div class="bulleting-items">
-                                <div class="bulleting-item">
-                                    <span class="bulleting-item--key">Голосов всего:</span>
-                                    <span class="bulleting-item--value cumulative-voting__total">410&nbsp;800&nbsp;100 ⅓</span>
-                                </div>
+
                                 <div class="bulleting-item">
                                     <span class="bulleting-item--key">Голосов отдано:</span>
                                     <span class="bulleting-item--value cumulative-voting__sum">0</span>
+                                </div>
+                                <div class="bulleting-item">
+                                    <span class="bulleting-item--key">Голосов всего:</span>
+                                    <span class="bulleting-item--value cumulative-voting__total">410&nbsp;800&nbsp;100 ⅓</span>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,15 @@
 $(function () {
-    if ($('.hotkeys')) {
+    if ($('.hotkeys').length > 0) {
+
+        if ($('.voting-enter__table').length > 0) {
+            var i = 1;
+            $('.voting-enter__table .voting-actions__choice--item').each(function () {
+                $(this).attr('tabindex', i);
+                i++;
+            })
+
+        }
+
 
         var keysObj = [
             {
@@ -111,6 +121,21 @@ $(function () {
                     $('.hotkeys').find('.bullet-numbers-hotkey .bullet-number')[8].click()
                 },
                 keys: [17, 57]
+            },
+            {
+                // space
+                func: function () {
+                    var nextBtn = $(event.target).closest('.voting-enter__tr').next().find('.voting-true');
+                    if (nextBtn.length === 0) {
+                        nextBtn = $(event.target).closest('.voting-enter__tr-parent').next().find('.voting-true').first();
+                        if (nextBtn.length === 0) {
+                            nextBtn = $('.send-hotkey');
+                        }
+                    }
+                    event.target.click();
+                    nextBtn.focus();
+                },
+                keys: [32]
             }
         ];
 

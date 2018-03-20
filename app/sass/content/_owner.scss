@@ -24,7 +24,7 @@ thead {
 tbody {
   .ov-register {
     color: $someone!important;
-    font-weight: 700;
+    font-weight: 400;
     transition: .4s;
     cursor: pointer;
     &:hover {
@@ -48,7 +48,7 @@ tbody {
   .table {
     td {
       color: #0062b3;
-      font-weight: 700;
+      font-weight: 400;
     }
   }
 }
