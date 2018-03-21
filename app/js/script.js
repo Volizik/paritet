@@ -293,14 +293,14 @@ $(function () {
         $(this).closest('.bullet-numbers').find('.bullet-number').removeClass('activeBullet');
         $(this).addClass('activeBullet');
     });
-    $(document).on('click', '.show-condition', function () {
-        $('.condition-hidden').addClass('show-condition-hidden');
-        $(this).hide();
-    });
-    $(document).on('click', '.hide-condition', function () {
-        $('.condition-hidden').removeClass('show-condition-hidden');
-        $('.show-condition').show();
-    });
+    // $(document).on('click', '.show-condition', function () {
+    //     $('.condition-hidden').addClass('show-condition-hidden');
+    //     $(this).hide();
+    // });
+    // $(document).on('click', '.hide-condition', function () {
+    //     $('.condition-hidden').removeClass('show-condition-hidden');
+    //     $('.show-condition').show();
+    // });
     $(document).on('click', '.hide-voting-settings', function () {
 
         var concrete = $(this).closest('.content__block');
@@ -580,5 +580,13 @@ $(function () {
     if ($('.modal-show-on-load').length > 0) {
         $('.modal-show-on-load').closest('.overlay').show();
     }
+
+    $(document).on('click', '.calculationMethod', function () {
+        if ($(this).val() !== 'SIMPLE') {
+            $('.calculationAdd').slideDown("fast");
+        } else {
+            $('.calculationAdd').slideUp("fast");
+        }
+    });
 
 });
