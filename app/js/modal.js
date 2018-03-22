@@ -7,6 +7,7 @@ $(function () {
     });
     $(document).on('click', '.modal__footer>.cancel', function () {
         modal.hide();
+        return false;
     });
     $(document).on('click', '.modal__footer>.delete-btn', function () {
         modal.hide();

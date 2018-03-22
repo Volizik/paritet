@@ -403,6 +403,7 @@ $(function () {
     });
     $(document).on('click', '.modal .cancel', function () {
         $(this).closest('.overlay').fadeOut('fast');
+        return false;
     });
 
     $(document).on('click', '.edit-status-meeting', function () {

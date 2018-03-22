@@ -95,33 +95,60 @@
             <div class="string">
                 <div class="string__key">Эмитент</div>
                 <div class="string__value-row">
-                    <label>не может изменять настройки голосования</label>
+                    <div class="checkbox">
+                        <input type="checkbox" id="can_change">
+                        <label for="can_change">может изменять настройки голосования</label>
+                    </div>
                 </div>
             </div>
             <div class="string">
                 <div class="string__key">Кворум</div>
                 <div class="string__value-row">
-                    <span>&gt; 50 %</span>
+                    <input class="noborder" style="width: 140px" type="number" value="50">
                 </div>
             </div>
             <div class="string">
                 <div class="string__key">Решение</div>
                 <div class="string__value-row">
-                    <span>&gt; 50 %</span>
-                    <span style="margin-left: 20px">От зарегистрированных</span>
+                    <input class="noborder" style="width: 140px; margin-right: 10px" type="number" data-val="true"
+                           data-val-required="The DecisionLevelMain field is required." id="DecisionLevelMain"
+                           name="DecisionLevelMain" value="50">
+                    <div class="select noborder-select">
+                        <select style="width: 300px" id="MeetingCountingBaseMain" name="MeetingCountingBaseMain">
+                            <option value="BYREG" selected="selected">От зарегистрированных</option>
+                            <option value="BYVOTE">От принимающих участие</option>
+                            <option value="BYTOTAL">От всех по списку</option>
+                        </select>
+                    </div>
                 </div>
+
             </div>
-            <div class="string condition-hidden">
+            <div class="string">
                 <div class="string__key">Способ расчета</div>
                 <div class="string__value-row">
-                    <span></span>
+                    <div class="select noborder-select">
+                        <select style="width: 450px" class="calculationMethod" id="MeetingCountingType"
+                                name="MeetingCountingType">
+                            <option value="SIMPLE">Простой, с учетом настроек вопроса</option>
+                            <option value="EXCEPT_PRIV">О выплате дивидендов по привилегированным акциям</option>
+                            <option value="DEALING_OVER50">Крупная сделка с заинтересованностью (более 50)</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="string condition-hidden">
+            <div class="string calculationAdd" style="display: none">
                 <div class="string__key">Доп. условие</div>
                 <div class="string__value-row">
-                    <span>&gt; 0 %</span>
-                    <span style="margin-left: 20px"></span>
+                    <input class="noborder" style="width: 140px; margin-right: 10px" type="number" id="DecisionLevelAux"
+                           name="DecisionLevelAux" value="">
+
+                    <div class="select noborder-select">
+                        <select style="width: 300px" id="MeetingCountingBaseAux" name="MeetingCountingBaseAux">
+                            <option value="BYREG">От зарегистрированных</option>
+                            <option value="BYVOTE">От принимающих участие</option>
+                            <option value="BYTOTAL">От всех по списку</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -152,12 +179,10 @@
                 <div class="string__key">Комментарий эмитента</div>
             </div>
             <div class="string">
-                <div class="string__value-row">
-
-                </div>
+                <textarea class="restraint" id="RestrictNote" name="RestrictNote"></textarea>
             </div>
             <div class="string">
-                <div class="string__key">Примененные ограничения</div>
+                <div class="string__key">Примененные ограничения уровня собрания</div>
             </div>
             <table class="constraint-table">
                 <thead>
@@ -256,6 +281,17 @@
 
                 </tbody>
             </table>
+            <div class="string string__row-center">
+                <div class="string__key">Примененные ограничения</div>
+                <div class="string__value-row"> Редактирование структурных ограничений невозможно : нет реестра к собранию</div>
+            </div>
+            <div class="string">
+                <div class="string__value-row">нет</div>
+            </div>
+            <div class="string footer-actions">
+                <button class="submit">Сохранить</button>
+                <button class="cancel">Отмена</button>
+            </div>
 
         </div>
     </section>
