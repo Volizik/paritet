@@ -72,35 +72,6 @@ $(function () {
 
     /*-------------------!SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
-    /*----------------scrollbar----------------*/
-    $('.content__section').mCustomScrollbar({
-        theme: "my-theme",
-        mouseWheel: {
-            deltaFactor: 20,
-            normalizeDelta: false
-        },
-        scrollInertia: 300
-    });
-    $('.content__aside').mCustomScrollbar({
-        theme: "my-theme",
-        mouseWheel: {
-            deltaFactor: 20,
-            normalizeDelta: false
-        },
-        scrollInertia: 300
-    });
-    $('.content__section .filter__body').mCustomScrollbar({
-        theme: "my-theme"
-
-
-    });
-    $('.filter .filter .filter__body').mCustomScrollbar({
-        theme: "my-theme"
-    });
-    $('.modal__body').mCustomScrollbar({
-        theme: "my-theme"
-    });
-    /*----------------!scrollbar----------------*/
 
     $(document).on('click', '.filter--icon', function () {
         $('.header__filter>.filter').fadeToggle('fast');
