@@ -201,6 +201,7 @@ $pink: #ef3f56;
   background-color: $green-btn;
   cursor: pointer;
   color: #fff;
+  flex-shrink: 0;
   &--edit {
     display: flex;
     align-items: center;
@@ -830,6 +831,13 @@ label {
     color: #fff!important;
   }
 }
+.voting-block {
+  &__footer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
 .voting-actions {
   padding-top: 20px;
   padding-bottom: 10px;
@@ -978,7 +986,6 @@ label {
         box-sizing: border-box;
       }
     }
-
   }
   .divide-voting {
     display: block;
@@ -990,6 +997,11 @@ label {
     }
   }
 }
+
+.is-hidden {
+  display: none;
+}
+
 .voting-actions-hidden {
   display: none;
 }

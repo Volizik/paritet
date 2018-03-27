@@ -561,4 +561,12 @@ $(function () {
         }
     });
 
+    $(document).on('click', '.splitVoises', function () {
+        $(this).closest('.voting__block').find('.voting-block__footer').toggle();
+        $(this).closest('.voting__block').find('.voting-actions').last().toggle();
+    })
+    $(document).on('click', '.voting-actions__footer .cancel', function () {
+        $(this).closest('.voting-actions__footer').hide();
+    })
+
 });
