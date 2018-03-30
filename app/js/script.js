@@ -554,19 +554,28 @@ $(function () {
     }
 
     $(document).on('click', '.calculationMethod', function () {
-        if ($(this).val() !== 'SIMPLE') {
+        if ($(this).val() === 'DEALING_OVER50') {
             $('.calculationAdd').slideDown("fast");
         } else {
             $('.calculationAdd').slideUp("fast");
         }
     });
 
-    $(document).on('click', '.splitVoises', function () {
-        $(this).closest('.voting__block').find('.voting-block__footer').toggle();
-        $(this).closest('.voting__block').find('.voting-actions').last().toggle();
-    })
-    $(document).on('click', '.voting-actions__footer .cancel', function () {
-        $(this).closest('.voting-actions__footer').hide();
-    })
+    $(document).on('click', '.splitVoises', function (event) {
+        var _this = $(this);
+        var testDiv = $("<div class='testDiv'></div>");
+        var questionId = $(this).parents('.question').attr('data-id');
+        event.preventDefault();
+        $.ajax({
+            url: $(this).attr('href').toString(),
+            type: 'get',
+            success: function(html) {
+                var parent = _this.parents('.voting__block');
+                testDiv.html(html);
+                var question = testDiv.find('.question[data-id=' + questionId + ']');
+                parent.html(question.find('.voting__block').html());
+            }
+        })
+    });
 
 });
