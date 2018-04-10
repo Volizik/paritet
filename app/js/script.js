@@ -12,7 +12,7 @@ $(function () {
         $('.action-btn ul').fadeToggle('fast')
     });
 
-    $(document).click(function(event) {
+    $(document).click(function (event) {
         if ($(event.target).closest(".action-btn").length) return;
         $(".action-btn ul").fadeOut("fast");
         $('.action-btn--arrow').removeClass('action-btn--active');
@@ -33,40 +33,40 @@ $(function () {
 
     /*-------------------SET LOCATION FOR CLASS "SOMEONE"-------------------------*/
 
-    $(document).on('click', '.someone', function() {
+    $(document).on('click', '.someone', function () {
         window.location = "../html/admin_pages/admin-user-cabinet-account-main.html";
     });
-    $(document).on('click', '.someone-group', function() {
+    $(document).on('click', '.someone-group', function () {
         window.location = "../html/pages/admin-groups-cabinet-group-main.html";
     });
-    $(document).on('click', '.iss-bills-list tbody .bill-num', function() {
+    $(document).on('click', '.iss-bills-list tbody .bill-num', function () {
         window.location = "issuer-bills-cabinet-bill.html";
     });
-    $(document).on('click', '.own-bills-list tbody .bill-num', function() {
+    $(document).on('click', '.own-bills-list tbody .bill-num', function () {
         window.location = "owner-bills-cabinet-bill.html";
     });
-    $(document).on('click', '.manager-issuers-list tbody .mi-register', function() {
+    $(document).on('click', '.manager-issuers-list tbody .mi-register', function () {
         window.location = "manager-issuer-cabinet.html";
     });
-    $(document).on('click', '.own-issuers-list tbody .mi-register', function() {
+    $(document).on('click', '.own-issuers-list tbody .mi-register', function () {
         window.location = "owner-issuer-cabinet.html";
     });
-    $(document).on('click', 'tbody .mv-register', function() {
+    $(document).on('click', 'tbody .mv-register', function () {
         window.location = "manager-voting-issuer-list.html";
     });
-    $(document).on('click', 'tbody .vil-bill', function() {
+    $(document).on('click', 'tbody .vil-bill', function () {
         window.location = "manager-voting-form.html";
     });
-    $(document).on('click', 'tbody .ai-register', function() {
+    $(document).on('click', 'tbody .ai-register', function () {
         window.location = "../html/admin_pages/admin-issuer-cabinet.html";
     });
-    $(document).on('click', 'tbody .iml-number', function() {
+    $(document).on('click', 'tbody .iml-number', function () {
         window.location = "issuer-meeting-cabinet-info.html";
     });
-    $(document).on('click', 'tbody .mml-number', function() {
+    $(document).on('click', 'tbody .mml-number', function () {
         window.location = "manager-meeting-cabinet-info.html";
     });
-    $(document).on('click', 'tbody .ov-register', function() {
+    $(document).on('click', 'tbody .ov-register', function () {
         window.location = "owner-voting-cabinet-info.html";
     });
 
@@ -79,7 +79,6 @@ $(function () {
 
 
     /*----------filter in new user-----------*/
-
 
 
     $(document).on('click', '.filter .cancel', function () {
@@ -124,13 +123,13 @@ $(function () {
         }
     });
     $(document).on('keyup', '.t-search', function () {
-        if($(this).val() !== '') {
+        if ($(this).val() !== '') {
             if ($(this).siblings('.act_t-search').length > 0) {
                 return false
             }
             createCross($(this));
             $(this).addClass('t-search--cross')
-        }else {
+        } else {
             $(this).removeClass('t-search--cross');
             $(this).siblings('.act_t-search').remove();
         }
@@ -150,7 +149,7 @@ $(function () {
         $(this).addClass('activeTr');
     });
     $(document).on('click', '.admin-groups .filter .submit', function () {
-        if($('.activeTr').length >0) {
+        if ($('.activeTr').length > 0) {
             $('.admin-groups .t-search').val($('.activeTr').text());
             $('.admin-groups .filter').hide();
             $('.admin-groups .insert').addClass('insert-active').removeAttr('disabled')
@@ -158,7 +157,7 @@ $(function () {
     });
 
 
-    $(document).on('click', '.sidebar__item .users_inside',function () {
+    $(document).on('click', '.sidebar__item .users_inside', function () {
         var curLoc = window.location.href.toString();
         if (~curLoc.indexOf('admin-users-list')) {
             $('.header__filter--field .filter--input').hide();
@@ -168,7 +167,7 @@ $(function () {
         }
 
     });
-    $(document).on('click', '.sidebar__item .users_outside',function () {
+    $(document).on('click', '.sidebar__item .users_outside', function () {
         var curLoc = window.location.href.toString();
         if (~curLoc.indexOf('admin-users-list')) {
             $('.header__filter--field .filter--input').hide();
@@ -185,13 +184,13 @@ $(function () {
     });
 
 
-    $(document).on('click', '.sidebar__item .active-now',function () {
+    $(document).on('click', '.sidebar__item .active-now', function () {
         $('.header__filter--field .filter--input').hide();
         $('.autofilter').hide();
         $('.autofilter[data-id="active-now"]').css('display', 'flex');
 
     });
-    $(document).on('click', '.sidebar__item .meeting',function () {
+    $(document).on('click', '.sidebar__item .meeting', function () {
         $('.header__filter--field .filter--input').hide();
         $('.autofilter').hide();
         $('.autofilter[data-id="meeting"]').css({'display': 'flex'});
@@ -204,7 +203,7 @@ $(function () {
         $(this).addClass('activeTr');
     });
     $(document).on('click', '.filter .filter .submit', function () {
-        if($('.filter .filter .activeTr').length > 0) {
+        if ($('.filter .filter .activeTr').length > 0) {
             $(this).closest('.filter__body--item').find('.t-search').val($('.activeTr').text());
             $('.header__filter .filter .filter').hide();
         }
@@ -213,7 +212,7 @@ $(function () {
 
     //dropdown-----------------------------------------------
     $(document).on('click', '.drop', function () {
-        if($(this).find('ul').hasClass('visible-drop')) {
+        if ($(this).find('ul').hasClass('visible-drop')) {
             $(this).find('ul').removeClass('visible-drop');
         } else {
             $('.drop ul').removeClass('visible-drop');
@@ -230,7 +229,7 @@ $(function () {
     $(document).on('click', '.header__user', function () {
         $(this).find('.header__user--menu').fadeToggle('fast')
     });
-    $(document).click(function(event) {
+    $(document).click(function (event) {
         if ($(event.target).closest(".header__user").length) return;
         $(".header__user--menu").fadeOut("fast");
     });
@@ -246,10 +245,10 @@ $(function () {
     })
 
 
-    $(document).on('change', '.add-files input[type="file"]', function() {
+    $(document).on('change', '.add-files input[type="file"]', function () {
         var parent = $(this).parent();
         var chosenFiles = $(this)[0].files;
-        for (var i=0; i<chosenFiles.length; i++) {
+        for (var i = 0; i < chosenFiles.length; i++) {
             $('.selected-file').remove();
             $('<p>', {text: chosenFiles[i].name}).addClass('selected-file').appendTo(parent)
         }
@@ -287,8 +286,8 @@ $(function () {
     });
 
 
-    $(document).on( 'click', '.load-list', function () {
-        if($(this).hasClass('grey')) return false;
+    $(document).on('click', '.load-list', function () {
+        if ($(this).hasClass('grey')) return false;
         $(this).attr('data-btn-text', 'Список загружается...').addClass('orange');
 
         setTimeout(function () {
@@ -296,8 +295,8 @@ $(function () {
         }, 2000)
     });
 
-    $(document).on('click', 'label[for="applies"]',function () {
-        if($('#applies').is(':checked')) {
+    $(document).on('click', 'label[for="applies"]', function () {
+        if ($('#applies').is(':checked')) {
             $(this).closest('.content__block').find('.voting-date').addClass('voting-date-hidden')
         } else {
             $(this).closest('.content__block').find('.voting-date').removeClass('voting-date-hidden')
@@ -309,7 +308,7 @@ $(function () {
     });
 
     $(document).on('click', '.show-meetings', function () {
-        if($('.meetings').hasClass('meetings-hidden')) {
+        if ($('.meetings').hasClass('meetings-hidden')) {
             $('.meetings').removeClass('meetings-hidden');
             $(this).text('Скрыть ход собрания')
         } else {
@@ -333,7 +332,7 @@ $(function () {
     $(document).on('click', '.active-question .cancel', function () {
         $(this).closest('.active-question__content').fadeOut('fast')
     });
-    $(document).click(function(event) {
+    $(document).click(function (event) {
         if ($(event.target).closest(".active-question").length) return;
         $(".active-question__content").fadeOut("fast");
     });
@@ -341,7 +340,7 @@ $(function () {
     $(document).on('click', '.show-all-state', function () {
         var parent = $(this).closest('tr');
         var row = $('.hidden-row');
-        if(parent.find(row).hasClass('hidden')) {
+        if (parent.find(row).hasClass('hidden')) {
             parent.find(row).removeClass('hidden');
             $(this).text('Всего (скрыть)')
         } else {
@@ -356,7 +355,7 @@ $(function () {
     });
 
 
-    if($('.write-msg')) {
+    if ($('.write-msg')) {
         $(document).on('click', '.show-write-msg', function () {
             $('.write-msg').fadeIn('fast');
         });
@@ -455,7 +454,7 @@ $(function () {
         $(this).addClass('voting-bill--active')
     });
 
-    $(document).on('change', '.content__block--photo input[type="file"]', function() {
+    $(document).on('change', '.content__block--photo input[type="file"]', function () {
         var span = $(this).closest('.content__block--photo').find('.content__block--photo-selected');
         var chosenFiles = $(this)[0].files;
         span.text(chosenFiles[0].name);
@@ -487,26 +486,26 @@ $(function () {
 
     function selectAllVoting(e) {
         var items = $('.voting-enter__table').find('.voting-actions__choice--item');
-        var votingTrue =  $('.voting-enter__table').find('.voting-true');
-        var votingFalse =  $('.voting-enter__table').find('.voting-false');
-        var votingAbstained =  $('.voting-enter__table').find('.voting-abstained');
-        var votingNotValid =  $('.voting-enter__table').find('.voting-not-valid');
-        if(e.hasClass('voting-true')) {
+        var votingTrue = $('.voting-enter__table').find('.voting-true');
+        var votingFalse = $('.voting-enter__table').find('.voting-false');
+        var votingAbstained = $('.voting-enter__table').find('.voting-abstained');
+        var votingNotValid = $('.voting-enter__table').find('.voting-not-valid');
+        if (e.hasClass('voting-true')) {
             items.removeClass('voting-selected').find('input').removeAttr('checked')
             votingTrue.addClass('voting-selected');
             votingTrue.find('input').attr('checked', 'checked');
         }
-        if(e.hasClass('voting-false')) {
+        if (e.hasClass('voting-false')) {
             items.removeClass('voting-selected').find('input').removeAttr('checked')
             votingFalse.addClass('voting-selected');
             votingFalse.find('input').attr('checked', 'checked');
         }
-        if(e.hasClass('voting-abstained')) {
+        if (e.hasClass('voting-abstained')) {
             items.removeClass('voting-selected').find('input').removeAttr('checked')
             votingAbstained.addClass('voting-selected');
             votingAbstained.find('input').attr('checked', 'checked');
         }
-        if(e.hasClass('voting-not-valid')) {
+        if (e.hasClass('voting-not-valid')) {
             items.removeClass('voting-selected').find('input').removeAttr('checked')
             votingNotValid.addClass('voting-selected');
             votingNotValid.find('input').attr('checked', 'checked');
@@ -516,7 +515,7 @@ $(function () {
     $(document).on('click', 'label[for="select-all-question"]', function () {
         var items = $('.voting-enter__table').find('.voting-actions__choice--item');
         var votingForAll = $('.voting-for-all');
-        if($(this).prev().is(':checked')) {
+        if ($(this).prev().is(':checked')) {
             console.log('not checked');
             items.find('input').removeAttr('readonly');
             items.removeAttr('style');
@@ -538,20 +537,20 @@ $(function () {
     });
 
 
-    (function() {
+    (function () {
         var text = $('.voting-enter__td-text');
-       text.each(function () {
-           if($(this).height() > 30) {
-               $(this).addClass('voting-enter__td-text--hidden')
-           }
-       })
+        text.each(function () {
+            if ($(this).height() > 30) {
+                $(this).addClass('voting-enter__td-text--hidden')
+            }
+        })
     })();
     $(document).on('click', '.voting-enter__td-text--hidden', function () {
         $(this).toggleClass('voting-enter__td-text--visible')
     });
 
 
-    $('.overlay').bind('mousewheel', function(){
+    $('.overlay').bind('mousewheel', function () {
         return false
     });
 
@@ -575,13 +574,29 @@ $(function () {
         $.ajax({
             url: $(this).attr('href').toString(),
             type: 'get',
-            success: function(html) {
+            success: function (html) {
                 var parent = _this.parents('.voting__block');
                 testDiv.html(html);
                 var question = testDiv.find('.question[data-id=' + questionId + ']');
                 parent.html(question.find('.voting__block').html());
             }
         })
+    });
+
+
+    $(document).on('click', '.select2-take-all', function () {
+        if ($('.select2-take-all').hasClass('select2-take-all--checked')) {
+            $('.select2-docs > option').removeAttr('selected');
+            $('.select2-take-all').toggleClass('select2-take-all--checked');
+            $('.select2-docs').trigger("change");
+        } else {
+            $('.select2-docs > option').prop('selected', 'selected');
+            $('.select2-take-all').toggleClass('select2-take-all--checked');
+            $('.select2-docs').trigger("change");
+        }
+    });
+    $(document).on('click', '.select2-selection__choice__remove', function () {
+        $('.select2-take-all').removeClass('select2-take-all--checked');
     });
 
 });
