@@ -149,7 +149,7 @@ $(function () {
         $('.admin-groups .filter tr').removeClass('activeTr');
         $(this).addClass('activeTr');
     });
-    $(document).on('click', '.cadmin-groups .filter .submit', function () {
+    $(document).on('click', '.admin-groups .filter .submit', function () {
         if($('.activeTr').length >0) {
             $('.admin-groups .t-search').val($('.activeTr').text());
             $('.admin-groups .filter').hide();
@@ -388,9 +388,15 @@ $(function () {
         var votingFalse = parent.find('.if-voting-false');
         var votingTrue = parent.find('.if-voting-true');
         var thisRadio = $(this).find('input[type="radio"]');
+        var contentBlock = $(this).closest('.content__block');
 
         if (parent.hasClass('voting-actions-disable')) {
             return false
+        }
+        if (!contentBlock.hasClass('modal-is-shown')) {
+            contentBlock.find('.questionModal').closest('.overlay').show();
+            contentBlock.addClass('modal-is-shown');
+            contentBlock.find('.voting-send').show();
         }
         if ($(this).hasClass('voting-selected')) {
             $(this).removeClass('voting-selected');

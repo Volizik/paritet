@@ -36,22 +36,26 @@
     width: 8%;
   }
   .ast-name {
-    width: 17%;
+    width: 21%;
   }
   .ast-type {
-    width: 18%;
+    width: 150px;
   }
   .ast-all {
-    width: 7%;
+    width: 130px;
+    padding-right: 30px;
+    text-align: right;
   }
   .ast-voting {
-    width: 145px;
+    width: 110px;
+    padding-right: 30px;
+    text-align: right;
   }
   .ast-reason {
     width: 185px;
   }
   .ast-actions {
-    width: 60px;
+    width: 20px;
   }
 }
 

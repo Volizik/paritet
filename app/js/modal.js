@@ -13,6 +13,10 @@ $(function () {
         modal.hide();
     });
 
+    $(document).on('click', '.questionModal .submit', function () {
+        $(this).closest('.overlay').hide();
+    });
+
 
 
 

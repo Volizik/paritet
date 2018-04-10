@@ -28,6 +28,11 @@
   &__value-col {
     display: flex;
     flex-direction: column;
+    >span {
+      height: 25px;
+      display: flex;
+      align-items: center;
+    }
   }
 }
 

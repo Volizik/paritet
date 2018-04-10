@@ -31,7 +31,7 @@ $(function() {
         inputs.each(function () {
             sum += +($(this).val())
         });
-        sumElement.text(sum);
+
 
         if (sum > _total) {
             sumElement.addClass('red');
@@ -44,15 +44,24 @@ $(function() {
             sumElement.removeClass('red');
         }
 
+
+        var sumReverse = sum.toString().split('').reverse();
+        var _sumReverse = [];
+        for (var j = 0; j < sumReverse.length; j++) {
+            if (j % 3 === 0) {
+                _sumReverse.push(sumReverse[j] + ' ');
+            } else {
+                _sumReverse.push(sumReverse[j]);
+            }
+        }
+        sumElement.text(_sumReverse.reverse().join(''));
+
     });
 
     $(document).on('click', '.voting-actions__choice--item', function () {
         var parent = $(this).closest('.cumulative-voting__block');
         var inputs = parent.find('.cumulative-voting__input');
         if (inputs.length > 0) {
-            // if ($(this).hasClass('voting-selected')) {
-            //     return
-            // }
             inputs.each(function () {
                 $(this).val('')
             });
