@@ -599,4 +599,22 @@ $(function () {
         $('.select2-take-all').removeClass('select2-take-all--checked');
     });
 
+    $(document).on('click', '.voting_auth', function (event) {
+        var _this = $(this);
+        var testDiv = $("<div class='testDiv'></div>");
+        var _id = $(this).attr('data-votingBtnId');
+        event.preventDefault();
+        $.ajax({
+            url: $(this).parents('form').attr('action').toString(),
+            type: 'post',
+            success: function (html) {
+                var parent = _this.parents('.parentRow');
+                testDiv.html(html);
+                var _row = testDiv.find('.voting_auth[data-votingBtnId=' + _id + ']').parents('.parentRow');
+                parent.html(_row.html());
+            }
+        })
+    });
+
+
 });

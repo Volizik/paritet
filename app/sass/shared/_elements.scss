@@ -5,6 +5,17 @@
   font-weight: 300;
   margin-top: 8px;
   margin-bottom: 32px;
+  &-desc {
+    font-weight: 400;
+    padding-left: 10px;
+    color: #777;
+  }
+}
+a.title-desc {
+  color: #0062b3;
+  &:visited {
+    color: #0062b3;
+  }
 }
 
 .checkbox {
