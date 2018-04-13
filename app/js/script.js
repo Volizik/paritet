@@ -350,10 +350,8 @@ $(function () {
     });
 
     $(document).on('click', '.agenda-btn-new-question', function () {
-        $('.modal').closest('.overlay').hide();
-        $(this).closest('.content__block').find('.overlay').show();
+        $(this).closest('.content__block').find('.modal-add-question').closest('.overlay').show();
     });
-
 
     if ($('.write-msg')) {
         $(document).on('click', '.show-write-msg', function () {
@@ -615,6 +613,27 @@ $(function () {
             }
         })
     });
+
+    $(document).on('keyup', '.votes-cast', function() {
+        var votingActions = $(this).closest('.voting-actions');
+        var siblingVotingAction = votingActions.siblings('.voting-actions');
+        var buttons = votingActions.find('.voting-actions__choice--item');
+        var btnTrue = votingActions.find('.voting-true');
+        var btnFalse = votingActions.find('.voting-false');
+
+        if (!buttons.hasClass('voting-selected')) {
+            var siblingVotingActionButtonSelected = siblingVotingAction.find('.voting-actions__choice--item.voting-selected');
+            if (siblingVotingActionButtonSelected.length > 0) {
+                if (siblingVotingActionButtonSelected.hasClass('voting-true')) {
+                    btnFalse.click()
+                } else {
+                    btnTrue.click()
+                }
+            } else {
+                btnTrue.click()
+            }
+        }
+    })
 
 
 });
