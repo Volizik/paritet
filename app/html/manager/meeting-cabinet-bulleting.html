@@ -30,80 +30,101 @@
                 <h3 class="meeting-answer-title">Решение:</h3>
                 <div class="meeting-answer need-hide overflow-height">Утвердить годовой отчет, годовую бухгалтерскую отчетность АО«Теплотехстроймаш» за 2016 год. </div>
 
-                <div class="voting__block">
-                    <div class="voting-actions">
-                        <ul class="voting-actions__choice">
-                            <li class="voting-actions__choice--item voting-true"><label><input type="radio" name="radio">За</label></li>
-                            <li class="voting-actions__choice--item voting-false"><label><input type="radio" name="radio">Против</label></li>
-                            <li class="voting-actions__choice--item voting-abstained"><label><input type="radio" name="radio">воздерживаюсь</label></li>
-                        </ul>
-                        <div class="bulleting-items">
+                <div class="question" data-id="questionId-0-0">
+                    <div class="voting__block">
+                        <input type="hidden" name="questions[0].Decisions[0].Votes[0].Id" value="0">
+                        <div class="voting-actions ">
+                            <ul class="voting-actions__choice">
+                                <li class="voting-actions__choice--item voting-true">
+                                    <label>
+                                        <input type="radio" name="questions[0].Decisions[0].Votes[0].Result" value="Yes">За
+                                    </label>
+                                </li>
+                                <li class="voting-actions__choice--item voting-false">
+                                    <label>
+                                        <input type="radio" name="questions[0].Decisions[0].Votes[0].Result" value="No">Против
+                                    </label>
+                                </li>
+                                <li class="voting-actions__choice--item voting-abstained">
+                                    <label><input type="radio" name="questions[0].Decisions[0].Votes[0].Result" value="Abstained">воздерживаюсь</label>
+                                </li>
+                            </ul>
+                            <div class="voting-actions__divide" style="display: flex;">
+                                <div class="bulleting-items">
+                                    <div class="bulleting-item">
+                                        <span class="bulleting-item--key">Голосов отдано:</span>
+                                        <input value="0" name="questions[0].Decisions[0].Votes[0].VoicesTotal" class="noborder votes-cast votesCastFirst" style="width: 100px" type="number" data-val="true" data-val-required="The AmountInt field is required." id="Vote_AmountInt">
+                                        <input type="hidden" class="votingVoicesTotal" value="200000.333333">
+                                    </div>
+                                    <div class="bulleting-item">
+                                        <span class="bulleting-item--key">Голосов всего:</span>
+                                        <span class="bulleting-item--value">200000.333333</span>
+                                    </div>
 
-                            <div class="bulleting-item if-voting-true" style="display: none">
-                                <span class="bulleting-item--key">Голосов отдано:</span>
-                                <span class="bulleting-item--value cumulative-voting__sum">0</span>
-                            </div>
-                            <div class="bulleting-item if-voting-false">
-                                <span class="bulleting-item--key">Голосов всего:</span>
-                                <span class="bulleting-item--value cumulative-voting__total">410&nbsp;800&nbsp;100 ⅓</span>
-                            </div>
-                        </div>
-                        <div class="voting-actions__divide">
-                            <span>Отдать голосов</span>
-                            <div class="voting-dividing">
-                                <div class="voting-dividing__row">
-                                    <input type="text">
-                                    <span>Обыкновенные акции</span>
                                 </div>
-                                <div class="voting-dividing__row">
-                                    <input type="text">
-                                    <span>привилегированные акции</span>
+
+                                <div class="voting-dividing">
                                 </div>
                             </div>
-                        </div>
-                        <div class="voting-actions__results">
-                            <div class="divide-voting show-divide-voting">
-                                <span class="splitVoises">Разделить голоса</span>
-                                <div class="active-question">
-                                    <span class="active-question__sign">?</span>
-                                    <div class="active-question__content">
-                                        <div class="active-question__text">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est minus sed sunt! A, aliquid amet dicta, ducimus, et id iusto laboriosam magni mollitia nemo quidem quo ratione recusandae rem rerum?</p>
-                                        </div>
-                                        <div class="active-question__actions">
-                                            <button type="button" class="cancel">Закрыть</button>
+
+
+                            <div class="voting-actions__results">
+                                <div class="divide-voting show-divide-voting">
+                                    <a class="splitVoises" href="/Owner/Meeting/SplitVoices/1?registerAccountId=3&amp;decisionId=1">
+                                        Убрать разделение
+                                    </a>
+                                    <div class="active-question">
+                                        <span class="active-question__sign">?</span>
+                                        <div class="active-question__content">
+                                            <div class="active-question__text">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est minus sed sunt! A, aliquid amet dicta, ducimus, et id iusto laboriosam magni mollitia nemo quidem quo ratione recusandae rem rerum?</p>
+                                            </div>
+                                            <div class="active-question__actions">
+                                                <button type="button" class="cancel">Закрыть</button>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="voting-actions voting-actions-hidden">
-                        <ul class="voting-actions__choice">
-                            <li class="voting-actions__choice--item voting-true"><label>За</label></li>
-                            <li class="voting-actions__choice--item voting-false"><label>Против</label></li>
-                            <li class="voting-actions__choice--item voting-abstained"><label>воздерживаюсь</label></li>
-                        </ul>
-                        <div class="voting-actions__divide">
-                            <span>Отдать голосов</span>
-                            <div class="voting-dividing">
-                                <div class="voting-dividing__row">
-                                    <p>80</p>
-                                    <span>Обыкновенные акции</span>
+                        <input type="hidden" name="questions[0].Decisions[0].Votes[1].Id" value="1">
+                        <div class="voting-actions ">
+                            <ul class="voting-actions__choice">
+                                <li class="voting-actions__choice--item voting-true">
+                                    <label>
+                                        <input type="radio" name="questions[0].Decisions[0].Votes[1].Result" value="Yes">За
+                                    </label>
+                                </li>
+                                <li class="voting-actions__choice--item voting-false">
+                                    <label>
+                                        <input type="radio" name="questions[0].Decisions[0].Votes[1].Result" value="No">Против
+                                    </label>
+                                </li>
+                                <li class="voting-actions__choice--item voting-abstained">
+                                    <label><input type="radio" name="questions[0].Decisions[0].Votes[1].Result" value="Abstained">воздерживаюсь</label>
+                                </li>
+                            </ul>
+                            <div class="voting-actions__divide" style="display: flex;">
+                                <div class="bulleting-items">
+                                    <div class="bulleting-item">
+                                        <span class="bulleting-item--key">Голосов отдано:</span>
+                                        <input value="0" name="questions[0].Decisions[0].Votes[1].VoicesTotal" class="noborder votes-cast" style="width: 100px" type="number" id="Vote_AmountInt">
+                                    </div>
+                                    <div class="bulleting-item">
+                                        <button type="button" class="link remainingVoicesBtn" style="display: none">Все оставшиеся голоса</button>
+                                    </div>
+
                                 </div>
-                                <div class="voting-dividing__row">
-                                    <p>100</p>
-                                    <span>привилегированные акции</span>
+
+                                <div class="voting-dividing">
                                 </div>
                             </div>
+
+
+                            <div class="voting-actions__results">
+                            </div>
                         </div>
-                        <div class="voting-actions__results">
-                            <div class="divide-voting del-divide-voting">Удалить разделение</div>
-                        </div>
-                    </div>
-                    <div class="voting-block__footer is-hidden">
-                        <button class="submit" type="submit">Разделить голоса</button>
-                        <button class="cancel" type="button">Отменить</button>
                     </div>
                 </div>
 
@@ -262,5 +283,6 @@
         </form>
 
     </section>
+    <div class="overlay" style="display: block"></div>
 
 </main>

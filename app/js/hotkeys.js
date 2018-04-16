@@ -174,4 +174,20 @@ $(function () {
 
         })()
     }
+
+    //for  close modal
+    document.onkeydown = function (e) {
+        // e.stopPropagation();
+        e = e || window.event;
+        var modal = $('.overlay');
+        modal.each(function () {
+            if ($(this).is(':visible') && e.keyCode === 27) {
+                $(this).hide()
+            }
+            if ($(this).is(':visible') && e.keyCode === 13) {
+                // console.log($(this)[0].querySelector('.modal__footer button'))
+                $(this)[0].querySelector('.modal__footer button').click();
+            }
+        });
+    }
 });

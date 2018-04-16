@@ -362,7 +362,7 @@ $(function () {
         });
     }
 
-    $(document).on('click', '.modal', function () {
+    $(document).on('click', '.modal', function (e) {
         e.stopPropagation();
     });
 
@@ -614,8 +614,8 @@ $(function () {
         })
     });
 
-    $(document).on('keyup', '.votes-cast', function() {
-        var votingActions = $(this).closest('.voting-actions');
+    function voisesActionButton(_this) {
+        var votingActions = _this.closest('.voting-actions');
         var siblingVotingAction = votingActions.siblings('.voting-actions');
         var buttons = votingActions.find('.voting-actions__choice--item');
         var btnTrue = votingActions.find('.voting-true');
@@ -633,6 +633,32 @@ $(function () {
                 btnTrue.click()
             }
         }
+    }
+    $(document).on('keyup', '.votes-cast', function() {
+        voisesActionButton($(this));
+        //btn remainingVoicesBtn
+        var remainingBtn = $(this).closest('.voting__block').find('.remainingVoicesBtn');
+        if ($(this).val().length > 0) {
+            remainingBtn.show()
+        } else {
+            remainingBtn.hide()
+        }
+    });
+
+    $(document).on('click', '.remainingVoicesBtn', function () {
+        var parent = $(this).closest('.voting__block');
+        var votesCastFirstInput = parent.find('.votesCastFirst').val();
+        var votesCastSecondInput = $(this).closest('.voting-actions').find('.votes-cast');
+        var totalVoises = parent.find('.votingVoicesTotal').val().replace(',', '.');
+
+        if (parseFloat(votesCastFirstInput) > parseFloat(totalVoises)) {
+            alert('Введенное количество голосов больше, чем голосов всего')
+        } else {
+            votesCastSecondInput.val(totalVoises - votesCastFirstInput);
+            voisesActionButton($(this));
+        }
+
+
     })
 
 
