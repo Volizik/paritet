@@ -156,17 +156,24 @@
                                 </div>
                                 <div class="bulleting-item">
                                     <span class="bulleting-item--key">Голосов всего:</span>
-                                    <span class="bulleting-item--value cumulative-voting__total">410&nbsp;800&nbsp;100 ⅓</span>
+                                    <span class="bulleting-item--value">410&nbsp;800&nbsp;100 ⅓</span>
+                                    <input type="hidden" class="cumulative-voting__total" value="410800100">
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <input type="hidden" class="data-cumulative-input" data-amount="3" data-total="410800100">
 
                     <h3 class="meeting-answer-title">Кандидат 1:</h3>
                     <div class="meeting-answer need-hide">Иванов Виктор Петрович</div>
                     <div class="string string__row-center">
                         <input type="number" style="width: 100px; margin-right: 10px" class="noborder cumulative-voting__input">
                         <div class="string__key">голосов</div>
+                        <div class="help-hidden-block">
+                            <div class="string__key"> <button type="button" class="link part-of-voices-btn">1/х голосов</button></div>
+                            <div class="string__key"> <button type="button" class="link remaining-voices-btn">Все оставшиеся голоса</button></div>
+                        </div>
                     </div>
 
                     <h3 class="meeting-answer-title">Кандидат 2:</h3>
@@ -174,6 +181,10 @@
                     <div class="string string__row-center">
                         <input type="number" style="width: 100px; margin-right: 10px" class="noborder cumulative-voting__input">
                         <div class="string__key">голосов</div>
+                        <div class="help-hidden-block">
+                            <div class="string__key"> <button type="button" class="link part-of-voices-btn">1/х голосов</button></div>
+                            <div class="string__key"> <button type="button" class="link remaining-voices-btn">Все оставшиеся голоса</button></div>
+                        </div>
                     </div>
 
                     <h3 class="meeting-answer-title">Кандидат 3:</h3>
@@ -181,6 +192,10 @@
                     <div class="string string__row-center">
                         <input type="number" style="width: 100px; margin-right: 10px" class="noborder cumulative-voting__input">
                         <div class="string__key">голосов</div>
+                        <div class="help-hidden-block">
+                            <div class="string__key"> <button type="button" class="link part-of-voices-btn">1/х голосов</button></div>
+                            <div class="string__key"> <button type="button" class="link remaining-voices-btn">Все оставшиеся голоса</button></div>
+                        </div>
                     </div>
                 </div>
                 <div class="hr"></div>
@@ -283,6 +298,5 @@
         </form>
 
     </section>
-    <div class="overlay" style="display: block"></div>
 
 </main>

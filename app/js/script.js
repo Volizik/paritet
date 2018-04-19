@@ -387,11 +387,14 @@ $(function () {
         var thisRadio = $(this).find('input[type="radio"]');
         var contentBlock = $(this).closest('.content__block');
 
+        contentBlock.find('.help-hidden-block').removeClass('help-hidden-block--is-visible');
+
         if (parent.hasClass('voting-actions-disable')) {
             return false
         }
         if (!contentBlock.hasClass('modal-is-shown')) {
-            contentBlock.find('.questionModal').closest('.overlay').show();
+            contentBlock.find('.questionModal').closest('.overlay').show().focus();
+            contentBlock.find('.questionModal').find('button').focus();
             contentBlock.addClass('modal-is-shown');
             contentBlock.find('.voting-send').show();
         }
@@ -400,6 +403,7 @@ $(function () {
             thisRadio.removeAttr('checked');
             votingFalse.show();
             votingTrue.hide();
+            parent.find('.cumulative-voting__sum').text('0');
             return false
         } else if (parent.find('.voting-selected').length > 0) {
             parent.find('.voting-actions__choice--item').removeClass('voting-selected');
@@ -468,7 +472,7 @@ $(function () {
         $('.contenteditable').first().focus()
     }
 
-    $(document).on('click', '.manager-meeting-list .modal label', function () {
+    $(document).on('click', '.create-new__modal label', function () {
         var inputRemeeting = $(this).parent().find('input[value="Remeeting"]');
         var inputCopy = $(this).parent().find('input[value="Copyof"]');
         var allSelect = $(this).siblings('.sub-select');
@@ -634,15 +638,12 @@ $(function () {
             }
         }
     }
+
     $(document).on('keyup', '.votes-cast', function() {
         voisesActionButton($(this));
         //btn remainingVoicesBtn
         var remainingBtn = $(this).closest('.voting__block').find('.remainingVoicesBtn');
-        if ($(this).val().length > 0) {
-            remainingBtn.show()
-        } else {
-            remainingBtn.hide()
-        }
+        remainingBtn.show()
     });
 
     $(document).on('click', '.remainingVoicesBtn', function () {

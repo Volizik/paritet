@@ -119,5 +119,12 @@
     display: flex;
   }
 
+  .help-hidden-block {
+    display: none;
+    &--is-visible {
+      display: flex;
+    }
+  }
+
 
 }
