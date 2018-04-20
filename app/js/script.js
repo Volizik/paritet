@@ -639,11 +639,39 @@ $(function () {
         }
     }
 
+    function candidateQuestionFunc(_this) {
+        if (_this.closest('.candidate-question').length > 0) {
+            var parent = _this.closest('.candidate-question');
+            var votingBlock = _this.closest('.voting__block');
+            var inputs = votingBlock.find('.votes-cast');
+            var infoInput = votingBlock.find('.votingVoicesTotal');
+            var allInfoInputs = parent.find('.votingVoicesTotal');
+            var total = infoInput.val().toString().indexOf(',') > 0 ? Number(infoInput.val().replace(',', '.')) : infoInput.val();
+            var sum = 0;
+            var answerElem = parent.find('.meeting-answer')[0];
+            inputs.each(function () {
+                sum += $(this).val().toString().indexOf(',') > 0 ? Number($(this).val().replace(',', '.')) : Number($(this).val());
+            });
+            infoInput.attr('data-sum', parseFloat(sum));
+            allInfoInputs.each(function () {
+                if ($(this).attr('data-sum') > parseFloat(total)) {
+                    if (!parent.find('.error-hint').length > 0) {
+                        $(answerElem).after($('<p class="red error-hint" style="font-size: 13px;">Превышено количество голосов ЗА. Голосование недействительно</p>'))
+                    }
+                    return false
+                } else {
+                    parent.find('.error-hint').remove()
+                }
+            });
+        }
+    }
+
     $(document).on('keyup', '.votes-cast', function() {
         voisesActionButton($(this));
         //btn remainingVoicesBtn
         var remainingBtn = $(this).closest('.voting__block').find('.remainingVoicesBtn');
-        remainingBtn.show()
+        remainingBtn.show();
+        candidateQuestionFunc($(this))
     });
 
     $(document).on('click', '.remainingVoicesBtn', function () {
@@ -652,14 +680,9 @@ $(function () {
         var votesCastSecondInput = $(this).closest('.voting-actions').find('.votes-cast');
         var totalVoises = parent.find('.votingVoicesTotal').val().replace(',', '.');
 
-        if (parseFloat(votesCastFirstInput) > parseFloat(totalVoises)) {
-            alert('Введенное количество голосов больше, чем голосов всего')
-        } else {
-            votesCastSecondInput.val(totalVoises - votesCastFirstInput);
-            voisesActionButton($(this));
-        }
-
-
+        votesCastSecondInput.val(totalVoises - votesCastFirstInput);
+        voisesActionButton($(this));
+        candidateQuestionFunc($(this));
     })
 
 
