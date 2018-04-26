@@ -413,14 +413,24 @@ $(function () {
             });
             thisRadio.attr('checked', 'checked');
             votingFalse.hide();
-            votingTrue.show();
-            return false
+            if ($(this).hasClass('voting-veto')) {
+                votingTrue.hide();
+                return false
+            } else {
+                votingTrue.show();
+                return false
+            }
         } else {
             $(this).addClass('voting-selected');
             thisRadio.attr('checked', 'checked');
             votingFalse.hide();
-            votingTrue.show();
-            return false
+            if ($(this).hasClass('voting-veto')) {
+                votingTrue.hide();
+                return false
+            } else {
+                votingTrue.show();
+                return false
+            }
         }
     });
 
@@ -618,72 +628,13 @@ $(function () {
         })
     });
 
-    function voisesActionButton(_this) {
-        var votingActions = _this.closest('.voting-actions');
-        var siblingVotingAction = votingActions.siblings('.voting-actions');
-        var buttons = votingActions.find('.voting-actions__choice--item');
-        var btnTrue = votingActions.find('.voting-true');
-        var btnFalse = votingActions.find('.voting-false');
 
-        if (!buttons.hasClass('voting-selected')) {
-            var siblingVotingActionButtonSelected = siblingVotingAction.find('.voting-actions__choice--item.voting-selected');
-            if (siblingVotingActionButtonSelected.length > 0) {
-                if (siblingVotingActionButtonSelected.hasClass('voting-true')) {
-                    btnFalse.click()
-                } else {
-                    btnTrue.click()
-                }
-            } else {
-                btnTrue.click()
-            }
-        }
-    }
+    // $(document).on('blur', '.typeNumber', function () {
+    //     $.fn.convertFraction($(this)[0].value)
+    //     // console.log($(this)[0].value)
+    // })
 
-    function candidateQuestionFunc(_this) {
-        if (_this.closest('.candidate-question').length > 0) {
-            var parent = _this.closest('.candidate-question');
-            var votingBlock = _this.closest('.voting__block');
-            var inputs = votingBlock.find('.votes-cast');
-            var infoInput = votingBlock.find('.votingVoicesTotal');
-            var allInfoInputs = parent.find('.votingVoicesTotal');
-            var total = infoInput.val().toString().indexOf(',') > 0 ? Number(infoInput.val().replace(',', '.')) : infoInput.val();
-            var sum = 0;
-            var answerElem = parent.find('.meeting-answer')[0];
-            inputs.each(function () {
-                sum += $(this).val().toString().indexOf(',') > 0 ? Number($(this).val().replace(',', '.')) : Number($(this).val());
-            });
-            infoInput.attr('data-sum', parseFloat(sum));
-            allInfoInputs.each(function () {
-                if ($(this).attr('data-sum') > parseFloat(total)) {
-                    if (!parent.find('.error-hint').length > 0) {
-                        $(answerElem).after($('<p class="red error-hint" style="font-size: 13px;">Превышено количество голосов ЗА. Голосование недействительно</p>'))
-                    }
-                    return false
-                } else {
-                    parent.find('.error-hint').remove()
-                }
-            });
-        }
-    }
 
-    $(document).on('keyup', '.votes-cast', function() {
-        voisesActionButton($(this));
-        //btn remainingVoicesBtn
-        var remainingBtn = $(this).closest('.voting__block').find('.remainingVoicesBtn');
-        remainingBtn.show();
-        candidateQuestionFunc($(this))
-    });
-
-    $(document).on('click', '.remainingVoicesBtn', function () {
-        var parent = $(this).closest('.voting__block');
-        var votesCastFirstInput = parent.find('.votesCastFirst').val();
-        var votesCastSecondInput = $(this).closest('.voting-actions').find('.votes-cast');
-        var totalVoises = parent.find('.votingVoicesTotal').val().replace(',', '.');
-
-        votesCastSecondInput.val(totalVoises - votesCastFirstInput);
-        voisesActionButton($(this));
-        candidateQuestionFunc($(this));
-    })
 
 
 });

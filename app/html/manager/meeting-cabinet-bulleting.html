@@ -53,12 +53,12 @@
                                 <div class="bulleting-items">
                                     <div class="bulleting-item">
                                         <span class="bulleting-item--key">Голосов отдано:</span>
-                                        <input value="0" name="questions[0].Decisions[0].Votes[0].VoicesTotal" class="noborder votes-cast votesCastFirst" style="width: 100px" type="number" data-val="true" data-val-required="The AmountInt field is required." id="Vote_AmountInt">
-                                        <input type="hidden" class="votingVoicesTotal" value="200000.333333">
+                                        <input value="0" name="questions[0].Decisions[0].Votes[0].VoicesTotal" class="noborder votes-cast votesCastFirst typeNumber" placeholder="123 2/3" data-converted-fraction="0" style="width: 100px">
+                                        <input type="hidden" class="votingVoicesTotal" value="10000 2/3">
                                     </div>
                                     <div class="bulleting-item">
                                         <span class="bulleting-item--key">Голосов всего:</span>
-                                        <span class="bulleting-item--value">200000.333333</span>
+                                        <span class="bulleting-item--value">10000 <sup>2</sup>&#47;<sub>3</sub></span>
                                     </div>
 
                                 </div>
@@ -109,7 +109,7 @@
                                 <div class="bulleting-items">
                                     <div class="bulleting-item">
                                         <span class="bulleting-item--key">Голосов отдано:</span>
-                                        <input value="0" name="questions[0].Decisions[0].Votes[1].VoicesTotal" class="noborder votes-cast" style="width: 100px" type="number" id="Vote_AmountInt">
+                                        <input value="0" name="questions[0].Decisions[0].Votes[0].VoicesTotal" class="noborder votes-cast votesCastSecond typeNumber" placeholder="123 2/3" data-converted-fraction="0" style="width: 100px">
                                     </div>
                                     <div class="bulleting-item">
                                         <button type="button" class="link remainingVoicesBtn" style="display: none">Все оставшиеся голоса</button>
@@ -168,7 +168,10 @@
                     <h3 class="meeting-answer-title">Кандидат 1:</h3>
                     <div class="meeting-answer need-hide">Иванов Виктор Петрович</div>
                     <div class="string string__row-center">
-                        <input type="number" style="width: 100px; margin-right: 10px" class="noborder cumulative-voting__input">
+                        <input type="text" style="width: 100px; margin-right: 10px" class="noborder votes-cast cumulative-voting__input typeNumber" placeholder="123 2/3" data-converted-fraction="0">
+                        <!--<div class="drob">-->
+                            <!--<span>1 </span><sup>1</sup>&frasl;<sub>2</sub>-->
+                        <!--</div>-->
                         <div class="string__key">голосов</div>
                         <div class="help-hidden-block">
                             <div class="string__key"> <button type="button" class="link part-of-voices-btn">1/х голосов</button></div>
@@ -179,7 +182,7 @@
                     <h3 class="meeting-answer-title">Кандидат 2:</h3>
                     <div class="meeting-answer need-hide">Сидоров Александр Иванович</div>
                     <div class="string string__row-center">
-                        <input type="number" style="width: 100px; margin-right: 10px" class="noborder cumulative-voting__input">
+                        <input type="text" style="width: 100px; margin-right: 10px" class="noborder votes-cast cumulative-voting__input typeNumber" placeholder="123 2/3" data-converted-fraction="0">
                         <div class="string__key">голосов</div>
                         <div class="help-hidden-block">
                             <div class="string__key"> <button type="button" class="link part-of-voices-btn">1/х голосов</button></div>
@@ -190,7 +193,7 @@
                     <h3 class="meeting-answer-title">Кандидат 3:</h3>
                     <div class="meeting-answer need-hide">Филатова Анна Михайловна</div>
                     <div class="string string__row-center">
-                        <input type="number" style="width: 100px; margin-right: 10px" class="noborder cumulative-voting__input">
+                        <input type="text" style="width: 100px; margin-right: 10px" class="noborder votes-cast cumulative-voting__input typeNumber" placeholder="123 2/3" data-converted-fraction="0">
                         <div class="string__key">голосов</div>
                         <div class="help-hidden-block">
                             <div class="string__key"> <button type="button" class="link part-of-voices-btn">1/х голосов</button></div>
