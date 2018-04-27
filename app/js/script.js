@@ -379,61 +379,6 @@ $(function () {
     });
 
 
-    $(document).on('click', '.voting-actions__choice--item', function () {
-        var parent = $(this).closest('.voting-actions');
-        var inputs = parent.find('input[type="radio"]');
-        var votingFalse = parent.find('.if-voting-false');
-        var votingTrue = parent.find('.if-voting-true');
-        var thisRadio = $(this).find('input[type="radio"]');
-        var contentBlock = $(this).closest('.content__block');
-
-        contentBlock.find('.help-hidden-block').removeClass('help-hidden-block--is-visible');
-
-        if (parent.hasClass('voting-actions-disable')) {
-            return false
-        }
-        if (!contentBlock.hasClass('modal-is-shown')) {
-            contentBlock.find('.questionModal').closest('.overlay').show().focus();
-            contentBlock.find('.questionModal').find('button').focus();
-            contentBlock.addClass('modal-is-shown');
-            contentBlock.find('.voting-send').show();
-        }
-        if ($(this).hasClass('voting-selected')) {
-            $(this).removeClass('voting-selected');
-            thisRadio.removeAttr('checked');
-            votingFalse.show();
-            votingTrue.hide();
-            parent.find('.cumulative-voting__sum').text('0');
-            return false
-        } else if (parent.find('.voting-selected').length > 0) {
-            parent.find('.voting-actions__choice--item').removeClass('voting-selected');
-            $(this).addClass('voting-selected');
-            inputs.each(function () {
-                $(this).removeAttr('checked')
-            });
-            thisRadio.attr('checked', 'checked');
-            votingFalse.hide();
-            if ($(this).hasClass('voting-veto')) {
-                votingTrue.hide();
-                return false
-            } else {
-                votingTrue.show();
-                return false
-            }
-        } else {
-            $(this).addClass('voting-selected');
-            thisRadio.attr('checked', 'checked');
-            votingFalse.hide();
-            if ($(this).hasClass('voting-veto')) {
-                votingTrue.hide();
-                return false
-            } else {
-                votingTrue.show();
-                return false
-            }
-        }
-    });
-
     $(document).on('click', '.show-divide-voting>span', function () {
         $(this).closest('.voting__block').find('.voting-actions__divide').css('display', 'flex');
         $(this).closest('.voting__block').find('.voting-actions-hidden').css('display', 'flex');

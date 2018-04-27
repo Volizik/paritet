@@ -14,9 +14,6 @@
 }
 
 thead {
-  .ov-register {
-    width: 10%;
-  }
   .ov-voting {
     width: 15%;
   }
@@ -51,4 +48,9 @@ tbody {
       font-weight: 400;
     }
   }
+}
+.mi-register,
+.ov-register,
+.b-number {
+  width: 110px;
 }

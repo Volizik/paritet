@@ -1,33 +1,5 @@
 $(function () {
 
-    // Голосование с кандидатами
-    function candidateQuestionFunc(_this) {
-        if (_this.closest('.candidate-question').length > 0) {
-            var parent = _this.closest('.candidate-question');
-            var votingBlock = _this.closest('.voting__block');
-            var inputs = votingBlock.find('.votes-cast');
-            var infoInput = votingBlock.find('.votingVoicesTotal');
-            var allInfoInputs = parent.find('.votingVoicesTotal');
-            var total = infoInput.val().toString().indexOf(',') > 0 ? Number(infoInput.val().replace(',', '.')) : infoInput.val();
-            var sum = 0;
-            var answerElem = parent.find('.meeting-answer')[0];
-            inputs.each(function () {
-                sum += $(this).val().toString().indexOf(',') > 0 ? Number($(this).val().replace(',', '.')) : Number($(this).val());
-            });
-            infoInput.attr('data-sum', parseFloat(sum));
-            allInfoInputs.each(function () {
-                if ($(this).attr('data-sum') > parseFloat(total)) {
-                    if (!parent.find('.error-hint').length > 0) {
-                        $(answerElem).after($('<p class="red error-hint" style="font-size: 13px;">Превышено количество голосов ЗА. Голосование недействительно</p>'))
-                    }
-                    return false
-                } else {
-                    parent.find('.error-hint').remove()
-                }
-            });
-        }
-    }
-
     // Автоматическое нажатие кнопок голосования при вводе в инпут
     function voisesButtonClickEmit(_this) {
         var votingActions = _this.closest('.voting-actions');
@@ -79,8 +51,23 @@ $(function () {
             },
             dataType: 'json',
             success: function (html) {
-                console.log('comparingIsLager success ', html)
+                // console.log('comparingIsLager success ', html)
             },
+            error: function (err) {
+                alert('Ошибка! Ответ сервера: ' + err.status);
+            }
+        })
+    }
+
+    function additionFraction(stringOfFractions) {
+        return $.ajax({
+            url: '/FractionCalculator/SumOfFractions',
+            type: 'get',
+            data: {
+                value: stringOfFractions
+            },
+            dataType: 'json',
+            success: function (html) {},
             error: function (err) {
                 alert('Ошибка! Ответ сервера: ' + err.status);
             }
@@ -95,7 +82,7 @@ $(function () {
         return isAllowedKeyCode(e.originalEvent.key);
     });
     $(document).on('blur', '.votes-cast', function() {
-        var _this = $(this)
+        var _this = $(this);
         var parent = $(this).closest('.voting__block');
         var votingVoicesTotal = parent.find('.votingVoicesTotal').val().replace(/\u00a0/g, '');
         var arrOfInputs = parent.find('.votes-cast');
@@ -105,17 +92,23 @@ $(function () {
             if ($(this).val().trim() === '') {
                 $(this).val(0)
             }
-            arrOfInputsVal.push($(this).val()); // Значение каждого инпута заносим в массив
+            arrOfInputsVal.push($(this).val().replace(/\u00a0/g, '')); // Значение каждого инпута заносим в массив
         });
         // candidateQuestionFunc($(this));
-        comparingIsLager(votingVoicesTotal, $(this).val()).done(function (data) {
-            if (data.result === 'true') {
-                _this.closest('.question').find('.cumulative-voting-warning').remove()
-            } else {
-                _this.closest('.question').find('.cumulative-voting-warning').remove();
-                _this.closest('.voting__block').before('<span class="cumulative-voting-warning">Отдано больше голосов чем имеется. Голосование недействительно</span>')
-            }
-        })
+        additionFraction(arrOfInputsVal.join(';')).done(function (e) {
+            // Складываем дроби, и сравниваем с "Голосов всего"
+            var sum = e.result.replace(/\u00a0/g, '');
+            comparingIsLager(votingVoicesTotal, sum).done(function (data) {
+                if (data.result === 'true') {
+                    _this.closest('.question').find('.cumulative-voting-warning').remove()
+                } else {
+                    _this.closest('.question').find('.cumulative-voting-warning').remove();
+                    _this.closest('.voting__block').before('<span class="cumulative-voting-warning">Отдано больше голосов чем имеется. Голосование недействительно</span>')
+                }
+            })
+        });
+
+
     });
     $(document).on('click', '.remainingVoicesBtn', function () {
         // Вычитание
@@ -331,4 +324,24 @@ $(function () {
             })
         });;
     });
+    $(document).on('click', '.cumulative-voting__block .voting-actions__choice--item', function () {
+        var parent = $(this).closest('.cumulative-voting__block');
+        var inputs = parent.find('.cumulative-voting__input');
+        if ($(this).hasClass('voting-false') || $(this).hasClass('voting-abstained')) {
+            // Если нажаты против или возжерживаюсь - запрещаем ввод голосов и отдаем все голоса
+            var total = parent.find('.dataCumulativeInput').data('total');
+            parent.find('.noborder').attr('readonly', '').css({
+                pointerEvents: 'none'
+            });
+            $('.cumulative-voting__sum').text(total);
+            inputs.each(function () {
+                $(this).val('')
+            });
+            parent.find('.cumulative-voting-warning').remove();
+        } else {
+            parent.find('.noborder').removeAttr('readonly').css({
+                pointerEvents: 'auto'
+            });
+        }
+    })
 });
