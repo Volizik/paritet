@@ -82,36 +82,36 @@ $pink: #ef3f56;
     cursor: pointer;
     min-height: inherit!important;
   }
-  &__content {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    box-shadow: 0 5px 10px 5px #ddd;
-    background-color: #fff;
-    z-index: 20;
-    p {
-      color: #000;
-      font-size: 14px;
-      margin: 10px 0 ;
-      line-height: 20px;
-      font-weight: 400;
-    }
-  }
-  &__text {
-    padding: 15px;
-    box-sizing: border-box;
-  }
-  &__actions {
-    padding: 20px 15px;
-    border-top: 1px solid #ccc;
-    box-sizing: border-box;
-    button {
-      height: 40px;
-    }
-  }
+  //&__content {
+  //  display: none;
+  //  position: fixed;
+  //  top: 50%;
+  //  left: 50%;
+  //  transform: translate(-50%, -50%);
+  //  width: 500px;
+  //  box-shadow: 0 5px 10px 5px #ddd;
+  //  background-color: #fff;
+  //  z-index: 20;
+  //  p {
+  //    color: #000;
+  //    font-size: 14px;
+  //    margin: 10px 0 ;
+  //    line-height: 20px;
+  //    font-weight: 400;
+  //  }
+  //}
+  //&__text {
+  //  padding: 15px;
+  //  box-sizing: border-box;
+  //}
+  //&__actions {
+  //  padding: 20px 15px;
+  //  border-top: 1px solid #ccc;
+  //  box-sizing: border-box;
+  //  button {
+  //    height: 40px;
+  //  }
+  //}
 }
 .mr5 {
   margin-right: 5px!important;
@@ -341,6 +341,7 @@ $pink: #ef3f56;
       margin: 0!important;
       font-size: 20px;
       font-weight: 400!important;
+      color: #000;
     }
   }
   &__body {
@@ -411,8 +412,12 @@ $pink: #ef3f56;
       height: 30px;
     }
   }
-
-
+}
+.questionModal {
+  .modal__body {
+    font-size: 14px;
+    color: #000;
+  }
 }
 
 .input-filter__module {
@@ -992,9 +997,9 @@ label {
   .divide-voting {
     display: block;
     font-size: 13px;
-    color: $blue;
+    //color: $blue;
     cursor: pointer;
-    >a {
+    .splitVoises {
       color: $blue;
     }
   }

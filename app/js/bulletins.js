@@ -16,6 +16,7 @@ $(function () {
     //         }
     //     })
     // });
+
     $(document).on('click', '.voting-actions__choice--item', function () {
         var parent = $(this).closest('.voting-actions');
         var siblingsVotingActions = parent.siblings('.voting-actions')

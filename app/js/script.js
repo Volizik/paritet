@@ -326,16 +326,16 @@ $(function () {
     });
 
 
-    $(document).on('click', '.active-question>span', function () {
-        $(this).parent().find('.active-question__content').fadeIn('fast')
+    $(document).on('click', '.active-question__sign', function () {
+        $(this).siblings('.overlay').show()
     });
-    $(document).on('click', '.active-question .cancel', function () {
-        $(this).closest('.active-question__content').fadeOut('fast')
-    });
-    $(document).click(function (event) {
-        if ($(event.target).closest(".active-question").length) return;
-        $(".active-question__content").fadeOut("fast");
-    });
+    // $(document).on('click', '.active-question .cancel', function () {
+    //     $(this).closest('.active-question__content').fadeOut('fast')
+    // });
+    // $(document).click(function (event) {
+    //     if ($(event.target).closest(".active-question").length) return;
+    //     $(".active-question__content").fadeOut("fast");
+    // });
 
     $(document).on('click', '.show-all-state', function () {
         var parent = $(this).closest('tr');
@@ -574,10 +574,19 @@ $(function () {
     });
 
 
-    // $(document).on('blur', '.typeNumber', function () {
-    //     $.fn.convertFraction($(this)[0].value)
-    //     // console.log($(this)[0].value)
-    // })
+    $(document).on('blur', '.input-meeting-date', function () {
+        if ($(this).val() === '') {
+            $('.input-meeting-time').val('')
+        }
+    });
+    $(document).on('change', '.formOfConduct', function () {
+        if ($(this).val() === 'ABSENT') {
+            $(this).closest('.meeting__info').find('.hide-if-absent').hide()
+        } else {
+            $(this).closest('.meeting__info').find('.hide-if-absent').show()
+        }
+    })
+
 
 
 
