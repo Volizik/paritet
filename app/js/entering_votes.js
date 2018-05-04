@@ -203,6 +203,14 @@ $(function () {
                                 parent.find('.cumulative-voting-warning').remove();
                             }
                         })
+                        // Если сумма значений равняется нулю - скрыть "Голосов отдано" иначе - показать
+                        if (parent.find('.cumulative-voting__sum').text().trim() === '0') {
+                            console.log('is hidden');
+                            parent.find('.cumulative-voting__sum').closest('.bulleting-item').hide();
+                        } else {
+                            console.log('is visible');
+                            parent.find('.cumulative-voting__sum').closest('.bulleting-item').show();
+                        }
                     })
                 }
             },
@@ -278,6 +286,14 @@ $(function () {
                                 parent.find('.cumulative-voting-warning').remove();
                             }
                         })
+                        // Если сумма значений равняется нулю - скрыть "Голосов отдано" иначе - показать
+                        if (parent.find('.cumulative-voting__sum').text().trim() === '0') {
+                            console.log('is hidden');
+                            parent.find('.cumulative-voting__sum').closest('.bulleting-item').hide();
+                        } else {
+                            console.log('is visible');
+                            parent.find('.cumulative-voting__sum').closest('.bulleting-item').show();
+                        }
                     });
                 }
             },
@@ -321,8 +337,17 @@ $(function () {
                 } else if (result.result === 'true') {
                     parent.find('.cumulative-voting-warning').remove();
                 }
+
             })
-        });;
+            // Если сумма значений равняется нулю - скрыть "Голосов отдано" иначе - показать
+            if (parent.find('.cumulative-voting__sum').text().trim() === '0') {
+                console.log('is hidden');
+                parent.find('.cumulative-voting__sum').closest('.bulleting-item').hide();
+            } else {
+                console.log('is visible');
+                parent.find('.cumulative-voting__sum').closest('.bulleting-item').show();
+            }
+        });
     });
     $(document).on('click', '.cumulative-voting__block .voting-actions__choice--item', function () {
         var parent = $(this).closest('.cumulative-voting__block');
@@ -330,15 +355,21 @@ $(function () {
         if ($(this).hasClass('voting-false') || $(this).hasClass('voting-abstained')) {
             // Если нажаты против или возжерживаюсь - запрещаем ввод голосов и отдаем все голоса
             var total = parent.find('.dataCumulativeInput').data('total');
+            parent.find('.cumulative-voting__sum').closest('.bulleting-item').show();
             parent.find('.noborder').attr('readonly', '').css({
                 pointerEvents: 'none'
             });
             $('.cumulative-voting__sum').text(total);
             inputs.each(function () {
-                $(this).val('')
+                $(this).val('0')
             });
             parent.find('.cumulative-voting-warning').remove();
         } else {
+            parent.find('.cumulative-voting__sum').closest('.bulleting-item').hide();
+            $('.cumulative-voting__sum').text('0');
+            inputs.each(function () {
+                $(this).val('0')
+            });
             parent.find('.noborder').removeAttr('readonly').css({
                 pointerEvents: 'auto'
             });

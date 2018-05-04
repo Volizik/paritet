@@ -38,8 +38,8 @@ $(function () {
             return false
         }
         if (!contentBlock.hasClass('modal-is-shown')) {
-            contentBlock.find('.questionModal').closest('.overlay').show().focus();
-            contentBlock.find('.questionModal').find('button').focus();
+            contentBlock.find('.modal-first-click').closest('.overlay').show().focus();
+            contentBlock.find('.modal-first-click').find('button').focus();
             contentBlock.addClass('modal-is-shown');
             contentBlock.find('.voting-send').show();
         }
