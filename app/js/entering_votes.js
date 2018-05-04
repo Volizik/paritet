@@ -205,10 +205,8 @@ $(function () {
                         })
                         // Если сумма значений равняется нулю - скрыть "Голосов отдано" иначе - показать
                         if (parent.find('.cumulative-voting__sum').text().trim() === '0') {
-                            console.log('is hidden');
                             parent.find('.cumulative-voting__sum').closest('.bulleting-item').hide();
                         } else {
-                            console.log('is visible');
                             parent.find('.cumulative-voting__sum').closest('.bulleting-item').show();
                         }
                     })
@@ -288,10 +286,8 @@ $(function () {
                         })
                         // Если сумма значений равняется нулю - скрыть "Голосов отдано" иначе - показать
                         if (parent.find('.cumulative-voting__sum').text().trim() === '0') {
-                            console.log('is hidden');
                             parent.find('.cumulative-voting__sum').closest('.bulleting-item').hide();
                         } else {
-                            console.log('is visible');
                             parent.find('.cumulative-voting__sum').closest('.bulleting-item').show();
                         }
                     });
@@ -341,10 +337,8 @@ $(function () {
             })
             // Если сумма значений равняется нулю - скрыть "Голосов отдано" иначе - показать
             if (parent.find('.cumulative-voting__sum').text().trim() === '0') {
-                console.log('is hidden');
                 parent.find('.cumulative-voting__sum').closest('.bulleting-item').hide();
             } else {
-                console.log('is visible');
                 parent.find('.cumulative-voting__sum').closest('.bulleting-item').show();
             }
         });
@@ -359,14 +353,14 @@ $(function () {
             parent.find('.noborder').attr('readonly', '').css({
                 pointerEvents: 'none'
             });
-            $('.cumulative-voting__sum').text(total);
+            parent.find('.cumulative-voting__sum').text(total);
             inputs.each(function () {
                 $(this).val('0')
             });
             parent.find('.cumulative-voting-warning').remove();
         } else {
             parent.find('.cumulative-voting__sum').closest('.bulleting-item').hide();
-            $('.cumulative-voting__sum').text('0');
+            parent.find('.cumulative-voting__sum').text('0');
             inputs.each(function () {
                 $(this).val('0')
             });
