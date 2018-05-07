@@ -523,23 +523,6 @@ $(function () {
         }
     });
 
-    $(document).on('click', '.splitVoises', function (event) {
-        var _this = $(this);
-        var testDiv = $("<div class='testDiv'></div>");
-        var questionId = $(this).parents('.question').attr('data-id');
-        event.preventDefault();
-        $.ajax({
-            url: $(this).attr('href').toString(),
-            type: 'get',
-            success: function (html) {
-                var parent = _this.parents('.voting__block');
-                testDiv.html(html);
-                var question = testDiv.find('.question[data-id=' + questionId + ']');
-                parent.html(question.find('.voting__block').html());
-            }
-        })
-    });
-
 
     $(document).on('click', '.select2-take-all', function () {
         if ($('.select2-take-all').hasClass('select2-take-all--checked')) {
@@ -585,6 +568,10 @@ $(function () {
         } else {
             $(this).closest('.meeting__info').find('.hide-if-absent').show()
         }
+    })
+
+    $(document).on('click', '.modalBtnOk', function () {
+        $(this).closest('.overlay').hide();
     })
 
 
