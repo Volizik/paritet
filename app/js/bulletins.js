@@ -88,18 +88,20 @@ $(function () {
         var parent = _this.closest('.candidate-question');
         var maxAmountCandidates = parent.find('.dataCumulativeInput').data('amount-candidates');
         var count = parent.find('.voting-true.voting-selected').length;
-        console.log('in error function', count)
         if (count > maxAmountCandidates) {
             parent.find('.cumulative-voting-warning__amount-yes-voting').remove();
-            parent.find('.question').prepend('<span class="cumulative-voting-warning__amount-yes-voting">Превышено количество голосов ЗА. Голосование недействительно</span>')
+            parent.find('.candidatesList').before('<span class="cumulative-voting-warning__amount-yes-voting">Превышено количество голосов ЗА. Голосование недействительно</span>')
         } else {
             parent.find('.cumulative-voting-warning__amount-yes-voting').remove();
         }
     }
 
+
+
     $(document).on('click', '.candidate-question .voting-actions__choice--item', function () {
         showError($(this))
     });
+
 
     $(document).on('click', '.splitVoises', function (event) {
         var _this = $(this);

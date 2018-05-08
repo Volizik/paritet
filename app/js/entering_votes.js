@@ -74,6 +74,35 @@ $(function () {
         })
     }
 
+    function calculateCandidatesYesVotes(_this) {
+        var parent = _this.closest('.voting__block');
+        var votingActions = _this.closest('.voting-actions');
+        var votingVoicesTotal = parent.find('.votingVoicesTotal').val().replace(/\u00a0/g, '');
+
+        if (votingActions.find('.voting-selected.voting-true').length > 0) {
+            console.log('inside function')
+            votingActions.find('.introducedVotes').val(votingActions.find('.votes-cast').val());
+
+            var arrOfInputsYes = _this.closest('.candidatesList').find('.introducedVotes');
+            var arrOfInputsYesVal = [];
+            arrOfInputsYes.each(function () {
+                // Заменяем пробелы на 0, что бы с сервера не возвращалась ошибка
+                if ($(this).val().trim() === '') {
+                    $(this).val(0)
+                }
+                arrOfInputsYesVal.push($(this).val().replace(/\u00a0/g, '')); // Значение каждого инпута заносим в массив
+            });
+            additionFraction(arrOfInputsYesVal.join(';')).done(function (e) {
+                console.log('arr', arrOfInputsYesVal)
+                // Складываем дроби, и сравниваем с "Голосов всего"
+                var sum = e.result.replace(/\u00a0/g, '');
+                comparingIsLager(votingVoicesTotal, sum).done(function (data) {
+                    console.log('comparingIsLager', data)
+                })
+            })
+        }
+    }
+
     // Простое разделенное голосование
     $(document).on('keydown', '.votes-cast', function(e) {
         voisesButtonClickEmit($(this));
@@ -85,6 +114,8 @@ $(function () {
         var _this = $(this);
         var parent = $(this).closest('.voting__block');
         var votingVoicesTotal = parent.find('.votingVoicesTotal').val().replace(/\u00a0/g, '');
+
+        // Складываем введенные значения в разделенные голоса
         var arrOfInputs = parent.find('.votes-cast');
         var arrOfInputsVal = [];
         arrOfInputs.each(function () {
@@ -94,7 +125,6 @@ $(function () {
             }
             arrOfInputsVal.push($(this).val().replace(/\u00a0/g, '')); // Значение каждого инпута заносим в массив
         });
-        // candidateQuestionFunc($(this));
         additionFraction(arrOfInputsVal.join(';')).done(function (e) {
             // Складываем дроби, и сравниваем с "Голосов всего"
             var sum = e.result.replace(/\u00a0/g, '');
@@ -108,6 +138,8 @@ $(function () {
             })
         });
 
+        // Складываем введенные значения голосов ЗА
+        calculateCandidatesYesVotes(_this);
 
     });
     $(document).on('click', '.remainingVoicesBtn', function () {
@@ -140,7 +172,9 @@ $(function () {
             }
         })
     });
-
+    $(document).on('click', '.candidate-question .voting-actions__choice--item', function () {
+        calculateCandidatesYesVotes($(this))
+    });
 
 
     // Срабатываение кнопки кумулятивного голосования
