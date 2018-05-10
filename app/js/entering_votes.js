@@ -1,5 +1,22 @@
 $(function () {
 
+    //Умножение
+    function multiplicationFractions(val1, val2) {
+        return $.ajax({
+            url: '/FractionCalculator/Multiplication',
+            type: 'get',
+            data: {
+                value1: val1,
+                value2: val2
+            },
+            dataType: 'json',
+            success: function (html) {},
+            error: function (err) {
+                alert('Ошибка! Ответ сервера: ' + err.status);
+            }
+        })
+    }
+
     // Автоматическое нажатие кнопок голосования при вводе в инпут
     function voisesButtonClickEmit(_this) {
         var votingActions = _this.closest('.voting-actions');
@@ -78,29 +95,45 @@ $(function () {
         var parent = _this.closest('.voting__block');
         var votingActions = _this.closest('.voting-actions');
         var votingVoicesTotal = parent.find('.votingVoicesTotal').val().replace(/\u00a0/g, '');
+        var amountCandidates = _this.closest('.candidate-question').find('.dataCumulativeInput').data('amount-candidates');
+        var candidatesList = _this.closest('.candidatesList');
+        var arrOfInputsYes = candidatesList.find('.introducedVotes');
+        var arrOfInputsYesVal = [];
 
-        if (votingActions.find('.voting-selected.voting-true').length > 0) {
-            console.log('inside function')
+        if (!votingActions.hasClass('voting-actions-splitted')) {
+            votingActions.find('.introducedVotes').val(votingVoicesTotal);
+        } else {
             votingActions.find('.introducedVotes').val(votingActions.find('.votes-cast').val());
+        }
 
-            var arrOfInputsYes = _this.closest('.candidatesList').find('.introducedVotes');
-            var arrOfInputsYesVal = [];
-            arrOfInputsYes.each(function () {
-                // Заменяем пробелы на 0, что бы с сервера не возвращалась ошибка
-                if ($(this).val().trim() === '') {
-                    $(this).val(0)
-                }
-                arrOfInputsYesVal.push($(this).val().replace(/\u00a0/g, '')); // Значение каждого инпута заносим в массив
-            });
+        if (!votingActions.find('.voting-selected.voting-true').length > 0) {
+            votingActions.find('.introducedVotes').val(0);
+        }
+        arrOfInputsYes.each(function () {
+            // Заменяем пробелы на 0, что бы с сервера не возвращалась ошибка
+            if ($(this).val().trim() === '') {
+                $(this).val(0)
+            }
+            arrOfInputsYesVal.push($(this).val().replace(/\u00a0/g, '')); // Значение каждого инпута заносим в массив
+        });
+        multiplicationFractions(votingVoicesTotal, amountCandidates).done(function (totalVoisesReq) {
+            var totalVoises = totalVoisesReq.result.replace(/\u00a0/g, '');
             additionFraction(arrOfInputsYesVal.join(';')).done(function (e) {
                 console.log('arr', arrOfInputsYesVal)
                 // Складываем дроби, и сравниваем с "Голосов всего"
                 var sum = e.result.replace(/\u00a0/g, '');
-                comparingIsLager(votingVoicesTotal, sum).done(function (data) {
-                    console.log('comparingIsLager', data)
+                comparingIsLager(totalVoises, sum).done(function (data) {
+                    if (data.result === 'false') {
+                        console.log('false')
+                        candidatesList.siblings('.cumulative-voting-warning__amount-yes-voting').remove();
+                        candidatesList.before('<span class="cumulative-voting-warning__amount-yes-voting">Превышено количество голосов ЗА. Голосование недействительно</span>')
+                    } else if (data.result === 'true') {
+                        console.log('true')
+                        candidatesList.siblings('.cumulative-voting-warning__amount-yes-voting').remove();
+                    }
                 })
             })
-        }
+        });
     }
 
     // Простое разделенное голосование
@@ -165,6 +198,7 @@ $(function () {
                 } else {
                     votesCastSecond.val(request);
                     voisesButtonClickEmit(_this); // нажимаем кнопку
+                    calculateCandidatesYesVotes(_this)
                 }
             },
             error: function (err) {
@@ -174,6 +208,28 @@ $(function () {
     });
     $(document).on('click', '.candidate-question .voting-actions__choice--item', function () {
         calculateCandidatesYesVotes($(this))
+    });
+    $(document).on('click', '.splitVoises', function (event) {
+        var _this = $(this);
+        var Div = $("<div class='testDiv'></div>");
+        var parent = _this.parents('.question');
+        var question;
+        var questionId = parent.attr('data-id');
+        event.preventDefault();
+        $.ajax({
+            url: $(this).attr('href').toString(),
+            type: 'get',
+            success: function (html) {
+                Div.html(html);
+                question = Div.find('.question[data-id=' + questionId + ']');
+                _this = question.find('.splitVoises');
+                parent.html(question.html())
+            }
+        }).done(function () {
+            // if (_this.closest('.candidatesList').length > 0) {
+            //     calculateCandidatesYesVotes(_this)
+            // }
+        })
     });
 
 

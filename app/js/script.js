@@ -287,12 +287,30 @@ $(function () {
 
 
     $(document).on('click', '.load-list', function () {
+        var _this_ = $(this);
         if ($(this).hasClass('grey')) return false;
+        var meetId = $(this).siblings('input[name="meetId"]').val();
         $(this).attr('data-btn-text', 'Список загружается...').addClass('orange');
-
-        setTimeout(function () {
-            $('.load-list').attr('data-btn-text', 'Список получен 12.05. 2017, 15:06').removeClass('orange').addClass('grey');
-        }, 2000)
+        $.ajax({
+            url: '/Manager/Meeting/GetRegistry',
+            type: 'post',
+            data: {
+                meetId: meetId
+            },
+            dataType: 'json',
+            success: function (html) {
+                console.log('html', html)
+                _this_.attr('data-btn-text', 'Список получен ' + html.result).removeClass('orange').addClass('grey');
+            },
+            error: function (err) {
+                console.log(err)
+                var modal = _this_.siblings('.overlay')
+                modal.find('.modal__header h2').text('Ошибка №' + err.status);
+                modal.find('.modal__body').html('<div style="margin-bottom: 10px">'+ err.statusText + '</div>' + '<div>'+ err.responseText + '</div>');
+                modal.show();
+                _this_.attr('data-btn-text', 'Получить список...').removeClass('orange');
+            }
+        })
     });
 
     $(document).on('click', 'label[for="applies"]', function () {

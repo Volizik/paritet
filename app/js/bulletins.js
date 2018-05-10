@@ -83,45 +83,28 @@ $(function () {
         }
     });
 
-    function showError(_this) {
-        // Превышение количества нажатия кнопки ЗА для голосования с кандидатами
-        var parent = _this.closest('.candidate-question');
-        var maxAmountCandidates = parent.find('.dataCumulativeInput').data('amount-candidates');
-        var count = parent.find('.voting-true.voting-selected').length;
-        if (count > maxAmountCandidates) {
-            parent.find('.cumulative-voting-warning__amount-yes-voting').remove();
-            parent.find('.candidatesList').before('<span class="cumulative-voting-warning__amount-yes-voting">Превышено количество голосов ЗА. Голосование недействительно</span>')
-        } else {
-            parent.find('.cumulative-voting-warning__amount-yes-voting').remove();
-        }
-    }
+    // function showError(_this) {
+    //     // Превышение количества нажатия кнопки ЗА для голосования с кандидатами
+    //     var parent = _this.closest('.candidate-question');
+    //     var maxAmountCandidates = parent.find('.dataCumulativeInput').data('amount-candidates');
+    //     var count = parent.find('.voting-true.voting-selected').length;
+    //     if (count > maxAmountCandidates) {
+    //         parent.find('.cumulative-voting-warning__amount-yes-voting').remove();
+    //         parent.find('.candidatesList').before('<span class="cumulative-voting-warning__amount-yes-voting">Превышено количество голосов ЗА. Голосование недействительно</span>')
+    //     } else {
+    //         parent.find('.cumulative-voting-warning__amount-yes-voting').remove();
+    //     }
+    // }
 
 
 
     $(document).on('click', '.candidate-question .voting-actions__choice--item', function () {
-        showError($(this))
+        // showError($(this))
     });
 
 
-    $(document).on('click', '.splitVoises', function (event) {
-        var _this = $(this);
-        var Div = $("<div class='testDiv'></div>");
-        var parent = _this.parents('.question');
-        var question;
-        var questionId = parent.attr('data-id');
-        event.preventDefault();
-        $.ajax({
-            url: $(this).attr('href').toString(),
-            type: 'get',
-            success: function (html) {
-                Div.html(html);
-                question = Div.find('.question[data-id=' + questionId + ']');
-                parent.html(question.html())
-            }
-        }).done(function () {
-            showError(parent.find('.splitVoises'))
-        })
-    });
+
+
 
 
 
