@@ -5,10 +5,12 @@ $(function () {
         e.preventDefault();
         var _this = $(this);
         var parent = $(this).closest('.content__block');
-        console.log(parent.find('form').attr('action'));
+        // Данные для отправки формы преобразуем в массив
+        var formData = parent.find('form').serializeArray();
         $.ajax({
             url: parent.find('form').attr('action').toString(),
             type: 'post',
+            data: formData,
             success: function (data) {
                 parent.html(data)
             },
@@ -20,7 +22,7 @@ $(function () {
 
     $(document).on('click', '.voting-actions__choice--item', function () {
         var parent = $(this).closest('.voting-actions');
-        var siblingsVotingActions = parent.siblings('.voting-actions')
+        var siblingsVotingActions = parent.siblings('.voting-actions');
         var inputs = parent.find('input[type="radio"]');
         var votingFalse = parent.find('.if-voting-false');
         var votingTrue = parent.find('.if-voting-true');
