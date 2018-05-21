@@ -313,6 +313,13 @@ $pink: #ef3f56;
   white-space: pre-wrap;
   border: 1px solid #ccc;
   outline: none;
+  *{
+    margin: 0!important;
+    padding: 0!important;
+    font-size: 13px!important;
+    display: inline;
+    white-space: normal;
+  }
   &:hover, &:focus {
     border: 1px solid rgba(0, 174, 239, .5)!important;
   }

@@ -68,7 +68,6 @@ $(function () {
             },
             dataType: 'json',
             success: function (html) {
-                // console.log('comparingIsLager success ', html)
             },
             error: function (err) {
                 alert('Ошибка! Ответ сервера: ' + err.status);
@@ -124,11 +123,9 @@ $(function () {
                 var sum = e.result.replace(/\u00a0/g, '');
                 comparingIsLager(totalVoises, sum).done(function (data) {
                     if (data.result === 'false') {
-                        console.log('false')
                         candidatesList.siblings('.cumulative-voting-warning__amount-yes-voting').remove();
                         candidatesList.before('<span class="cumulative-voting-warning__amount-yes-voting">Превышено количество голосов ЗА. Голосование недействительно</span>')
                     } else if (data.result === 'true') {
-                        console.log('true')
                         candidatesList.siblings('.cumulative-voting-warning__amount-yes-voting').remove();
                     }
                 })

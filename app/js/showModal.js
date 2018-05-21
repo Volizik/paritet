@@ -1,5 +1,5 @@
 function showModal(dopClass) {
-   event.preventDefault();
+
    var main = document.querySelector('.modal');
    if (main) {
        if (dopClass === undefined) {
@@ -11,5 +11,5 @@ function showModal(dopClass) {
    } else {
        return false
    }
-
+    return false
 }

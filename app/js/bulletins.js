@@ -56,6 +56,7 @@ $(function () {
             votingFalse.show();
             votingTrue.hide();
             parent.find('.cumulative-voting__sum').text('0');
+            parent.find('.votes-cast').val(0);
             return false
         } else if (parent.find('.voting-selected').length > 0) {
             parent.find('.voting-actions__choice--item').removeClass('voting-selected');
@@ -86,24 +87,6 @@ $(function () {
         }
     });
 
-    // function showError(_this) {
-    //     // Превышение количества нажатия кнопки ЗА для голосования с кандидатами
-    //     var parent = _this.closest('.candidate-question');
-    //     var maxAmountCandidates = parent.find('.dataCumulativeInput').data('amount-candidates');
-    //     var count = parent.find('.voting-true.voting-selected').length;
-    //     if (count > maxAmountCandidates) {
-    //         parent.find('.cumulative-voting-warning__amount-yes-voting').remove();
-    //         parent.find('.candidatesList').before('<span class="cumulative-voting-warning__amount-yes-voting">Превышено количество голосов ЗА. Голосование недействительно</span>')
-    //     } else {
-    //         parent.find('.cumulative-voting-warning__amount-yes-voting').remove();
-    //     }
-    // }
-
-
-
-    $(document).on('click', '.candidate-question .voting-actions__choice--item', function () {
-        // showError($(this))
-    });
 
 
 
