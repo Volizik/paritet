@@ -209,6 +209,9 @@
           background-color: #949908;
           transition: .4s;
         }
+        &:disabled{
+          background-color: #adb309;
+        }
         &:active {
           background-color: #949908;
           transition: .4s;
@@ -308,6 +311,7 @@
             background-color: #002a4d;
             transition: .4s;
           }
+
           em {
             margin-right: 10px;
           }
