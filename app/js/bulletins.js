@@ -60,6 +60,7 @@ $(function () {
             return false
         } else if (parent.find('.voting-selected').length > 0) {
             parent.find('.voting-actions__choice--item').removeClass('voting-selected');
+            parent.find('.votes-cast').focus();
             $(this).addClass('voting-selected');
             inputs.each(function () {
                 $(this).removeAttr('checked')
@@ -74,6 +75,7 @@ $(function () {
                 return false
             }
         } else {
+            parent.find('.votes-cast').focus();
             $(this).addClass('voting-selected');
             thisRadio.attr('checked', 'checked');
             votingFalse.hide();

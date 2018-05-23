@@ -1,23 +1,26 @@
 $(function () {
 
-    var text = $('.need-hide');
-
-    if (text.length > 0) {
-        text.each(function () {
-            if ($(this).height() > 51) {
-                $(this).after('<button type="button" class="need-hide-btn">больше...</button>');
-                $(this).addClass('overflow-height')
+    var meetingBlockText = $('.meeting-text-wrap');
+    if (meetingBlockText.length > 0) {
+        meetingBlockText.each(function () {
+            var hiddenText = $(this).find('.fullsize-text').val();
+            if (hiddenText.length > 51) {
+                $(this).append('<button type="button" class="need-hide-btn">больше...</button>');
             }
         });
     }
 
     $(document).on('click', '.need-hide-btn', function () {
-        $(this).prev().toggleClass('overflow-height');
+        var smallText = $(this).siblings('.small-size-text').val(),
+            hiddenText = $(this).siblings('.fullsize-text').val();
+        $(this).prev().toggleClass('resize-text');
 
-        if ($(this).prev().hasClass('overflow-height')) {
-            $(this).text('больше...')
+        if ($(this).prev().hasClass('resize-text')) {
+            $(this).text('меньше...');
+            $(this).siblings('.need-hide').html(hiddenText);
         } else {
-            $(this).text('меньше...')
+            $(this).text('больше...');
+            $(this).siblings('.need-hide').html(smallText)
         }
     })
 
