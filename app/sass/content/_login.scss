@@ -21,7 +21,7 @@
     width: 280px;
     box-sizing: border-box;
     padding: 10px 30px;
-    background-color: rgba(255,255,255,.85);
+    background-color: rgba(255, 255, 255, .85);
     overflow: hidden;
     &--top {
       position: relative;
@@ -95,7 +95,7 @@
       align-items: center;
       justify-content: space-between;
       button {
-        margin: 0!important;
+        margin: 0 !important;
       }
     }
     &--buttons {
@@ -205,12 +205,14 @@
         cursor: pointer;
         margin: 30px 0px;
         transition: .4s;
+        cursor: pointer;
         &:hover {
           background-color: #949908;
           transition: .4s;
         }
-        &:disabled{
+        &:disabled {
           background-color: #adb309;
+          cursor: default;
         }
         &:active {
           background-color: #949908;
@@ -284,7 +286,7 @@
             width: calc(100% - 120px)
           }
         }
-        >a {
+        > a {
           padding-right: 20px;
         }
         [type="submit"] {
@@ -316,9 +318,34 @@
             margin-right: 10px;
           }
         }
+        .button {
+          width: 110px;
+          box-sizing: border-box;
+          background-color: #003866;
+          text-transform: uppercase;
+          color: #fff;
+          border: none;
+          height: 50px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: .4s;
+          float: left;
+          line-height: 49px;
+          text-align: center;
+          margin-top: 0;
+          &:hover,
+          &:active {
+            background-color: #002a4d;
+            transition: .4s;
+          }
+
+          em {
+            margin-right: 10px;
+          }
+        }
       }
       .main__form--recovery {
-        >a {
+        > a {
           padding-right: 20px;
         }
         [type="submit"] {
@@ -373,7 +400,7 @@
     width: 280px;
     box-sizing: border-box;
     padding: 20px;
-    background-color: rgba(255,255,255,.85);
+    background-color: rgba(255, 255, 255, .85);
     h2 {
       font-size: 20px;
       font-weight: 300;
@@ -419,7 +446,7 @@
     width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
-    background-color: rgba(255,255,255,.7);
+    background-color: rgba(255, 255, 255, .7);
     margin-top: 40px;
     flex-shrink: 0;
     p {
@@ -436,5 +463,14 @@
     }
   }
 }
-
-
+.recaptcha-wrap{
+  width: 300px;
+  height: 74px;
+  overflow: hidden;
+  position: relative;
+}
+.g-recaptcha{
+  position: absolute;
+  left: -1px;
+  top: -1px;
+}

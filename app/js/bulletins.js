@@ -7,12 +7,26 @@ $(function () {
         var parent = $(this).closest('.content__block');
         // Данные для отправки формы преобразуем в массив
         var formData = parent.find('form').serializeArray();
+        var url = parent.find('form').attr('action').toString();
+        var customUrl = url.replace(/SignBulletinAjax/g, 'SignBulletin');
         $.ajax({
-            url: parent.find('form').attr('action').toString(),
+            url: url,
             type: 'post',
             data: formData,
             success: function (data) {
                 parent.html(data)
+            },
+            error: function (err) {
+                console.error(err)
+            }
+        })
+        $.ajax({
+            url:  customUrl,
+            type: 'post',
+            success: function (data) {
+                var block = $('<div>');
+                block.html(data);
+                $('.status-voiting').html(block.find('.status-voiting').html());
             },
             error: function (err) {
                 console.error(err)

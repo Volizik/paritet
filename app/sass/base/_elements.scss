@@ -1152,8 +1152,18 @@ label {
     }
   }
 }
-
-
+.mgb-20px{
+  margin-bottom: 20px;
+}
+.g-recaptcha iframe .rc-anchor-light .rc-anchor-normal{
+  border: none!important;
+}
+.g-recaptcha iframe .rc-anchor{
+  border-radius: 0!important;
+}
+.g-recaptcha iframe .rc-anchor-light{
+  background: #fff!important;
+}
 @keyframes animateLogo {
   50% {
     height: 60px;

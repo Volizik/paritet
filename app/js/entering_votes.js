@@ -141,6 +141,8 @@ $(function () {
         return isAllowedKeyCode(e.originalEvent.key);
     });
     $(document).on('blur', '.votes-cast', function() {
+
+
         var _this = $(this);
         var parent = $(this).closest('.voting__block');
         var votingVoicesTotal = parent.find('.votingVoicesTotal').val().replace(/\u00a0/g, '');
@@ -170,6 +172,38 @@ $(function () {
 
         // Складываем введенные значения голосов ЗА
         calculateCandidatesYesVotes(_this);
+
+    });
+    $(document).on('keyup', '.votes-cast', function() {
+        var _this = $(this);
+        var parent = $(this).closest('.voting__block');
+        var votingVoicesTotal = parent.find('.votingVoicesTotal').val().replace(/\u00a0/g, '');
+            // Складываем введенные значения в разделенные голоса
+            var arrOfInputs = parent.find('.votes-cast');
+            var arrOfInputsVal = [];
+            arrOfInputs.each(function () {
+                // Заменяем пробелы на 0, что бы с сервера не возвращалась ошибка
+                if ($(this).val().trim() === '') {
+                    $(this).val(0)
+                }
+                arrOfInputsVal.push($(this).val().replace(/\u00a0/g, '')); // Значение каждого инпута заносим в массив
+            });
+            additionFraction(arrOfInputsVal.join(';')).done(function (e) {
+                // Складываем дроби, и сравниваем с "Голосов всего"
+                var sum = e.result.replace(/\u00a0/g, '');
+                comparingIsLager(votingVoicesTotal, sum).done(function (data) {
+                    if (data.result === 'true') {
+                        _this.closest('.question').find('.cumulative-voting-warning').remove()
+                    } else {
+                        _this.closest('.question').find('.cumulative-voting-warning').remove();
+                        _this.closest('.voting__block').before('<span class="cumulative-voting-warning">Отдано больше голосов чем имеется. Голосование недействительно</span>')
+                    }
+                })
+            });
+
+            // Складываем введенные значения голосов ЗА
+            calculateCandidatesYesVotes(_this);
+
 
     });
     $(document).on('click', '.remainingVoicesBtn', function () {

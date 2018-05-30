@@ -25,10 +25,10 @@ function FindAccountsForUser() {
 function ChangePassword() {
     $.post("/user/ChangePassword", $("#ChangePasswordForm").serialize(), function (data) {
         if (data) {
-            $(".modal-change-password-success").show();
+            $(".modal-change-password-success").closest('.overlay').show();
         }
         else {
-            $(".modal-change-password-fail").show();
+            $(".modal-change-password-fail").closest('.overlay').show();
         }
     });
 }
@@ -140,15 +140,15 @@ function AddUser() {
 }
 
 function ShowModalResultSuccess() {
-    $('.modal-add-user-result-succes').show();
+    $('.modal-add-user-result-succes').closest('.overlay').show();
 };
 
 function ShowModalResultFail() {
-    $('.modal-add-user-result-fail').show();
+    $('.modal-add-user-result-fail').closest('.overlay').show();
 };
 
 function ShowModalAddUserCancel() {
-    $('.modal-add-user-cancel').show();
+    $('.modal-add-user-cancel').closest('.overlay').show();
 };
 
 function SelectIssuer() {
@@ -187,12 +187,12 @@ $(function () {
     //клик по кнопке "Добавить" во всплывающем окне представителей
     $(document).on('click', '.filter .add', function () {
         var insideModal = $(this).closest('.filter').find('.filter');
-        insideModal.show()
+        insideModal.closest('.overlay').show()
     });
 
     //клик на поле ввода представителей - открывает окно представителей
     $(document).on('click', '.admin-represent', function () {
-        $(this).siblings('.filter').show()
+        $(this).siblings('.filter').closest('.overlay').show()
     });
 
     //клик на кнопку "Выбрать" в окне представителей
@@ -236,13 +236,13 @@ $(function () {
     // модалка при удалении группы
     $(document).on('click', '.groups-list .group-delete', function () {
         $('#groupToDelete').attr('value', $(this).data('group-id'));
-        $('.modal-delete').show();
+        $('.modal-delete').closest('.overlay').show();
     });
 
     // модалка при удалении пользователя
     $(document).on('click', '.users-list .user-delete', function () {
         $('#userToDelete').attr("value", $(this).data('userid'));
-        $('.modal-delete-user').show();
+        $('.modal-delete-user').closest('.overlay').show();
     });
 
     // клик в меню удалить группу
@@ -252,7 +252,7 @@ $(function () {
         var url = $(this).attr("href");
         var id = url.substring(url.lastIndexOf('/') + 1);
         $('#groupToDelete').attr('value', id);
-        $('.modal-delete').show();
+        $('.modal-delete').closest('.overlay').show();
     });
 
     $(document).on('click', '.groups-by-user .filter .submit', function () {
