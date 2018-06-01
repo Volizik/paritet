@@ -39,11 +39,18 @@
         left: -40px;
       }
       .logo {
+         &:before,
+         &:after {
+           height: 1px;
+           transform: rotate(0);
+           animation: animateLogo 2s ease-in-out forwards;
+         }
+       }
+      .logo-2 {
         &:before,
         &:after {
-          height: 1px;
-          transform: rotate(0);
-          animation: animateLogo 2s ease-in-out forwards;
+          height: 60px;
+          transform: rotate(45deg);
         }
       }
       h2 {
@@ -134,7 +141,7 @@
     }
     &--content {
       position: relative;
-      padding: 0px 30px;
+
       box-sizing: border-box;
       min-height: 150px;
       a {
@@ -154,9 +161,16 @@
         }
       }
     }
+    &--wrap{
+      padding: 0px 30px;
+    }
+    &--desk{
+      font-size: 14px;
+      color: #fff;
+      text-align: center;
+    }
     &--recovery {
       position: relative;
-      padding: 0px 30px;
       box-sizing: border-box;
       min-height: 150px;
       a {
@@ -329,7 +343,6 @@
           font-size: 14px;
           cursor: pointer;
           transition: .4s;
-          float: left;
           line-height: 49px;
           text-align: center;
           margin-top: 0;
@@ -386,8 +399,10 @@
       box-sizing: border-box;
       background-color: red;
       text-align: center;
+      position: relative;
+      margin-right: -30px;
+      margin-left: -30px; 
       color: #fff;
-      margin: 0;
       ul {
         margin: 0;
         padding: 0;
@@ -465,7 +480,7 @@
 }
 .recaptcha-wrap{
   width: 300px;
-  height: 74px;
+  height: 70px;
   overflow: hidden;
   position: relative;
 }

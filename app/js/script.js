@@ -297,7 +297,6 @@ $(function () {
             data: {
                 meetId: meetId
             },
-            dataType: 'json',
             success: function (html) {
                 console.log('html', html)
                 _this_.attr('data-btn-text', 'Список получен ' + html.result).removeClass('orange').addClass('grey');
@@ -592,7 +591,14 @@ $(function () {
         $(this).closest('.overlay').hide();
     })
 
-
-
+    $(document).on('change', '.event-change', function () {
+        var parent = $(this).closest('tr');
+       if($(this).val() == 2){
+           parent.find('.ast-voting .noborder').val(0).attr('disabled', 'disabled');
+       }
+       else {
+           parent.find('.ast-voting .noborder').removeAttr('disabled');
+       }
+    });
 
 });

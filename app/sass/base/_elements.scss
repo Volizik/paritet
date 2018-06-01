@@ -191,6 +191,31 @@ $pink: #ef3f56;
     background-color: #ef4056;
   }
 }
+.logo-2 {
+  display: block;
+  position: relative;
+  width: 50%;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 22px;
+    width: 20px;
+    background-color: #00467f;
+    height: 60px;
+    transform: rotate(45deg);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    width: 20px;
+    height: 60px;
+    transform: rotate(45deg);
+    background-color: #ef4056;
+  }
+}
 
 
 .action-btn {

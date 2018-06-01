@@ -18,6 +18,7 @@ function Condition() {
     };
 
     this.runSave = function () {
+        this.conditionArray = [];
         this.elems = this.getElementsByAttr(this.options.typeAttrName);
         for (var i = 0; i < this.elems.length; i++) {
             var type = this.getAttr(this.elems[i], this.options.typeAttrName);
@@ -28,15 +29,19 @@ function Condition() {
             }
             if (type === 'block' || type === 'checkbox') {
                 val = this.getAttr(this.elems[i], this.options.valAttrName);
-                console.log(val);
             }
-            this.conditionArray.push({name: name, val: val, type:type});
+            if(val!=0 && val !=''){
+                this.conditionArray.push({name: name, val: val, type:type});
+            }
+
         }
+        console.log( JSON.stringify(this.conditionArray).length);
         setCookie(this.options.cookieName, JSON.stringify(this.conditionArray), {expires: this.options.cookieExpires});
     };
 
     this.runLoad = function () {
         var arr = getCookie(this.options.cookieName);
+        console.log(arr);
         if (arr) {
             arr = JSON.parse(arr);
             for (var i = 0; i < arr.length; i++) {
