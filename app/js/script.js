@@ -299,7 +299,7 @@ $(function () {
             },
             success: function (html) {
                 console.log('html', html)
-                _this_.attr('data-btn-text', 'Список получен ' + html.result).removeClass('orange').addClass('grey');
+                _this_.attr('data-btn-text', 'Список получен ' + html).removeClass('orange').addClass('grey');
             },
             error: function (err) {
                 console.log(err)

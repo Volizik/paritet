@@ -1206,3 +1206,9 @@ label {
 //  from {top: 50%; opacity: 1}
 //  to {top: -50%; opacity: 0}
 //}
+.represent-filter{
+  max-width: 420px;
+  .filter__body{
+    max-height: 250px;
+  }
+}
