@@ -204,6 +204,7 @@ $(function () {
                 alert('Ошибка! Ответ сервера: ' + err.status);
             }
         })
+        con.runSave();
     });
     $(document).on('click', '.candidate-question .voting-actions__choice--item', function () {
         calculateCandidatesYesVotes($(this))

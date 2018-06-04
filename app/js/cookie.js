@@ -46,6 +46,9 @@ $(function () {
         $(document).on('keyup', '.votes-cast', function () {
             con.runSave();
         });
+        $(document).on('keyup', '.cumulative-voting__input', function () {
+            con.runSave();
+        });
         // $('.ch').on('click', function (e) {
         //     var val = parseInt($(this).attr('data-scv'));
         //     if (val === 0) {
