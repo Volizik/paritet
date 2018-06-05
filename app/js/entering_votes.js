@@ -118,7 +118,6 @@ $(function () {
         multiplicationFractions(votingVoicesTotal, amountCandidates).done(function (totalVoisesReq) {
             var totalVoises = totalVoisesReq.result.replace(/\u00a0/g, '');
             additionFraction(arrOfInputsYesVal.join(';')).done(function (e) {
-                console.log('arr', arrOfInputsYesVal)
                 // Складываем дроби, и сравниваем с "Голосов всего"
                 var sum = e.result.replace(/\u00a0/g, '');
                 comparingIsLager(totalVoises, sum).done(function (data) {
@@ -132,7 +131,7 @@ $(function () {
             })
         });
     }
-
+    var _changeInterval = null;
     // Простое разделенное голосование
     $(document).on('keydown', '.votes-cast', function(e) {
         voisesButtonClickEmit($(this));
@@ -140,8 +139,7 @@ $(function () {
         remainingBtn.show();
         return isAllowedKeyCode(e.originalEvent.key);
     });
-    $(document).on('blur', '.votes-cast', function() {
-
+    $(document).on('keyup', '.votes-cast', function() {
 
         var _this = $(this);
         var parent = $(this).closest('.voting__block');
@@ -150,28 +148,39 @@ $(function () {
         // Складываем введенные значения в разделенные голоса
         var arrOfInputs = parent.find('.votes-cast');
         var arrOfInputsVal = [];
-        arrOfInputs.each(function () {
-            // Заменяем пробелы на 0, что бы с сервера не возвращалась ошибка
-            if ($(this).val().trim() === '') {
-                $(this).val(0)
-            }
-            arrOfInputsVal.push($(this).val().replace(/\u00a0/g, '')); // Значение каждого инпута заносим в массив
-        });
-        additionFraction(arrOfInputsVal.join(';')).done(function (e) {
-            // Складываем дроби, и сравниваем с "Голосов всего"
-            var sum = e.result.replace(/\u00a0/g, '');
-            comparingIsLager(votingVoicesTotal, sum).done(function (data) {
-                if (data.result === 'true') {
-                    _this.closest('.question').find('.cumulative-voting-warning').remove()
-                } else {
-                    _this.closest('.question').find('.cumulative-voting-warning').remove();
-                    _this.closest('.voting__block').before('<span class="cumulative-voting-warning">Отдано больше голосов чем имеется. Голосование недействительно</span>')
-                }
-            })
-        });
 
-        // Складываем введенные значения голосов ЗА
-        calculateCandidatesYesVotes(_this);
+        // wait untill user type in something
+        // Don't let call setInterval - clear it, user is still typing
+        clearInterval(_changeInterval);
+        _changeInterval = setInterval(function() {
+            arrOfInputs.each(function () {
+                // Заменяем пробелы на 0, что бы с сервера не возвращалась ошибка
+                if ($(this).val().trim() === '') {
+                    $(this).val(0)
+                }
+                arrOfInputsVal.push($(this).val().replace(/\u00a0/g, '')); // Значение каждого инпута заносим в массив
+            });
+
+            additionFraction(arrOfInputsVal.join(';')).done(function (e) {
+                // Складываем дроби, и сравниваем с "Голосов всего"
+                console.log(e);
+                var sum = e.result.replace(/\u00a0/g, '');
+                console.log('votingVoicesTotal', votingVoicesTotal);
+                console.log('sum', sum);
+                comparingIsLager(votingVoicesTotal, sum).done(function (data) {
+                    if (data.result === 'true') {
+                        _this.closest('.question').find('.cumulative-voting-warning').remove()
+                    } else {
+                        _this.closest('.question').find('.cumulative-voting-warning').remove();
+                        _this.closest('.voting__block').before('<span class="cumulative-voting-warning">Отдано больше голосов чем имеется. Голосование недействительно</span>')
+                    }
+                })
+            });
+
+            // Складываем введенные значения голосов ЗА
+            calculateCandidatesYesVotes(_this);
+            clearInterval(_changeInterval)
+        }, 2000);
 
     });
     $(document).on('click', '.remainingVoicesBtn', function () {

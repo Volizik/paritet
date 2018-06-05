@@ -2,12 +2,10 @@ $(function () {
 
     var con = new Condition();
     if (con){
-        console.log('IS CON');
         con.init({
             valAttrName: 'data-scv',
             cookieName: '___rrr___',
             customLoad: function (item, name, value, type) {
-                console.log('in func')
                 if (type === 'block') {
                     if (parseInt(value) === 1) {
                         item.classList.add('block');
@@ -18,7 +16,6 @@ $(function () {
                     item.value = value;
                 }
                 if(type === 'checkbox'){
-                    console.log('is checkbox')
                     if (parseInt(value) === 1) {
                         $(item).closest('.voting-actions__choice--item').addClass('voting-selected');
                         item.setAttribute('checked', 'checked');

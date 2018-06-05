@@ -35,18 +35,15 @@ function Condition() {
             }
 
         }
-        console.log( JSON.stringify(this.conditionArray).length);
         setCookie(this.options.cookieName, JSON.stringify(this.conditionArray), {expires: this.options.cookieExpires});
     };
 
     this.runLoad = function () {
         var arr = getCookie(this.options.cookieName);
-        console.log(arr);
         if (arr) {
             arr = JSON.parse(arr);
             for (var i = 0; i < arr.length; i++) {
                 var el = this.getElementByAttr(this.options.nameAttrName, arr[i].name);
-                console.log(this.options.nameAttrName, arr[i].name);
                 if(arr[i].type === 'block' || arr[i].type === 'checkbox'){
                     el.setAttribute(this.options.valAttrName, arr[i].val);
                 }
