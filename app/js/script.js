@@ -597,4 +597,9 @@ $(function () {
            parent.find('.ast-voting .noborder').removeAttr('disabled');
        }
     });
+
+    $(document).on('change', '.input-meeting-date', function () {
+        $('.reg-start-date').val($(this).val());
+    });
+
 });
