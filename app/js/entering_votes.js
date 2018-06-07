@@ -1,4 +1,68 @@
 $(function () {
+    var con = new Condition();
+    if (con) {
+        con.init({
+            valAttrName: 'data-scv',
+            cookieName: '___rrr___',
+            customLoad: function (item, name, value, type) {
+                if (type === 'block') {
+                    if (parseInt(value) === 1) {
+                        item.classList.add('block');
+
+                    }
+                }
+                if (type === 'input') {
+                    item.value = value;
+                }
+                if (type === 'checkbox') {
+                    if (parseInt(value) === 1) {
+                        $(item).closest('.voting-actions__choice--item').addClass('voting-selected');
+                        item.setAttribute('checked', 'checked');
+                    }
+                }
+            }
+
+        });
+    }
+
+
+    if (con) {
+        con.runLoad();
+
+        $(document).on('click', ".voting-actions__choice--item", function () {
+            var val = parseInt($(this).find('input').attr('data-scv'));
+            var inputs = $(this).closest('.voting-actions__choice').find('input');
+            if (val === 0) {
+                inputs.each(function () {
+                    $(this).attr('data-scv', 0);
+                });
+                $(this).find('input').attr('data-scv', 1)
+            }
+            else {
+                $(this).find('input').attr('data-scv', 0);
+            }
+            con.runSave();
+        });
+        $(document).on('keyup', '.votes-cast', function () {
+            con.runSave();
+        });
+        $(document).on('click', '.part-of-voices-btn', function () {
+            con.runSave();
+        });
+        $(document).on('keyup', '.cumulative-voting__input', function () {
+            con.runSave();
+        });
+        // $('.ch').on('click', function (e) {
+        //     var val = parseInt($(this).attr('data-scv'));
+        //     if (val === 0) {
+        //         $(this).attr('data-scv', 1)
+        //     }
+        //     else {
+        //         $(this).attr('data-scv', 0);
+        //     }
+        //     con.runSave();
+        // });
+    }
 
     //Умножение
     function multiplicationFractions(val1, val2) {
@@ -376,6 +440,7 @@ $(function () {
                         var totalVoices = parent.find('.dataCumulativeInput').data('total').replace(/\u00a0/g, ''); // Количество голосов всего (Вырезаем все спецсимволы пробела);
                         comparingIsLager(totalVoices, data.result.replace(/\u00a0/g, '')).done(function (result) {
                             // Если количество введенных голосов превышает количество "Голосов всего" - выводим сообщение об ошибке. Иначе удаляем сообщение
+                            con.runSave();
                             if (result.result === 'false') {
                                 parent.find('.cumulative-voting-warning').remove();
                                 parent.find('.voting__block').append('<span class="cumulative-voting-warning">Отдано больше голосов чем имеется. Голосование недействительно</span>')
@@ -410,7 +475,9 @@ $(function () {
             arrOfInputsValWithoutThis.push($(this).val()); // Значение каждого инпута заносим в массив
         });
         arrOfInputsValWithoutThis.splice(arrOfInputsValWithoutThis.indexOf(thisInput), 1); // удаляем из массива значение инпута, по кнопке которого кликнули
-        fractionMinusListOfFraction(arrOfInputsValWithoutThis, $(this));
+        fractionMinusListOfFraction(arrOfInputsValWithoutThis, $(this)).done(function () {
+            con.runSave();
+        });
     });
     $(document).on('focus', '.cumulative-voting__input', function () {
         $(this).closest('.cumulative-voting__block').find('.help-hidden-block').removeClass('help-hidden-block--is-visible');

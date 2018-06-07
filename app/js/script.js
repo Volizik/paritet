@@ -332,7 +332,6 @@ $(function () {
             $('.meetings').addClass('meetings-hidden');
             $(this).text('Показать ход собрания')
         }
-
     });
 
     $(document).on('click', '.info-affix', function () {
@@ -341,8 +340,6 @@ $(function () {
     $(document).on('click', '.materials-list__btn', function () {
         $(this).siblings('.add-files').fadeIn('fast')
     });
-
-
     $(document).on('click', '.active-question__sign', function () {
         $(this).siblings('.overlay').show()
     });
@@ -600,5 +597,4 @@ $(function () {
            parent.find('.ast-voting .noborder').removeAttr('disabled');
        }
     });
-
 });

@@ -16,7 +16,7 @@ $(function () {
         },
         scrollInertia: 300
     });
-    $('.content__section .filter__body').mCustomScrollbar({theme: "my-theme"});
+    $('.filter__body').mCustomScrollbar({theme: "my-theme"});
     $('.filter .filter .filter__body').mCustomScrollbar({theme: "my-theme"});
     $('.modal__body').mCustomScrollbar({theme: "my-theme"});
 

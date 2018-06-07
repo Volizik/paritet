@@ -1,5 +1,4 @@
 function Condition() {
-
     this.conditionArray = [];
 
     this.init = function (options) {
@@ -35,6 +34,7 @@ function Condition() {
             }
 
         }
+        console.log(JSON.stringify(this.conditionArray));
         setCookie(this.options.cookieName, JSON.stringify(this.conditionArray), {expires: this.options.cookieExpires});
     };
 
