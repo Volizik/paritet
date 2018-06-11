@@ -3,7 +3,8 @@ $(function () {
     if (con) {
         con.init({
             valAttrName: 'data-scv',
-            cookieName: '___rrr___',
+            cookieName: $('.voiting-name-storage').val(),
+            storage: 'localStorage',
             customLoad: function (item, name, value, type) {
                 if (type === 'block') {
                     if (parseInt(value) === 1) {

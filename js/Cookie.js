@@ -8,6 +8,7 @@ function Condition() {
             typeAttrName: 'data-save-condition',
             nameAttrName: 'data-save-condition-name',
             valAttrName: 'data-save-condition-val',
+            storage: 'cookie',
             customLoad: function (item, name, value, type) {
             }
         };
@@ -35,11 +36,14 @@ function Condition() {
 
         }
         console.log(JSON.stringify(this.conditionArray));
-        setCookie(this.options.cookieName, JSON.stringify(this.conditionArray), {expires: this.options.cookieExpires});
+        this.setStorage(this.options.cookieName, JSON.stringify(this.conditionArray));
+        // setCookie(this.options.cookieName, JSON.stringify(this.conditionArray), {expires: this.options.cookieExpires});
     };
 
     this.runLoad = function () {
-        var arr = getCookie(this.options.cookieName);
+        // var arr = getCookie(this.options.cookieName);
+        var arr = this.getStorage(this.options.cookieName);
+        console.log(arr);
         if (arr) {
             arr = JSON.parse(arr);
             for (var i = 0; i < arr.length; i++) {
@@ -164,4 +168,30 @@ function Condition() {
         return finalParams;
     }
 
+    function setLocalStorage (key, value) {
+        if(typeof value != "string"){
+            value = JSON.stringify(value);
+        }
+        return localStorage.setItem(key, value);
+    };
+    function getLocalStorage (key) {
+      return localStorage.getItem(key);
+    };
+
+    this.getStorage = function (key) {
+        if(this.options.storage == "cookie"){
+            return getCookie(key);
+        }
+        if (this.options.storage == "localStorage"){
+            return getLocalStorage(key);
+        }
+    };
+    this.setStorage = function (key, value) {
+        if(this.options.storage == "cookie"){
+            return setCookie (key, value, {expires: this.options.cookieExpires});
+        }
+        if (this.options.storage == "localStorage"){
+            return setLocalStorage(key, value);
+        }
+    };
 }
